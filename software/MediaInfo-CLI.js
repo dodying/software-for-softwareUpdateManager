@@ -8,8 +8,8 @@ let data = {
   download: {
     selector: 'a[href$="Windows_x64.zip"]'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath, 'Plugin')
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath, 'Plugin')
   }
 }
 module.exports = data

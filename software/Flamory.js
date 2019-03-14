@@ -10,8 +10,8 @@ let data = {
   download: {
     plain: 'http://flamory.com/get'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_ai')(output, iPath, null, 'App')
+  install: function (output, iPath, fns) {
+    return fns.install.ai(output, iPath, null, 'App')
   }
 }
 module.exports = data

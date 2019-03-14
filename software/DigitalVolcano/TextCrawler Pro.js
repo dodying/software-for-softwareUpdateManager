@@ -9,14 +9,14 @@ let data = {
   download: {
     plain: 'https://www.digitalvolcano.co.uk/download/TextCrawlerPro_setup.exe'
   },
-  install: function (output, iPath) {
-    return require('./../../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   },
   other: {
     crack: {
       commercial: 0,
-      install: function (output, iPath) {
-        return require('./../../js/install')(output, iPath, 'IsLicense50.dll')
+      install: function (output, iPath, fns) {
+        return fns.install(output, iPath, 'IsLicense50.dll')
       }
     }
   }

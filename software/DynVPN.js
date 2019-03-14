@@ -8,8 +8,8 @@ let data = {
   download: {
     selector: 'body > section.section-content > div > table > tbody > tr:nth-child(1) > td:nth-child(4) > a'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

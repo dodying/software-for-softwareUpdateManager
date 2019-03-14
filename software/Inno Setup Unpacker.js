@@ -11,8 +11,8 @@ let data = {
   download: {
     plain: 'https://sourceforge.net/projects/innounp/files/latest/download'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_zipped_single')(output, iPath, 'innounp.exe')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped.single(output, iPath, 'innounp.exe')
   }
 }
 module.exports = data

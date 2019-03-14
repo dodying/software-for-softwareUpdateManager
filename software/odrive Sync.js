@@ -10,8 +10,8 @@ let data = {
   download: {
     plain: 'https://www.odrive.com/downloaddesktop?platform=win'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_wix')(output, iPath, null, 'odrive.x64.msi', data.preferPath)
+  install: function (output, iPath, fns) {
+    return fns.install.wix(output, iPath, null, 'odrive.x64.msi', data.preferPath)
   }
 }
 module.exports = data

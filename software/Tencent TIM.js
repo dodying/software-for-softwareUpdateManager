@@ -8,8 +8,8 @@ let data = {
   download: {
     selector: '.down-btn>a'
   }
-  // install: function (output, iPath) {
-  //   let killed = require('./../js/kill')(output, iPath)
+  // install: function (output, iPath, fns) {
+  //   let killed = fns.kill(output, iPath)
   //   if (!killed) return false
   //   const path = require('path')
   //   const fse = require('fs-extra')

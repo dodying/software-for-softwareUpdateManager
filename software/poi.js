@@ -9,8 +9,8 @@ let data = {
   download: {
     func: async (res, $) => $('a[href*="/releases/download/"][href$="win.7z"]').eq(-1).attr('href')
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

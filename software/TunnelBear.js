@@ -11,8 +11,8 @@ let data = {
   download: {
     plain: 'https://tunnelbear.s3.amazonaws.com/downloads/pc/public/TunnelBear-Installer.exe'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_wix')(output, iPath, null, 'TunnelBear.Setup.msi', data.preferPath)
+  install: function (output, iPath, fns) {
+    return fns.install.wix(output, iPath, null, 'TunnelBear.Setup.msi', data.preferPath)
   }
 }
 module.exports = data

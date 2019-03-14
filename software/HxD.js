@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'https://mh-nexus.de/downloads/HxDSetup.zip'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_zipped')(output, iPath, 'install_inno_with_type', null, 'HxD.exe', require('./../config').locale.match(/^zh/i) ? '2' : '3')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped(output, iPath, 'install_inno_with_type', null, 'HxD.exe', require('./../config').locale.match(/^zh/i) ? '2' : '3')
   }
 }
 module.exports = data

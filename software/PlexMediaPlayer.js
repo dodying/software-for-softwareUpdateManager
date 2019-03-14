@@ -9,8 +9,8 @@ let data = {
   download: {
     func: async (res, $) => JSON.parse(res.body).computer.Windows.releases[0].url
   },
-  install: function (output, iPath) {
-    return require('./../js/install_wix')(output, iPath, null, 'PMP.msi', data.preferPath)
+  install: function (output, iPath, fns) {
+    return fns.install.wix(output, iPath, null, 'PMP.msi', data.preferPath)
   }
 }
 module.exports = data

@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'https://rammichael.com/downloads/textify_setup.exe'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath, ['Textify.ini', 'WebApp.ini'])
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath, ['Textify.ini', 'WebApp.ini'])
   }
 }
 module.exports = data

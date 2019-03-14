@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'http://download.deluge-torrent.org/windows/deluge-{version}-win32-py2.7.exe'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

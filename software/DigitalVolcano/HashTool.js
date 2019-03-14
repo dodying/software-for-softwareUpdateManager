@@ -8,8 +8,8 @@ let data = {
   download: {
     selector: 'a.button-green'
   },
-  install: function (output, iPath) {
-    return require('./../../js/install_zipped_single')(output, iPath, 'Hash_Tool.exe')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped.single(output, iPath, 'Hash_Tool.exe')
   }
 }
 module.exports = data

@@ -8,10 +8,10 @@ let data = {
   download: {
     plain: 'https://www.majorgeeks.com/index.php?ct=files&action=download&'
   },
-  install: function (output, iPath) {
-    return require('./../../js/install_inno')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install.inno(output, iPath)
   },
-  afterInstall: function (output, iPath) {
+  afterInstall: function (output, iPath, fns) {
     let path = require('path')
     let fse = require('fs-extra')
 

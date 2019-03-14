@@ -10,7 +10,7 @@ let data = {
   download: {
     selector: 'h1+p>a'
   },
-  install: async function (output, iPath) {
+  install: async function (output, iPath, fns) {
     let fs = require('fs')
     let path = require('path')
     let cp = require('child_process')
@@ -36,7 +36,7 @@ let data = {
     try {
       let tmp = path.resolve(__dirname, './../unzip/Evernote.msi')
       fs.copyFileSync(msi, tmp)
-      require('./../js/install_msi')(tmp, iPath, null, data.preferPath)
+      fns.install.msi(tmp, iPath, null, data.preferPath)
       fs.unlinkSync(msi)
       return true
     } catch (error) {

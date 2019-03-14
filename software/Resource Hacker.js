@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'http://www.angusj.com/resourcehacker/resource_hacker.zip'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_zipped_single')(output, iPath, 'ResourceHacker.exe')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped.single(output, iPath, 'ResourceHacker.exe')
   }
 }
 module.exports = data

@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'http://www.maxthon.cn/mx5/portable/dl'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

@@ -8,8 +8,8 @@ let data = {
   download: {
     selector: 'a[href$="-win64.zip"]'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath, 'mega.ini')
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath, 'mega.ini')
   }
 }
 module.exports = data

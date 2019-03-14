@@ -9,8 +9,8 @@ let data = {
   download: {
     plain: 'https://www.kaplansoft.com/tektape/release/TekTape.zip'
   },
-  install: function (output, iPath) {
-    return require('./../../js/install_zipped')(output, iPath, 'install_msi', '.msi', null, data.preferPath)
+  install: function (output, iPath, fns) {
+    return fns.install.zipped(output, iPath, 'install_msi', '.msi', null, data.preferPath)
   }
 }
 module.exports = data

@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'https://accounts.activecollab.com/api/v2/desktop-apps/activecollab/releases/win32/download'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_zipped')(output, iPath, 'install', 'app-64.7z')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped(output, iPath, 'install', 'app-64.7z')
   }
 }
 module.exports = data

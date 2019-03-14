@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'https://www.autoitscript.com/cgi-bin/getfile.pl?autoit3/autoit-v3.zip'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

@@ -9,8 +9,8 @@ let data = {
   download: {
     selector: 'a[href*="/releases/download/"][href*="win64"][href$=".zip"]'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_zipped_single')(output, iPath, 'upx.exe')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped.single(output, iPath, 'upx.exe')
   }
 }
 module.exports = data

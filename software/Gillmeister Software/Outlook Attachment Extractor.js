@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'https://www.outlook-attachment-extractor.com/downloads/oae-setup.exe'
   },
-  install: function (output, iPath) {
-    return require('./../../js/install_inno_with_type')(output, iPath, null, null, { '{code_GetBitnessDefaultInstallDir}': require('path').parse(iPath).dir })
+  install: function (output, iPath, fns) {
+    return fns.install.inno.type(output, iPath, null, null, { '{code_GetBitnessDefaultInstallDir}': require('path').parse(iPath).dir })
   }
 }
 module.exports = data

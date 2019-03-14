@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'http://jfx.cwcodes.net/WinNTSetup/Release/WinNTSetup3.rar'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'https://www.digitalvolcano.co.uk/download/TextCrawler_Setup.exe'
   },
-  install: function (output, iPath) {
-    return require('./../../js/install_zipped_single')(output, iPath, 'TextCrawler.exe')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped.single(output, iPath, 'TextCrawler.exe')
   }
 }
 module.exports = data

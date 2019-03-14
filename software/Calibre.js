@@ -10,16 +10,16 @@ let data = {
   download: {
     plain: 'https://calibre-ebook.com/dist/win64'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_msi')(output, iPath, null, data.preferPath)
+  install: function (output, iPath, fns) {
+    return fns.install.msi(output, iPath, null, data.preferPath)
   },
   other: {
     portable: {
       download: {
         plain: 'https://calibre-ebook.com/dist/portable'
       },
-      install: function (output, iPath) {
-        let killed = require('./../js/kill')(output, iPath)
+      install: function (output, iPath, fns) {
+        let killed = fns.kill(output, iPath)
         if (!killed) return false
         let path = require('path')
         let parentPath = path.parse(iPath).dir

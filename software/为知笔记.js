@@ -9,8 +9,8 @@ let data = {
   download: {
     plain: 'http://url.wiz.cn/u/windows'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_inno')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install.inno(output, iPath)
   }
 }
 module.exports = data

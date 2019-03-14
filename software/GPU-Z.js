@@ -6,10 +6,10 @@ let data = {
     selector: '.title'
   },
   download: {
-    func: async (res, $, req, cheerio) => require('./../js/download/techpowerup')(res, $, req, cheerio)
+    func: async (res, $, fns) => fns.download.techpowerup(res, $, fns)
   },
-  install: function (output, iPath) {
-    return require('./../js/install_single')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install.single(output, iPath)
   }
 }
 module.exports = data

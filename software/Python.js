@@ -8,7 +8,7 @@ let data = {
   download: {
     plain: 'https://www.python.org/ftp/python/{version}/python-{version}-amd64.exe'
   },
-  install: function (output, iPath) {
+  install: function (output, iPath, fns) {
     let excludes = [/^py\.exe$/i, /\.msi$/i]
     let installMsi = ['core.msi', 'dev.msi', 'doc.msi', 'exe.msi', 'lib.msi', 'tcltk.msi', 'test.msi', 'tools.msi']
 
@@ -55,15 +55,15 @@ let data = {
         fse.removeSync(_path)
 
         if (fse.existsSync(folderNew)) {
-          require('./../js/copy')(folderNew, `${path.parse(__dirname).dir}\\${fromNew}`, excludes)
+          fns.copy(folderNew, `${path.parse(__dirname).dir}\\${fromNew}`, excludes)
           fse.removeSync(folderNew)
         }
       }
-      require('./../js/copy')(fromNew, parentPath, excludes)
+      fns.copy(fromNew, parentPath, excludes)
       return true
     }
 
-    let killed = require('./../js/kill')(output, iPath)
+    let killed = fns.kill(output, iPath)
     if (!killed) return false
 
     try {
@@ -74,7 +74,7 @@ let data = {
       return false
     }
   },
-  afterInstall: async function (output, iPath) {
+  afterInstall: async function (output, iPath, fns) {
     const path = require('path')
     const fse = require('fs-extra')
     const cp = require('child_process')

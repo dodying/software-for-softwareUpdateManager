@@ -10,8 +10,8 @@ let data = {
   download: {
     func: async (res, $) => $('.dl-header-cta-button').attr('href').replace('download', 'release').replace('www', 'download').replace(/\/$/, '')
   },
-  install: function (output, iPath) {
-    return require('./../js/install_msi')(output, iPath, null, data.preferPath)
+  install: function (output, iPath, fns) {
+    return fns.install.msi(output, iPath, null, data.preferPath)
   }
 }
 module.exports = data

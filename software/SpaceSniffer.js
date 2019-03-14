@@ -8,8 +8,8 @@ let data = {
   download: {
     selector: 'body > div > table:nth-child(8) > tbody > tr > td:nth-child(1) > a'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_zipped_single')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install.zipped.single(output, iPath)
   }
 }
 module.exports = data

@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'https://getcleaver.com/downloads/windows'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_zipped')(output, iPath, 'install_zipped', null, 'install', 'app-32.7z')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped(output, iPath, 'install_zipped', null, 'install', 'app-32.7z')
   }
 }
 module.exports = data

@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'https://www.highrez.co.uk/scripts/download.asp?package=XMousePortable'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath, null, '64bit*')
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath, null, '64bit*')
   }
 }
 module.exports = data

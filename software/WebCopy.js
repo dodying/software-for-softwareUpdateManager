@@ -8,8 +8,8 @@ let data = {
   download: {
     func: async (res, $) => $('.file-option>a').eq(0).attr('href').replace('/info/', '/get/')
   },
-  install: function (output, iPath) {
-    return require('./../js/install_inno')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install.inno(output, iPath)
   }
 }
 module.exports = data

@@ -8,16 +8,16 @@ let data = {
   download: {
     selector: 'a[href="https://bintray.com/rime/weasel/release"]+a'
   },
-  beforeInstall: function (output, iPath) {
+  beforeInstall: function (output, iPath, fns) {
     let path = require('path')
     let parentPath = path.parse(iPath).dir
     let setup = path.resolve(parentPath, 'WeaselSetup.exe')
     if (require('fs').existsSync(setup)) require('child_process').execSync(`"${setup}" /u`)
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   },
-  afterInstall: function (output, iPath) {
+  afterInstall: function (output, iPath, fns) {
     let path = require('path')
     let parentPath = path.parse(iPath).dir
     let setup = path.resolve(parentPath, 'WeaselSetup.exe')

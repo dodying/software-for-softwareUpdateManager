@@ -10,8 +10,8 @@ let data = {
   download: {
     selector: 'a[href$="win64.exe"]'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_wix')(output, iPath, null, /^mixxx/, data.preferPath)
+  install: function (output, iPath, fns) {
+    return fns.install.wix(output, iPath, null, /^mixxx/, data.preferPath)
   }
 }
 module.exports = data

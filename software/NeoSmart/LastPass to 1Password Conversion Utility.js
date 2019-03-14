@@ -6,10 +6,10 @@ let data = {
     selector: 'a[name]'
   },
   download: {
-    func: async (res, $, req, cheerio) => require('./../../js/download/neosmart')(res, $, req, cheerio)
+    func: async (res, $, fns) => fns.download.neosmart(res, $, fns)
   },
-  install: function (output, iPath) {
-    return require('./../../js/install_single')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install.single(output, iPath)
   }
 }
 module.exports = data

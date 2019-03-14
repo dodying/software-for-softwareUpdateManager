@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'https://shuax.com/fd'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath, null, 'x64')
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath, null, 'x64')
   }
 }
 module.exports = data

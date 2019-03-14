@@ -9,8 +9,8 @@ let data = {
   download: {
     plain: 'https://enigmaprotector.com/assets/files/enigmavb.exe'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_inno')(output, iPath, 'languages')
+  install: function (output, iPath, fns) {
+    return fns.install.inno(output, iPath, 'languages')
   }
 }
 module.exports = data

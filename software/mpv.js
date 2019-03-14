@@ -9,8 +9,8 @@ let data = {
   download: {
     selector: '.latest a[href^="/mpv-x86_64"]'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath, 'doc')
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath, 'doc')
   }
 }
 module.exports = data

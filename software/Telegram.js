@@ -31,7 +31,7 @@ let data = {
     // 1. omitted => /(\d+[\d.]+\d+)/[1]
     // 2. /other/ => /other/[1]
     // ---
-    // or func: async (res, $, req, cheerio, choice) => { return version }
+    // or func: async (res, $, fns, choice) => { return version }
   },
   /**
    * download:
@@ -55,7 +55,7 @@ let data = {
     // ?match: '', // omitted => /(.*)/[1]
     //
     // --- mode 2 ---
-    // func: async (res, $, req, cheerio, choice) => { return url }
+    // func: async (res, $, fns, choice) => { return url }
 
     // ?output:
     // save to which extension, format: '.ext'
@@ -64,17 +64,17 @@ let data = {
   },
   /**
    * omitted => install manually
-   * install: async function(output, iPath, choice)
+   * install: async function(output, iPath, fns, choice)
    * @returns {boolean} if install completed
    * @param {string} output the path to the install pack file.
    * @param {string} iPath the path to the bin file.
    */
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
   /**
-   * beforeInstall: async function(output, iPath)
-   * afterInstall: async function(output, iPath)
+   * beforeInstall: async function(output, iPath, fns)
+   * afterInstall: async function(output, iPath, fns)
    */
   /**
    * other: object

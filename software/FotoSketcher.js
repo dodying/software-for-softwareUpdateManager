@@ -9,8 +9,8 @@ let data = {
   download: {
     selector: 'a[href$="setup_64bit.exe"]'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_inno_single')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install.inno.single(output, iPath)
   }
 }
 module.exports = data

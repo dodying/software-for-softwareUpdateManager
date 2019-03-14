@@ -9,8 +9,8 @@ let data = {
   download: {
     plain: 'https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=zh-CN'
   },
-  install: function (output, iPath) {
-    return require('./../../js/install')(output, iPath, null, 'core')
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath, null, 'core')
   }
 }
 module.exports = data

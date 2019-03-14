@@ -9,8 +9,8 @@ let data = {
   download: {
     plain: 'https://www.binaryfortress.com/Data/Download/?package=displayfusion&log=101'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_inno')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install.inno(output, iPath)
   }
 }
 module.exports = data

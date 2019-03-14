@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'https://www.majorgeeks.com/index.php?ct=files&action=download&'
   },
-  install: function (output, iPath) {
-    return require('./../../js/install_inno_with_type')(output, iPath, null, { 'IObitUnlockerExtension': '2', 'IObitUnlocker': '9' })
+  install: function (output, iPath, fns) {
+    return fns.install.inno.type(output, iPath, null, { 'IObitUnlockerExtension': '2', 'IObitUnlocker': '9' })
   }
 }
 module.exports = data

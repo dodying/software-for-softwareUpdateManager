@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'https://www.nirsoft.net/utils/nircmd-x64.zip'
   },
-  install: function (output, iPath) {
-    return require('./../../js/install_zipped_single')(output, iPath, 'nircmd.exe')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped.single(output, iPath, 'nircmd.exe')
   }
 }
 module.exports = data

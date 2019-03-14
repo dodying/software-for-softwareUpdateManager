@@ -8,8 +8,8 @@ let data = {
   download: {
     selector: '.download_prog a'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_zipped')(output, iPath, 'install', 'Installer.exe', null, '$0')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped(output, iPath, 'install', 'Installer.exe', null, '$0')
   }
 }
 module.exports = data

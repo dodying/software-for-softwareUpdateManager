@@ -8,8 +8,8 @@ let data = {
   download: {
     selector: '.download_btn_new'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_inno')(output, iPath, null, { '{code_CefInstallDir}': require('path').parse(iPath).dir })
+  install: function (output, iPath, fns) {
+    return fns.install.inno(output, iPath, null, { '{code_CefInstallDir}': require('path').parse(iPath).dir })
   }
 }
 module.exports = data

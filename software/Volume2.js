@@ -8,8 +8,8 @@ let data = {
   download: {
     selector: '.entry-content a[href$=".zip"]'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath, 'Config.ini')
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath, 'Config.ini')
   }
 }
 module.exports = data

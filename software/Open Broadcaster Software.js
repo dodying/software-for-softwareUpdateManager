@@ -8,8 +8,8 @@ let data = {
   download: {
     selector: '#win_blurb a.green_btn'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

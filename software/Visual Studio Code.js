@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'https://go.microsoft.com/fwlink/?Linkid=850641'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

@@ -8,8 +8,8 @@ let data = {
   download: {
     func: async (res, $) => 'https://mirrors.shu.edu.cn/kde/ftp' + new URL($('a[href$="x64-setup.exe"]').eq(0).attr('href')).pathname
   },
-  install: function (output, iPath) {
-    return require('./../../js/install_zipped')(output, iPath, 'install', '.7z')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped(output, iPath, 'install', '.7z')
   }
 }
 module.exports = data

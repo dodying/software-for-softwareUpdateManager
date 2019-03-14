@@ -9,8 +9,8 @@ let data = {
   download: {
     selector: 'a[href*="/releases/download/"][href*="win-64bit"][href$=".zip"]'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_zipped_single')(output, iPath, 'aria2c.exe')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped.single(output, iPath, 'aria2c.exe')
   }
 }
 module.exports = data

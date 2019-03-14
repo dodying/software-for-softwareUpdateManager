@@ -9,8 +9,8 @@ let data = {
   download: {
     plain: 'https://www.python.org/ftp/python/{version}/python-{version}.amd64.msi'
   },
-  install: function (output, iPath) {
-    let installed = require('./../js/install_msi')(output, iPath, null, data.preferPath)
+  install: function (output, iPath, fns) {
+    let installed = fns.install.msi(output, iPath, null, data.preferPath)
     if (installed) {
       const path = require('path')
       const fse = require('fs-extra')

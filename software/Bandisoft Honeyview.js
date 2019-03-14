@@ -8,7 +8,7 @@ let data = {
   download: {
     plain: 'http://www.bandisoft.com/honeyview/dl.php?web'
   },
-  install: function (output, iPath, choice) {
+  install: function (output, iPath, fns, choice) {
     const readlineSync = require('readline-sync')
     const fs = require('fs')
     const path = require('path')
@@ -24,7 +24,7 @@ let data = {
 
     let parentPath = path.parse(iPath).dir
     if (shell) cp.execSync(`regsvr32 /u /s "${parentPath}\\HVShell64.dll"`)
-    let installed = require('./../js/install')(output, iPath)
+    let installed = fns.install(output, iPath)
     if (installed) {
       if (shell) cp.execSync(`regsvr32 /s "${parentPath}\\HVShell64.dll"`)
       if (portable) {

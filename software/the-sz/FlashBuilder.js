@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'http://www.the-sz.com/common/get.php?product=flash'
   },
-  install: function (output, iPath) {
-    return require('./../../js/install_zipped')(output, iPath, 'install_inno_single')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped(output, iPath, 'install_inno_single')
   }
 }
 module.exports = data

@@ -10,8 +10,8 @@ let data = {
   download: {
     plain: 'https://mirrors.shu.edu.cn/libreoffice/stable/{version}/win/x86_64/LibreOffice_{version}_Win_x64.msi'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_msi')(output, iPath, null, data.preferPath)
+  install: function (output, iPath, fns) {
+    return fns.install.msi(output, iPath, null, data.preferPath)
   }
 }
 module.exports = data

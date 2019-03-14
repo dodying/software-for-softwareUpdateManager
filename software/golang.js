@@ -9,8 +9,8 @@ let data = {
   download: {
     selector: '.download[href$="amd64.msi"]'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_msi')(output, iPath, null, data.preferPath)
+  install: function (output, iPath, fns) {
+    return fns.install.msi(output, iPath, null, data.preferPath)
   }
 }
 module.exports = data

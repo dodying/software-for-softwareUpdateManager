@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'http://madshi.net/madVR.zip'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

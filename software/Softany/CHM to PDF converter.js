@@ -9,8 +9,8 @@ let data = {
   download: {
     plain: 'http://download.softany.com/Softany-CHM-to-PDF-converter.exe'
   },
-  install: function (output, iPath) {
-    return require('./../../js/install_inno_single')(output, iPath, '.exe')
+  install: function (output, iPath, fns) {
+    return fns.install.inno.single(output, iPath, '.exe')
   }
 }
 module.exports = data

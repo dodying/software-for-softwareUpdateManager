@@ -8,8 +8,8 @@ let data = {
   download: {
     selector: '.file>tbody>tr:nth-child(2)>td:nth-child(4)>a[href$="64bit-portable.zip"]'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

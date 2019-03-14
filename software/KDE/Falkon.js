@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'https://mirrors.shu.edu.cn/kde/ftp/stable/falkon/{version}/Falkon-{version}.exe'
   },
-  install: function (output, iPath) {
-    return require('./../../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

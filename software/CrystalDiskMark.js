@@ -10,8 +10,8 @@ let data = {
   download: {
     selector: 'h2:has("#CrystalDiskMark")+div a.icon-download:contains("zip")'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

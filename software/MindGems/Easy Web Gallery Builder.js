@@ -9,8 +9,8 @@ let data = {
   download: {
     plain: 'http://www.mindgems.com/software/EWGalleryBuilder.exe'
   },
-  install: function (output, iPath) {
-    return require('./../../js/install_inno')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install.inno(output, iPath)
   }
 }
 module.exports = data

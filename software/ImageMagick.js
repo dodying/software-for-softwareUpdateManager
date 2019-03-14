@@ -10,8 +10,8 @@ let data = {
   download: {
     selector: 'a[href*="portable"][href$="x64.zip"]'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath, ['www', 'index.html', 'images'])
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath, ['www', 'index.html', 'images'])
   }
 }
 module.exports = data

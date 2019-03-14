@@ -8,7 +8,7 @@ let data = {
   download: {
     plain: 'https://www.cygwin.com/setup-x86_64.exe'
   },
-  install: function (output, iPath) {
+  install: function (output, iPath, fns) {
     let path = require('path')
     let { dir: parentPath } = path.parse(iPath)
 

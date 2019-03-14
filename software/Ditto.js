@@ -13,8 +13,8 @@ let data = {
       return 'https://sourceforge.net/projects/ditto-cp/files/Ditto/' + versionDots + '/DittoPortable_64bit_' + versionUnder + '.zip/download'
     }
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

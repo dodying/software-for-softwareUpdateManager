@@ -8,8 +8,8 @@
 //   download: {
 //     selector: '.templatemo_homewrapper a'
 //   },
-//   install: function (output, iPath) {
-//     return require('./../js/install')(output, iPath)
+//   install: function (output, iPath, fns) {
+//     return fns.install(output, iPath)
 //   }
 // }
 // module.exports = data
@@ -23,8 +23,8 @@ let data = {
   download: {
     plain: 'https://mirrors.yuntu.ca/office-tool/Office%20Tool%20v{version}.zip'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

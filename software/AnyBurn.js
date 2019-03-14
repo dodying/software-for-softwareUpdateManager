@@ -9,8 +9,8 @@ let data = {
   download: {
     plain: 'http://www.anyburn.com/anyburn_setup_x64.exe'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

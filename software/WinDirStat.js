@@ -8,8 +8,8 @@ let data = {
   download: {
     selector: 'a[href*="sourceforge.net"][href$=".exe"]'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_zipped_single')(output, iPath, 'windirstat.exe')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped.single(output, iPath, 'windirstat.exe')
   }
 }
 module.exports = data

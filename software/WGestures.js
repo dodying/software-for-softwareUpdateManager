@@ -10,8 +10,8 @@ let data = {
   download: {
     selector: 'a[href*="/releases/download/"][href$=".zip"]'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_zipped')(output, iPath, 'install_msi', null, null, data.preferPath)
+  install: function (output, iPath, fns) {
+    return fns.install.zipped(output, iPath, 'install_msi', null, null, data.preferPath)
   }
 }
 module.exports = data

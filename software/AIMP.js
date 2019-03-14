@@ -8,8 +8,8 @@ let data = {
   download: {
     selector: 'a:contains("Programki.net")'
   },
-  install: function (output, iPath, choice) {
-    let killed = require('./../js/kill')(output, iPath)
+  install: function (output, iPath, fns, choice) {
+    let killed = fns.kill(output, iPath)
     if (!killed) return false
     const path = require('path')
     let parentPath = path.parse(iPath).dir

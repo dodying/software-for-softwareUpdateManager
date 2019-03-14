@@ -9,8 +9,8 @@ let data = {
   download: {
     plain: 'https://kcsoftwares.com/files/audiograil_lite.exe'
   },
-  install: function (output, iPath) {
-    return require('./../../js/install_inno')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install.inno(output, iPath)
   }
 }
 module.exports = data

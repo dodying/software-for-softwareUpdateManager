@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'https://rammichael.com/downloads/7tt_setup.exe'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath, '^inject.dll')
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath, '^inject.dll')
   }
 }
 module.exports = data

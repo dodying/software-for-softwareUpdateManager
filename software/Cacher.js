@@ -8,8 +8,8 @@ let data = {
   download: {
     func: async (res, $) => 'https://s3.amazonaws.com/download.cacher.io/' + res.body.match(/path:\s+(.*)/)[1]
   },
-  install: function (output, iPath) {
-    return require('./../js/install_zipped')(output, iPath, 'install', 'app-64.7z')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped(output, iPath, 'install', 'app-64.7z')
   }
 }
 module.exports = data

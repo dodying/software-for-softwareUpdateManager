@@ -9,8 +9,8 @@ let data = {
   download: {
     func: async (res, $) => 'https://mirrors.shu.edu.cn/kde/ftp' + new URL($('#sixty-four-bit-windows-installer').eq(0).attr('href')).pathname
   },
-  install: function (output, iPath) {
-    return require('./../../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

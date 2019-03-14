@@ -8,8 +8,8 @@ let data = {
   download: {
     func: async (res, $) => require('cheerio').load(JSON.parse(res.body.match(/\?\((.*)\)/)[1]).txt)('a[href$=".zip"]').attr('href')
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

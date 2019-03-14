@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'https://download-installer.cdn.mozilla.net/pub/thunderbird/releases/{version}/win64/zh-CN/Thunderbird%20Setup%20{version}.exe'
   },
-  install: function (output, iPath) {
-    return require('./../../js/install')(output, iPath, null, 'core')
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath, null, 'core')
   }
 }
 module.exports = data

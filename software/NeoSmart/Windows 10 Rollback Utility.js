@@ -6,7 +6,7 @@ let data = {
     selector: 'a[name]'
   },
   download: {
-    func: async (res, $, req, cheerio) => require('./../../js/download/neosmart')(res, $, req, cheerio)
+    func: async (res, $, fns) => fns.download.neosmart(res, $, fns)
   }
 }
 module.exports = data

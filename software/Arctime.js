@@ -9,8 +9,8 @@ let data = {
   download: {
     plain: 'https://t.arctime.cn/ap2w64'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

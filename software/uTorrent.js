@@ -12,10 +12,10 @@ let data = {
   download: {
     plain: 'http://download-hr.utorrent.com/track/stable/endpoint/utorrent/os/windows'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_zipped_single')(output, iPath, 'Carrier.EXE')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped.single(output, iPath, 'Carrier.EXE')
   },
-  afterInstall: function (output, iPath) {
+  afterInstall: function (output, iPath, fns) {
     let path = require('path')
     let fs = require('fs')
     let parentPath = path.parse(iPath).dir

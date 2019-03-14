@@ -8,8 +8,8 @@ let data = {
   download: {
     selector: '.Item>a[href$="x64.exe"]'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath, null, '7z.exe 7z.dll')
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath, null, '7z.exe 7z.dll')
   }
 }
 module.exports = data

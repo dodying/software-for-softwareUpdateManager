@@ -9,8 +9,8 @@ let data = {
   download: {
     selector: 'a[href$="x64.exe"]'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_zipped')(output, iPath, 'install', 'INSTALL.CAB')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped(output, iPath, 'install', 'INSTALL.CAB')
   }
 }
 module.exports = data

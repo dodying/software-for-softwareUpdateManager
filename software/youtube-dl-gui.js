@@ -9,8 +9,8 @@ let data = {
   download: {
     selector: 'a[href*="/releases/download/"][href$="win-setup.zip"]'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_zipped')(output, iPath, 'install_inno')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped(output, iPath, 'install_inno')
   }
 }
 module.exports = data

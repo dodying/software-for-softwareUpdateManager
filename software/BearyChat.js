@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'https://download.bearychat.com/apps/win64'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_zipped')(output, iPath, 'install', 'full.nupkg', null, 'lib\\net45')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped(output, iPath, 'install', 'full.nupkg', null, 'lib\\net45')
   }
 }
 module.exports = data

@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'https://media.inkscape.org/dl/resources/file/inkscape-{version}-x64.7z'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

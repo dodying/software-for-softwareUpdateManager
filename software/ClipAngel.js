@@ -4,13 +4,13 @@ let data = {
   withoutHeader: true,
   url: 'https://sourceforge.net/projects/clip-angel/files/',
   version: {
-    selector: 'a.download .sub-label'
+    selector: '[headers="files_name_h"]>a'
   },
   download: {
-    plain: 'https://sourceforge.net/projects/clip-angel/files/latest/download'
+    selector: '[headers="files_name_h"]>a'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

@@ -9,8 +9,8 @@ let data = {
   download: {
     plain: 'https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/{version}/xampp-windows-x64-{version}-0-VC15.7z/download'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

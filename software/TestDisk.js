@@ -8,8 +8,8 @@ let data = {
   download: {
     func: async (res, $) => $('script[src="/mw/extensions/Download/download.js"]+style+script').eq(0).html().match(/<a class="download-link" href="(.*?)">/)[1].replace('/Download_and_donate.php', '')
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

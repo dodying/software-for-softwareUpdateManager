@@ -6,8 +6,8 @@ let data = {
   commercial: 2,
   url: 'https://www.notion.so/desktop',
   version: {
-    func: async (res, $, req, cheerio) => {
-      let res1 = await req('https://www.notion.so/api/v3/getDesktopDownloadUrl', {
+    func: async (res, $, fns) => {
+      let res1 = await fns.req('https://www.notion.so/api/v3/getDesktopDownloadUrl', {
         method: 'POST',
         json: { 'platform': 'windows' }
       })
@@ -18,8 +18,8 @@ let data = {
   download: {
     func: async (res, $) => url
   },
-  install: function (output, iPath) {
-    return require('./../js/install_zipped')(output, iPath, 'install', 'app-64.7z')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped(output, iPath, 'install', 'app-64.7z')
   }
 }
 module.exports = data

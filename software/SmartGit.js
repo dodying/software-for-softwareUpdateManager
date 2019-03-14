@@ -9,10 +9,10 @@ let data = {
   download: {
     selector: 'a[href*="portable"][href$=".7z"]'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   },
-  afterInstall: function (output, iPath) {
+  afterInstall: function (output, iPath, fns) {
     let path = require('path')
     let fs = require('fs')
     let parentPath = path.parse(iPath).dir

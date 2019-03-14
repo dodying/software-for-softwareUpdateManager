@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'https://gottcode.org/gottet/download/?os=windows'
   },
-  install: function (output, iPath) {
-    return require('./../../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

@@ -10,8 +10,8 @@ let data = {
   download: {
     selector: 'body > table > tbody > tr > td.maintd2 > table:nth-child(4) > tbody > tr:nth-child(3) > td:nth-child(1) > a'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

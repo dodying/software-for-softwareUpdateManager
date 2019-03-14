@@ -10,8 +10,8 @@ let data = {
     selector: 'a[href*="/releases/download/"][href$="Windows.tar.gz"]',
     outout: '.tar.gz'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_zipped')(output, iPath, 'install')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped(output, iPath, 'install')
   }
 }
 module.exports = data

@@ -8,8 +8,8 @@ let data = {
   download: {
     selector: '#win-download-link'
   },
-  install: function (output, iPath) {
-    let installed = require('./../js/install_inno_with_type')(output, iPath, ['^\\lib\\python2.7', '^\\lib\\gimp\\2.0\\python', '^\\var'])
+  install: function (output, iPath, fns) {
+    let installed = fns.install.inno.type(output, iPath, ['^\\lib\\python2.7', '^\\lib\\gimp\\2.0\\python', '^\\var'])
     if (installed) {
       let fs = require('fs')
       let path = require('path')

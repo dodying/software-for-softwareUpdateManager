@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'https://www.redcrab-software.com/download/redcrab.zip'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

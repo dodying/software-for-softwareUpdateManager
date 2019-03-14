@@ -9,8 +9,8 @@ let data = {
   download: {
     plain: 'http://www.cloudbuckit.com/downloads/CloudBuckit-Setup.msi'
   },
-  install: function (output, iPath) {
-    return require('./../../js/install')(output, iPath, null, data.preferPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath, null, data.preferPath)
   }
 }
 module.exports = data

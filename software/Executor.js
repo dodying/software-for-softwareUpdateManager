@@ -9,8 +9,8 @@ let data = {
   download: {
     plain: 'http://www.1space.dk/executor/Executor64bit.zip'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

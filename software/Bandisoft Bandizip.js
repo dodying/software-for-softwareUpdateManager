@@ -8,7 +8,7 @@ let data = {
   download: {
     plain: 'https://www.bandisoft.com/bandizip/dl.php?web'
   },
-  install: function (output, iPath, choice) {
+  install: function (output, iPath, fns, choice) {
     const readlineSync = require('readline-sync')
     const fs = require('fs')
     const path = require('path')
@@ -33,7 +33,7 @@ let data = {
       return false
     }
 
-    let installed = require('./../js/install')(output, iPath)
+    let installed = fns.install(output, iPath)
     if (installed) {
       if (shell) cp.execSync(`${regDll} /calldll "${parentPath}\\bdzshl64.dll" RegSvr`)
       if (portable) {

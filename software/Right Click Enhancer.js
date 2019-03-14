@@ -9,8 +9,8 @@ let data = {
   download: {
     plain: 'https://rbsoft.org/downloads/right-click-enhancer/Right-Click-Enhancer.zip'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

@@ -9,8 +9,8 @@ let data = {
   download: {
     plain: 'https://www.helpndoc.com/helpndoc-setup.exe'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_inno_with_type')(output, iPath, null, '1')
+  install: function (output, iPath, fns) {
+    return fns.install.inno.type(output, iPath, null, '1')
   }
 }
 module.exports = data

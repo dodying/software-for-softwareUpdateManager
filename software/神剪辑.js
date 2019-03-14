@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'http://res.kami233.com/download/shenjianji64.7z'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

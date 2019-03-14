@@ -9,8 +9,8 @@ let data = {
   download: {
     selector: 'a[href*="/releases/download/"][href$="windows.zip"]'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_zipped_single')(output, iPath, 'innoextract.exe')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped.single(output, iPath, 'innoextract.exe')
   }
 }
 module.exports = data

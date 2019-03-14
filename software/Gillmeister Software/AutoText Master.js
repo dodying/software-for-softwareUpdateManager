@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'https://gillmeister-software.com/downloads/atm-setup.exe'
   },
-  install: function (output, iPath) {
-    return require('./../../js/install_inno_with_type')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install.inno.type(output, iPath)
   }
 }
 module.exports = data

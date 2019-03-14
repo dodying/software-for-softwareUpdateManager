@@ -9,8 +9,8 @@ let data = {
   download: {
     func: async (res, $) => 'https://download.mp3tag.de/' + $('a[href="dodownload.html"]').text().trim()
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

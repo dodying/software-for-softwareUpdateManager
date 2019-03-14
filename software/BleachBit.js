@@ -8,8 +8,8 @@ let data = {
   download: {
     func: async (res, $) => 'https://download.bleachbit.org/' + $('a[href$="portable.zip"]').eq(0).attr('href').match(/file=(.*)$/)[1]
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

@@ -9,8 +9,8 @@ let data = {
   download: {
     func: async (res, $) => $('a[onclick^="downloadProduct"]').attr('onclick').match(/downloadProduct\('(.*)'\)/)[1]
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

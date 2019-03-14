@@ -10,8 +10,8 @@ let data = {
   download: {
     func: async (res, $) => JSON.parse(res.body).Categories[1].Releases[0].File.Url
   },
-  install: function (output, iPath) {
-    return require('./../js/install_ai')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install.ai(output, iPath)
   }
 }
 module.exports = data

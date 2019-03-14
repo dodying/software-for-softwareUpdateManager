@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'https://www.digitalvolcano.co.uk/download/DuplicateCleanerFree4_setup.exe'
   },
-  install: function (output, iPath) {
-    return require('./../../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

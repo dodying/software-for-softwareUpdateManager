@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'https://www.sordum.org/files/downloads.php?firewall-app-blocker'
   },
-  install: function (output, iPath) {
-    return require('./../../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

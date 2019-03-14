@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'http://www.syncfolders.elementfx.com/setupfile/SyncFoldersSetup.zip'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_zipped')(output, iPath, 'install_inno')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped(output, iPath, 'install_inno')
   }
 }
 module.exports = data

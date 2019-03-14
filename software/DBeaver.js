@@ -9,8 +9,8 @@ let data = {
   download: {
     plain: 'https://dbeaver.io/files/dbeaver-ce-latest-win32.win32.x86_64.zip'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

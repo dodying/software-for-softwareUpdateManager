@@ -10,8 +10,8 @@ let data = {
   download: {
     plain: 'https://sourceforge.net/projects/x64dbg/files/latest/download'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath, null, 'release\\')
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath, null, 'release\\')
   }
 }
 module.exports = data

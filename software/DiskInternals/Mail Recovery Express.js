@@ -9,8 +9,8 @@ let data = {
   download: {
     plain: 'https://www.diskinternals.com/download/Mail_Recovery_Express.exe'
   },
-  install: function (output, iPath) {
-    return require('./../../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

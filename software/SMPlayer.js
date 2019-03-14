@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'https://sourceforge.net/projects/smplayer/files/SMPlayer/{version}/smplayer-portable-{version}.0-x64.7z/download'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

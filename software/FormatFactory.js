@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'http://down.pcgeshi.com/FormatFactory_setup.exe'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_nsis')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install.nsis(output, iPath)
   }
 }
 module.exports = data

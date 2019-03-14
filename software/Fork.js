@@ -8,10 +8,10 @@ let data = {
   download: {
     plain: 'https://git-fork.com/update/win/ForkInstaller.exe'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_zipped')(output, iPath, 'install', 'full.nupkg', null, 'lib\\net45')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped(output, iPath, 'install', 'full.nupkg', null, 'lib\\net45')
   },
-  afterInstall: async function (output, iPath) {
+  afterInstall: async function (output, iPath, fns) {
     const path = require('path')
     const fs = require('fs')
     const cp = require('child_process')

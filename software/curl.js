@@ -9,8 +9,8 @@ let data = {
   download: {
     selector: 'a.windl[href$="win64-mingw.zip"]'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath, null, '*\\bin')
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath, null, '*\\bin')
   }
 }
 module.exports = data

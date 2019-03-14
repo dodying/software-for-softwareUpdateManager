@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'http://downloads.wisecleaner.com/soft/WPCASetup.exe'
   },
-  install: function (output, iPath) {
-    return require('./../../js/install_inno')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install.inno(output, iPath)
   }
 }
 module.exports = data

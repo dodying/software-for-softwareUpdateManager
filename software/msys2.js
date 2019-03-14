@@ -8,8 +8,8 @@ let data = {
   download: {
     func: async (res, $) => 'https://mirrors.shu.edu.cn/msys2/distrib/x86_64/' + $('a[href$=".tar.xz"]').map((i, j) => $(j).text()).toArray().sort().reverse()[0]
   },
-  install: function (output, iPath) {
-    return require('./../js/install_zipped')(output, iPath, 'install')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped(output, iPath, 'install')
   }
 }
 module.exports = data

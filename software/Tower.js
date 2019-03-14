@@ -9,8 +9,8 @@ let data = {
   download: {
     selector: '[id="releases--windows"] .release__header>.release__download-link>a'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_ai')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install.ai(output, iPath)
   }
 }
 module.exports = data

@@ -8,8 +8,8 @@ let data = {
   download: {
     func: async (res, $) => JSON.parse(res.body).Stable.x64.url[0]
   },
-  install: function (output, iPath) {
-    return require('./../js/install_zipped')(output, iPath, 'install')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped(output, iPath, 'install')
   }
 }
 module.exports = data

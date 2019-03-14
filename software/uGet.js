@@ -9,8 +9,8 @@ let data = {
   download: {
     plain: 'https://ugetdm.com/go/windows-download'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

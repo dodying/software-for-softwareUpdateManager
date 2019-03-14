@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'https://www.nirsoft.net/utils/runfromprocess.zip'
   },
-  install: function (output, iPath) {
-    return require('./../../js/install_zipped_single')(output, iPath, 'x64.exe')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped.single(output, iPath, 'x64.exe')
   }
 }
 module.exports = data

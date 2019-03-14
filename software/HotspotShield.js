@@ -11,8 +11,8 @@ let data = {
   download: {
     selector: '#download_url_dlm'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_wix')(output, iPath, null, /^HSS/i, data.preferPath)
+  install: function (output, iPath, fns) {
+    return fns.install.wix(output, iPath, null, /^HSS/i, data.preferPath)
   }
 }
 module.exports = data

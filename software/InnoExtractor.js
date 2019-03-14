@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'http://www.havysoft.cl/download/IE_Install.zip'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_zipped')(output, iPath, 'install_inno')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped(output, iPath, 'install_inno')
   }
 }
 module.exports = data

@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'https://www.palemoon.org/download.php?mirror=as&bits=64&type=installer'
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath, null, 'core')
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath, null, 'core')
   }
 }
 module.exports = data

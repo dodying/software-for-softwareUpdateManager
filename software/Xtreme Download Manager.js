@@ -9,8 +9,8 @@ let data = {
   download: {
     plain: 'http://xdman.sourceforge.net/xdman.jar'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_single')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install.single(output, iPath)
   }
 }
 module.exports = data

@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'https://browser.yandex.com/download/?full=1'
   },
-  install: function (output, iPath) {
-    return require('./../js/install_zipped')(output, iPath, 'install', null, null, 'Browser-bin')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped(output, iPath, 'install', null, null, 'Browser-bin')
   }
 }
 module.exports = data

@@ -6,10 +6,10 @@ let data = {
     selector: 'td:has(#a9)+td+td'
   },
   download: {
-    func: async (res, $, req, cheerio) => res.body.match(/'a9','(.*?)'/)[1]
+    func: async (res, $) => res.body.match(/'a9','(.*?)'/)[1]
   },
-  install: function (output, iPath) {
-    return require('./../js/install_zipped_single')(output, iPath, 'sqlite3.exe')
+  install: function (output, iPath, fns) {
+    return fns.install.zipped.single(output, iPath, 'sqlite3.exe')
   }
 }
 module.exports = data

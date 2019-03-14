@@ -8,8 +8,8 @@ let data = {
   download: {
     plain: 'http://www.musetips.com/downloads/WMACutterSetup.exe'
   },
-  install: function (output, iPath) {
-    return require('./../../js/install_inno')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install.inno(output, iPath)
   }
 }
 module.exports = data

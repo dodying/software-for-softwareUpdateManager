@@ -2,15 +2,15 @@
 
 let data = {
   withoutHeader: true,
-  url: 'https://sourceforge.net/projects/docfetcher/files',
+  url: 'https://sourceforge.net/projects/docfetcher/files/docfetcher/',
   version: {
-    selector: 'a.download .sub-label'
+    func: async (res, $, fns, choice) => fns.walkLink(res.request.uri.href, fns, { selector: '[headers="files_name_h"]>a', attr: 'text', sort: true })
   },
   download: {
-    plain: 'https://sourceforge.net/projects/docfetcher/files/latest/download'
+    func: async (res, $, fns, choice) => fns.walkLink(res.request.uri.href, fns, { selector: '[headers="files_name_h"]>a', sort: true }, '[headers="files_name_h"]>a[href*="portable.zip/download"]')
   },
-  install: function (output, iPath) {
-    return require('./../js/install')(output, iPath)
+  install: function (output, iPath, fns) {
+    return fns.install(output, iPath)
   }
 }
 module.exports = data
