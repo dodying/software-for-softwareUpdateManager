@@ -2,15 +2,26 @@
 
 let data = {
   withoutHeader: true,
-  url: 'https://sourceforge.net/projects/mpcbe/files/',
+  url: 'https://sourceforge.net/projects/mpcbe/files/MPC-BE/Release%20builds/',
   version: {
-    selector: 'a.download .sub-label'
+    selector: '[headers="files_name_h"]>a'
   },
   download: {
-    plain: 'https://sourceforge.net/projects/mpcbe/files/latest/download'
+    func: async (res, $, fns, choice) => fns.walkLink(res.request.uri.href, fns, {
+      selector: '[headers="files_name_h"]>a',
+      sort: true
+    }, {
+      selector: '[headers="files_name_h"]>a[href$="/download"]',
+      matchCheck: '.x64.7z'
+    })
   },
   install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install_inno')
+    return fns.install(output, iPath)
+  },
+  other: {
+    nightly: {
+      url: 'https://sourceforge.net/projects/mpcbe/files/MPC-BE/Nightly%20Builds%20%28from%20svn%20trunk%29/'
+    }
   }
 }
 module.exports = data

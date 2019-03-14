@@ -4,13 +4,19 @@ let data = {
   withoutHeader: true,
   url: 'https://sourceforge.net/projects/pyscripter/files/',
   version: {
-    selector: 'a.download .sub-label'
+    selector: '[headers="files_name_h"]>a'
   },
   download: {
-    plain: 'https://sourceforge.net/projects/pyscripter/files/latest/download'
+    func: async (res, $, fns, choice) => fns.walkLink(res.request.uri.href, fns, {
+      selector: '[headers="files_name_h"]>a',
+      sort: true
+    }, {
+      selector: '[headers="files_name_h"]>a[href$="/download"]',
+      matchCheck: '-x64.zip'
+    })
   },
   install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
+    return fns.install(output, iPath)
   }
 }
 module.exports = data

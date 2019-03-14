@@ -2,14 +2,18 @@
 
 let data = {
   withoutHeader: true,
-  // url: 'http://innounp.sourceforge.net/',
   url: 'https://sourceforge.net/projects/innounp/files/innounp/',
   version: {
-    // selector: 'h2:contains("History")+p>b'
-    selector: '.name'
+    selector: '[headers="files_name_h"]>a'
   },
   download: {
-    plain: 'https://sourceforge.net/projects/innounp/files/latest/download'
+    func: async (res, $, fns, choice) => fns.walkLink(res.request.uri.href, fns, {
+      selector: '[headers="files_name_h"]>a',
+      sort: true
+    }, {
+      selector: '[headers="files_name_h"]>a[href$="/download"]',
+      matchCheck: /\d+(?!src)\.rar/
+    })
   },
   install: function (output, iPath, fns) {
     return fns.install.zipped.single(output, iPath, 'innounp.exe')
