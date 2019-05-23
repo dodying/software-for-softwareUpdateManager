@@ -5,7 +5,7 @@ let data = {
   preferPath: 'Last.fm Desktop Scrobbler.exe',
   version: {
     func: async (res, $, fns) => {
-      let res1 = await fns.req('https://www.last.fm/download/windows-scrobbler', { method: 'HEAD' })
+      let res1 = await fns.reqHEAD('https://www.last.fm/download/windows-scrobbler')
       return res1.request.uri.href.match(/(\d+[\d.]+\d+)/)[1]
     }
   },

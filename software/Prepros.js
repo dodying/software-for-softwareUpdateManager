@@ -5,9 +5,7 @@ let data = {
   url: 'https://prepros.io/downloads',
   version: {
     func: async (res, $, fns) => {
-      let res1 = await fns.req('https://prepros.io/downloads/stable/windows', {
-        method: 'HEAD'
-      })
+      let res1 = await fns.reqHEAD('https://prepros.io/downloads/stable/windows')
       return res1.headers['content-disposition'].match(/filename="(.*)"/)[1].match(/-(\d+[\d.]+\d+)/)[1]
     }
   },

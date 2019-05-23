@@ -10,7 +10,7 @@ let data = {
     selector: 'a[href*="/releases/download/"][href$="x64.zip"]'
   },
   install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
+    return fns.install(output, iPath, '.txt')
   }
 }
 module.exports = data

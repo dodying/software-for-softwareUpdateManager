@@ -1,16 +1,12 @@
 'use strict'
 
 let data = {
-  commercial: 1,
-  url: 'https://biblprog.com/en/foxit_reader/download/',
-  version: {
-    selector: '[itemprop="softwareVersion"]'
+  site: {
+    Softpedia: 'https://www.softpedia.com/get/Office-tools/PDF/Foxit-PDF-Reader.shtml'
   },
-  download: {
-    selector: '.download_prog a'
-  },
+  preferPath: 'FoxitReader.exe',
   install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
+    return fns.install.msi(output, iPath, null, data.preferPath)
   }
 }
 module.exports = data

@@ -9,6 +9,7 @@ let data = {
     plain: 'https://www.python.org/ftp/python/{version}/python-{version}-amd64.exe'
   },
   install: function (output, iPath, fns) {
+    // return fns.install.cli(output, iPath, output, ['/quiet', '/passive', 'TargetDir={dir}', 'AssociateFiles=1', 'CompileAll=1', 'PrependPath=1'])
     let excludes = [/^py\.exe$/i, /\.msi$/i]
     let installMsi = ['core.msi', 'dev.msi', 'doc.msi', 'exe.msi', 'lib.msi', 'tcltk.msi', 'test.msi', 'tools.msi']
 
@@ -22,9 +23,11 @@ let data = {
         parentPath = path.parse(parentPath).dir
       }
 
-      cp.execSync(`plugins\\dark.exe "${output}" -x ".\\unzip\\${name}"`)
+      let tmp = path.resolve(fns.dirname, 'unzip', name)
 
-      let fromNew = `unzip\\${name}\\AttachedContainer`
+      cp.execSync(`plugins\\dark.exe "${output}" -x "${tmp}"`)
+
+      let fromNew = path.resolve(tmp, 'AttachedContainer')
       let list = fse.readdirSync(fromNew)
       while (list.length === 1) {
         fromNew = path.resolve(fromNew, list[0])
@@ -55,7 +58,7 @@ let data = {
         fse.removeSync(_path)
 
         if (fse.existsSync(folderNew)) {
-          fns.copy(folderNew, `${path.parse(__dirname).dir}\\${fromNew}`, excludes)
+          fns.copy(folderNew, path.resolve(fns.dirname, fromNew), excludes)
           fse.removeSync(folderNew)
         }
       }

@@ -3,10 +3,14 @@
 let data = {
   url: 'https://www.bleachbit.org/download/windows',
   version: {
-    selector: '#node-10 > div > div > div > div > p'
+    selector: '.field-item>p'
   },
   download: {
-    func: async (res, $) => 'https://download.bleachbit.org/' + $('a[href$="portable.zip"]').eq(0).attr('href').match(/file=(.*)$/)[1]
+    func: async (res, $, fns, choice) => {
+      let res1 = await fns.req($('[href$="portable.zip"]').eq(0).attr('href'))
+      let $1 = fns.cheerio.load(res1.body)
+      return $1('meta[http-equiv="refresh"]').attr('content').match(/url=(.*)/i)[1]
+    }
   },
   install: function (output, iPath, fns) {
     return fns.install(output, iPath)

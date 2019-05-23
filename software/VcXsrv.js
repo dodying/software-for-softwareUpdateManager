@@ -7,9 +7,8 @@ let data = {
     selector: '[headers="files_name_h"]>a'
   },
   download: {
-    func: async (res, $, fns, choice) => fns.walkLink(res.request.uri.href, fns, {
-      selector: '[headers="files_name_h"]>a',
-      sort: true
+    func: async (res, $, fns, choice) => fns.walkLink(res, fns, {
+      selector: '[headers="files_name_h"]>a'
     }, {
       selector: '[headers="files_name_h"]>a[href$="/download"]',
       matchCheck: /vcxsrv-64\.(.*)\.installer\.exe/

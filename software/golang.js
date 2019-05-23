@@ -2,7 +2,7 @@
 
 let data = {
   url: 'https://golang.org/dl/',
-  preferPath: 'golang.exe',
+  preferPath: 'bin/go.exe',
   version: {
     selector: '.toggleButton'
   },

@@ -1,6 +1,7 @@
 'use strict'
 
 let data = {
+  withoutHeader: true,
   url: 'https://www.pendrivelinux.com/yumi-multiboot-usb-creator/',
   version: {
     selector: 'a[href^="/downloads/YUMI/YUMI-"]'
@@ -9,7 +10,7 @@ let data = {
     selector: 'a[href^="/downloads/YUMI/YUMI-"]'
   },
   install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
+    return fns.install.single(output, iPath)
   }
 }
 module.exports = data

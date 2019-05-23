@@ -1,6 +1,7 @@
 'use strict'
 
 let data = {
+  // useProxy: true,
   // url: 'http://blog.bahraniapps.com/gifcam/',
   // version: {
   //   selector: 'a[title="GifCam.zip"]'
@@ -14,8 +15,7 @@ let data = {
     match: /(.*)/
   },
   download: {
-    selector: '[name="trackingConfig[download][internalDownloadUrl]"]',
-    attr: 'content'
+    func: async (res, $) => res.body.match(/"internalDownloadUrl":"(.*?)"/)[1]
   },
   install: function (output, iPath, fns) {
     return fns.install.zipped.single(output, iPath)

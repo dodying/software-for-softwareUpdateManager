@@ -13,3 +13,7 @@ let data = {
   }
 }
 module.exports = data
+// How to use serial?
+// In the window [Donate to Upgrade to Plus] at the same time,
+// press keys [Ctrl] + [Shift] + [Alt] + [i] and enter the key.
+// YAaeaxxl-14C5273A

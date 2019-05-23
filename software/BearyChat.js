@@ -3,7 +3,7 @@
 let data = {
   url: 'https://bearychat.com/releases/client/changelog.json',
   version: {
-    func: async (res, $) => JSON.parse(res.body).body.releases[0].version
+    func: async (res, $) => res.json.body.releases[0].version
   },
   download: {
     plain: 'https://download.bearychat.com/apps/win64'

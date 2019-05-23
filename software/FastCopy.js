@@ -14,8 +14,7 @@ let data = {
     }
   },
   install: function (output, iPath, fns) {
-    let parentPath = require('path').parse(iPath).dir
-    return require('child_process').execSync(`"${output}" /SILENT /DIR="${parentPath}" /EXTRACT64 /NOSUBDIR`)
+    return fns.install.cli(output, iPath, output, ['/SILENT', '/DIR={dir}', '/EXTRACT64', '/NOSUBDIR'])
   }
 }
 module.exports = data

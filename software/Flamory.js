@@ -1,11 +1,9 @@
 'use strict'
 
 let data = {
-  commercial: 1,
-  url: 'https://filehippo.com/zh/download_flamory/',
+  url: 'https://www.softpedia.com/get/Internet/Bookmark-Managers/Flamory.shtml',
   version: {
-    selector: '.title-text>span:nth-child(2)',
-    match: /(.*)/
+    func: async (res, $) => res.body.match(/spjs_prog_version="(.*?)";/)[1]
   },
   download: {
     plain: 'http://flamory.com/get'

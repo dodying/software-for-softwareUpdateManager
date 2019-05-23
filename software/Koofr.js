@@ -5,9 +5,7 @@ let data = {
   url: 'https://koofr.eu/desktop-apps/',
   version: {
     func: async (res, $, fns) => {
-      let res1 = await fns.req('https://app.koofr.net/dl/apps/win', {
-        method: 'HEAD'
-      })
+      let res1 = await fns.reqHEAD('https://app.koofr.net/dl/apps/win')
       return res1.headers['content-disposition'].match(/filename="(.*)"/)[1].match(/v(\d+[\d.]+\d+)/)[1]
     }
   },

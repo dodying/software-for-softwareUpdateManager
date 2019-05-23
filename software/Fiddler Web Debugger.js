@@ -1,15 +1,15 @@
 'use strict'
 
 let data = {
-  url: 'https://www.majorgeeks.com/mg/getmirror/fiddler,1.html',
+  url: 'https://www.softpedia.com/get/Programming/Debuggers-Decompilers-Dissasemblers/Telerik-Fiddler.shtml',
   version: {
-    selector: '.geekywraplight>h1'
+    selector: '.dllabel+span'
   },
   download: {
-    plain: 'https://www.majorgeeks.com/index.php?ct=files&action=download&'
+    plain: 'https://telerik-fiddler.s3.amazonaws.com/fiddler/FiddlerSetup.exe'
   },
   install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
+    return fns.install.zipped(output, iPath, 'install', 'FiddlerSetup.exe')
   }
 }
 module.exports = data

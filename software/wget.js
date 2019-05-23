@@ -1,6 +1,7 @@
 'use strict'
 
 let data = {
+  withoutHeader: true,
   url: 'https://eternallybored.org/misc/wget/',
   version: {
     selector: '#content > table > tbody > tr:nth-child(2) > td:nth-child(1)'

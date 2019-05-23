@@ -1,9 +1,9 @@
 'use strict'
 
 let data = {
-  url: 'https://www.filehorse.com/download-grammarly/',
+  url: 'https://www.softpedia.com/get/Office-tools/Other-Office-Tools/Grammarly-Grammarly.shtml',
   version: {
-    selector: '.pageing>li:nth-child(3)'
+    func: async (res, $) => res.body.match(/spjs_prog_version="(.*?)";/)[1]
   },
   download: {
     plain: 'https://download-editor.grammarly.com/windows/GrammarlySetup.exe'

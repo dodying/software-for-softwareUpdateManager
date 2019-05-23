@@ -1,7 +1,7 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/winauth/winauth/releases',
+  url: 'https://github.com/winauth/winauth/releases/latest',
   version: {
     selector: '.muted-link.css-truncate',
     match: /(.*)/

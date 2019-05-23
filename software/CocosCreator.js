@@ -17,9 +17,10 @@ let data = {
     return fns.install.zipped(output, iPath, (from, to) => {
       const path = require('path')
 
-      require('child_process').execSync(`"${from}" /extract:"${path.parse(__dirname).dir}\\unzip\\"`)
-      let fromNew = require('fs-extra').readdirSync('unzip')
-      fromNew = path.join('unzip', fromNew.filter(i => path.parse(i).ext === '.msi')[0])
+      let temp = path.resolve(fns.dirname, 'unzip')
+      require('child_process').execSync(`"${from}" /extract:"${temp}"`)
+      let fromNew = require('fs-extra').readdirSync(temp)
+      fromNew = path.join(temp, fromNew.filter(i => path.parse(i).ext === '.msi')[0])
       return fns.install.msi(fromNew, to, null, data.preferPath)
     })
   }

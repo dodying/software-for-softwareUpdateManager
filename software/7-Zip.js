@@ -10,6 +10,13 @@ let data = {
   },
   install: function (output, iPath, fns) {
     return fns.install(output, iPath)
+  },
+  other: {
+    cli: {
+      install: function (output, iPath, fns) {
+        return fns.install(output, iPath, null, '7z.exe 7z.dll')
+      }
+    }
   }
 }
 module.exports = data

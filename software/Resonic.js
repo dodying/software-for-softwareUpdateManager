@@ -1,6 +1,7 @@
 'use strict'
 
 let data = {
+  commercial: 1,
   url: 'https://resonic.at/download',
   version: {
     selector: 'h2',

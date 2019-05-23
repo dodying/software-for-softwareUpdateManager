@@ -10,6 +10,13 @@ let data = {
   },
   install: function (output, iPath, fns) {
     return fns.install.zipped.single(output, iPath, 'nircmd.exe')
+  },
+  other: {
+    cli: {
+      install: function (output, iPath, fns) {
+        return fns.install.zipped.single(output, iPath, 'nircmdc.exe')
+      }
+    }
   }
 }
 module.exports = data

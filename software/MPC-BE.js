@@ -4,12 +4,12 @@ let data = {
   withoutHeader: true,
   url: 'https://sourceforge.net/projects/mpcbe/files/MPC-BE/Release%20builds/',
   version: {
-    selector: '[headers="files_name_h"]>a'
+    selector: '[headers="files_name_h"]>a',
+    match: /(.*)/
   },
   download: {
-    func: async (res, $, fns, choice) => fns.walkLink(res.request.uri.href, fns, {
-      selector: '[headers="files_name_h"]>a',
-      sort: true
+    func: async (res, $, fns, choice) => fns.walkLink(res, fns, {
+      selector: '[headers="files_name_h"]>a'
     }, {
       selector: '[headers="files_name_h"]>a[href$="/download"]',
       matchCheck: '.x64.7z'

@@ -10,6 +10,11 @@ let data = {
   },
   install: function (output, iPath, fns) {
     return fns.install(output, iPath)
+  },
+  other: {
+    LTS: {
+      url: 'https://nodejs.org/en/download/'
+    }
   }
 }
 module.exports = data

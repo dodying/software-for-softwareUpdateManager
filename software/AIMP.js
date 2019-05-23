@@ -9,17 +9,20 @@ let data = {
     selector: 'a:contains("Programki.net")'
   },
   install: function (output, iPath, fns, choice) {
-    let killed = fns.kill(output, iPath)
-    if (!killed) return false
+    return fns.install.cli(output, iPath, output, ['/AUTO={dir}', '/PORTABLE', '/SILENT'])
+  },
+  afterInstall: async function (output, iPath, fns, choice) {
     const path = require('path')
+    const fse = require('fs-extra')
     let parentPath = path.parse(iPath).dir
-    require('child_process').execSync(`"${output}" /AUTO="${parentPath}" /PORTABLE /SILENT`)
-    if (typeof choice === 'undefined' && require('readline-sync').keyInYNStrict('Continue to delete backup?')) {
-      require('fs-extra').removeSync(path.resolve(parentPath, '!Backup'))
-    } else if (typeof choice === 'boolean' && choice) {
-      require('fs-extra').removeSync(path.resolve(parentPath, '!Backup'))
+    let backup = path.resolve(parentPath, '!Backup')
+    if (fse.existsSync(backup)) {
+      if (typeof choice === 'undefined' && require('readline-sync').keyInYNStrict('Continue to delete backup?')) {
+        require('fs-extra').removeSync(backup)
+      } else if (typeof choice === 'boolean' && choice) {
+        require('fs-extra').removeSync(backup)
+      }
     }
-    return true
   },
   other: {
     backup: { installChoice: false },

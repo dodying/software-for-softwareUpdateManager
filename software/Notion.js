@@ -7,8 +7,9 @@ let data = {
   url: 'https://www.notion.so/desktop',
   version: {
     func: async (res, $, fns) => {
-      let res1 = await fns.req('https://www.notion.so/api/v3/getDesktopDownloadUrl', {
+      let res1 = await fns.req({
         method: 'POST',
+        uri: 'https://www.notion.so/api/v3/getDesktopDownloadUrl',
         json: { 'platform': 'windows' }
       })
       url = res1.body.url

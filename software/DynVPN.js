@@ -10,6 +10,13 @@ let data = {
   },
   install: function (output, iPath, fns) {
     return fns.install(output, iPath)
+  },
+  other: {
+    cli: {
+      download: {
+        selector: 'body > section.section-content > div > table > tbody > tr:nth-child(2) > td:nth-child(4) > a'
+      }
+    }
   }
 }
 module.exports = data

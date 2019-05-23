@@ -9,7 +9,7 @@ let data = {
     plain: 'https://www.majorgeeks.com/index.php?ct=files&action=download&'
   },
   install: function (output, iPath, fns) {
-    return fns.install.inno.type(output, iPath, null, null, { '{code_CustomDefaultDir}': require('path').parse(iPath).dir })
+    return fns.install.inno.type(output, iPath, null, null, { '{code_CustomDefaultDir}': '{dir}' })
   }
 }
 module.exports = data

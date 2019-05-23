@@ -23,7 +23,6 @@ let data = {
       let src = path.join(parentPath, git[0])
       let dist = path.join(process.env.LOCALAPPDATA, 'Fork\\gitInstance', version)
       cp.execSync(`plugins\\7z.exe x -y -o"${dist}" "${src}"`)
-      fs.unlinkSync(src)
     }
   }
 }

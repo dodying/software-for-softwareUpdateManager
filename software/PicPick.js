@@ -11,6 +11,13 @@ let data = {
   },
   install: function (output, iPath, fns) {
     return fns.install(output, iPath)
+  },
+  other: {
+    pro: {
+      download: {
+        plain: 'https://www.picpick.org/releases/latest/picpick_inst_pro.exe'
+      }
+    }
   }
 }
 module.exports = data

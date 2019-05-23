@@ -1,15 +1,14 @@
 'use strict'
 
 let data = {
-  commercial: 2,
-  url: 'https://www.filehorse.com/download-logmein-hamachi/download/',
-  preferPath: 'hamachi-2-ui.exe',
+  url: 'https://www.softpedia.com/get/Internet/File-Sharing/Hamachi.shtml',
   version: {
-    selector: '.pageing>li:nth-child(3)'
+    func: async (res, $) => res.body.match(/spjs_prog_version="(.*?)";/)[1]
   },
   download: {
-    selector: '#download_url'
+    plain: 'https://secure.logmein.com/hamachi.msi'
   },
+  preferPath: 'hamachi-2-ui.exe',
   install: function (output, iPath, fns) {
     return fns.install.msi(output, iPath, null, data.preferPath)
   }

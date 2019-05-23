@@ -9,7 +9,7 @@ let data = {
     plain: 'https://gillmeister-software.com/downloads/wtr-setup.exe'
   },
   install: function (output, iPath, fns) {
-    return fns.install.inno.type(output, iPath, null, null, { '{code_GetBitnessDefaultInstallDir}': require('path').parse(iPath).dir })
+    return fns.install.inno.type(output, iPath, null, null, { '{code_GetBitnessDefaultInstallDir}': '{dir}' })
   }
 }
 module.exports = data

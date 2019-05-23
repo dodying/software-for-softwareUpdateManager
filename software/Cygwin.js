@@ -9,13 +9,7 @@ let data = {
     plain: 'https://www.cygwin.com/setup-x86_64.exe'
   },
   install: function (output, iPath, fns) {
-    let path = require('path')
-    let { dir: parentPath } = path.parse(iPath)
-
-    while (parentPath.toLowerCase().split(/[/\\]+/).includes('bin')) {
-      parentPath = path.parse(parentPath).dir
-    }
-    return require('child_process').execSync(`start /wait ${output} --root ${parentPath} --no-admin --no-shortcuts --local-package-dir ${parentPath}\\packages --wait --only-site --site https://mirrors.shu.edu.cn/cygwin/ --upgrade-also --quiet-mode --verbose --wait`)
+    return fns.install.cli(output, iPath, output, ['--root', output, '--root', '{dir}', '--no-admin', '--no-shortcuts', '--local-package-dir', '{dir}\\packages', '--wait', '--only-site', '--site', 'https://mirrors.shu.edu.cn/cygwin/', '--upgrade-also', '--quiet-mode', '--verbose', '--wait'], { wait: true })
   }
 }
 module.exports = data

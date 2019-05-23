@@ -1,15 +1,20 @@
 'use strict'
 
 let data = {
-  url: 'http://shareaza.sourceforge.net/?id=download',
+  url: 'https://sourceforge.net/projects/shareaza/files/Shareaza/',
   version: {
-    selector: '.redHeaderLarger'
+    selector: '[headers="files_name_h"]>a'
   },
   download: {
-    selector: 'a[href$="x64.exe"]'
+    func: async (res, $, fns, choice) => fns.walkLink(res, fns, {
+      selector: '[headers="files_name_h"]>a'
+    }, {
+      selector: '[headers="files_name_h"]>a[href$="/download"]',
+      matchCheck: 'x64.exe'
+    })
   },
   install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
+    return fns.install.inno.type(output, iPath)
   }
 }
 module.exports = data

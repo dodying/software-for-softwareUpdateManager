@@ -7,7 +7,7 @@ let data = {
     match: /V(.*)/
   },
   download: {
-    selector: 'a[href*="/releases/download/"][href$=".7z"]'
+    selector: 'a[href*="/releases/download/"][href$="_x64.7z"]'
   },
   install: function (output, iPath, fns) {
     return fns.install(output, iPath)

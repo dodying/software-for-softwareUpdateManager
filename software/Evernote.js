@@ -34,7 +34,7 @@ let data = {
       checker()
     })
     try {
-      let tmp = path.resolve(__dirname, './../unzip/Evernote.msi')
+      let tmp = path.resolve(fns.dirname, 'unzip/Evernote.msi')
       fs.copyFileSync(msi, tmp)
       fns.install.msi(tmp, iPath, null, data.preferPath)
       fs.unlinkSync(msi)

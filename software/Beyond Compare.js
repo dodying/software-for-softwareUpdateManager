@@ -2,7 +2,7 @@
 
 let data = {
   commercial: 3,
-  url: 'http://scootersoftware.com/download.php?zz=dl4',
+  url: 'http://scootersoftware.com/download.php',
   version: {
     selector: '#content a[href*="zh"]',
     attr: 'href'

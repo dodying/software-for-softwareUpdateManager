@@ -1,6 +1,7 @@
 'use strict'
 
 let data = {
+  withoutHeader: true,
   url: 'https://windirstat.net/download.html',
   version: {
     selector: 'li.download'

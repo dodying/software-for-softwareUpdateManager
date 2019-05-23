@@ -7,6 +7,9 @@ let data = {
   },
   download: {
     plain: 'https://www.raidrive.com/download.latest.php'
+  },
+  install: function (output, iPath, fns) {
+    return fns.install.ai.cli(output, iPath, ['APPDIR={dir}'])
   }
 }
 module.exports = data

@@ -1,13 +1,12 @@
 'use strict'
 
 let data = {
-  commercial: 2,
-  url: 'https://www.filehorse.com/download-twitch-desktop-app/download/',
+  url: 'https://www.softpedia.com/get/Internet/Chat/Other-Chat-Tools/Twitch-Desktop-App.shtml#download',
   version: {
-    selector: '.pageing>li:nth-child(3)'
+    func: async (res, $) => res.body.match(/spjs_prog_version="(.*?)";/)[1]
   },
   download: {
-    selector: '#download_url'
+    plain: 'https://updates.twitchapp.net/windows/installer/TwitchSetup.exe'
   }
 }
 module.exports = data

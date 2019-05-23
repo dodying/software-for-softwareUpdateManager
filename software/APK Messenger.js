@@ -1,12 +1,8 @@
 'use strict'
 
 let data = {
-  url: 'https://apk.ghpym.com/downloads.html',
-  version: {
-    selector: '.button-info'
-  },
-  download: {
-    selector: 'a.button[href$=".7z"]'
+  site: {
+    Pc6: 'http://www.pc6.com/softview/SoftView_538551.html'
   },
   install: function (output, iPath, fns) {
     return fns.install(output, iPath)

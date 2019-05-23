@@ -1,12 +1,17 @@
 'use strict'
 
 let data = {
-  url: 'https://biblprog.com/en/opera/download/',
+  url: 'https://get.geo.opera.com/pub/opera/desktop/',
   version: {
-    selector: '[itemprop="softwareVersion"]'
+    func: async (res, $, fns, choice) => fns.walkLink(res, fns, {
+      selector: 'a',
+      sort: true,
+      attr: 'text',
+      match: /^(.*)\/$/
+    })
   },
   download: {
-    selector: '.download_prog a[href$="x64.exe"]'
+    plain: 'https://get.geo.opera.com/pub/opera/desktop/{version}/win/Opera_{version}_Setup_x64.exe'
   },
   install: function (output, iPath, fns) {
     return fns.install(output, iPath)

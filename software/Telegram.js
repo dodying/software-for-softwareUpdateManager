@@ -10,6 +10,8 @@ let data = {
 
   // ?noMd5: true/false,
 
+  // ?fixedPath: 'fixedPath',
+
   // url or site, either needed
   url: 'https://github.com/telegramdesktop/tdesktop/releases/latest',
   site: {

@@ -6,7 +6,7 @@ let data = {
   preferPath: 'TunnelBear.exe',
   url: 'https://www.tunnelbear.com/core/getVersionHistory?platform=pc',
   version: {
-    func: async (res, $) => JSON.parse(res.body)[0].version.match(/(\d+[\d.]+\d+)/)[1]
+    func: async (res, $) => res.json[0].version.match(/(\d+[\d.]+\d+)/)[1]
   },
   download: {
     plain: 'https://tunnelbear.s3.amazonaws.com/downloads/pc/public/TunnelBear-Installer.exe'

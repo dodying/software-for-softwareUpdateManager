@@ -19,13 +19,7 @@ let data = {
         plain: 'https://calibre-ebook.com/dist/portable'
       },
       install: function (output, iPath, fns) {
-        let killed = fns.kill(output, iPath)
-        if (!killed) return false
-        let path = require('path')
-        let parentPath = path.parse(iPath).dir
-        parentPath = path.parse(parentPath).dir
-        require('child_process').execSync(`"${output}" "${parentPath}"`)
-        return true
+        return fns.install.cli(output, iPath, output, [require('path').resolve(iPath, './../../')])
       }
     }
   }

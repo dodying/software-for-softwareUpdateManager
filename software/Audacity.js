@@ -1,15 +1,11 @@
 'use strict'
 
 let data = {
-  url: 'https://biblprog.com/en/audacity/download/',
-  version: {
-    selector: '[itemprop="softwareVersion"]'
-  },
-  download: {
-    selector: '.download_prog a[href$=".zip"]'
+  site: {
+    Softpedia: 'https://www.softpedia.com/get/Multimedia/Audio/Audio-Editors-Recorders/Audacity.shtml'
   },
   install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
+    return fns.install.inno(output, iPath)
   }
 }
 module.exports = data

@@ -10,6 +10,7 @@ let data = {
     plain: 'https://www.python.org/ftp/python/{version}/python-{version}.amd64.msi'
   },
   install: function (output, iPath, fns) {
+    // return fns.install.msi.i(output, iPath, ['ADDLOCAL=ALL'])
     let installed = fns.install.msi(output, iPath, null, data.preferPath)
     if (installed) {
       const path = require('path')

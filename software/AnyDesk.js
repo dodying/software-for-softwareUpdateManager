@@ -4,7 +4,7 @@ let data = {
   commercial: 1,
   url: 'https://anydesk.com/platforms/windows',
   version: {
-    selector: '#updates .u-type-bold'
+    selector: '#download-info'
   },
   download: {
     plain: 'http://download.anydesk.com/AnyDesk.exe'
