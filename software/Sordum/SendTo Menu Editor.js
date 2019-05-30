@@ -1,12 +1,16 @@
 'use strict'
 
 let data = {
-  url: 'https://www.sordum.org/10830/',
+  url: 'https://www.sordum.org/downloads/?sendto-menu-editor',
   version: {
-    selector: '.entry-title'
+    selector: '[align="left"]>a'
   },
   download: {
-    plain: 'https://www.sordum.org/files/downloads.php?sendto-menu-editor'
+    func: async (res, $, fns, choice) => {
+      let uri1 = $('a[href*="files/downloads.php"]').eq(0).attr('href')
+      let res1 = await fns.reqHEAD(uri1)
+      return res1.request.uri.href
+    }
   },
   install: function (output, iPath, fns) {
     return fns.install(output, iPath)

@@ -1,12 +1,16 @@
 'use strict'
 
 let data = {
-  url: 'https://www.sordum.org/9207/',
+  url: 'https://www.sordum.org/downloads/?st-find-prime-numbers',
   version: {
-    selector: '.entry-title'
+    selector: '[align="left"]>a'
   },
   download: {
-    plain: 'https://www.sordum.org/files/downloads.php?st-find-prime-numbers'
+    func: async (res, $, fns, choice) => {
+      let uri1 = $('a[href*="files/downloads.php"]').eq(0).attr('href')
+      let res1 = await fns.reqHEAD(uri1)
+      return res1.request.uri.href
+    }
   },
   install: function (output, iPath, fns) {
     return fns.install(output, iPath)

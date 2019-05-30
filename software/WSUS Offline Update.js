@@ -1,12 +1,12 @@
 'use strict'
 
 let data = {
-  url: 'https://www.sordum.org/10104/',
+  url: 'http://download.wsusoffline.net/',
   version: {
-    selector: '.entry-title'
+    selector: 'a[href$=".zip"]'
   },
   download: {
-    plain: 'https://www.sordum.org/files/downloads.php?st-sordum-monitor-off'
+    selector: 'a[href$=".zip"]'
   },
   install: function (output, iPath, fns) {
     return fns.install(output, iPath)

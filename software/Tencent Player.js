@@ -1,12 +1,14 @@
 'use strict'
 
 let data = {
-  url: 'https://www.sordum.org/10946/',
+  url: 'http://player.qq.com/',
   version: {
-    selector: '.entry-title'
+    selector: '.download_btn[data-href]',
+    attr: 'data-href'
   },
   download: {
-    plain: 'https://www.sordum.org/files/downloads.php?random-password-generator'
+    selector: '.download_btn[data-href]',
+    attr: 'data-href'
   },
   install: function (output, iPath, fns) {
     return fns.install(output, iPath)
