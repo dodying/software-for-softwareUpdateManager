@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/liuzhuoling2011/baidupcs-web/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/liuzhuoling2011/baidupcs-web/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="windows-amd64.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  downloadChoice: '[href$="windows-amd64.zip"]',
+  install: 'install_zipped_single'
 }
 module.exports = data

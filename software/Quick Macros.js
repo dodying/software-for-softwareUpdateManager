@@ -2,15 +2,10 @@
 
 let data = {
   commercial: 3,
-  url: 'http://quickmacros.com/download.html',
-  version: {
-    selector: 'div.body:nth-child(2) > p:nth-child(1)'
-  },
-  download: {
-    plain: 'http://quickmacros.com/quickmac.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  url: 'http://quickmacros.com/help/QM_Help/IDH_WHATSNEW2.html',
+  version: 'h2',
+  changelog: 'ol',
+  download: 'http://quickmacros.com/quickmac.exe',
+  install: 'install_inno'
 }
 module.exports = data

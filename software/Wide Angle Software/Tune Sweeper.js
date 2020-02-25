@@ -5,9 +5,6 @@ let data = {
   site: {
     Softpedia: 'https://www.softpedia.com/get/Multimedia/Audio/Other-AUDIO-Tools/Tune-Sweeper.shtml'
   },
-  preferPath: 'Tune_Sweeper.exe',
-  install: function (output, iPath, fns) {
-    return fns.install.ai.msi(output, iPath, null, 'TuneSweeper.msi', data.preferPath)
-  }
+  install: ['install_ai_msi', null, 'TuneSweeper.msi', 'Tune_Sweeper.exe']
 }
 module.exports = data

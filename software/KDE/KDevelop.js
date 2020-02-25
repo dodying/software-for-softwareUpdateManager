@@ -2,14 +2,9 @@
 
 let data = {
   url: 'https://www.kdevelop.org/download',
-  version: {
-    selector: 'a[href$="x64-setup.exe"]'
-  },
-  download: {
-    func: async (res, $) => 'https://mirrors.shu.edu.cn/kde/ftp' + new URL($('a[href$="x64-setup.exe"]').eq(0).attr('href')).pathname
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install', '.7z')
-  }
+  version: 'a[href$="x64-setup.exe"]',
+  download: (res, $) => 'https://mirrors.ustc.edu.cn/kde' + new URL($('a[href$="x64-setup.exe"]').eq(0).attr('href')).pathname,
+  installType: 'nsis',
+  install: ['install_zipped', 'install', '.7z']
 }
 module.exports = data

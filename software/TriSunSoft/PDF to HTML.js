@@ -3,14 +3,8 @@
 let data = {
   commercial: 3,
   url: 'https://www.pdf-helper.com/pdf-to-html/',
-  version: {
-    selector: '.green-button>span:nth-child(3)'
-  },
-  download: {
-    plain: 'https://www.pdf-helper.com/files/pdf-to-html.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath, null, { '{userappdata}': require('path').resolve(iPath, './../../') })
-  }
+  version: '.green-button>span:nth-child(3)',
+  download: 'https://www.pdf-helper.com/files/pdf-to-html.exe',
+  install: info => info.fns.install.inno(info, null, { '{userappdata}': require('path').resolve(info.parentPath, './../') })
 }
 module.exports = data

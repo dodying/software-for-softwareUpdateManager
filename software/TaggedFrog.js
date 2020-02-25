@@ -2,14 +2,9 @@
 
 let data = {
   url: 'http://lunarfrog.com/projects/taggedfrog/download',
-  version: {
-    selector: 'h2'
-  },
-  download: {
-    selector: '.link-list>a[href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: 'h2',
+  changelog: '.gap:contains("What\'s new")+ul',
+  download: '.link-list>a[href$=".zip"]',
+  install: 'install'
 }
 module.exports = data

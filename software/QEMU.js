@@ -2,21 +2,21 @@
 
 let data = {
   url: 'https://qemu.weilnetz.de/w64/',
-  version: {
-    func: async (res, $, fns, choice) => fns.walkLink(res, fns, {
-      selector: '[href^="qemu-w64-setup-"][href$=".exe"]',
-      sort: true,
-      match: /qemu-w64-setup-(.*?).exe/
-    })
+  version: async (res, $, fns, choice) => fns.walkLink(res, fns, {
+    selector: '[href^="qemu-w64-setup-"][href$=".exe"]',
+    sort: true,
+    match: /qemu-w64-setup-(.*?).exe/
+  }),
+  changelog: {
+    selector: 'body',
+    attr: 'text',
+    match: /^\d+-\d+-\d+:/,
+    split: true
   },
-  download: {
-    func: async (res, $, fns, choice) => fns.walkLink(res, fns, {
-      selector: '[href^="qemu-w64-setup-"][href$=".exe"]',
-      sort: true
-    })
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: async (res, $, fns, choice) => fns.walkLink(res, fns, {
+    selector: '[href^="qemu-w64-setup-"][href$=".exe"]',
+    sort: true
+  }),
+  install: 'install_nsis'
 }
 module.exports = data

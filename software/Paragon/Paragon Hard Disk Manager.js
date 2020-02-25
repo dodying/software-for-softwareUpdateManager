@@ -5,9 +5,6 @@ let data = {
   site: {
     Softpedia: 'https://www.softpedia.com/get/System/Hard-Disk-Utils/Paragon-Hard-Disk-Manager.shtml'
   },
-  preferPath: 'program/advlauncher.exe',
-  install: function (output, iPath, fns) {
-    return fns.install.wix(output, iPath, null, /^hdm/i, data.preferPath)
-  }
+  install: ['install_wix', null, /^hdm/i, 'program/advlauncher.exe']
 }
 module.exports = data

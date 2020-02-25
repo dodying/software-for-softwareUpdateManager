@@ -1,16 +1,17 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/Wox-launcher/Wox/releases',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/Wox-launcher/Wox/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install', 'full.nupkg', null, 'lib\\net45')
+  downloadChoice: '[href*="Wox-"][href$=".exe"]',
+  install: ['install_zipped', 'install', 'full.nupkg', null, 'lib\\net*'],
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/Wox-launcher/Wox/releases'
+      }
+    }
   }
 }
 module.exports = data

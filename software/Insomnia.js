@@ -2,16 +2,10 @@
 
 let data = {
   commercial: 2,
-  url: 'https://github.com/getinsomnia/insomnia/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/getinsomnia/insomnia/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="full.nupkg"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath, null, 'lib\\net45')
-  }
+  downloadChoice: '[href$="full.nupkg"]',
+  install: ['install', null, 'lib\\net*']
 }
 module.exports = data

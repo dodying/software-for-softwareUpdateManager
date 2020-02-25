@@ -1,16 +1,18 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/poooi/poi/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/poooi/poi/releases/latest'
   },
-  download: {
-    func: async (res, $) => $('a[href*="/releases/download/"][href$="win.7z"]').eq(-1).attr('href')
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
+  downloadChoice: '[href$="win.7z"]:not([href$="ia32-win.7z"])',
+  install: 'install',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/poooi/poi/releases'
+      },
+      downloadChoice: '[href$="win.7z"]:not([href$="ia32-win.7z"])'
+    }
   }
 }
 module.exports = data

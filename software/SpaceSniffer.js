@@ -2,14 +2,8 @@
 
 let data = {
   url: 'http://www.uderzo.it/main_products/space_sniffer/download_alt.html',
-  version: {
-    selector: 'body > div > table:nth-child(8) > tbody > tr > td:nth-child(1) > a'
-  },
-  download: {
-    selector: 'body > div > table:nth-child(8) > tbody > tr > td:nth-child(1) > a'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  version: 'body > div > table:nth-child(8) > tbody > tr > td:nth-child(1) > a',
+  download: 'body > div > table:nth-child(8) > tbody > tr > td:nth-child(1) > a',
+  install: 'install_zipped_single'
 }
 module.exports = data

@@ -1,16 +1,17 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/mltframework/shotcut/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/mltframework/shotcut/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".zip"][href*="win64"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
+  downloadChoice: '[href$=".exe"][href*="win64"]',
+  install: 'install_nsis',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/mltframework/shotcut/releases'
+      }
+    }
   }
 }
 module.exports = data

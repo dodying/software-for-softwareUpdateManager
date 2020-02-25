@@ -1,16 +1,13 @@
 'use strict'
 
 let data = {
-  url: 'https://www.cfos.de/en/download/download.htm',
-  version: {
-    selector: '#cfosnotifier>.red'
+  url: 'https://www.cfos.de/en/cfos-notifier/whats-new.txt',
+  version: ['body', 'text', /\ncFos Notifier ([\d.]+)/],
+  changelog: {
+    match: /^cFos Notifier [\d.]+/,
+    split: true
   },
-  download: {
-    plain: 'https://www.cfos.de/files/notify.msi'
-  },
-  preferPath: 'notify.exe',
-  install: function (output, iPath, fns) {
-    return fns.install.msi(output, iPath, null, data.preferPath)
-  }
+  download: 'https://www.cfos.de/files/notify.msi',
+  install: ['install_msi', null, 'notify.exe']
 }
 module.exports = data

@@ -2,14 +2,12 @@
 
 let data = {
   url: 'https://www.seamonkey-project.org/releases/',
-  version: {
-    selector: 'h2>a'
+  version: 'h2>a',
+  changelog: {
+    url: '.release-date+div a',
+    selector: '#new+.section'
   },
-  download: {
-    plain: 'https://download-installer.cdn.mozilla.net/pub/seamonkey/releases/{version}/win32/zh-CN/SeaMonkey%20Setup%20{version}.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath, null, 'core')
-  }
+  download: 'https://download-installer.cdn.mozilla.net/pub/seamonkey/releases/{version}/win32/zh-CN/SeaMonkey%20Setup%20{version}.exe',
+  install: ['install', null, 'core']
 }
 module.exports = data

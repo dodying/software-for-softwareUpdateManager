@@ -2,14 +2,9 @@
 
 let data = {
   url: 'http://www.7stickynotes.com/download.php',
-  version: {
-    selector: '#download_details'
-  },
-  download: {
-    selector: '#downloadbt>a'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  version: '#download_details',
+  changelog: '#release_notes',
+  download: '#downloadbt>a',
+  install: 'install_inno'
 }
 module.exports = data

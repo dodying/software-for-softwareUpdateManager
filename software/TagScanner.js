@@ -2,14 +2,9 @@
 
 let data = {
   url: 'https://www.xdlab.ru/en/download.htm',
-  version: {
-    selector: 'a[href$=".zip"]'
-  },
-  download: {
-    selector: 'a[href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: 'a[href$=".zip"]',
+  changelog: ['https://www.xdlab.ru/en/history.htm', 'h4+ul'],
+  download: 'a[href$=".zip"]',
+  install: 'install'
 }
 module.exports = data

@@ -1,25 +1,16 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/oneclick/rubyinstaller2/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /RubyInstaller-(.*)/
+  site: {
+    GitHub: 'https://github.com/oneclick/rubyinstaller2/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="x64.exe"][href*="devkit"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  },
+  versionChoice: /RubyInstaller-(.*)/,
+  downloadChoice: '[href$="x64.exe"][href*="devkit"]',
+  install: 'install_inno',
   other: {
     nodevkit: {
-      download: {
-        selector: 'a[href*="/releases/download/"][href$="x64.7z"]'
-      },
-      install: function (output, iPath, fns) {
-        return fns.install(output, iPath)
-      }
+      downloadChoice: '[href$="x64.7z"]',
+      install: 'install'
     }
   }
 }

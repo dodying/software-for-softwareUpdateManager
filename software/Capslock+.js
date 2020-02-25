@@ -2,16 +2,9 @@
 
 let data = {
   url: 'https://cjkis.me/capslock+/',
-  version: {
-    selector: 'a[download]',
-    attr: 'href',
-    match: /v(.*?).exe/
-  },
-  download: {
-    selector: 'a[download]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.single(output, iPath)
-  }
+  version: ['a[download]', 'href', /v(.*?).exe/],
+  changelog: '.change-log ul>li',
+  download: 'a[download]',
+  install: 'install_single'
 }
 module.exports = data

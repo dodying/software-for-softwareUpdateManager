@@ -1,16 +1,9 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/erickutcher/monitoroff/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/erickutcher/monitoroff/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  install: 'install_zipped_single'
 }
 module.exports = data

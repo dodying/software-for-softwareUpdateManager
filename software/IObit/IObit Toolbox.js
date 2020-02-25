@@ -1,15 +1,9 @@
 'use strict'
 
 let data = {
-  url: 'https://www.majorgeeks.com/mg/getmirror/iobit_toolbox,1.html',
-  version: {
-    selector: '.geekywraplight>h1'
+  site: {
+    MajorGeeks: 'https://www.majorgeeks.com/mg/getmirror/iobit_toolbox,1.html'
   },
-  download: {
-    plain: 'https://www.majorgeeks.com/index.php?ct=files&action=download&'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  install: 'install'
 }
 module.exports = data

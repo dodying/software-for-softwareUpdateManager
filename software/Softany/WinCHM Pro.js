@@ -3,14 +3,14 @@
 let data = {
   commercial: 3,
   url: 'http://www.softany.com/winchm/download.htm',
-  version: {
-    selector: 'h1+table >tbody>tr:nth-child(2)>td:nth-child(2)'
+  version: 'h1+table >tbody>tr:nth-child(2)>td:nth-child(2)',
+  changelog: {
+    selector: '#contentfull',
+    attr: 'text',
+    match: /^Version [\d.]+/,
+    split: true
   },
-  download: {
-    plain: 'http://download.softany.com/WinCHM_setup.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  download: 'http://download.softany.com/WinCHM_setup.exe',
+  install: 'install_inno'
 }
 module.exports = data

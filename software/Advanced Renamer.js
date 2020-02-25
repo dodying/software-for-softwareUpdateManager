@@ -1,15 +1,16 @@
 'use strict'
 
 let data = {
-  url: 'https://www.advancedrenamer.com/download',
-  version: {
-    selector: 'h1'
+  commercial: 1,
+  url: 'https://www.advancedrenamer.com/versionlog',
+  version: '.siteblock>b',
+  changelog: {
+    selector: '.siteblock',
+    attr: 'text',
+    match: /Advanced Renamer [\d.]+/,
+    split: true
   },
-  download: {
-    plain: 'https://www.advancedrenamer.com/down/?obj=12'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: 'https://www.advancedrenamer.com/down/advanced_renamer_portable.zip',
+  install: 'install'
 }
 module.exports = data

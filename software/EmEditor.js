@@ -2,16 +2,13 @@
 
 let data = {
   commercial: 3,
-  url: 'https://www.emeditor.com/download/',
-  version: {
-    selector: 'a[href$="portable.zip"]',
-    attr: 'href'
+  url: 'https://www.emeditor.com/text-editor-features/history/',
+  version: '[title^="New in Version"]',
+  changelog: {
+    url: '[title^="New in Version"]',
+    selector: '.el_after_av_one_full'
   },
-  download: {
-    selector: 'a[href$="portable.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: 'https://support.emeditor.com/en/downloads/latest/portable/64',
+  install: 'install'
 }
 module.exports = data

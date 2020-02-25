@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/XhmikosR/notepad2-mod/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/XhmikosR/notepad2-mod/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="x64.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath, '.txt')
-  }
+  downloadChoice: '[href$="x64.zip"]',
+  install: ['install', '.txt']
 }
 module.exports = data

@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/Tribler/tribler/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/Tribler/tribler/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="x64.exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: '[href$="x64.exe"]',
+  install: 'install_nsis'
 }
 module.exports = data

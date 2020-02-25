@@ -2,15 +2,10 @@
 
 let data = {
   commercial: 3,
-  url: 'https://www.fastkeysautomation.com/',
-  version: {
-    selector: '#footer > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h4:nth-child(1)'
-  },
-  download: {
-    plain: 'https://www.fastkeysautomation.com/download/FastKeys_Setup_Portable.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  url: 'https://www.fastkeysautomation.com/index.html',
+  version: '#footer .col-md-4>h4',
+  changelog: '#footer .col-md-4',
+  download: 'https://www.fastkeysautomation.com/download/FastKeys_Setup.exe',
+  install: 'install_inno'
 }
 module.exports = data

@@ -1,16 +1,11 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/n457/Uncolored/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v\.(.*)/
+  site: {
+    GitHub: 'https://github.com/n457/Uncolored/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="setup.exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install', 'app-64.7z')
-  }
+  versionChoice: /v\.(.*)/,
+  downloadChoice: '[href$="setup.exe"]',
+  install: ['install_zipped', 'install', 'app-64.7z']
 }
 module.exports = data

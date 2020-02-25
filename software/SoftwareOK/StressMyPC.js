@@ -2,14 +2,9 @@
 
 let data = {
   url: 'https://www.softwareok.com/?Download=StressMyPC',
-  version: {
-    selector: 'h1'
-  },
-  download: {
-    plain: 'https://www.softwareok.com/Download/StressMyPC.zip'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  version: 'h1',
+  changelog: ['https://www.softwareok.com/?seite=Microsoft/StressMyPC', '[bordercolor="#DDDDDD"]>tbody>tr:nth-child(2)'],
+  download: 'https://www.softwareok.com/Download/StressMyPC.zip',
+  install: 'install_zipped_single'
 }
 module.exports = data

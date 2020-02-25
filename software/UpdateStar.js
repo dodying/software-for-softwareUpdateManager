@@ -2,16 +2,10 @@
 
 let data = {
   commercial: 2,
-  preferPath: 'UpdateStar.exe',
-  url: 'https://www.softpedia.com/get/System/System-Miscellaneous/UpdateStar.shtml',
-  version: {
-    selector: '.dllabel+span'
+  site: {
+    Softpedia: 'https://www.softpedia.com/get/System/System-Miscellaneous/UpdateStar.shtml'
   },
-  download: {
-    plain: 'http://static.updatestar.net/dl/updatestar/updatestar/UpdateStar_ENU.msi'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.msi(output, iPath, null, data.preferPath)
-  }
+  download: 'http://static.updatestar.net/dl/updatestar/updatestar/UpdateStar_ENU.msi',
+  install: ['install_msi', null, 'UpdateStar.exe']
 }
 module.exports = data

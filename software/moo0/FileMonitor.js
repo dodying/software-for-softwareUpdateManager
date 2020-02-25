@@ -3,14 +3,9 @@
 let data = {
   commercial: 1,
   url: 'https://www.moo0.com/software/FileMonitor/',
-  version: {
-    selector: '.tdSoftwareInfoData>strong'
-  },
-  download: {
-    plain: 'https://www.moo0.com/software/FileMonitor/download/free/'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  version: '.tdSoftwareInfoData>strong',
+  changelog: '.tdSoftwareInfoDescriptionData>p:has([href*="/history/"])',
+  download: 'https://www.moo0.com/software/FileMonitor/download/free/',
+  install: 'install_zipped_single'
 }
 module.exports = data

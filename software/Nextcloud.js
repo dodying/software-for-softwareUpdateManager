@@ -1,15 +1,15 @@
 'use strict'
 
 let data = {
-  url: 'https://nextcloud.com/install/',
-  version: {
-    selector: '#tab-desktop > div > div:nth-child(1) > p:nth-child(1)'
-  },
-  download: {
-    selector: 'a[href$="setup.exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
+  url: 'https://github.com/nextcloud/desktop/releases/latest',
+  version: ['.muted-link.css-truncate', 'text', /^v(.*)$/],
+  changelog: '.release-header+.markdown-body',
+  download: '.markdown-body [href$=".exe"]',
+  install: 'install_nsis',
+  other: {
+    beta: {
+      url: 'https://github.com/nextcloud/desktop/releases'
+    }
   }
 }
 module.exports = data

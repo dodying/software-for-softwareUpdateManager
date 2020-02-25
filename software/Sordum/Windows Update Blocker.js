@@ -1,19 +1,19 @@
+// 'use strict'
+//
+// let data = {
+//   site: {
+//     'Sites/Sordum': 'https://www.sordum.org/9470/'
+//   },
+//   install: 'install'
+// }
+// module.exports = data
+//
 'use strict'
 
 let data = {
-  url: 'https://www.sordum.org/downloads/?st-windows-update-blocker',
-  version: {
-    selector: '[align="left"]>a'
+  site: {
+    'Softpedia': 'https://www.softpedia.com/get/System/System-Miscellaneous/Windows-Update-Blocker.shtml'
   },
-  download: {
-    func: async (res, $, fns, choice) => {
-      let uri1 = $('a[href*="files/downloads.php"]').eq(0).attr('href')
-      let res1 = await fns.reqHEAD(uri1)
-      return res1.request.uri.href
-    }
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  install: 'install'
 }
 module.exports = data

@@ -1,16 +1,17 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/yakyak/yakyak/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/yakyak/yakyak/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="win32-x64.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
+  downloadChoice: '[href$="win32-x64.zip"]',
+  install: 'install',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/yakyak/yakyak/releases'
+      }
+    }
   }
 }
 module.exports = data

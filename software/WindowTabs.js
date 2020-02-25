@@ -1,15 +1,9 @@
 'use strict'
 
 let data = {
-  url: 'http://windowtabs.com/download/',
-  version: {
-    selector: 'h2'
+  site: {
+    Softpedia: 'https://www.softpedia.com/get/System/OS-Enhancements/WindowTabs.shtml'
   },
-  download: {
-    plain: 'http://windowtabs.com/WindowTabs.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.single(output, iPath)
-  }
+  install: 'install'
 }
 module.exports = data

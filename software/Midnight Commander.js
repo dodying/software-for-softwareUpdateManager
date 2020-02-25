@@ -1,18 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://sourceforge.net/projects/mcwin32/files/',
-  version: {
-    selector: '[headers="files_name_h"]>a'
+  site: {
+    SourceForge: 'https://sourceforge.net/projects/mcwin32/files/'
   },
-  download: {
-    func: async (res, $, fns, choice) => fns.walkLink(res, fns, {
-      selector: '[headers="files_name_h"]>a[href$="/download"]',
-      matchCheck: '.exe'
-    })
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  versionChoice: /mcwin32-(.*)-setup.exe/,
+  install: 'install_inno'
 }
 module.exports = data

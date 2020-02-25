@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/MayGo/tockler/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    'GitHub-Api': 'https://api.github.com/repos/MayGo/tockler/releases'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install', 'app-32.7z')
-  }
+  versionChoice: /.exe$/,
+  install: 'install_nsis'
 }
 module.exports = data

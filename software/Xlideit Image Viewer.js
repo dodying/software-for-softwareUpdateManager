@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  withoutHeader: true,
-  url: 'https://sourceforge.net/projects/xlideit/files',
-  version: {
-    selector: '[headers="files_name_h"]>a'
+  site: {
+    SourceForge: 'https://sourceforge.net/projects/xlideit/files'
   },
-  download: {
-    selector: '[headers="files_name_h"]>a'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  versionChoice: /Xlideit_([\d.]+).zip/,
+  install: 'install_zipped_single'
 }
 module.exports = data

@@ -1,10 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/shadowsocks/shadowsocks-qt5/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
-  }
+  site: {
+    'GitHub-Api': 'https://api.github.com/repos/shadowsocks/shadowsocks-qt5/releases'
+  },
+  versionChoice: /win64.7z$/,
+  install: 'install'
 }
 module.exports = data

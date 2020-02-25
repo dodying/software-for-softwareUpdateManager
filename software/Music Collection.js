@@ -2,14 +2,9 @@
 
 let data = {
   url: 'http://www.gsoft4u.com/downloads',
-  version: {
-    selector: 'tr.tablebody:nth-child(2) > td:nth-child(2)'
-  },
-  download: {
-    plain: 'http://www.gsoft4u.com/down/Music%20Collection%20Portable.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno.type(output, iPath)
-  }
+  version: 'tr.tablebody:nth-child(2) > td:nth-child(2)',
+  changelog: ['http://www.gsoft4u.com/updatelog', '.details>ul'],
+  download: 'http://www.gsoft4u.com/down/Music%20Collection%20Portable.exe',
+  install: 'install_inno_type'
 }
 module.exports = data

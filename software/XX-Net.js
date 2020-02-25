@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/XX-net/XX-Net/blob/master/code/default/download.md',
-  version: {
-    selector: '.markdown-body p:contains("Stable") a'
+  site: {
+    GitHub: 'https://github.com/XX-net/XX-Net/releases/latest'
   },
-  download: {
-    selector: '.markdown-body p:contains("Stable") a'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: '[href$=".7z"]',
+  install: 'install'
 }
 module.exports = data

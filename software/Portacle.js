@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/portacle/portacle/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/portacle/portacle/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="win-portacle.exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: '[href$="win-portacle.exe"]',
+  install: 'install'
 }
 module.exports = data

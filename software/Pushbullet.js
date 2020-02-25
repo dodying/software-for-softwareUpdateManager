@@ -1,16 +1,23 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/sidneys/pb-for-desktop/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
-  },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="setup.exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install', 'app-64.7z')
+  url: 'https://update.pushbullet.com/desktop/update.json',
+  version: (res, $) => res.json['.net2-prod'].version,
+  download: (res, $) => res.json['.net2-prod'].url,
+  install: 'install',
+  other: {
+    dev: {
+      version: (res, $) => res.json['.net2-dev'].version,
+      download: (res, $) => res.json['.net2-dev'].url
+    },
+    pe: {
+      version: (res, $) => res.json['WindowsPE-32bit-prod'].version,
+      download: (res, $) => res.json['WindowsPE-32bit-prod'].url
+    },
+    'pe-dev': {
+      version: (res, $) => res.json['WindowsPE-32bit-dev'].version,
+      download: (res, $) => res.json['WindowsPE-32bit-dev'].url
+    }
   }
 }
 module.exports = data

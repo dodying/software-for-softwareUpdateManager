@@ -2,16 +2,8 @@
 
 let data = {
   url: 'http://www.ivanyu.ca/windock/',
-  version: {
-    selector: 'a[href$=".exe"]',
-    attr: 'href',
-    match: /WinDock_Setup_(.*?).exe/
-  },
-  download: {
-    selector: 'a[href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  version: (res, $) => $('a[href$=".exe"]').eq(0).attr('href').match(/WinDock_Setup_(.*?).exe/)[1].replace(/_/g, '.'),
+  download: 'a[href$=".exe"]',
+  install: 'install_inno'
 }
 module.exports = data

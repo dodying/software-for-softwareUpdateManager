@@ -3,15 +3,8 @@
 let data = {
   commercial: 2,
   url: 'https://shemes.com/index.php?p=download',
-  version: {
-    selector: 'td>[href$=".exe"]',
-    match: /GrabIt (.*)/
-  },
-  download: {
-    selector: 'td>[href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno.type(output, iPath)
-  }
+  version: ['td>[href$=".exe"]', 'text', /GrabIt (.*)/],
+  download: 'td>[href$=".exe"]',
+  install: 'install_inno_type'
 }
 module.exports = data

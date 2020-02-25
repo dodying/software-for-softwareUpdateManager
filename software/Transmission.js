@@ -1,17 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/transmission/transmission/releases/latest',
-  preferPath: 'transmission-qt.exe',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/transmission/transmission/releases/latest'
   },
-  download: {
-    plain: 'https://github.com/transmission/transmission-releases/raw/master/transmission-{version}-x64.msi'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.msi(output, iPath, null, data.preferPath)
-  }
+  download: 'https://github.com/transmission/transmission-releases/raw/master/transmission-{version}-x64.msi',
+  install: ['install_msi', null, 'transmission-qt.exe']
 }
 module.exports = data

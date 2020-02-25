@@ -3,17 +3,9 @@
 let data = {
   commercial: 2,
   url: 'https://velocity.silverlakesoftware.com/',
-  preferPath: 'Velocity.exe',
-  version: {
-    selector: '#downloadbutton',
-    attr: 'href',
-    match: /VelocitySetup-([\d.]+).msi/
-  },
-  download: {
-    selector: '#downloadbutton'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.msi(output, iPath, null, data.preferPath)
-  }
+  version: ['#downloadbutton', 'href', /VelocitySetup-([\d.]+).msi/],
+  changelog: ['https://velocity.silverlakesoftware.com/releasenotes', '.page-header+h3+ul+h3+ul+h3+ul'],
+  download: '#downloadbutton',
+  install: ['install_msi', null, 'Velocity.exe']
 }
 module.exports = data

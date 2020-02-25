@@ -2,14 +2,8 @@
 
 let data = {
   url: 'https://www.ntwind.com/software/utilities/visual-subst.html',
-  version: {
-    selector: '.btn_download'
-  },
-  download: {
-    selector: '.btn_download'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: '.btn_download',
+  download: '.btn_download',
+  install: ['install_zipped_single', 'VSubst.exe']
 }
 module.exports = data

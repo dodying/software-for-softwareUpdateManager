@@ -2,15 +2,9 @@
 
 let data = {
   url: 'https://www.sourcetreeapp.com/',
-  version: {
-    selector: 'a[href$=".exe"]',
-    attr: 'href'
-  },
-  download: {
-    selector: 'a[href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install', 'full.nupkg', null, 'lib\\net45')
-  }
+  version: ['a[href$=".exe"]', 'href'],
+  changelog: ['https://product-downloads.atlassian.com/software/sourcetree/windows/ga/ReleaseNotes_{version}.html', 'ul'],
+  download: 'a[href$=".exe"]',
+  install: ['install_zipped', 'install', 'full.nupkg', null, 'lib\\net*']
 }
 module.exports = data

@@ -2,14 +2,8 @@
 
 let data = {
   url: 'http://hddscan.com/',
-  version: {
-    selector: 'body > center > table > tbody > tr:nth-child(1) > td:nth-child(2) > div > div:nth-child(2)'
-  },
-  download: {
-    plain: 'http://hddscan.com/download/HDDScan.zip'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: 'body > center > table > tbody > tr:nth-child(1) > td:nth-child(2) > div > div:nth-child(2)',
+  download: 'http://hddscan.com/download/HDDScan.zip',
+  install: 'install'
 }
 module.exports = data

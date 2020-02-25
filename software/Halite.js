@@ -1,16 +1,11 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/Eoinocal/Halite/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /Release-(.*)/
+  site: {
+    GitHub: 'https://github.com/Eoinocal/Halite/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="x64.7z"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  versionChoice: /Release-(.*)/,
+  downloadChoice: '[href$="x64.7z"]',
+  install: 'install'
 }
 module.exports = data

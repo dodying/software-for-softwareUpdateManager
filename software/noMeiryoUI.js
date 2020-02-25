@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/Tatsu-syo/noMeiryoUI/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /TAG-(.*)/
+  site: {
+    GitHub: 'https://github.com/Tatsu-syo/noMeiryoUI/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  versionChoice: /TAG-(.*)/,
+  install: 'install_zipped_single'
 }
 module.exports = data

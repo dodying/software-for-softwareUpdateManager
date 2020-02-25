@@ -3,12 +3,7 @@
 let data = {
   commercial: 3,
   url: 'https://www.binarymark.com/products/text-to-mp3-converter',
-  version: {
-    selector: '[title^="Latest"]',
-    attr: 'title'
-  },
-  download: {
-    plain: 'https://www.binarymark.com/download/44'
-  }
+  version: ['[title^="Latest"]', 'title'],
+  download: 'https://download.binarymark.com/TextToMP3SetupT.exe'
 }
 module.exports = data

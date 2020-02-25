@@ -2,14 +2,8 @@
 
 let data = {
   url: 'https://www.kaplansoft.com/download.html',
-  version: {
-    selector: '.pricerow:contains("SMPPCli")>td[align="center"]'
-  },
-  download: {
-    plain: 'https://www.kaplansoft.com/smppcli/release/SMPPCli.zip'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: '.pricerow:contains("SMPPCli")>td[align="center"]',
+  download: 'https://www.kaplansoft.com/smppcli/release/SMPPCli.zip',
+  install: 'install'
 }
 module.exports = data

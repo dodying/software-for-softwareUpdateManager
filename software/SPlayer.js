@@ -2,15 +2,8 @@
 
 let data = {
   url: 'https://beta.splayer.org/',
-  version: {
-    selector: 'a[href$=".exe"]',
-    attr: 'href'
-  },
-  download: {
-    selector: 'a[href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install', 'app-64.7z')
-  }
+  version: ['a[href$=".exe"]', 'href', /SPlayer-Setup-(.*?).exe/],
+  download: 'a[href$=".exe"]',
+  install: ['install_zipped', 'install', 'app-64.7z']
 }
 module.exports = data

@@ -5,8 +5,6 @@ let data = {
     Softpedia: 'https://www.softpedia.com/get/Desktop-Enhancements/Themes/ObjectDock.shtml'
   },
   fixedPath: '%ProgramFiles(x86)%\\Stardock\\ObjectDock\\ObjectDock.exe',
-  install: function (output, iPath, fns) {
-    return fns.install.cli(output, iPath, output, ['/S'], { wait: true })
-  }
+  install: 'install_cli_s'
 }
 module.exports = data

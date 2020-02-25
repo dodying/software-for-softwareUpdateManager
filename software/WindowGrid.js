@@ -2,14 +2,9 @@
 
 let data = {
   url: 'http://windowgrid.net/',
-  version: {
-    selector: '#downloads>a'
-  },
-  download: {
-    selector: '#downloads>a'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: '#downloads>a',
+  changelog: '.version+ul',
+  download: '#downloads>a',
+  install: 'install'
 }
 module.exports = data

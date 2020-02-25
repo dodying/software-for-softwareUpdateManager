@@ -2,28 +2,15 @@
 
 let data = {
   commercial: 3,
-  url: 'https://www.aignes.com/download.htm',
-  version: {
-    selector: '.mobile b',
-    match: /\((.*)\)/
-  },
-  download: {
-    plain: 'https://www.aignes.info/download/wswsetup.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  },
+  url: 'https://www.aignes.com/wsw_history.htm',
+  version: ['.larger>b', 'text', /\((.*)\)/],
+  changelog: '.history',
+  download: 'https://www.aignes.info/download/wswsetup.exe',
+  install: 'install_inno',
   other: {
     free: {
       commercial: 0,
-      url: 'https://www.aignes.com/wswfree.htm',
-      version: {
-        selector: '.mobile .medium',
-        match: /\((.*)\)/
-      },
-      download: {
-        plain: 'https://www.aignes.info/download/wswfreesetup.exe'
-      }
+      download: 'https://www.aignes.info/download/wswfreesetup.exe'
     }
   }
 }

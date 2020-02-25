@@ -2,14 +2,8 @@
 
 let data = {
   url: 'https://vovsoft.com/software/vov-remote-mouse/',
-  version: {
-    selector: 'h1'
-  },
-  download: {
-    plain: 'http://vovsoft.com/files/vov-remote-mouse.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  version: 'h1',
+  download: 'http://vovsoft.com/files/vov-remote-mouse.exe',
+  install: 'install_inno'
 }
 module.exports = data

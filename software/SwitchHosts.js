@@ -1,16 +1,17 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/oldj/SwitchHosts/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/oldj/SwitchHosts/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href*="win32-x64"][href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
+  downloadChoice: '[href*="windows_portable"][href$=".exe"]',
+  install: ['install_zipped', 'install', 'app-32.7z'],
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/oldj/SwitchHosts/releases'
+      }
+    }
   }
 }
 module.exports = data

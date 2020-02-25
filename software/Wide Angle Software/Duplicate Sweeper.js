@@ -5,9 +5,6 @@ let data = {
   site: {
     Softpedia: 'https://www.softpedia.com/get/File-managers/Duplicate-Sweeper.shtml'
   },
-  preferPath: 'Duplicate Sweeper.exe',
-  install: function (output, iPath, fns) {
-    return fns.install.ai.msi(output, iPath, null, 'DuplicateSweeper.msi', data.preferPath)
-  }
+  install: ['install_ai_msi', null, 'DuplicateSweeper.msi', 'Duplicate Sweeper.exe']
 }
 module.exports = data

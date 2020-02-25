@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://www.softpedia.com/get/Others/Fun/Uplay.shtml',
-  version: {
-    func: async (res, $) => res.body.match(/spjs_prog_version="(.*?)";/)[1]
+  site: {
+    Softpedia: 'https://www.softpedia.com/get/Others/Fun/Uplay.shtml'
   },
-  download: {
-    plain: 'https://ubistatic3-a.akamaihd.net/orbit/launcher_installer/UplayInstaller.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: 'http://static3.cdn.ubi.com/orbit/launcher_installer/UplayInstaller.exe',
+  install: 'install_nsis'
 }
 module.exports = data

@@ -2,14 +2,8 @@
 
 let data = {
   url: 'http://comicrack.cyolito.com/downloads',
-  version: {
-    selector: 'strong:contains("ComicRack for Windows")'
-  },
-  download: {
-    selector: '.btn-lg'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: 'strong:contains("ComicRack for Windows")',
+  download: '.btn-lg',
+  install: 'install_nsis'
 }
 module.exports = data

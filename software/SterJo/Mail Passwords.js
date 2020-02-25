@@ -2,14 +2,8 @@
 
 let data = {
   url: 'https://www.sterjosoft.com/mail-passwords.html',
-  version: {
-    selector: 'h2'
-  },
-  download: {
-    plain: 'https://www.sterjosoft.com/download/click.php?id=44'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: 'h2',
+  download: 'https://www.sterjosoft.com/download/click.php?id=44',
+  install: 'install'
 }
 module.exports = data

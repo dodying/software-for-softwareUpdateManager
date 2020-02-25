@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://powdertoy.co.uk/',
-  version: {
-    selector: '.version>h5'
-  },
-  download: {
-    plain: 'https://powdertoy.co.uk/Download/powder-win32.zip'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  url: 'https://powdertoy.co.uk/Download/Changelog.html',
+  version: '.version>h5',
+  changelog: '.changelist',
+  download: 'https://powdertoy.co.uk/Download/powder-win32.zip',
+  install: 'install_zipped_single'
 }
 module.exports = data

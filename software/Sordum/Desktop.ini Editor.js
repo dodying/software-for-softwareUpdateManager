@@ -1,19 +1,19 @@
+// 'use strict'
+//
+// let data = {
+//   site: {
+//     'Sites/Sordum': 'https://www.sordum.org/10084/'
+//   },
+//   install: 'install'
+// }
+// module.exports = data
+//
 'use strict'
 
 let data = {
-  url: 'https://www.sordum.org/downloads/?st-desktop.ini-editor',
-  version: {
-    selector: '[align="left"]>a'
+  site: {
+    'Softpedia': 'https://www.softpedia.com/get/PORTABLE-SOFTWARE/System/File-management/Desktop-ini-Editor.shtml'
   },
-  download: {
-    func: async (res, $, fns, choice) => {
-      let uri1 = $('a[href*="files/downloads.php"]').eq(0).attr('href')
-      let res1 = await fns.reqHEAD(uri1)
-      return res1.request.uri.href
-    }
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  install: 'install'
 }
 module.exports = data

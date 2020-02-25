@@ -5,22 +5,25 @@
 
 let data = {
   commercial: 2,
-  url: 'http://blog.utorrent.com/releases/windows/',
-  version: {
-    func: async (res, $) => $('.entry-title').eq(0).text().replace(/uTorrent (\d+[\d.]+\d+) For Windows \(build (\d+)\)/, '$1.$2')
-  },
-  download: {
-    plain: 'http://download-hr.utorrent.com/track/stable/endpoint/utorrent/os/windows'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath, 'Carrier.EXE')
-  },
-  afterInstall: function (output, iPath, fns) {
+  url: 'https://blog.utorrent.com/releases/windows/',
+  version: ['.entry-title', 'text', /Torrent (\d+[\d.]+\d+) For Windows \(build (\d+)\)/, '$1.$2'],
+  changelog: '.entry-content',
+  download: 'https://download-new.utorrent.com/track/stable/endpoint/utorrent/os/windows',
+  install: ['install_zipped_single', 'Carrier.EXE'],
+  afterInstall: info => {
     let path = require('path')
     let fs = require('fs')
-    let parentPath = path.parse(iPath).dir
-    let setting = path.resolve(parentPath, 'settings.dat')
+    let setting = path.resolve(info.parentPath, 'settings.dat')
     if (!fs.existsSync(setting)) fs.writeFileSync(setting, '')
+  },
+  other: {
+    beta: {
+      url: 'https://utclient.utorrent.com/offers/beta_release_notes/release_notes.html',
+      version: ['.content>h2', 'text', /Torrent (\d+[\d.]+\d+) Beta \(build (\d+)\)/, '$1.$2'],
+      changelog: '.content>.post',
+      download: 'https://download-new.utorrent.com/endpoint/utorrent/os/windows/track/beta',
+      install: null
+    }
   }
 }
 module.exports = data

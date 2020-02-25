@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/k-takata/the_silver_searcher-win32/releases',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/k-takata/the_silver_searcher-win32/releases'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="x64.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  downloadChoice: '[href$="x64.zip"]',
+  install: 'install_zipped_single'
 }
 module.exports = data

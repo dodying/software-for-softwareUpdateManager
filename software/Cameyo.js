@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://www.softpedia.com/get/System/System-Miscellaneous/Cameyo.shtml',
-  version: {
-    selector: '.dllabel+span'
+  site: {
+    Softpedia: 'https://www.softpedia.com/get/System/System-Miscellaneous/Cameyo.shtml'
   },
-  download: {
-    plain: 'https://online.cameyo.com/apps/1/download'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.single(output, iPath)
-  }
+  download: 'https://online.cameyo.com/apps/1/download',
+  install: 'install_single'
 }
 module.exports = data

@@ -2,15 +2,15 @@
 
 let data = {
   url: 'https://curl.haxx.se/windows/',
-  version: {
-    selector: '.relatedbox+p+p',
-    match: /Build: (.*?)\s+/
+  version: ['.relatedbox+p+p', 'text', /Build: (.*?)\s+/],
+  changelog: {
+    url: 'https://curl.haxx.se/changes.html',
+    selector: '.contents',
+    attr: 'text',
+    match: /Fixed in [\d.]+/,
+    split: true
   },
-  download: {
-    selector: 'a.windl[href$="win64-mingw.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath, null, '*\\bin')
-  }
+  download: 'a.windl[href$="win64-mingw.zip"]',
+  install: ['install', null, '*\\bin']
 }
 module.exports = data

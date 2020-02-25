@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://www.glarysoft.com/quick-search/',
-  version: {
-    selector: '.index_pro_ver'
-  },
-  download: {
-    selector: '.downloadspeedup'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  url: 'https://www.glarysoft.com/quick-search/download/',
+  version: '[class$="download_ver"]',
+  changelog: ['https://www.glarysoft.com/update/release-notes/?p=13&v={version}', '#content_002_wenzi_nb ul'],
+  download: 'https://download.glarysoft.com/qsearchsetup.exe',
+  install: 'install_nsis'
 }
 module.exports = data

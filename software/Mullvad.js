@@ -2,16 +2,10 @@
 
 let data = {
   commercial: 2,
-  url: 'https://github.com/mullvad/mullvadvpn-app/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/mullvad/mullvadvpn-app/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install', 'app-64.7z')
-  }
+  downloadChoice: '[href$=".exe"]',
+  install: ['install_zipped', 'install', 'app-64.7z']
 }
 module.exports = data

@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'http://makemkv.com/download/',
-  version: {
-    selector: '[href^="/download/Setup_"]'
-  },
-  download: {
-    selector: '[href^="/download/Setup_"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  url: 'https://www.makemkv.com/download/',
+  version: '[href^="/download/Setup"][href$=".exe"]',
+  changelog: 'h4:contains("Revision history")+li+ul',
+  download: '[href^="/download/Setup"][href$=".exe"]',
+  install: 'install_nsis'
 }
 module.exports = data

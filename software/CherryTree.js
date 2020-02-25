@@ -1,15 +1,14 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/giuspen/cherrytree/releases',
-  version: {
-    selector: '.commit-title>a'
+  site: {
+    'GitHub-commit': 'https://github.com/giuspen/cherrytree/releases'
   },
-  download: {
-    plain: 'http://www.giuspen.com/software/cherrytree_{version}_setup.exe'
+  changelog: {
+    url: 'https://github.com/giuspen/cherrytree/raw/master/changelog.txt',
+    split: true
   },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  download: 'http://www.giuspen.com/software/cherrytree_{version}_setup.exe',
+  install: 'install_inno'
 }
 module.exports = data

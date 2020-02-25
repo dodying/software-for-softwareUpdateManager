@@ -2,15 +2,15 @@
 
 let data = {
   url: 'https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html',
-  preferPath: 'putty.exe',
-  version: {
-    selector: 'h1'
+  version: 'h1',
+  changelog: {
+    url: 'https://www.chiark.greenend.org.uk/~sgtatham/putty/changes.html',
+    selector: 'body',
+    attr: 'text',
+    match: /^These features/,
+    split: true
   },
-  download: {
-    selector: 'a[href$="installer.msi"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.msi(output, iPath, null, data.preferPath)
-  }
+  download: 'a[href$="installer.msi"]',
+  install: ['install_msi', null, 'putty.exe']
 }
 module.exports = data

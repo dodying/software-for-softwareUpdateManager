@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://nsis.sourceforge.io/Download',
-  version: {
-    selector: '[style="font-size:160%"]'
+  site: {
+    SourceForge: 'https://sourceforge.net/projects/nsis/files/NSIS%203/'
   },
-  download: {
-    selector: 'a[href$=".exe?download"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: [null, 'setup.exe'],
+  install: 'install_nsis'
 }
 module.exports = data

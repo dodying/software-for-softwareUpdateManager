@@ -1,16 +1,11 @@
+
 'use strict'
 
 let data = {
-  url: 'https://github.com/coyove/goflyway/releases',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    'GitHub-Api': 'https://api.github.com/repos/coyove/goflyway/releases'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="amd64.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  versionChoice: 'goflyway_windows_amd64.zip',
+  install: 'install'
 }
 module.exports = data

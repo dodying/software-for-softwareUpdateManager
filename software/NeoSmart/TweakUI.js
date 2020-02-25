@@ -2,15 +2,9 @@
 
 let data = {
   url: 'https://neosmart.net/Software/Changelog/6',
-  preferPath: 'TweakUI64.exe',
-  version: {
-    selector: 'a[name]'
-  },
-  download: {
-    func: async (res, $, fns) => fns.download.neosmart(res, $, fns)
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.msi.single(output, iPath, data.preferPath)
-  }
+  version: 'a[name]',
+  changelog: 'ul',
+  download: async (res, $, fns) => fns.download.neosmart(res, $, fns),
+  install: ['install_msi_single', 'TweakUI64.exe']
 }
 module.exports = data

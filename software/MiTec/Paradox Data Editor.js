@@ -1,16 +1,9 @@
 'use strict'
 
 let data = {
-  commercial: 3,
   url: 'http://www.mitec.cz/index.html',
-  version: {
-    selector: '.doc>tbody>tr+tr td[class$="title"]>a[href="pde.html"]'
-  },
-  download: {
-    plain: 'http://www.mitec.cz/Downloads/PDESetup.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  version: '.doc>tbody>tr+tr td[class$="title"]>a[href="pde.html"]',
+  download: 'http://www.mitec.cz/Downloads/PDESetup.exe',
+  install: 'install_inno'
 }
 module.exports = data

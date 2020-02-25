@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'http://note.youdao.com/',
-  version: {
-    selector: '#version-info'
+  site: {
+    'Tencent SoftMgr': 'https://pc.qq.com/detail/10/detail_4510.html'
   },
-  download: {
-    plain: 'http://download.ydstatic.com/notewebsite/downloads/YNote.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: 'http://download.ydstatic.com/notewebsite/downloads/YNote.exe',
+  install: 'install_nsis'
 }
 module.exports = data

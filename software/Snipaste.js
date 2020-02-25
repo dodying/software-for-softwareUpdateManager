@@ -1,15 +1,16 @@
 'use strict'
 
 let data = {
-  url: 'https://www.snipaste.com/download.html',
-  version: {
-    selector: 'body > div.jumbotron > div > div:nth-child(2) > p:nth-child(7)'
+  site: {
+    download: 'https://www.snipaste.com/download.html'
   },
-  download: {
-    plain: 'https://dl.snipaste.com/win-x64'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
+  versionChoice: 'https://dl.snipaste.com/win-x64',
+  changelog: 'h3+br+h4+ul',
+  install: 'install',
+  other: {
+    beta: {
+      versionChoice: 'https://dl.snipaste.com/win-x64-beta'
+    }
   }
 }
 module.exports = data

@@ -1,15 +1,20 @@
 'use strict'
 
+let url
+
 let data = {
-  url: 'https://www.falkon.org/',
-  version: {
-    selector: 'h3'
+  url: 'https://mirrors.ustc.edu.cn/kde/stable/falkon/',
+  version: async (res, $, fns, choice) => {
+    url = await fns.walkLink(res, fns, {
+      selector: 'a',
+      sort: true
+    }, {
+      selector: 'a',
+      matchCheck: /.x64.exe$/
+    })
+    return url.match(/(\d+[\d.]+\d+)/)[1]
   },
-  download: {
-    plain: 'https://mirrors.shu.edu.cn/kde/ftp/stable/falkon/{version}/Falkon-{version}.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: async (res, $, fns, choice) => url,
+  install: 'install_nsis'
 }
 module.exports = data

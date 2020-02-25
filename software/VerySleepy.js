@@ -1,16 +1,18 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/VerySleepy/verysleepy/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/VerySleepy/verysleepy/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno.type(output, iPath)
+  downloadChoice: '[href$=".exe"]',
+  install: 'install_inno_type',
+  other: {
+    beta: {
+      site: {
+        AppVeyor: 'https://ci.appveyor.com/api/projects/CyberShadow/verysleepy'
+      },
+      downloadChoice: '.exe'
+    }
   }
 }
 module.exports = data

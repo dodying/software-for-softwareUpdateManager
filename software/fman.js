@@ -3,12 +3,14 @@
 let data = {
   commercial: 3,
   url: 'https://fman.io/download/thank-you?os=Windows',
-  version: {
-    selector: '.lead2 a[href$=".exe"]',
-    attr: 'href'
+  version: ['.lead2 a[href$=".exe"]', 'href'],
+  changelog: {
+    url: 'https://fman.io/changelog',
+    selector: '.changelog',
+    attr: 'text',
+    match: /^Version [\d.]+/,
+    split: true
   },
-  download: {
-    selector: '.lead2 a[href$=".exe"]'
-  }
+  download: '.lead2 a[href$=".exe"]'
 }
 module.exports = data

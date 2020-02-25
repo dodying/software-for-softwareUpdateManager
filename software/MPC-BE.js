@@ -1,26 +1,17 @@
 'use strict'
 
 let data = {
-  withoutHeader: true,
-  url: 'https://sourceforge.net/projects/mpcbe/files/MPC-BE/Release%20builds/',
-  version: {
-    selector: '[headers="files_name_h"]>a',
-    match: /(.*)/
+  site: {
+    SourceForge: 'https://sourceforge.net/projects/mpcbe/files/MPC-BE/Release%20builds/'
   },
-  download: {
-    func: async (res, $, fns, choice) => fns.walkLink(res, fns, {
-      selector: '[headers="files_name_h"]>a'
-    }, {
-      selector: '[headers="files_name_h"]>a[href$="/download"]',
-      matchCheck: '.x64.7z'
-    })
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  },
+  downloadChoice: [null, '.x64.7z'],
+  install: 'install',
   other: {
     nightly: {
-      url: 'https://sourceforge.net/projects/mpcbe/files/MPC-BE/Nightly%20Builds%20%28from%20svn%20trunk%29/'
+      site: {
+        SourceForge: 'https://sourceforge.net/projects/mpcbe/files/MPC-BE/Nightly%20Builds%20%28from%20svn%20trunk%29/'
+      },
+      versionChoice: /(.*)/
     }
   }
 }

@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/TheCGDF/SSD-Windows/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/TheCGDF/SSD-Windows/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  downloadChoice: '[href$=".exe"]',
+  install: 'install_single'
 }
 module.exports = data

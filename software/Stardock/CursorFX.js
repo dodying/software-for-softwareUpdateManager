@@ -5,8 +5,6 @@ let data = {
     Softpedia: 'https://www.softpedia.com/get/Tweak/System-Tweak/CursorXP.shtml'
   },
   fixedPath: '%ProgramFiles(x86)%\\Stardock\\CursorFX\\CursorFX.exe',
-  install: function (output, iPath, fns) {
-    return fns.install.cli(output, iPath, output, ['/S'], { wait: true })
-  }
+  install: 'install_cli_s'
 }
 module.exports = data

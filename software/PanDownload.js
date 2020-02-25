@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'http://pandownload.club/',
-  version: {
-    selector: 'meta[name="description"]',
-    attr: 'content'
-  },
-  download: {
-    selector: '#pandownload+h4+ul a[href^="http://pandownload."]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  url: 'https://pandownload.com/',
+  version: ['meta[name="description"]', 'content'],
+  changelog: '#更新日志+p+ol',
+  download: '#下载地址+ul a:contains("本地下载")',
+  install: 'install'
 }
 module.exports = data

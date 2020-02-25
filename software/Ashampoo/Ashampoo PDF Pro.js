@@ -5,8 +5,6 @@ let data = {
   site: {
     Softpedia: 'https://www.softpedia.com/get/Office-tools/PDF/Ashampoo-PDF-Pro.shtml'
   },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  install: 'install_inno'
 }
 module.exports = data

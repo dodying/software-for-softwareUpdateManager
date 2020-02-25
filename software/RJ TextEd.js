@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://www.softpedia.com/get/PORTABLE-SOFTWARE/Office/Suites-editors/Portable-RJ-TextEd.shtml',
-  version: {
-    selector: '.dllabel+span'
+  site: {
+    Softpedia: 'https://www.softpedia.com/get/Programming/File-Editors/RJ-TextEd.shtml'
   },
-  download: {
-    plain: 'http://www.rj-texted.com/files/rj-install_x64.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno.type(output, iPath, null, null, { '{win}': null })
-  }
+  download: 'http://www.rj-texted.com/files/rj-install_x64.exe',
+  install: ['install_inno_type', null, null, { '{win}': null }]
 }
 module.exports = data

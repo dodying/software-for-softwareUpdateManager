@@ -1,17 +1,9 @@
 'use strict'
 
 let data = {
-  url: 'https://sourceforge.net/projects/classicshell/files/',
-  version: {
-    selector: '[headers="files_name_h"]>a'
+  site: {
+    SourceForge: 'https://sourceforge.net/projects/classicshell/files/'
   },
-  download: {
-    func: async (res, $, fns, choice) => fns.walkLink(res, fns, {
-      selector: '[headers="files_name_h"]>a'
-    }, {
-      selector: '[headers="files_name_h"]>a[href$="/download"]',
-      matchCheck: /ClassicShellSetup_.*?.exe/
-    })
-  }
+  downloadChoice: [null, /ClassicShellSetup_.*?.exe/]
 }
 module.exports = data

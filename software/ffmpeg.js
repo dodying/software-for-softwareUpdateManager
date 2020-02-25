@@ -2,16 +2,14 @@
 
 let data = {
   url: 'https://ffmpeg.zeranoe.com/builds/',
-  version: {
-    selector: 'label[title^="Release"]',
-    match: /(.*)/
+  version: ['label[title^="Release"]', 'text', /(.*)/],
+  changelog: {
+    url: 'https://raw.githubusercontent.com/FFmpeg/FFmpeg/master/Changelog',
+    match: /^version [\d.]+/,
+    split: true
   },
-  download: {
-    plain: 'https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-{version}-win64-static.zip'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath, null, '*\\bin\\*.exe')
-  },
+  download: 'https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-{version}-win64-static.zip',
+  install: ['install', null, '*\\bin\\*.exe'],
   other: {
     nightly: {
       version: {

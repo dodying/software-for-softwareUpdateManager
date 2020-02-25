@@ -2,14 +2,9 @@
 
 let data = {
   url: 'https://sqlitestudio.pl/index.rvt?act=download',
-  version: {
-    selector: 'a[href$=".zip"][href*="SQLiteStudio"]'
-  },
-  download: {
-    selector: 'a[href$=".zip"][href*="SQLiteStudio"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: 'a[href$=".zip"][href*="SQLiteStudio"]',
+  changelog: ['https://sqlitestudio.pl/index.rvt?act=changelog', '.mainTdInternal>ul'],
+  download: 'a[href$=".zip"][href*="SQLiteStudio"]',
+  install: 'install'
 }
 module.exports = data

@@ -1,58 +1,25 @@
 'use strict'
 
 let data = {
-  url: 'https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/',
-  version: {
-    selector: '.name'
+  site: {
+    SourceForge: 'https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/'
   },
-  download: {
-    func: async (res, $, fns, choice) => {
-      let list = [
-        'win32-seh-x86_64',
-        'win32-sjlj-i686',
-        'win32-sjlj-x86_64',
-        'win32-dwarf-i686',
-        'posix-sjlj-x86_64',
-        'posix-sjlj-i686',
-        'posix-dwarf-i686',
-        'posix-seh-x86_64'
-      ]
-      let index = -1
-      if (typeof choice === 'number') index = choice
-      while (index < 0) {
-        index = require('readline-sync').keyInSelect(list, 'Please selct a version')
-      }
-      if (index >= 0) {
-        let arr = list[index].split('-')
-        let url = `https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/${$('.name').eq(0).text()}/threads-${arr[0]}/${arr[1]}/`
-        let res1 = await fns.req(url)
-        let $1 = fns.cheerio.load(res1.body)
-        return $1(`a[href^="${url}${arr[2]}-${$('.name').eq(0).text()}-release-${arr[0]}-${arr[1]}"][href$=".7z/download"]`).eq(0).attr('href')
-      }
-    }
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  },
-  afterInstall: function (output, iPath, fns) {
+  downloadChoice: [null, 'win32', 'seh', /x86_64-(.*).7z/],
+  install: 'install',
+  afterInstall: info => {
     let path = require('path')
-    let parentPath = path.parse(iPath).dir
 
-    while (parentPath.toLowerCase().split(/[/\\]+/).includes('bin')) {
-      parentPath = path.parse(parentPath).dir
-    }
-
-    require('fs').copyFileSync(path.resolve(parentPath, 'bin', 'mingw32-make.exe'), path.resolve(parentPath, 'bin', 'make.exe'))
+    require('fs').copyFileSync(path.resolve(info.parentPath, 'bin', 'mingw32-make.exe'), path.resolve(info.parentPath, 'bin', 'make.exe'))
   },
   other: {
-    'win32-seh-x86_64': { downloadChoice: 0 },
-    'win32-sjlj-i686': { downloadChoice: 1 },
-    'win32-sjlj-x86_64': { downloadChoice: 2 },
-    'win32-dwarf-i686': { downloadChoice: 3 },
-    'posix-sjlj-x86_64': { downloadChoice: 4 },
-    'posix-sjlj-i686': { downloadChoice: 5 },
-    'posix-dwarf-i686': { downloadChoice: 6 },
-    'posix-seh-x86_64': { downloadChoice: 7 }
+    'win32-seh-x86_64': { downloadChoice: [null, 'win32', 'seh', /x86_64-(.*).7z/] },
+    // 'win32-sjlj-i686': { downloadChoice: [null, 'win32', 'sjlj', /i686-(.*).7z/] },
+    'win32-sjlj-x86_64': { downloadChoice: [null, 'win32', 'sjlj', /x86_64-(.*).7z/] },
+    // 'win32-dwarf-i686': { downloadChoice: [null, 'win32', 'dwarf', /i686-(.*).7z/] },
+    'posix-sjlj-x86_64': { downloadChoice: [null, 'posix', 'sjlj', /x86_64-(.*).7z/] },
+    // 'posix-sjlj-i686': { downloadChoice: [null, 'posix', 'sjlj', /i686-(.*).7z/] },
+    // 'posix-dwarf-i686': { downloadChoice: [null, 'posix', 'dwarf', /i686-(.*).7z/] },
+    'posix-seh-x86_64': { downloadChoice: [null, 'posix', 'seh', /x86_64-(.*).7z/] }
   }
 }
 module.exports = data

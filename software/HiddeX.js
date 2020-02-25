@@ -2,15 +2,8 @@
 
 let data = {
   url: 'http://dejavu.narod.ru/hiddex.html',
-  version: {
-    selector: '.post_date',
-    match: /version (.*) \(/
-  },
-  download: {
-    plain: 'http://dejavu.narod.ru/hiddex.zip'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  version: ['.post_date', 'text', /version (.*) \(/],
+  download: 'http://dejavu.narod.ru/hiddex.zip',
+  install: 'install_zipped_single'
 }
 module.exports = data

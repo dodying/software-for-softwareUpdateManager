@@ -1,21 +1,10 @@
 'use strict'
 
 let data = {
-  withoutHeader: true,
-  url: 'https://sourceforge.net/projects/dosbox/files/dosbox/',
-  version: {
-    selector: '[headers="files_name_h"]>a'
+  site: {
+    SourceForge: 'https://sourceforge.net/projects/dosbox/files/dosbox/'
   },
-  download: {
-    func: async (res, $, fns, choice) => fns.walkLink(res, fns, {
-      selector: '[headers="files_name_h"]>a'
-    }, {
-      selector: '[headers="files_name_h"]>a[href$="/download"]',
-      matchCheck: 'win32-installer.exe'
-    })
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath, 'innounp.exe')
-  }
+  downloadChoice: [null, 'win32-installer.exe'],
+  install: ['install_zipped_single', 'innounp.exe']
 }
 module.exports = data

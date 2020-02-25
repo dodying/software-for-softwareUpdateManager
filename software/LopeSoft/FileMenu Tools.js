@@ -2,15 +2,10 @@
 
 let data = {
   commercial: 3,
-  url: 'https://www.lopesoft.com/index.php/en/filemenutools/download',
-  version: {
-    selector: '.pd-title'
-  },
-  download: {
-    plain: 'https://www.lopesoft.com/index.php/en/download/filemenu-tools?download=2:filemenutools-portable'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  url: 'https://www.lopesoft.com/index.php/en/lopeedit/changelog',
+  version: '.article-title',
+  changelog: '.article-intro>ul',
+  download: 'https://www.lopesoft.com/fmtools/FileMenuTools-portable.exe',
+  install: 'install_nsis'
 }
 module.exports = data

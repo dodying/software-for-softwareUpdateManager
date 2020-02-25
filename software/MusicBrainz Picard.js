@@ -1,15 +1,11 @@
 'use strict'
 
 let data = {
-  url: 'https://picard.musicbrainz.org/downloads/',
-  version: {
-    selector: '#downloads > li:nth-child(2) > div > table > tbody > tr > td:nth-child(1)'
+  site: {
+    GitHub: 'https://github.com/metabrainz/picard/releases/latest'
   },
-  download: {
-    selector: 'a[href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  versionChoice: /release-(.*)/,
+  downloadChoice: '[href$=".exe"]',
+  install: 'install_nsis'
 }
 module.exports = data

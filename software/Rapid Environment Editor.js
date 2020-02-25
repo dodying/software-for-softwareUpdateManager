@@ -2,14 +2,9 @@
 
 let data = {
   url: 'https://www.rapidee.com/en/download',
-  version: {
-    selector: '#winxp'
-  },
-  download: {
-    plain: 'https://www.rapidee.com/download/RapidEEx64.zip'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  version: ['#winxp', 'text', /([\d.]+) build (\d+)/, '$1.$2'],
+  changelog: '.block>ul',
+  download: 'https://www.rapidee.com/download/RapidEEx64.zip',
+  install: 'install_zipped_single'
 }
 module.exports = data

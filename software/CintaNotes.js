@@ -3,14 +3,9 @@
 let data = {
   commercial: 2,
   url: 'http://cintanotes.com/download/',
-  version: {
-    selector: '.download-button>a'
-  },
-  download: {
-    func: async (res, $) => $('a[href$=".zip"]').attr('href').replace('/download-start?file=', '')
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: '.download-button>a',
+  changelog: ['http://cintanotes.com/release-notes/', '.entry-content'],
+  download: (res, $) => $('a[href$=".zip"]').attr('href').replace('/download-start?file=', ''),
+  install: 'install'
 }
 module.exports = data

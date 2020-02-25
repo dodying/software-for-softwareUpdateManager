@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/tomboy-notes/tomboy-ng/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/tomboy-notes/tomboy-ng/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href*="win64"][href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: '[href$=".exe"]',
+  install: 'install_inno_type'
 }
 module.exports = data

@@ -4,8 +4,6 @@ let data = {
   site: {
     Softpedia: 'https://www.softpedia.com/get/Tweak/Browser-Tweak/IE9-Tweaker-Plus.shtml'
   },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  install: 'install_zipped_single'
 }
 module.exports = data

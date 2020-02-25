@@ -3,14 +3,12 @@
 let data = {
   commercial: 1,
   url: 'https://community.teamviewer.com/t5/Change-Log-Windows/bd-p/Change_Log_Windows',
-  version: {
-    selector: '.page-link'
+  version: '.page-link',
+  changelog: {
+    url: '.page-link',
+    selector: '#bodyDisplay ul'
   },
-  download: {
-    plain: 'https://dl.tvcdn.de/download/TeamViewerPortable.zip'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: 'https://dl.tvcdn.de/download/TeamViewerPortable.zip',
+  install: 'install'
 }
 module.exports = data

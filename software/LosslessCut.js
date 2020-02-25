@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/mifi/lossless-cut/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/mifi/lossless-cut/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="win32-x64.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: '[href$=".exe"]',
+  install: ['install_zipped', 'install', 'app-64.7z']
 }
 module.exports = data

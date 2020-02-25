@@ -1,13 +1,14 @@
 'use strict'
 
 let data = {
-  url: 'https://www.cfos.de/en/download/download.htm',
   commercial: 3,
-  version: {
-    selector: '#cfos6link_release_x86_version'
+  url: 'https://www.cfos.de/en/download/download.htm',
+  version: '#cfos6link_release_x86_version',
+  changelog: {
+    url: 'https://www.cfos.de/en/cfos-ipv6-link/whats-new.txt',
+    match: /^cfos6link [\d.]+/,
+    split: true
   },
-  download: {
-    selector: '.cfos6link_release_x64_link'
-  }
+  download: '.cfos6link_release_x64_link'
 }
 module.exports = data

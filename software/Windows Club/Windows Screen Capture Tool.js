@@ -4,8 +4,6 @@ let data = {
   site: {
     Softpedia: 'https://www.softpedia.com/get/Multimedia/Graphic/Graphic-Capture/Windows-Screen-Capture-Tool.shtml'
   },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  install: 'install'
 }
 module.exports = data

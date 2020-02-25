@@ -1,24 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://mh-nexus.de/en/downloads.php?product=HxD20',
-  version: {
-    selector: 'body > div > div.maincontent > table:nth-child(5) > tbody > tr:nth-child(2) > td:nth-child(3)'
-  },
-  download: {
-    plain: 'https://mh-nexus.de/downloads/HxDSetup.zip'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install_inno_with_type', null, 'HxD.exe', require('./../config').locale.match(/^zh/i) ? '2' : '3')
-  }
+  url: 'https://mh-nexus.de/en/hxd/changelog.php',
+  version: '[id^="v_"]',
+  changelog: ['https://mh-nexus.de/en/hxd/changelog.php', '[id^="v_"]+td'],
+  download: 'https://mh-nexus.de/downloads/HxDSetup.zip',
+  install: ['install_zipped', 'install_inno_type', null, /HxD,\d+.exe/, '7']
 }
 module.exports = data
-/**
- * 1:deu
- * 2:chs
- * 3:enu
- * 4:fra
- * 5:ita
- * 6:plk
- * 7:kor
- */

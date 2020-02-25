@@ -3,14 +3,8 @@
 let data = {
   commercial: 3,
   url: 'https://monflo.mirillis.com/download/thank-you?file=monflopc',
-  version: {
-    selector: '.download+ul>li'
-  },
-  download: {
-    selector: 'a.download'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: '.download+ul>li',
+  download: 'a.download',
+  install: 'install_nsis'
 }
 module.exports = data

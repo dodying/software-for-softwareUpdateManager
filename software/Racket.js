@@ -2,15 +2,8 @@
 
 let data = {
   url: 'https://download.racket-lang.org/',
-  version: {
-    selector: 'h3'
-  },
-  download: {
-    selector: 'option[value$="x86_64-win32.exe"]',
-    attr: 'value'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: 'h3',
+  download: ['option[value$="x86_64-win32.exe"]', 'value'],
+  install: 'install_nsis'
 }
 module.exports = data

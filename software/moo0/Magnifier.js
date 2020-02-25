@@ -3,15 +3,9 @@
 let data = {
   commercial: 1,
   url: 'https://www.moo0.com/software/Magnifier/',
-  version: {
-    selector: '.tdSoftwareInfoData>strong',
-    match: /(.*)/
-  },
-  download: {
-    plain: 'https://www.moo0.com/software/Magnifier/download/free/'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  version: ['.tdSoftwareInfoData>strong', 'text', /(.*)/],
+  changelog: '.tdSoftwareInfoDescriptionData>p:has([href*="/history/"])',
+  download: 'https://www.moo0.com/software/Magnifier/download/free/',
+  install: 'install_zipped_single'
 }
 module.exports = data

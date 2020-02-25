@@ -2,14 +2,8 @@
 
 let data = {
   url: 'http://www.un4seen.com/xmplay.html',
-  version: {
-    selector: '#phead > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(1) > td > table > tbody > tr > td:nth-child(2)'
-  },
-  download: {
-    selector: 'a[href^="download.php"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: '#phead > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(1) > td > table > tbody > tr > td:nth-child(2)',
+  download: 'a[href^="download.php"]',
+  install: 'install'
 }
 module.exports = data

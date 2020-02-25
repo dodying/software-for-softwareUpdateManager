@@ -5,9 +5,6 @@ let data = {
   site: {
     Softpedia: 'https://www.softpedia.com/get/Multimedia/Audio/Tag-Editors/Music-Tag-Tool.shtml'
   },
-  preferPath: 'Music Tag.exe',
-  install: function (output, iPath, fns) {
-    return fns.install.ai.msi(output, iPath, null, 'Music Tag.msi', data.preferPath)
-  }
+  install: ['install_ai_msi', null, 'Music Tag.msi', 'Music Tag.exe']
 }
 module.exports = data

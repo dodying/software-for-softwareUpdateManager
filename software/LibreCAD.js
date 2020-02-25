@@ -1,16 +1,18 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/LibreCAD/LibreCAD/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/LibreCAD/LibreCAD/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
+  downloadChoice: '[href$=".exe"]',
+  install: 'install_nsis',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/LibreCAD/LibreCAD/releases'
+      },
+      downloadChoice: '[href$=".exe"]'
+    }
   }
 }
 module.exports = data

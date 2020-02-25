@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/TranslucentTB/TranslucentTB/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/TranslucentTB/TranslucentTB/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="setup.exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  downloadChoice: '[href$="setup.exe"]',
+  install: 'install_inno'
 }
 module.exports = data

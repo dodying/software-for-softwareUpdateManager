@@ -2,15 +2,15 @@
 
 let data = {
   url: 'http://www.foobar2000.org/download',
-  version: {
-    selector: 'a[href^="/getfile/"]',
-    match: /v(\d+[\d.]+\d+)/
-  },
-  download: {
-    func: async (res, $) => $('a[href^="/getfile/"]').attr('href').replace('getfile', 'files')
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
+  version: ['a[href^="/getfile/"]', 'text', /v([\d.]+)/],
+  changelog: ['https://www.foobar2000.org/changelog', '.level3>ul'],
+  download: (res, $) => $('a[href^="/getfile/"]').attr('href').replace('getfile', 'files'),
+  install: 'install_nsis',
+  other: {
+    beta: {
+      version: ['h2:contains("beta")+a[href^="/getfile/"]', 'text', /v([\d.]+ beta \d+)/],
+      download: (res, $) => $('h2:contains("beta")+a[href^="/getfile/"]').attr('href').replace('getfile', 'files')
+    }
   }
 }
 module.exports = data

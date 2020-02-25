@@ -1,15 +1,9 @@
 'use strict'
 
 let data = {
-  url: 'https://www.techpowerup.com/download/techpowerup-gpu-z/',
-  version: {
-    selector: '.title'
+  site: {
+    TechPowerUp: 'https://www.techpowerup.com/download/techpowerup-gpu-z/'
   },
-  download: {
-    func: async (res, $, fns) => fns.download.techpowerup(res, $, fns)
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.single(output, iPath)
-  }
+  install: 'install_single'
 }
 module.exports = data

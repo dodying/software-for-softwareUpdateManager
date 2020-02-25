@@ -5,9 +5,7 @@ let data = {
   site: {
     Softpedia: 'https://www.softpedia.com/get/System/Launchers-Shutdown-Tools/WinAutomation.shtml'
   },
-  preferPath: 'WinAutomation.Server.exe',
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install_msi', 'data\\\\WinAutomationSetup.msi', null, data.preferPath)
-  }
+  download: 'http://assets.winautomation.com/releases/WinAutomationSetup.exe',
+  install: ['install_zipped', 'install_msi', 'data\\\\WinAutomationSetup.msi', null, 'WinAutomation.Server.exe']
 }
 module.exports = data

@@ -2,17 +2,8 @@
 
 let data = {
   url: 'http://ftp.gnome.org/pub/GNOME/binaries/win64/gedit/',
-  preferPath: 'bin/gedit.exe',
-  version: {
-    selector: 'a[href^="gedit-x86_64"][href$=".msi"]',
-    attr: 'href',
-    match: /-(\d+[\d.]+\d+).msi$/
-  },
-  download: {
-    selector: 'a[href^="gedit-x86_64"][href$=".msi"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.msi(output, iPath, null, data.preferPath)
-  }
+  version: ['a[href^="gedit-x86_64"][href$=".msi"]', 'href', /-(\d+[\d.]+\d+).msi$/],
+  download: 'a[href^="gedit-x86_64"][href$=".msi"]',
+  install: ['install_msi', null, 'bin/gedit.exe']
 }
 module.exports = data

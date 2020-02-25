@@ -2,14 +2,8 @@
 
 let data = {
   url: 'https://www.flixgrab.com/',
-  version: {
-    selector: '.font_9>[style="font-family:open sans,sans-serif;"]'
-  },
-  download: {
-    plain: 'http://downloads.flixgrab.com/flixgrabplus.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  version: '.font_9>[style="font-family:open sans,sans-serif;"]',
+  download: 'http://downloads.flixgrab.com/flixgrabplus.exe',
+  install: 'install_inno'
 }
 module.exports = data

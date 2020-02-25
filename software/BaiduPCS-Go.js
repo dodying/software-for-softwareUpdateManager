@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/iikira/BaiduPCS-Go/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/iikira/BaiduPCS-Go/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="windows-x64.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  downloadChoice: '[href$="windows-x64.zip"]',
+  install: 'install_zipped_single'
 }
 module.exports = data

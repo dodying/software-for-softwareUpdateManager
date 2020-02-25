@@ -1,16 +1,15 @@
 'use strict'
 
 let data = {
-  url: 'https://www.jianguoyun.com/s/downloads',
-  version: {
-    selector: '.require'
+  url: 'http://help.jianguoyun.com/?p=1415',
+  version: ['[dir="ltr"]>strong', 'text', /（WPF ([\d.]+)）/],
+  changelog: {
+    selector: '.entry-content',
+    attr: 'text',
+    split: true
   },
-  download: {
-    plain: 'https://www.jianguoyun.com/static/exe/installer/NutstoreWindowsInstaller.exe'
-  },
+  download: 'https://www.jianguoyun.com/static/exe/installer/NutstoreWindowsInstaller.exe',
   fixedPath: '%ProgramFiles%\\Nutstore\\Nutstore.exe',
-  install: function (output, iPath, fns) {
-    return fns.install.ai.cli(output, iPath)
-  }
+  install: 'install_ai_cli'
 }
 module.exports = data

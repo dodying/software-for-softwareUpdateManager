@@ -2,15 +2,14 @@
 
 let data = {
   url: 'https://www.hnsoft.pt/Downloads_CSearcher',
-  version: {
-    selector: '[href$=".zip"]',
-    attr: 'href'
+  version: ['[href$=".zip"]', 'href'],
+  changelog: {
+    selector: '#body',
+    attr: 'text',
+    match: /^Version [\d.]+/,
+    split: true
   },
-  download: {
-    selector: '[href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: '[href$=".zip"]',
+  install: 'install'
 }
 module.exports = data

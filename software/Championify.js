@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/dustinblackman/Championify/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/dustinblackman/Championify/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href*="WIN"][href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: '[href*="WIN"][href$=".zip"]',
+  install: 'install'
 }
 module.exports = data

@@ -2,14 +2,9 @@
 
 let data = {
   url: 'https://launchpad.net/acbf/+download',
-  version: {
-    selector: '.listing td a[href$="exe"]'
-  },
-  download: {
-    selector: '.listing td a[href$="exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: '.listing td a[href$="exe"]',
+  changelog: '[id^="release-information"]',
+  download: '.listing td a[href$="exe"]',
+  install: 'install_nsis'
 }
 module.exports = data

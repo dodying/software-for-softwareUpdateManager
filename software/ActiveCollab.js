@@ -2,14 +2,9 @@
 
 let data = {
   url: 'https://activecollab.com/help/release-notes/',
-  version: {
-    selector: 'h1'
-  },
-  download: {
-    plain: 'https://accounts.activecollab.com/api/v2/desktop-apps/activecollab/releases/win32/download'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install', 'app-64.7z')
-  }
+  version: 'h1',
+  changelog: '.c-release-notes__content>ol',
+  download: 'https://activecollab.com/api/v2/desktop-apps/activecollab/releases/win32/download',
+  install: ['install_zipped', 'install', 'app-64.7z']
 }
 module.exports = data

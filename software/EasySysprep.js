@@ -2,14 +2,15 @@
 
 let data = {
   url: 'https://www.itsk.com/thread-396278-1-1.html',
-  version: {
-    selector: '#thread_subject'
+  version: '#thread_subject',
+  changelog: {
+    url: 'https://www.itsk.com/thread-395036-1-1.html',
+    selector: '[id^="postmessage"]',
+    attr: 'text',
+    match: /^v[\d.]+/,
+    split: true
   },
-  download: {
-    selector: '[href$=".7z"][href*="EasySysprep"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath, null, null, '-p"itsk.com"')
-  }
+  download: '[href$=".7z"][href*="EasySysprep"]',
+  install: ['install', null, null, '-p"itsk.com"']
 }
 module.exports = data

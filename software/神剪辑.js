@@ -2,14 +2,9 @@
 
 let data = {
   url: 'http://www.kami233.com/download/',
-  version: {
-    selector: '.kami-session-item-title'
-  },
-  download: {
-    plain: 'http://res.kami233.com/download/shenjianji64.7z'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: '.kami-session-item-title',
+  changelog: '.kami-session-body-item',
+  download: 'http://res.kami233.com/download/shenjianji64.7z',
+  install: 'install'
 }
 module.exports = data

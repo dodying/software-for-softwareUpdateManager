@@ -1,16 +1,9 @@
 'use strict'
 
 let data = {
-  url: 'http://xdman.sourceforge.net/',
-  version: {
-    selector: 'body > div > div > div:nth-child(4) > div > h3',
-    match: /Version (\d+[\d.]+\d+)/
-  },
-  download: {
-    plain: 'http://xdman.sourceforge.net/xdman.jar'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.single(output, iPath)
-  }
+  url: 'https://subhra74.github.io/xdm/',
+  version: ['h3', 'text', /Version (\d+[\d.]+\d+)/],
+  download: 'https://subhra74.github.io/xdm/binaries/xdman.jar',
+  install: 'install_single'
 }
 module.exports = data

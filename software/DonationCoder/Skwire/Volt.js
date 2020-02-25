@@ -2,17 +2,8 @@
 
 let data = {
   url: 'http://www.dcmembers.com/skwire/download/volt/',
-  version: {
-    selector: '[class="list-group-item [hide_empty:version]"]>span',
-    match: /(.*)/
-  },
-  download: {
-    selector: 'a.wpdm-download-link',
-    attr: 'onclick',
-    match: /^this.href='(.*)';$/
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  version: ['[class="list-group-item [hide_empty:version]"]>span', 'text', /(.*)/],
+  download: ['a.wpdm-download-link', 'onclick', /^this.href='(.*)';$/],
+  install: 'install_inno'
 }
 module.exports = data

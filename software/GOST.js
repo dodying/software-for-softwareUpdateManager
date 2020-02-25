@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/ginuerzh/gost/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/ginuerzh/gost/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="windows_amd64.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  downloadChoice: '[href$="windows_amd64.zip"]',
+  install: 'install_zipped_single'
 }
 module.exports = data

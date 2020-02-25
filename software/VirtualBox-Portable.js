@@ -2,14 +2,9 @@
 
 let data = {
   url: 'http://www.vbox.me/changelog/',
-  version: {
-    selector: 'h2'
-  },
-  download: {
-    selector: 'a[href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: 'h2',
+  changelog: 'h2+p',
+  download: 'a[href$=".exe"]',
+  install: 'install'
 }
 module.exports = data

@@ -2,14 +2,9 @@
 
 let data = {
   url: 'https://gottcode.org/kapow/',
-  version: {
-    selector: '.version'
-  },
-  download: {
-    plain: 'https://gottcode.org/kapow/download/?os=windows'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: '.version',
+  changelog: '#releasenotes .newsitem>ul',
+  download: 'https://gottcode.org/kapow/download/?os=windows',
+  install: 'install_nsis'
 }
 module.exports = data

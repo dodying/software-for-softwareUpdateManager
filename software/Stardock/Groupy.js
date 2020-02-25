@@ -6,8 +6,6 @@ let data = {
     Softpedia: 'https://www.softpedia.com/get/Desktop-Enhancements/Other-Desktop-Enhancements/Groupy.shtml'
   },
   fixedPath: '%ProgramFiles(x86)%\\Stardock\\Groupy\\Groupy32.exe',
-  install: function (output, iPath, fns) {
-    return fns.install.cli(output, iPath, output, ['/S'], { wait: true })
-  }
+  install: 'install_cli_s'
 }
 module.exports = data

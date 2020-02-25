@@ -1,16 +1,18 @@
 'use strict'
 
 let data = {
-  withoutHeader: true,
-  url: 'https://www.dirsyncpro.org/download.html',
-  version: {
-    selector: 'a[href$="Windows.zip"]'
+  site: {
+    SourceForge: 'https://sourceforge.net/projects/directorysync/files/DirSync%20Pro%20%28stable%29/'
   },
-  download: {
-    selector: 'a[href$="Windows.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
+  versionChoice: /^(.*)$/,
+  downloadChoice: [null, 'Windows.zip'],
+  install: 'install',
+  other: {
+    unstable: {
+      site: {
+        SourceForge: 'https://sourceforge.net/projects/directorysync/files/DirSync%20Pro%20%28unstable%29/'
+      }
+    }
   }
 }
 module.exports = data

@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'http://hp.vector.co.jp/authors/VA018351/claunch.html',
-  version: {
-    selector: '.links a'
-  },
-  download: {
-    selector: '.links a:contains("64-bit")'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  url: 'https://hp.vector.co.jp/authors/VA018351/claunch.html',
+  version: '.links a',
+  changelog: ['https://hp.vector.co.jp/authors/VA018351/history_cl.html', '.version'],
+  download: '.links a:contains("64-bit")',
+  install: 'install'
 }
 module.exports = data

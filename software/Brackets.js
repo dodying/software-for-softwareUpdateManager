@@ -1,17 +1,11 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/adobe/brackets/releases/latest',
-  preferPath: 'Brackets.exe',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /release-(.*)/
+  site: {
+    GitHub: 'https://github.com/adobe/brackets/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".msi"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.msi(output, iPath, null, data.preferPath)
-  }
+  versionChoice: /release-(.*)/,
+  downloadChoice: '[href$=".msi"]',
+  install: ['install_msi', null, 'Brackets.exe']
 }
 module.exports = data

@@ -3,16 +3,9 @@
 let data = {
   commercial: 3,
   url: 'http://www.voltmemo.com/chs/downloading.php?id=chs-en',
-  version: {
-    selector: 'a[href$=".exe"]',
-    attr: 'href'
-  },
-  download: {
-    selector: 'a[href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  },
+  version: ['a[href$=".exe"]', 'href'],
+  download: 'a[href$=".exe"]',
+  install: 'install_nsis',
   other: {
     fr: { url: 'http://www.voltmemo.com/chs/downloading.php?id=chs-fr' },
     jp: { url: 'http://www.voltmemo.com/chs/downloading.php?id=chs-jp' },

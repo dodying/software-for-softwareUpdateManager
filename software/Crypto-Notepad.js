@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/Crypto-Notepad/Crypto-Notepad/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/Crypto-Notepad/Crypto-Notepad/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".7z"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  downloadChoice: '[href$=".7z"]',
+  install: 'install_zipped_single'
 }
 module.exports = data

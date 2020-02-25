@@ -1,17 +1,18 @@
 'use strict'
 
 let data = {
-  commercial: 1,
-  url: 'https://resonic.at/download',
-  version: {
-    selector: 'h2',
-    match: /Resonic Player (.*) /
+  commercial: 3,
+  site: {
+    download: 'https://resonic.at/download'
   },
-  download: {
-    plain: 'https://resonic.at/get/player/portable'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
+  versionChoice: 'https://resonic.at/get/pro',
+  changelog: ['https://resonic.at/whatsnew', '.pb-4>.col'],
+  install: ['install_msi', null, 'Resonic.exe'],
+  other: {
+    player: {
+      commercial: 1,
+      versionChoice: 'https://resonic.at/get/player'
+    }
   }
 }
 module.exports = data

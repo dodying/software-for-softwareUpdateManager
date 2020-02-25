@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/jusu/Elephant/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /V(\d+)/
+  site: {
+    GitHub: 'https://github.com/jusu/Elephant/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="win.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  downloadChoice: '[href$="win.zip"]',
+  install: 'install_zipped_single'
 }
 module.exports = data

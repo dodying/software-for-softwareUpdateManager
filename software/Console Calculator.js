@@ -1,15 +1,11 @@
 'use strict'
 
 let data = {
+  commercial: 3,
   url: 'http://www.zoesoft.com/console-calculator/ccalc-downloads/',
-  version: {
-    selector: 'h3'
-  },
-  download: {
-    plain: 'http://www.zoesoft.com/downloads/CCalc.zip'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  version: 'h3',
+  changelog: ['https://www.zoesoft.com/blog/', '.post-intro>ul'],
+  download: 'http://www.zoesoft.com/downloads/CCalc.zip',
+  install: 'install_zipped_single'
 }
 module.exports = data

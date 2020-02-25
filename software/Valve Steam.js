@@ -1,15 +1,9 @@
 'use strict'
 
 let data = {
-  url: 'https://www.softpedia.com/get/Others/Fun/Valve-Steam.shtml',
-  version: {
-    func: async (res, $) => res.body.match(/spjs_prog_version="(.*?)";/)[1]
-  },
-  download: {
-    plain: 'https://media.st.dl.bscstorage.net/client/installer/SteamSetup.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  url: 'http://client-download.steampowered.com/client/steam_client_win32',
+  version: (res, $) => res.body.match(/"version"\s+"(.*?)"/)[1],
+  download: 'https://media.st.dl.bscstorage.net/client/installer/SteamSetup.exe',
+  install: 'install_nsis'
 }
 module.exports = data

@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  withoutHeader: true,
-  url: 'https://sourceforge.net/projects/luabinaries/files/',
-  version: {
-    selector: '.folder .name'
+  site: {
+    SourceForge: 'https://sourceforge.net/projects/luabinaries/files/'
   },
-  download: {
-    plain: 'https://sourceforge.net/projects/luabinaries/files/{version}/Tools%20Executables/lua-{version}_Win64_bin.zip/download'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: [null, 'Tools Executables', 'Win64_bin.zip'],
+  install: 'install'
 }
 module.exports = data

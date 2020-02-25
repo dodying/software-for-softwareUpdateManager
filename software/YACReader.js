@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'http://www.yacreader.com/downloads',
-  version: {
-    selector: '.latestversion'
+  site: {
+    GitHub: 'https://github.com/YACReader/yacreader/releases/latest'
   },
-  download: {
-    selector: '.dwnld.windows>a'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  downloadChoice: '[href$="winx64-7z.exe"]',
+  install: 'install_inno'
 }
 module.exports = data

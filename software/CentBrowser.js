@@ -2,25 +2,23 @@
 
 let data = {
   url: 'https://www.centbrowser.cn/history.html',
-  version: {
-    selector: '.list>p',
-    attr: 'id'
-  },
-  download: {
-    selector: '.list a[href$="x64_portable.exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  },
+  version: ['.list>p', 'id'],
+  changelog: '.list>span',
+  download: '.list a[href$="x64_portable.exe"]',
+  install: 'install',
   other: {
     beta: {
       url: 'http://static.centbrowser.com/beta_64/',
-      version: {
-        func: async (res, $) => $('a[href$="portable.exe"]').eq(-1).text().match(/centbrowser_(.*?)_x64/)[1]
-      },
-      download: {
-        func: async (res, $) => $('a[href$="portable.exe"]').eq(-1).attr('href')
-      }
+      version: async (res, $, fns, choice) => fns.walkLink(res, fns, {
+        selector: 'a',
+        match: /centbrowser_(.*?)_x64_portable.exe/,
+        sort: true
+      }),
+      download: async (res, $, fns, choice) => fns.walkLink(res, fns, {
+        selector: 'a',
+        matchCheck: /centbrowser_(.*?)_x64_portable.exe/,
+        sort: true
+      })
     }
   }
 }

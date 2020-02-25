@@ -1,15 +1,9 @@
 'use strict'
 
 let data = {
-  url: 'https://msfn.org/board/topic/149612-winntsetup/',
-  version: {
-    selector: 'h1'
+  site: {
+    MajorGeeks: 'https://www.majorgeeks.com/mg/getmirror/winntsetup,1.html'
   },
-  download: {
-    plain: 'http://jfx.cwcodes.net/WinNTSetup/Release/WinNTSetup3.rar'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  install: 'install'
 }
 module.exports = data

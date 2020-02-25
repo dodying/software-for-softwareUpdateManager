@@ -2,14 +2,9 @@
 
 let data = {
   url: 'http://registry-finder.com/',
-  version: {
-    selector: 'h2+p'
-  },
-  download: {
-    selector: 'a[href$="RegistryFinder64.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: 'h2+p',
+  changelog: ['http://registry-finder.com/version_history.html', 'ul>li>ul'],
+  download: 'a[href$="RegistryFinder64.zip"]',
+  install: 'install'
 }
 module.exports = data

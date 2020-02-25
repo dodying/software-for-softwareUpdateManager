@@ -3,12 +3,7 @@
 let data = {
   commercial: 3,
   url: 'https://www.binarymark.com/products/batch-encoding-converter',
-  version: {
-    selector: '[title^="Latest"]',
-    attr: 'title'
-  },
-  download: {
-    plain: 'https://www.binarymark.com/download/18'
-  }
+  version: ['[title^="Latest"]', 'title'],
+  download: 'https://download.binarymark.com/BatchConvertSetupT.exe'
 }
 module.exports = data

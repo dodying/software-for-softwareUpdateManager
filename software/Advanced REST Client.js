@@ -1,16 +1,15 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/advanced-rest-client/arc-electron/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/advanced-rest-client/arc-electron/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="setup.exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install', 'app-64.7z')
+  downloadChoice: '[href$="setup.exe"]',
+  install: ['install_zipped', 'install', 'app-64.7z'],
+  other: {
+    beta: {
+      site: { GitHub: 'https://github.com/advanced-rest-client/arc-electron/releases' }
+    }
   }
 }
 module.exports = data

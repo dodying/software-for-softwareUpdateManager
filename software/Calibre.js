@@ -1,26 +1,16 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/kovidgoyal/calibre/releases/latest',
-  preferPath: 'calibre.exe',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    download: 'https://calibre-ebook.com/changelog.rss'
   },
-  download: {
-    plain: 'https://calibre-ebook.com/dist/win64'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.msi(output, iPath, null, data.preferPath)
-  },
+  versionChoice: ['https://calibre-ebook.com/dist/win64', /calibre-64bit-(.*?).msi/],
+  changelog: async (res, $, fns, choice) => [$('item>description').eq(0).text(), true],
+  install: ['install_msi', null, 'calibre.exe'],
   other: {
     portable: {
-      download: {
-        plain: 'https://calibre-ebook.com/dist/portable'
-      },
-      install: function (output, iPath, fns) {
-        return fns.install.cli(output, iPath, output, [require('path').resolve(iPath, './../../')])
-      }
+      versionChoice: ['https://calibre-ebook.com/dist/portable', /calibre-portable-installer-(.*?).exe/],
+      nstall: info => info.fns.install.cli(info, null, [require('path').resolve(info.parentPath, '../')])
     }
   }
 }

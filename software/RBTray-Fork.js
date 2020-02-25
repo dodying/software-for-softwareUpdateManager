@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/benbuck/rbtray/releases',
-  version: {
-    selector: '.commit-title',
-    match: /v(.*)/
+  site: {
+    'GitHub-commit': 'https://github.com/benbuck/rbtray/releases'
   },
-  download: {
-    selector: '.muted-link[href*="archive"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath, null, '*\\x64')
-  }
+  changelog: ['https://github.com/benbuck/rbtray/blob/master/CHANGELOG.md', 'h2:has(#user-content-change-history)+h2+ul'],
+  install: ['install', null, '*\\x64']
 }
 module.exports = data

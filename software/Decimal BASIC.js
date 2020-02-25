@@ -2,15 +2,14 @@
 
 let data = {
   url: 'https://decimalbasic.ninja-web.net/EnglishWindows.htm',
-  version: {
-    selector: 'h4+p',
-    match: /Ver\.\s+(\d+[\d.]+\d+)\s+/
+  version: ['h4+p', 'text', /Ver\.\s+(\d+[\d.]+\d+)\s+/],
+  changelog: {
+    selector: 'dl',
+    attr: 'text',
+    match: /^Ver. [\d.]+/,
+    split: true
   },
-  download: {
-    selector: 'h4+p>a'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: 'h4+p>a',
+  install: 'install'
 }
 module.exports = data

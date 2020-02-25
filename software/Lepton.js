@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/hackjutsu/Lepton/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/hackjutsu/Lepton/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="-win.7z"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: '[href$="-win.7z"]',
+  install: 'install'
 }
 module.exports = data

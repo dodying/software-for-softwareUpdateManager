@@ -1,16 +1,9 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/Cenmrev/V2RayW/releases',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/Cenmrev/V2RayW/releases'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  install: 'install'
 }
 module.exports = data

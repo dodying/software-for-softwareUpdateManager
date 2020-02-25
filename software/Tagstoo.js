@@ -1,16 +1,11 @@
 'use strict'
 
 let data = {
-  withoutHeader: true,
-  url: 'https://tagstoo.sourceforge.io/download.html',
-  version: {
-    selector: '#downloadmain'
+  site: {
+    SourceForge: 'https://sourceforge.net/projects/tagstoo/files/'
   },
-  download: {
-    selector: '#downloadmain>a'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install', 'app-64.7z')
-  }
+  versionChoice: /Tagstoo (.*?) win64/,
+  downloadChoice: [/Tagstoo (.*?) win64/, '.exe'],
+  install: ['install_zipped', 'install', 'app-64.7z']
 }
 module.exports = data

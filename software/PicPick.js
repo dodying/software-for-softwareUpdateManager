@@ -3,20 +3,14 @@
 let data = {
   commercial: 1,
   url: 'https://picpick.app/zh/download',
-  version: {
-    selector: 'h3+div'
-  },
-  download: {
-    plain: 'https://www.picpick.org/releases/latest/picpick_portable.zip'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  },
+  version: 'h3+div',
+  changelog: 'h3+div',
+  download: 'https://www.picpick.org/releases/latest/picpick_portable.zip',
+  install: 'install',
   other: {
     pro: {
-      download: {
-        plain: 'https://www.picpick.org/releases/latest/picpick_inst_pro.exe'
-      }
+      download: 'https://www.picpick.org/releases/latest/picpick_inst_pro.exe',
+      install: 'install_nsis'
     }
   }
 }

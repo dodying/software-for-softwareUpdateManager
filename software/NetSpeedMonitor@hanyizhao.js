@@ -1,17 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/hanyizhao/NetSpeedMonitor/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/hanyizhao/NetSpeedMonitor/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".msi"]'
-  },
-  preferPath: 'NetSpeedMonitor.exe',
-  install: function (output, iPath, fns) {
-    return fns.install.msi(output, iPath, null, data.preferPath)
-  }
+  downloadChoice: '[href$=".msi"]',
+  install: ['install_msi', null, 'NetSpeedMonitor.exe']
 }
 module.exports = data

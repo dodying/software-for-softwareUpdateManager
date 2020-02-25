@@ -1,16 +1,18 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/trufflesuite/ganache/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    'GitHub-Api': 'https://api.github.com/repos/trufflesuite/ganache/releases'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install', 'app-64.7z')
+  versionChoice: [/.exe$/, null, false],
+  install: ['install_zipped', 'install', 'app-64.7z'],
+  other: {
+    beta: {
+      site: {
+        'GitHub-Api': 'https://api.github.com/repos/trufflesuite/ganache/releases'
+      },
+      versionChoice: /.exe$/
+    }
   }
 }
 module.exports = data

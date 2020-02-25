@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  withoutHeader: true,
-  url: 'https://www.pidgin.im/',
-  version: {
-    selector: '.number'
+  site: {
+    SourceForge: 'https://sourceforge.net/projects/pidgin/files/Pidgin/'
   },
-  download: {
-    selector: '.sourceforge_accelerator_link'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: [null, 'offline.exe'],
+  install: 'install_nsis'
 }
 module.exports = data

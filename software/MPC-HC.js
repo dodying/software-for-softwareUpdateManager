@@ -2,14 +2,9 @@
 
 let data = {
   url: 'https://mpc-hc.org/downloads/',
-  version: {
-    selector: '.downloads-version'
-  },
-  download: {
-    selector: 'a[href$="x64.7z"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: '.downloads-version',
+  changelog: ['https://mpc-hc.org/changelog/', 'h2[id]+ul'],
+  download: 'a[href$="x64.7z"]',
+  install: 'install'
 }
 module.exports = data

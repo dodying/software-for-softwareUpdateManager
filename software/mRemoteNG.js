@@ -1,16 +1,16 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/mRemoteNG/mRemoteNG/releases',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/mRemoteNG/mRemoteNG/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
+  install: 'install',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/mRemoteNG/mRemoteNG/releases'
+      }
+    }
   }
 }
 module.exports = data

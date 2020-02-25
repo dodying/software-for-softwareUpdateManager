@@ -1,26 +1,19 @@
 'use strict'
 
 let data = {
-  url: 'https://www.majorgeeks.com/mg/getmirror/iobit_driver_booster,1.html',
-  version: {
-    selector: '.geekywraplight>h1'
+  site: {
+    MajorGeeks: 'https://www.majorgeeks.com/mg/getmirror/iobit_driver_booster,1.html'
   },
-  download: {
-    plain: 'https://www.majorgeeks.com/index.php?ct=files&action=download&'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  },
-  afterInstall: function (output, iPath, fns) {
+  install: 'install_inno',
+  afterInstall: info => {
     let path = require('path')
     let fse = require('fs-extra')
 
-    let parentPath = path.parse(iPath).dir
-    let parentPath2 = path.parse(parentPath).dir
+    let parentPath2 = path.parse(info.parentPath).dir
 
-    fse.moveSync(path.join(parentPath, '{cm_AppVer}'), path.join(parentPath2, 'Driver Booster-Main'))
-    fse.removeSync(parentPath)
-    fse.moveSync(path.join(parentPath2, 'Driver Booster-Main'), parentPath)
+    fse.moveSync(path.join(info.parentPath, '{cm_AppVer}'), path.join(parentPath2, 'Driver Booster-Main'))
+    fse.removeSync(info.parentPath)
+    fse.moveSync(path.join(parentPath2, 'Driver Booster-Main'), info.parentPath)
   }
 }
 module.exports = data

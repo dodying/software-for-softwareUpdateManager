@@ -1,22 +1,14 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/z3APA3A/3proxy/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/z3APA3A/3proxy/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="-x64.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  },
+  downloadChoice: '[href$="-x64.zip"]',
+  install: 'install',
   other: {
     lite: {
-      download: {
-        selector: 'a[href*="/releases/download/"][href$="-lite.zip"]'
-      }
+      downloadChoice: '[href$="-lite.zip"]'
     }
   }
 }

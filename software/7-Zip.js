@@ -2,20 +2,20 @@
 
 let data = {
   url: 'https://www.7-zip.org/download.html',
-  version: {
-    selector: 'h1+p'
+  version: 'h1+p',
+  changelog: {
+    url: 'https://www.7-zip.org/history.txt',
+    split: true
   },
-  download: {
-    selector: '.Item>a[href$="x64.exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  },
+  download: '.Item>a[href$="x64.exe"]',
+  install: 'install',
   other: {
     cli: {
-      install: function (output, iPath, fns) {
-        return fns.install(output, iPath, null, '7z.exe 7z.dll')
-      }
+      install: ['install', null, '7z.exe 7z.dll']
+    },
+    1505: {
+      version: () => '15.05',
+      download: 'https://sourceforge.net/projects/sevenzip/files/7-Zip/15.05/7z1505-x64.exe/download'
     }
   }
 }

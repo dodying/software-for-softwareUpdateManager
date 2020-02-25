@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/Superfly-Inc/ShowKeyPlus/releases/latest',
-  version: {
-    selector: '.release-header a'
+  site: {
+    GitHub: 'https://github.com/Superfly-Inc/ShowKeyPlus/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install_zipped_single', 'ShowKeyPlus_x64.zip')
-  }
+  versionChoice: [/([\d.]+)/, true],
+  install: ['install_zipped', 'install_zipped_single', 'ShowKeyPlus_x64.zip']
 }
 module.exports = data

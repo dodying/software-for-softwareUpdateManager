@@ -2,16 +2,17 @@
 
 let data = {
   commercial: 2,
-  url: 'https://github.com/tagspaces/tagspaces/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/tagspaces/tagspaces/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href*="win"][href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install', 'app-64.7z')
+  downloadChoice: '[href*="win"][href$=".exe"]',
+  install: ['install_zipped', 'install', 'app-64.7z'],
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/tagspaces/tagspaces/releases'
+      }
+    }
   }
 }
 module.exports = data

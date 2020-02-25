@@ -2,25 +2,24 @@
 
 let data = {
   url: 'https://rime.im/download/',
-  version: {
-    selector: 'a[href="https://bintray.com/rime/weasel/release"]'
+  version: 'a[href="https://bintray.com/rime/weasel/release"]',
+  changelog: {
+    url: 'https://rime.im/release/weasel/',
+    selector: '.mypage',
+    attr: 'text',
+    match: /^#[\d-]+/,
+    split: true
   },
-  download: {
-    selector: 'a[href="https://bintray.com/rime/weasel/release"]+a'
-  },
-  beforeInstall: function (output, iPath, fns) {
+  download: 'a[href="https://bintray.com/rime/weasel/release"]+a',
+  beforeInstall: info => {
     let path = require('path')
-    let parentPath = path.parse(iPath).dir
-    let setup = path.resolve(parentPath, 'WeaselSetup.exe')
+    let setup = path.resolve(info.parentPath, 'WeaselSetup.exe')
     if (require('fs').existsSync(setup)) require('child_process').execSync(`"${setup}" /u`)
   },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  },
-  afterInstall: function (output, iPath, fns) {
+  install: 'install_nsis',
+  afterInstall: info => {
     let path = require('path')
-    let parentPath = path.parse(iPath).dir
-    let setup = path.resolve(parentPath, 'WeaselSetup.exe')
+    let setup = path.resolve(info.parentPath, 'WeaselSetup.exe')
     require('child_process').execSync(`"${setup}" /i`)
   }
 }

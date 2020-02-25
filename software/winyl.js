@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/winyl-player/winyl/releases',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/winyl-player/winyl/releases'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="portable_x64.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: '[href$="portable_x64.zip"]',
+  install: 'install'
 }
 module.exports = data

@@ -2,14 +2,12 @@
 
 let data = {
   url: 'https://www.redfox.bz/en/download.html',
-  version: {
-    selector: '[href="/download/changes_reclock.txt"]'
+  version: '[href="/download/changes_reclock.txt"]',
+  changelog: {
+    url: 'https://www.redfox.bz/download/changes_reclock.txt',
+    split: true
   },
-  download: {
-    plain: 'https://www.redfox.bz/download/SetupReClock.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.nsis(output, iPath)
-  }
+  download: 'https://www.redfox.bz/download/SetupReClock.exe',
+  install: 'install_nsis_cli'
 }
 module.exports = data

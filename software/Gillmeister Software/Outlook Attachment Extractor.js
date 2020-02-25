@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://www.outlook-attachment-extractor.com/download.aspx',
-  version: {
-    selector: 'h2'
-  },
-  download: {
-    plain: 'https://www.outlook-attachment-extractor.com/downloads/oae-setup.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno.type(output, iPath, null, null, { '{code_GetBitnessDefaultInstallDir}': '{dir}' })
-  }
+  url: 'https://www.outlook-attachment-extractor.com/changelog.aspx',
+  version: '.content>h3',
+  changelog: '.content>ul',
+  download: 'https://www.outlook-attachment-extractor.com/downloads/oae-setup.exe',
+  install: ['install_inno_type', null, null, { '{code_GetBitnessDefaultInstallDir}': '{dir}' }]
 }
 module.exports = data

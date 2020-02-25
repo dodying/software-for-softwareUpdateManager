@@ -1,20 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://sourceforge.net/projects/astrogrep/files/AstroGrep%20%28Win32%29/',
-  version: {
-    selector: '[headers="files_name_h"]>a'
+  site: {
+    SourceForge: 'https://sourceforge.net/projects/astrogrep/files/AstroGrep%20%28Win32%29/'
   },
-  download: {
-    func: async (res, $, fns, choice) => fns.walkLink(res, fns, {
-      selector: '[headers="files_name_h"]>a'
-    }, {
-      selector: '[headers="files_name_h"]>a[href$="/download"]',
-      matchCheck: 'portable.zip'
-    })
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: [null, 'portable.zip'],
+  install: 'install'
 }
 module.exports = data

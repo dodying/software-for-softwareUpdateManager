@@ -2,17 +2,10 @@
 
 let data = {
   commercial: 3,
-  url: 'https://www.exodus.io/download/',
-  version: {
-    selector: 'a[onclick^="downloadClicked(\'windows"]',
-    attr: 'href',
-    match: /x64-(.*).exe$/
-  },
-  download: {
-    selector: 'a[onclick^="downloadClicked(\'windows"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install', 'full.nupkg', null, 'lib\\net45')
-  }
+  url: 'https://www.exodus.io/releases/',
+  version: '.x-releases__item-heading-date',
+  changelog: '.x-releases__item-fixes',
+  download: 'https://downloads.exodus.io/releases/exodus-windows-x64-{version}.exe',
+  install: ['install_zipped', 'install', 'full.nupkg', null, 'lib\\net*']
 }
 module.exports = data

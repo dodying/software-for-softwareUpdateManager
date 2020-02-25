@@ -1,15 +1,14 @@
 'use strict'
 
 let data = {
-  url: 'https://www.winitor.com/binaries.html',
-  version: {
-    selector: 'a[href$=".zip"]'
+  url: 'https://www.winitor.com/get.html',
+  version: '[href="./get.html"]',
+  changelog: {
+    url: 'https://www.winitor.com/tools/pestudio/changes.log',
+    match: /^Version [\d.]+/,
+    split: true
   },
-  download: {
-    selector: 'a[href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: 'a[href$=".zip"]',
+  install: 'install'
 }
 module.exports = data

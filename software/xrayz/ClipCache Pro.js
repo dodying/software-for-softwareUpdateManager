@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'http://www.xrayz.co.uk/download/clipcache',
-  version: {
-    selector: 'a[href$=".exe"]'
-  },
-  download: {
-    plain: 'http://www.xrayz.co.uk/download/ccsetup.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno.type(output, iPath)
-  }
+  url: 'https://www.xrayz.co.uk/clipcache/versions',
+  version: '[cellpadding="5"]+div>p',
+  changelog: '[cellpadding="5"]+div>ul',
+  download: 'http://www.xrayz.co.uk/download/ccsetup.exe',
+  install: 'install_inno_type'
 }
 module.exports = data

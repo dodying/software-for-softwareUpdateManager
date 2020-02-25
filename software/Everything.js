@@ -2,14 +2,13 @@
 
 let data = {
   url: 'https://www.voidtools.com/downloads/',
-  version: {
-    selector: '#dl'
+  version: '#dl',
+  changelog: {
+    url: 'https://www.voidtools.com/Changes.txt',
+    match: /Version [\d.]+$/,
+    split: true
   },
-  download: {
-    plain: 'https://www.voidtools.com/Everything-{version}.x64.zip'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: 'https://www.voidtools.com/Everything-{version}.x64.zip',
+  install: 'install'
 }
 module.exports = data

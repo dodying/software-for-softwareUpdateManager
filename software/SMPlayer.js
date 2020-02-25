@@ -1,24 +1,20 @@
 'use strict'
 
 let data = {
-  url: 'https://sourceforge.net/projects/smplayer/files/SMPlayer/',
-  version: {
-    func: async (res, $, fns, choice) => fns.walkLink(res, fns, {
-      selector: '[headers="files_name_h"]>a',
-      sort: true,
-      attr: 'text'
-    })
+  site: {
+    SourceForge: 'https://sourceforge.net/projects/smplayer/files/SMPlayer/'
   },
-  download: {
-    func: async (res, $, fns, choice) => fns.walkLink(res, fns, {
-      selector: '[headers="files_name_h"]>a'
-    }, {
-      selector: '[headers="files_name_h"]>a[href$="/download"]',
-      matchCheck: '.7z'
-    })
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
+  downloadChoice: [null, '.7z'],
+  install: 'install',
+  other: {
+    beta: {
+      site: {
+        SourceForge: 'https://sourceforge.net/projects/smplayer/files/SMPlayer/Development-builds/'
+      },
+      versionChoice: /smplayer-(.*)-x64.exe/,
+      downloadChoice: /smplayer-(.*)-x64.exe/,
+      install: 'install_nsis'
+    }
   }
 }
 module.exports = data

@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://www.aignes.com/psmenu.htm',
-  version: {
-    selector: '.mobile .medium'
-  },
-  download: {
-    plain: 'https://www.aignes.info/download/psmsetup.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  url: 'https://www.aignes.com/psmenu_history.htm',
+  version: '.larger>b',
+  changelog: '.history',
+  download: 'https://www.aignes.info/download/psmsetup.exe',
+  install: 'install_inno'
 }
 module.exports = data

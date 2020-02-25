@@ -2,15 +2,12 @@
 
 let data = {
   url: 'https://raw.githubusercontent.com/meganz/MEGAcmd/master/build/megacmd/megacmd.changes',
-  version: {
-    selector: 'body',
-    match: /- Update to version (\d+[\d.]+\d+):/
+  version: ['body', 'text', /- Update to version (\d+[\d.]+\d+):/],
+  changelog: {
+    match: /linux@mega.co.nz/,
+    split: true
   },
-  download: {
-    plain: 'https://mega.nz/MEGAcmdSetup.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: 'https://mega.nz/MEGAcmdSetup.exe',
+  install: 'install_nsis'
 }
 module.exports = data

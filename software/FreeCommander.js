@@ -3,15 +3,14 @@
 let data = {
   commercial: 2,
   url: 'https://freecommander.com/en/downloads/',
-  version: {
-    selector: '#post-29 > div > p:nth-child(2) > strong > span',
-    match: /Build (\d[\d\w]+)/
-  },
-  download: {
-    plain: 'https://freecommander.com/downloads/FreeCommanderXE-32-public_setup.zip'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install_inno')
+  version: ['#post-29 span', 'text', /FreeCommander XE (\d+) Build (\d+\w?) 32-bit public/, '$1.$2'],
+  download: 'https://freecommander.com/downloads/FreeCommanderXE-32-public_portable.zip',
+  install: 'install',
+  other: {
+    beta: {
+      version: ['#post-29 table~p+p span', 'text', /FreeCommander XE (\d+) Build (\d+\w?) 32-bit public beta/, '$1.$2'],
+      download: '#post-29 table~table [href$=".zip"][href*="portable"]'
+    }
   }
 }
 module.exports = data

@@ -2,14 +2,9 @@
 
 let data = {
   url: 'https://www.winpcap.org/install/default.htm',
-  version: {
-    selector: 'p+h1'
-  },
-  download: {
-    selector: 'a[href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.nsis(output, iPath)
-  }
+  version: 'p+h1',
+  changelog: ['https://www.winpcap.org/misc/changelog.htm', '.content>ul'],
+  download: 'a[href$=".exe"]',
+  install: 'install_nsis'
 }
 module.exports = data

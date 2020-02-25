@@ -2,14 +2,8 @@
 
 let data = {
   url: 'https://www.diskinternals.com/zip-repair/',
-  version: {
-    selector: '.divh5'
-  },
-  download: {
-    plain: 'https://www.diskinternals.com/download/zip_repair.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: '.divh5',
+  download: 'https://www.diskinternals.com/download/zip_repair.exe',
+  install: 'install_nsis'
 }
 module.exports = data

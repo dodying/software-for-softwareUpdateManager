@@ -2,15 +2,10 @@
 
 let data = {
   commercial: 2,
-  url: 'https://www.softpedia.com/get/Internet/Browsers/Cocoon-Browser.shtml',
-  version: {
-    func: async (res, $) => res.body.match(/spjs_prog_version="(.*?)";/)[1]
+  site: {
+    Softpedia: 'https://www.softpedia.com/get/Internet/Browsers/Cocoon-Browser.shtml'
   },
-  download: {
-    plain: 'https://getcocoon.com/downloads/vwc_cocoon.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath, null, 'core')
-  }
+  download: 'https://getcocoon.com/downloads/vwc_cocoon.exe',
+  install: ['install', null, 'core']
 }
 module.exports = data

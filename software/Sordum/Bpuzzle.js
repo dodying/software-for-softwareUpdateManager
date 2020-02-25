@@ -1,19 +1,9 @@
 'use strict'
 
 let data = {
-  url: 'https://www.sordum.org/downloads/?bpuzzle',
-  version: {
-    selector: '[align="left"]>a'
+  site: {
+    'Sites/Sordum': 'https://www.sordum.org/8058/'
   },
-  download: {
-    func: async (res, $, fns, choice) => {
-      let uri1 = $('a[href*="files/downloads.php"]').eq(0).attr('href')
-      let res1 = await fns.reqHEAD(uri1)
-      return res1.request.uri.href
-    }
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  install: 'install'
 }
 module.exports = data

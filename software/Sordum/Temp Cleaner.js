@@ -1,19 +1,19 @@
+// 'use strict'
+//
+// let data = {
+//   site: {
+//     'Sites/Sordum': 'https://www.sordum.org/9190/'
+//   },
+//   install: 'install'
+// }
+// module.exports = data
+//
 'use strict'
 
 let data = {
-  url: 'https://www.sordum.org/downloads/?st-temp-cleaner',
-  version: {
-    selector: '[align="left"]>a'
+  site: {
+    'Softpedia': 'https://www.softpedia.com/get/Security/Secure-cleaning/Temp-Cleaner-velociraptor.shtml'
   },
-  download: {
-    func: async (res, $, fns, choice) => {
-      let uri1 = $('a[href*="files/downloads.php"]').eq(0).attr('href')
-      let res1 = await fns.reqHEAD(uri1)
-      return res1.request.uri.href
-    }
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  install: 'install_zipped_single'
 }
 module.exports = data

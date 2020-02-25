@@ -2,14 +2,15 @@
 
 let data = {
   url: 'https://www.hwinfo.com/download/',
-  version: {
-    selector: '.download>sub'
-  },
-  download: {
-    selector: 'a[href$=".zip"][href*="sac.sk"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
+  version: '.download>sub',
+  changelog: ['https://www.hwinfo.com/version-history/', '.version-released+ul'],
+  download: 'a[href$=".zip"][href*="sac.sk"]',
+  install: 'install',
+  other: {
+    beta: {
+      version: ['.btn-gray', 'text', /Download latest Beta v([\d.-]+)/],
+      download: '.btn-gray a[href$=".zip"]'
+    }
   }
 }
 module.exports = data

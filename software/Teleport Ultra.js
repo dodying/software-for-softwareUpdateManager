@@ -3,20 +3,18 @@
 let data = {
   commercial: 3,
   url: 'http://www.tenmax.com/teleport/version.htm',
-  version: {
-    selector: '.ver'
+  version: '.ver',
+  changelog: {
+    selector: '.bodytable .middle',
+    attr: 'text',
+    match: /^Version [\d.]+/,
+    split: true
   },
-  download: {
-    plain: 'http://www.tenmax.com/Teleport_Ultra_Installer.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.nsis(output, iPath)
-  },
+  download: 'http://www.tenmax.com/Teleport_Ultra_Installer.exe',
+  install: 'install_nsis_cli',
   other: {
     pro: {
-      download: {
-        plain: 'http://www.tenmax.com/Teleport_Pro_Installer.exe'
-      }
+      download: 'http://www.tenmax.com/Teleport_Pro_Installer.exe'
     }
   }
 }

@@ -3,14 +3,14 @@
 let data = {
   commercial: 3,
   url: 'https://www.winnc.com/download/',
-  version: {
-    selector: 'h2'
+  version: 'h2',
+  changelog: {
+    selector: '.section_wrapper',
+    attr: 'text',
+    match: /^WinNc [\d.]+/,
+    split: true
   },
-  download: {
-    plain: 'http://www.winnc.com/setup.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  download: 'http://www.winnc.com/setup.exe',
+  install: 'install_inno'
 }
 module.exports = data

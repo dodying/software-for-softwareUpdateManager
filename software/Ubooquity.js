@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'http://vaemendis.net/ubooquity/static2/download',
-  version: {
-    selector: '#static-2 > p:nth-child(8)'
-  },
-  download: {
-    selector: '#static-2 > p:nth-child(7) > a'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  url: 'https://vaemendis.net/ubooquity/categorie2/release',
+  version: 'h1>a',
+  changelog: '[id^="post"]',
+  download: 'http://vaemendis.net/ubooquity/service/download.php',
+  install: 'install_zipped_single'
 }
 module.exports = data

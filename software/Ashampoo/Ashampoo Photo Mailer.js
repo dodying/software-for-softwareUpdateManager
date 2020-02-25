@@ -5,8 +5,6 @@ let data = {
   site: {
     Softpedia: 'https://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/Ashampoo-Photo-Mailer.shtml'
   },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  install: 'install_inno'
 }
 module.exports = data

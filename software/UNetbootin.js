@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/unetbootin/unetbootin/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/unetbootin/unetbootin/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".exe"][href*="windows"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.single(output, iPath)
-  }
+  downloadChoice: '[href$=".exe"][href*="windows"]',
+  install: 'install_single'
 }
 module.exports = data

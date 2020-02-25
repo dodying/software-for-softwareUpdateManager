@@ -3,14 +3,8 @@
 let data = {
   withoutHeader: true,
   url: 'https://eternallybored.org/misc/wget/',
-  version: {
-    selector: '#content > table > tbody > tr:nth-child(2) > td:nth-child(1)'
-  },
-  download: {
-    plain: 'https://eternallybored.org/misc/wget/{version}/64/wget.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.single(output, iPath)
-  }
+  version: '#content > table > tbody > tr:nth-child(2) > td:nth-child(1)',
+  download: 'https://eternallybored.org/misc/wget/{version}/64/wget.exe',
+  install: 'install_single'
 }
 module.exports = data

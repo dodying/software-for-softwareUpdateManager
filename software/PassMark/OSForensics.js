@@ -2,15 +2,15 @@
 
 let data = {
   commercial: 3,
-  url: 'https://www.osforensics.com/download.html',
-  version: {
-    selector: '.feature'
+  url: 'https://www.osforensics.com/whatsnew.html',
+  version: ['#sub-content>h4', 'text', /([\d.]+ build \d+)/],
+  changelog: {
+    selector: '#sub-content',
+    attr: 'text',
+    match: /^v[\d.]+/,
+    split: true
   },
-  download: {
-    plain: 'https://downloads.passmark.com/osforensics/downloads/osf.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  download: 'https://downloads.passmark.com/osforensics/downloads/osf.exe',
+  install: 'install_inno'
 }
 module.exports = data

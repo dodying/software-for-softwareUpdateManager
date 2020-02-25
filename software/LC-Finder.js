@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/lc-soft/LC-Finder/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/lc-soft/LC-Finder/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="LC-Finder.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: '[href$="LC-Finder.zip"]',
+  install: 'install'
 }
 module.exports = data

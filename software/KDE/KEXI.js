@@ -1,15 +1,16 @@
 'use strict'
 
 let data = {
-  url: 'https://mirrors.shu.edu.cn/kde/ftp/stable/kexi/win64/',
-  version: {
-    selector: 'a[href$="Win64.exe"]'
-  },
-  download: {
-    selector: 'a[href$="Win64.exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  url: 'https://mirrors.ustc.edu.cn/kde/stable/kexi/win64/',
+  version: async (res, $, fns, choice) => fns.walkLink(res, fns, {
+    selector: 'a',
+    sort: true,
+    match: /KEXI_(.*?)_Preview/
+  }),
+  download: async (res, $, fns, choice) => fns.walkLink(res, fns, {
+    selector: 'a',
+    sort: true
+  }),
+  install: 'install_nsis'
 }
 module.exports = data

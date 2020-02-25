@@ -2,14 +2,9 @@
 
 let data = {
   url: 'http://www.nand.it/nandeck/',
-  version: {
-    selector: '.tit1'
-  },
-  download: {
-    selector: '.tit1>a'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  version: '.tit1',
+  changelog: '[width="78%"]',
+  download: '.tit1>a',
+  install: 'install_zipped_single'
 }
 module.exports = data

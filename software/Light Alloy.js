@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'http://light-alloy.verona.im/download/',
-  version: {
-    selector: 'h3>b'
+  site: {
+    FossHub: 'https://www.fosshub.com/Light-Alloy.html'
   },
-  download: {
-    selector: 'a.mirror[href$=".7z"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: /LA_Portable_v(.*?).7z/,
+  install: 'install'
 }
 module.exports = data

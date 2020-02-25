@@ -3,14 +3,9 @@
 let data = {
   commercial: 2,
   url: 'https://mobaxterm.mobatek.net/download-home-edition.html',
-  version: {
-    selector: '.btn_bleu'
-  },
-  download: {
-    selector: '.btn_bleu'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: '.btn_bleu',
+  changelog: '.version_titre+ul',
+  download: '.btn_bleu',
+  install: 'install'
 }
 module.exports = data

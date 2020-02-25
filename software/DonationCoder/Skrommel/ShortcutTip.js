@@ -2,17 +2,8 @@
 
 let data = {
   url: 'http://www.dcmembers.com/skrommel/download/shortcuttip/',
-  version: {
-    selector: '[class="list-group-item [hide_empty:version]"]>span',
-    match: /(.*)/
-  },
-  download: {
-    selector: 'a.wpdm-download-link',
-    attr: 'onclick',
-    match: /^this.href='(.*)';$/
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: ['[class="list-group-item [hide_empty:version]"]>span', 'text', /(.*)/],
+  download: ['a.wpdm-download-link', 'onclick', /^this.href='(.*)';$/],
+  install: 'install'
 }
 module.exports = data

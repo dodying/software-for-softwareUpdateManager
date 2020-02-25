@@ -1,20 +1,14 @@
 'use strict'
 
 let data = {
-  url: 'https://www.autohotkey.com/download/',
-  version: {
-    selector: 'a[href="../docs/AHKL_ChangeLog.htm"]'
+  site: {
+    GitHub: 'https://github.com/Lexikos/AutoHotkey_L/releases/latest'
   },
-  download: {
-    plain: 'https://www.autohotkey.com/download/ahk.zip'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  },
-  afterInstall: function (output, iPath, fns) {
+  download: 'https://www.autohotkey.com/download/ahk.zip',
+  install: 'install',
+  afterInstall: info => {
     let path = require('path')
-    let parentPath = path.parse(iPath).dir
-    require('fs').copyFileSync(path.resolve(parentPath, 'AutoHotkeyU64.exe'), path.resolve(parentPath, 'AutoHotkey.exe'))
+    require('fs').copyFileSync(path.resolve(info.parentPath, 'AutoHotkeyU64.exe'), path.resolve(info.parentPath, 'AutoHotkey.exe'))
   }
 }
 module.exports = data

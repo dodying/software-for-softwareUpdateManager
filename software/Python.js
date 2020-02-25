@@ -2,14 +2,14 @@
 
 let data = {
   url: 'https://www.python.org/downloads/windows/',
-  version: {
-    selector: 'a[href^="/downloads/release/python-3"]'
+  version: 'a[href^="/downloads/release/python-3"]',
+  changelog: {
+    url: 'a[href^="/downloads/release/python-3"]',
+    selector: '.main-content'
   },
-  download: {
-    plain: 'https://www.python.org/ftp/python/{version}/python-{version}-amd64.exe'
-  },
-  install: function (output, iPath, fns) {
-    // return fns.install.cli(output, iPath, output, ['/quiet', '/passive', 'TargetDir={dir}', 'AssociateFiles=1', 'CompileAll=1', 'PrependPath=1'])
+  download: 'https://www.python.org/ftp/python/{version}/python-{version}-amd64.exe',
+  install: info => {
+    // ['install_cli', null, ['/quiet', '/passive', 'TargetDir={dir}', 'AssociateFiles=1', 'CompileAll=1', 'PrependPath=1']]
     let excludes = [/^py\.exe$/i, /\.msi$/i]
     let installMsi = ['core.msi', 'dev.msi', 'doc.msi', 'exe.msi', 'lib.msi', 'tcltk.msi', 'test.msi', 'tools.msi']
 
@@ -18,14 +18,9 @@ let data = {
     const cp = require('child_process')
 
     let install = () => {
-      let { dir: parentPath, name } = path.parse(iPath)
-      while (parentPath.toLowerCase().split(/[/\\]+/).includes('bin')) {
-        parentPath = path.parse(parentPath).dir
-      }
+      let tmp = path.resolve(info.fns.dirname, 'unzip', info.name)
 
-      let tmp = path.resolve(fns.dirname, 'unzip', name)
-
-      cp.execSync(`plugins\\dark.exe "${output}" -x "${tmp}"`)
+      cp.execSync(`plugins\\dark.exe "${info.output}" -x "${tmp}"`)
 
       let fromNew = path.resolve(tmp, 'AttachedContainer')
       let list = fse.readdirSync(fromNew)
@@ -58,15 +53,15 @@ let data = {
         fse.removeSync(_path)
 
         if (fse.existsSync(folderNew)) {
-          fns.copy(folderNew, path.resolve(fns.dirname, fromNew), excludes)
+          info.fns.copy(folderNew, path.resolve(info.fns.dirname, fromNew), excludes)
           fse.removeSync(folderNew)
         }
       }
-      fns.copy(fromNew, parentPath, excludes)
+      info.fns.copy(fromNew, info.parentPath, excludes)
       return true
     }
 
-    let killed = fns.kill(output, iPath)
+    let killed = info.fns.kill(info.parentPath)
     if (!killed) return false
 
     try {
@@ -77,21 +72,19 @@ let data = {
       return false
     }
   },
-  afterInstall: async function (output, iPath, fns) {
+  afterInstall: info => {
     const path = require('path')
     const fse = require('fs-extra')
     const cp = require('child_process')
 
-    let { dir: parentPath } = path.parse(iPath)
-
-    let bundledPath = path.resolve(parentPath, 'Lib\\ensurepip\\_bundled')
+    let bundledPath = path.resolve(info.parentPath, 'Lib\\ensurepip\\_bundled')
     let whls = fse.readdirSync(bundledPath)
     let pip = whls.filter(i => i.match(/^pip-/))[0]
     pip = path.resolve(bundledPath, pip)
-    let pipNew = path.resolve(parentPath, 'pip.whl')
+    let pipNew = path.resolve(info.parentPath, 'pip.whl')
     fse.copySync(pip, pipNew)
     whls.forEach(whl => {
-      cp.execSync(`cd /d ${parentPath} & ${path.resolve(parentPath, 'python.exe')} pip.whl/pip install --no-index ${path.resolve(bundledPath, whl)}`)
+      cp.execSync(`cd /d ${info.parentPath} & ${path.resolve(info.parentPath, 'python.exe')} pip.whl/pip install --no-index ${path.resolve(bundledPath, whl)}`)
     })
     fse.unlinkSync(pipNew)
   }

@@ -2,14 +2,13 @@
 
 let data = {
   url: 'https://quassel-irc.org/downloads',
-  version: {
-    selector: '.content>h2'
+  version: '.content>h2',
+  changelog: {
+    url: 'https://raw.githubusercontent.com/quassel/quassel/master/ChangeLog',
+    match: /^Version [\d.]+/,
+    split: true
   },
-  download: {
-    selector: '[href*="x64-setup"][href$=".7z"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: '[href*="x64-setup"][href$=".7z"]',
+  install: 'install'
 }
 module.exports = data

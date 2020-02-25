@@ -1,18 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://sourceforge.net/projects/doff/files/DisplayPowerOff/',
-  version: {
-    selector: '[headers="files_name_h"]>a'
+  site: {
+    SourceForge: 'https://sourceforge.net/projects/doff/files/DisplayPowerOff/'
   },
-  download: {
-    func: async (res, $, fns, choice) => fns.walkLink(res, fns, {
-      selector: '[headers="files_name_h"]>a[href$="/download"]',
-      matchCheck: '.7z'
-    })
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath, null, 'x64')
-  }
+  versionChoice: /DisplayPowerOff-(.*).7z/,
+  install: ['install', null, 'x64']
 }
 module.exports = data

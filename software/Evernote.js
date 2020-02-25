@@ -3,21 +3,16 @@
 let data = {
   url: 'https://evernote.com/intl/zh-cn/download',
   preferPath: 'Evernote.exe',
-  version: {
-    selector: 'h1+p>a',
-    attr: 'href'
-  },
-  download: {
-    selector: 'h1+p>a'
-  },
-  install: async function (output, iPath, fns) {
+  version: ['h1+p>a', 'href'],
+  download: 'h1+p>a',
+  install: async info => {
     let fs = require('fs')
     let path = require('path')
     let cp = require('child_process')
     let msi = path.resolve(process.env.LOCALAPPDATA, 'Temp', 'Evernote.msi')
     if (fs.existsSync(msi)) fs.unlinkSync(msi)
     await new Promise((resolve, reject) => {
-      let process = cp.spawn(output)
+      let process = cp.spawn(info.output)
       let checker = () => {
         setTimeout(() => {
           if (fs.existsSync(msi)) {
@@ -34,9 +29,10 @@ let data = {
       checker()
     })
     try {
-      let tmp = path.resolve(fns.dirname, 'unzip/Evernote.msi')
+      let tmp = path.resolve(info.fns.dirname, 'unzip/Evernote.msi')
       fs.copyFileSync(msi, tmp)
-      fns.install.msi(tmp, iPath, null, data.preferPath)
+      info.output = tmp
+      info.fns.install.msi(info, null, data.preferPath)
       fs.unlinkSync(msi)
       return true
     } catch (error) {

@@ -1,16 +1,17 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/2dust/v2rayN/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/2dust/v2rayN/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="v2rayN.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
+  downloadChoice: '[href$="v2rayN.zip"]',
+  install: 'install',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/2dust/v2rayN/releases'
+      }
+    }
   }
 }
 module.exports = data

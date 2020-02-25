@@ -1,16 +1,18 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/CopyTranslator/CopyTranslator/releases',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/CopyTranslator/CopyTranslator/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install', 'app-64.7z')
+  downloadChoice: '[href$=".exe"]',
+  install: ['install_zipped', 'install', 'app-64.7z'],
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/CopyTranslator/CopyTranslator/releases'
+      },
+      downloadChoice: '[href$=".exe"]'
+    }
   }
 }
 module.exports = data

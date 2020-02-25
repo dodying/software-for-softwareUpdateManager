@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/ChanpleCai/SmartTaskbar/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/ChanpleCai/SmartTaskbar/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno.single(output, iPath, '.exe')
-  }
+  downloadChoice: '[href$=".exe"]',
+  install: ['install_inno_single', '.exe']
 }
 module.exports = data

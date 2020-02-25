@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/IceEnd/Yosoro/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/IceEnd/Yosoro/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href*="win32-x64"][href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install_zipped', null, 'install', 'full.nupkg', null, 'lib\\net45')
-  }
+  downloadChoice: '[href*="win32-x64"][href$=".zip"]',
+  install: ['install_zipped', 'install_zipped', null, 'install', 'full.nupkg', null, 'lib\\net*']
 }
 module.exports = data

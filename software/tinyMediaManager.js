@@ -1,17 +1,11 @@
 'use strict'
 
 let data = {
-  url: 'https://release.tinymediamanager.org/download_v2.html',
-  version: {
-    selector: 'a[href$="win.zip"]',
-    attr: 'href'
-  },
-  download: {
-    selector: 'a[href$="win.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  },
+  url: 'https://release.tinymediamanager.org/download_v3.html',
+  version: ['a[href$="win.zip"]', 'href'],
+  changelog: ['https://tinymediamanager.org/changelog/', '[id^="Version v"]+p'],
+  download: 'a[href$="win.zip"]',
+  install: 'install',
   other: {
     prerelease: {
       url: 'https://prerelease.tinymediamanager.org/download_v3.html',

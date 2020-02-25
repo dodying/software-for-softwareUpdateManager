@@ -2,14 +2,13 @@
 
 let data = {
   url: 'https://potplayer.daum.net/',
-  version: {
-    selector: '.tit_version'
+  version: '.tit_version',
+  changelog: {
+    url: 'http://potplayer.daum.net/update.html?lang=en&bit',
+    match: /^\[[\d.]+/,
+    split: true
   },
-  download: {
-    plain: 'http://get.daum.net/PotPlayer64/Version/Latest/PotPlayerSetup64.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: 'http://get.daum.net/PotPlayer64/Version/Latest/PotPlayerSetup64.exe',
+  install: 'install_nsis'
 }
 module.exports = data

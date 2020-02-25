@@ -3,14 +3,9 @@
 let data = {
   commercial: 1,
   url: 'https://anydesk.com/platforms/windows',
-  version: {
-    selector: '#download-info'
-  },
-  download: {
-    plain: 'http://download.anydesk.com/AnyDesk.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.single(output, iPath)
-  }
+  version: '#download-info',
+  changelog: '#changelog .any-list-icon',
+  download: 'http://download.anydesk.com/AnyDesk.exe',
+  install: 'install_single'
 }
 module.exports = data

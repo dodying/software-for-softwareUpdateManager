@@ -5,8 +5,6 @@ let data = {
   site: {
     Softpedia: 'https://www.softpedia.com/get/Multimedia/Graphic/Graphic-Capture/Apowersoft-Screen-Capture-Pro.shtml'
   },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  install: 'install_inno'
 }
 module.exports = data

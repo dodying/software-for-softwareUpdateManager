@@ -2,15 +2,8 @@
 
 let data = {
   url: 'https://fotosketcher.com/download-fotosketcher/',
-  version: {
-    selector: 'h1+p',
-    match: /FotoSketcher (.*?) \(/
-  },
-  download: {
-    selector: 'a[href$="setup_64bit.exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno.single(output, iPath)
-  }
+  version: ['h1+p', 'text', /FotoSketcher (.*?) \(/],
+  download: 'a[href$="setup_64bit.exe"]',
+  install: 'install_inno_single'
 }
 module.exports = data

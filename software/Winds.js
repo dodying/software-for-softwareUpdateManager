@@ -2,16 +2,8 @@
 
 let data = {
   url: 'https://s3.amazonaws.com/winds-2.0-releases/latest.html',
-  version: {
-    selector: '#td-win>a',
-    attr: 'href',
-    match: /Winds%20Setup%20(.*?).exe/
-  },
-  download: {
-    selector: '#td-win>a'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install', 'app-64.7z')
-  }
+  version: ['#td-win>a', 'href', /Winds%20Setup%20(.*?).exe/],
+  download: '#td-win>a',
+  install: ['install_zipped', 'install', 'app-64.7z']
 }
 module.exports = data

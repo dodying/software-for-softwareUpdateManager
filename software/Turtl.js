@@ -1,17 +1,17 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/turtl/desktop/releases/latest',
-  preferPath: 'turtl.exe',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/turtl/desktop/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="windows64.msi"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.msi(output, iPath, null, data.preferPath)
+  downloadChoice: '[href$="windows64.msi"]',
+  install: ['install_msi', null, 'turtl.exe'],
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/turtl/desktop/releases'
+      }
+    }
   }
 }
 module.exports = data

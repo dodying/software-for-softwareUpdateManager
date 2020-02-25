@@ -1,18 +1,16 @@
 'use strict'
 
 let data = {
-  url: 'http://www.ne.jp/asahi/mighty/knight/download.html',
-  version: {
-    selector: 'a[href*="pix64"]',
-    attr: 'href',
-    match: /pix64_(.*?)e.exe/
+  url: 'https://www.ne.jp/asahi/mighty/knight/download.html',
+  version: ['a[href*="pix64"]', 'href', /pix64_(.*?)e.exe/],
+  changelog: {
+    url: 'https://www.ne.jp/asahi/mighty/knight/history.html',
+    selector: '.half>.padding',
+    attr: 'text',
+    match: /ver. [\d.]+/,
+    split: true
   },
-  download: {
-    selector: 'a[href*="pix64"]'
-  }
-  // install: function (output, iPath, fns) {
-  //   // InstallShield
-  //   return fns.install(output, iPath)
-  // }
+  download: 'a[href*="pix64"]',
+  installType: 'InstallShield'
 }
 module.exports = data

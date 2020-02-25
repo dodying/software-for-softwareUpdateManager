@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://www.softpedia.com/get/Tweak/Uninstallers/Kaspersky-Anti-Virus-Remover.shtml',
-  version: {
-    func: async (res, $) => res.body.match(/spjs_prog_version="(.*?)";/)[1]
+  site: {
+    Softpedia: 'https://www.softpedia.com/get/Tweak/Uninstallers/Kaspersky-Anti-Virus-Remover.shtml'
   },
-  download: {
-    plain: 'http://media.kaspersky.com/utilities/ConsumerUtilities/kavremvr.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.single(output, iPath)
-  }
+  download: 'http://media.kaspersky.com/utilities/ConsumerUtilities/kavremvr.exe',
+  install: 'install_single'
 }
 module.exports = data

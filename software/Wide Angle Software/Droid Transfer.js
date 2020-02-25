@@ -5,9 +5,6 @@ let data = {
   site: {
     Softpedia: 'https://www.softpedia.com/get/Mobile-Phone-Tools/Droid-Transfer.shtml'
   },
-  preferPath: 'Droid Transfer.exe',
-  install: function (output, iPath, fns) {
-    return fns.install.ai.msi(output, iPath, null, 'Droid Transfer.msi', data.preferPath)
-  }
+  install: ['install_ai_msi', null, 'Droid Transfer.msi', 'Droid Transfer.exe']
 }
 module.exports = data

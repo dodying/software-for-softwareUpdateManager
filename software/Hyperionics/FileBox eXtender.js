@@ -2,15 +2,10 @@
 
 let data = {
   url: 'http://www.hyperionics.com/files/index.asp',
-  version: {
-    selector: '[href="downloads.asp"]'
-  },
-  download: {
-    plain: 'http://www.hyperionics.com/downloads/Fbx64Setup.exe'
-  },
+  version: '[href="downloads.asp"]',
+  changelog: ['https://www.hyperionics.com/files/changelog.asp', 'ul'],
+  download: 'http://www.hyperionics.com/downloads/Fbx64Setup.exe',
   fixedPath: '%ProgramFiles%\\FileBX\\FileBX.exe',
-  install: function (output, iPath, fns) {
-    return fns.install.cli(output, iPath, output, ['/S'])
-  }
+  install: 'install_cli_s'
 }
 module.exports = data

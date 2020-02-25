@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/zhongyang219/MusicPlayer2/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /V(.*)/
+  site: {
+    GitHub: 'https://github.com/zhongyang219/MusicPlayer2/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".7z"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: '[href$="_x64.7z"]',
+  install: 'install'
 }
 module.exports = data

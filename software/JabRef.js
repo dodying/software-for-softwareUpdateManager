@@ -1,16 +1,18 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/JabRef/jabref/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/JabRef/jabref/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".jar"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.single(output, iPath)
+  downloadChoice: '[href$=".jar"]',
+  install: 'install_single',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/JabRef/jabref/releases'
+      },
+      downloadChoice: '[href$=".jar"]'
+    }
   }
 }
 module.exports = data

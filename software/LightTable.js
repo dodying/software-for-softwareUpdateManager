@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/LightTable/LightTable/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/LightTable/LightTable/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="windows.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: '[href$="windows.zip"]',
+  install: 'install'
 }
 module.exports = data

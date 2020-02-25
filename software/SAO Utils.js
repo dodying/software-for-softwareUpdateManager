@@ -2,16 +2,10 @@
 
 let data = {
   url: 'http://sao.gpbeta.com/',
-  version: {
-    selector: '.jumbotron-code',
-    match: /(.*)/
-  },
-  download: {
-    selector: '[aria-labelledby="downloadMenu"] a[href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno.type(output, iPath)
-  },
+  version: ['#section_log+div+h3', 'text', /\(([\d.]+)\)/],
+  changelog: '#section_log+div+h3+ol',
+  download: '[aria-labelledby="downloadMenu"] a[href$=".exe"]',
+  install: 'install_inno_type',
   other: {
     exp: {
       url: 'http://sao.gpbeta.com/exp/',

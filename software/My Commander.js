@@ -2,16 +2,8 @@
 
 let data = {
   url: 'https://myco.yonan.ro/',
-  version: {
-    selector: '.standard-button',
-    attr: 'href',
-    match: /myco_(.*?).zip/
-  },
-  download: {
-    selector: '.standard-button'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: ['.standard-button', 'href', /myco_(.*?).zip/],
+  download: '.standard-button',
+  install: 'install'
 }
 module.exports = data

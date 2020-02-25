@@ -2,14 +2,13 @@
 
 let data = {
   url: 'https://atnsoft.com/textpaster/versions/',
-  version: {
-    selector: 'h3'
+  version: ['h3', 'text', /^(.*) \(/],
+  changelog: {
+    selector: '#share+div',
+    attr: 'text',
+    split: true
   },
-  download: {
-    plain: 'https://atnsoft.com/downloads/textpaster_setup.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno.single(output, iPath)
-  }
+  download: 'https://atnsoft.com/downloads/textpaster_setup.exe',
+  install: 'install_inno_single'
 }
 module.exports = data

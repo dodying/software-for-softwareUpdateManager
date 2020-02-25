@@ -1,15 +1,9 @@
 'use strict'
 
 let data = {
-  url: 'http://www.majorgeeks.com/mg/getmirror/nvcleanstall,1.html',
-  version: {
-    selector: '.geekywraplight>h1'
+  site: {
+    TechPowerUp: 'https://www.techpowerup.com/download/techpowerup-nvcleanstall/'
   },
-  download: {
-    plain: 'https://www.majorgeeks.com/index.php?ct=files&action=download&'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.single(output, iPath)
-  }
+  install: 'install_single'
 }
 module.exports = data

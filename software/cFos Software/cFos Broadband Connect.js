@@ -1,13 +1,14 @@
 'use strict'
 
 let data = {
-  url: 'https://www.cfos.de/en/download/download.htm',
   commercial: 3,
-  version: {
-    selector: '#cfosbc_release_x86_version'
+  url: 'https://www.cfos.de/en/download/download.htm',
+  version: '#cfosbc_release_x86_version',
+  changelog: {
+    url: 'https://www.cfos.de/en/broadband-connect/whats-new.txt',
+    match: /^cFos BC [\d.]+/,
+    split: true
   },
-  download: {
-    selector: '.cfosbc_release_x64_link'
-  }
+  download: '.cfosbc_release_x64_link'
 }
 module.exports = data

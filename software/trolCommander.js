@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/trol73/mucommander/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/trol73/mucommander/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: '[href$=".exe"]',
+  install: 'install_nsis'
 }
 module.exports = data

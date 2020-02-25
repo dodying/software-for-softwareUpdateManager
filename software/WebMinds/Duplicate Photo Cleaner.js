@@ -5,8 +5,6 @@ let data = {
   site: {
     Softpedia: 'https://www.softpedia.com/get/Multimedia/Graphic/Graphic-Others/Duplicate-Photo-Cleaner.shtml'
   },
-  install: function (output, iPath, fns) {
-    return fns.install.inno.type(output, iPath)
-  }
+  install: 'install_inno_type'
 }
 module.exports = data

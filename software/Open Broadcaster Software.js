@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://obsproject.com/download',
-  version: {
-    selector: '#win_blurb .dl_ver'
+  site: {
+    GitHub: 'https://github.com/obsproject/obs-studio/releases/latest'
   },
-  download: {
-    selector: '#win_blurb a.green_btn'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: '[href$="Full-Installer-x64.exe"]',
+  install: 'install_nsis'
 }
 module.exports = data

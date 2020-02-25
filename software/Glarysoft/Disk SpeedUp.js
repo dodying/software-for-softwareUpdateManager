@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://www.glarysoft.com/disk-speedup/',
-  version: {
-    selector: '.index_pro_ver'
-  },
-  download: {
-    selector: '.downloadspeedup'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  url: 'https://www.glarysoft.com/disk-speedup/download/',
+  version: '[class$="download_ver"]',
+  changelog: ['https://www.glarysoft.com/update/release-notes/?p=5&v={version}', '#content_002_wenzi_nb ul'],
+  download: 'https://download.glarysoft.com/dssetup.exe',
+  install: 'install_nsis'
 }
 module.exports = data

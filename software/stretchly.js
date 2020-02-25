@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/hovancik/stretchly/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/hovancik/stretchly/releases/latest'
   },
-  download: {
-    func: async (res, $) => $('a[href*="/releases/download/"][href$="win.7z"]').eq(-1).attr('href')
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: '[href$="win.7z"]:not([href$="ia32-win.7z"])',
+  install: 'install'
 }
 module.exports = data

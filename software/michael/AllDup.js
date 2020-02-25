@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'http://www.alldup.de/download_alldup.php',
-  version: {
-    selector: 'a[href="/alldup_hilfe/alldup_version.php"]'
-  },
-  download: {
-    plain: 'http://www.alldup.de/download/AllDupSetup.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  url: 'http://www.alldup.de/alldup_hilfe/alldup_version.php',
+  version: '#content>h4',
+  changelog: '#content>ul',
+  download: 'http://www.alldup.de/download/AllDupSetup.exe',
+  install: 'install_inno'
 }
 module.exports = data

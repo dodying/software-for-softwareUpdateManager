@@ -2,14 +2,9 @@
 
 let data = {
   url: 'https://www.crystalidea.com/speedyfox/release-notes',
-  version: {
-    selector: '.release>.content-title'
-  },
-  download: {
-    plain: 'https://www.crystalidea.com/downloads/speedyfox.zip'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  version: '.release>.content-title',
+  changelog: '.changes',
+  download: 'https://www.crystalidea.com/downloads/speedyfox.zip',
+  install: 'install_zipped_single'
 }
 module.exports = data

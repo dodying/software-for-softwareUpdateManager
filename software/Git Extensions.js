@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/gitextensions/gitextensions/releases',
-  version: {
-    selector: '.release-header a',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/gitextensions/gitextensions/releases'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href*="Portable"][href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: '[href*="Portable"][href$=".zip"]',
+  install: 'install'
 }
 module.exports = data

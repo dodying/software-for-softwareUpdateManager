@@ -6,8 +6,6 @@ let data = {
     Softpedia: 'https://www.softpedia.com/get/System/OS-Enhancements/Start8.shtml'
   }
   // fixedPath: '',
-  // install: function (output, iPath, fns) {
-  //   return fns.install.cli(output, iPath, output, ['/S'], { wait: true })
-  // }
+  // install: 'install_cli_s'
 }
 module.exports = data

@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/hui-Zz/RunAny/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/hui-Zz/RunAny/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/archive/"][href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: 'https://github.com/hui-Zz/RunAny/archive/v{version}.zip',
+  install: 'install'
 }
 module.exports = data

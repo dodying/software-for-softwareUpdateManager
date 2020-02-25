@@ -3,14 +3,9 @@
 let data = {
   commercial: 3,
   url: 'http://www.torchsoft.com/en/download.html',
-  version: {
-    selector: 'table>tbody>tr'
-  },
-  download: {
-    plain: 'http://www.torchsoft.com/download/RegistryWorkshop.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: 'table>tbody>tr',
+  changelog: ['http://www.torchsoft.com/node/12', '[property="schema:text"]>ul'],
+  download: 'http://www.torchsoft.com/download/RegistryWorkshop.exe',
+  install: 'install_nsis'
 }
 module.exports = data

@@ -2,15 +2,15 @@
 
 let data = {
   commercial: 2,
-  url: 'http://macrotoolworks.com/products/macro-toolworks',
-  version: {
-    selector: '#mtwtab3>h3'
+  url: 'http://macrotoolworks.com/index.php/?id=25',
+  version: '.newsitem_text>h3',
+  changelog: {
+    selector: '.newsitem_text',
+    attr: 'text',
+    match: /^Version [\d.]+/,
+    split: true
   },
-  download: {
-    plain: 'http://www.mtwfiles.cz/downloads/latest/mtw_pro.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno.type(output, iPath)
-  }
+  download: 'http://www.mtwfiles.cz/downloads/latest/mtw_pro.exe',
+  install: 'install_inno_type'
 }
 module.exports = data

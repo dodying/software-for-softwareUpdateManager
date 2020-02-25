@@ -3,15 +3,9 @@
 let data = {
   commercial: 3,
   url: 'http://www.testlog.com/',
-  version: {
-    selector: 'p:contains("Version")',
-    match: /V(\d.*)/
-  },
-  download: {
-    plain: 'http://www.testlog.com/ftp/testlog.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  version: ['.sidebox>p', 'text', /([\d.]+) \(Build (\d+)\)/, '$1.$2'],
+  changelog: ['http://www.testlog.com/support/ver_history.htm', '.Normal+ul'],
+  download: 'http://www.testlog.com/ftp/testlog.exe',
+  install: 'install_inno'
 }
 module.exports = data

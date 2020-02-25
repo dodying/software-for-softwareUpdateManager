@@ -2,14 +2,13 @@
 
 let data = {
   url: 'http://www.maxthon.cn/mx5/changelog/',
-  version: {
-    selector: 'h2'
+  version: 'h2',
+  changelog: {
+    selector: 'body',
+    attr: 'text',
+    split: true
   },
-  download: {
-    plain: 'http://www.maxthon.cn/mx5/portable/dl'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: 'http://www.maxthon.cn/mx5/portable/dl',
+  install: 'install'
 }
 module.exports = data

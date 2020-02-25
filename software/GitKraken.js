@@ -2,15 +2,15 @@
 
 let data = {
   commercial: 1,
-  url: 'https://www.gitkraken.com/download',
-  version: {
-    selector: '#download strong'
+  url: 'https://support.gitkraken.com/release-notes/current/',
+  version: '[id^="version"]',
+  changelog: {
+    selector: '.md-content',
+    attr: 'text',
+    match: /^Version [\d.]+/,
+    split: true
   },
-  download: {
-    plain: 'https://release.gitkraken.com/win64/GitKrakenSetup.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install', 'full.nupkg', null, 'lib\\net45')
-  }
+  download: 'https://release.gitkraken.com/win64/GitKrakenSetup.exe',
+  install: ['install_zipped', 'install', 'full.nupkg', null, 'lib\\net*']
 }
 module.exports = data

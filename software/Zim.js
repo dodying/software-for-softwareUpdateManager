@@ -2,14 +2,8 @@
 
 let data = {
   url: 'https://zim.glump.net/windows/',
-  version: {
-    selector: 'h3'
-  },
-  download: {
-    selector: 'a[href*="setup"][href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: 'h3',
+  download: 'a[href*="setup"][href$=".exe"]',
+  install: 'install_nsis'
 }
 module.exports = data

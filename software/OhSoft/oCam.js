@@ -1,16 +1,23 @@
 'use strict'
 
 let data = {
-  url: 'http://ohsoft.net/eng/ocam/download.php?cate=1002',
-  version: {
-    selector: 'a[href^="/eng/product/oCam"]',
-    attr: 'href'
-  },
-  download: {
-    selector: 'a[href^="/eng/product/oCam"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  url: 'https://github.com/ohsoft/archive/tree/master/ocam',
+  version: async (res, $, fns, choice) => fns.walkLink(res, fns, {
+    selector: '.content .js-navigation-open',
+    sort: true
+  }, {
+    selector: '.content .js-navigation-open',
+    match: /_v([\d.]+)_sign.exe/
+  }),
+  download: async (res, $, fns, choice) => fns.walkLink(res, fns, {
+    selector: '.content .js-navigation-open',
+    sort: true
+  }, {
+    selector: '.content .js-navigation-open',
+    matchCheck: /_v([\d.]+)_sign.exe/
+  }, {
+    selector: '#raw-url'
+  }),
+  install: 'install_inno'
 }
 module.exports = data

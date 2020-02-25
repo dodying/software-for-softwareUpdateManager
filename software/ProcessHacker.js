@@ -1,16 +1,17 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/processhacker/processhacker/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/processhacker/processhacker/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath, null, 'x64')
+  install: ['install', null, '64bit'],
+  other: {
+    nightly: {
+      site: {
+        AppVeyor: 'https://ci.appveyor.com/api/projects/processhacker/processhacker'
+      },
+      downloadChoice: 'bin.zip'
+    }
   }
 }
 module.exports = data

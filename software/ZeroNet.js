@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/HelloZeroNet/ZeroNet/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/HelloZeroNet/ZeroNet/releases/latest'
   },
-  download: {
-    plain: 'https://github.com/HelloZeroNet/ZeroNet-win/archive/dist/ZeroNet-win.zip'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: 'https://github.com/HelloZeroNet/ZeroNet-win/archive/dist/ZeroNet-win.zip',
+  install: 'install'
 }
 module.exports = data

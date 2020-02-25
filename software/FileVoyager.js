@@ -2,14 +2,15 @@
 
 let data = {
   url: 'https://www.filevoyager.com/download/',
-  version: {
-    selector: 'a[href$="Full.7z"]'
+  version: 'a[href$="Full.7z"]',
+  changelog: {
+    url: 'https://www.filevoyager.com/doc/changelog/',
+    selector: '.entry-content',
+    attr: 'text',
+    match: /^[\d.]+/,
+    split: true
   },
-  download: {
-    selector: 'a[href$="Full.7z"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: 'a[href$="Full.7z"]',
+  install: 'install'
 }
 module.exports = data

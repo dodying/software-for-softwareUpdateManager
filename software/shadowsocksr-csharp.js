@@ -1,16 +1,9 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/shadowsocksrr/shadowsocksr-csharp/releases',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/shadowsocksrr/shadowsocksr-csharp/releases'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath, 'templates')
-  }
+  install: ['install', 'templates']
 }
 module.exports = data

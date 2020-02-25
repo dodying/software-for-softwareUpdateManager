@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/frostwire/frostwire/releases',
-  version: {
-    selector: '.muted-link:contains("desktop")',
-    match: /frostwire-desktop-(.*)/
+  site: {
+    'GitHub-Api': 'https://api.github.com/repos/frostwire/frostwire/releases'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="windows.github.exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  versionChoice: [/windows.github.exe$/, /frostwire-desktop-(.*)/],
+  install: 'install_nsis'
 }
 module.exports = data

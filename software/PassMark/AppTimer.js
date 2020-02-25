@@ -2,15 +2,8 @@
 
 let data = {
   url: 'https://www.passmark.com/products/apptimer.htm',
-  version: {
-    selector: 'p:contains("Version")',
-    match: /V(\d.*)/
-  },
-  download: {
-    plain: 'https://www.passmark.com/ftp/AppTimer.zip'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  version: ['li:contains("Version")', 'text', /([\d.]+) \(Build (\d+)\)/, '$1.$2'],
+  download: 'https://www.passmark.com/ftp/AppTimer.zip',
+  install: 'install_zipped_single'
 }
 module.exports = data

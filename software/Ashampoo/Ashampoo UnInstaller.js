@@ -5,8 +5,6 @@ let data = {
   site: {
     Softpedia: 'https://www.softpedia.com/get/Security/Secure-cleaning/Ashampoo-UnInstaller-Platinum-Suite.shtml'
   },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  install: 'install_inno'
 }
 module.exports = data

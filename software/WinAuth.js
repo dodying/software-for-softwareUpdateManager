@@ -1,16 +1,16 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/winauth/winauth/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/winauth/winauth/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
+  install: 'install_zipped_single',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/winauth/winauth/releases'
+      }
+    }
   }
 }
 module.exports = data

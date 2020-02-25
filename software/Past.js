@@ -2,14 +2,13 @@
 
 let data = {
   url: 'https://folk.uio.no/ohammer/past/',
-  version: {
-    selector: 'font>b'
+  version: 'font>b',
+  changelog: async (res, $, fns, choice) => {
+    let res1 = await fns.req('https://folk.uio.no/ohammer/past/versionlist.html')
+    let $1 = fns.cheerio.load(res1.body)
+    return [$1.html($1('font>ul').eq(-1)), true]
   },
-  download: {
-    selector: 'p>a[href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  download: 'p>a[href$=".zip"]',
+  install: 'install_zipped_single'
 }
 module.exports = data

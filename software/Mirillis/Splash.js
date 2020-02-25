@@ -2,14 +2,9 @@
 
 let data = {
   url: 'https://mirillis.com/download-splash-free-hd-video-player',
-  version: {
-    selector: '.download_btn+ul>li'
-  },
-  download: {
-    selector: '.download_btn'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: '.download_btn+ul>li',
+  changelog: ['https://mirillis.com/splash-history', '.list_pos ul'],
+  download: '.download_btn',
+  install: 'install_nsis'
 }
 module.exports = data

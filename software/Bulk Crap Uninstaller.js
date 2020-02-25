@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="portable.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: '[href$="portable.zip"]',
+  install: 'install'
 }
 module.exports = data

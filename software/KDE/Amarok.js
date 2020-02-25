@@ -1,15 +1,23 @@
 'use strict'
 
+let url
+
 let data = {
-  url: 'https://community.kde.org/Amarok/GettingStarted/Download/Windows',
-  version: {
-    selector: '#toc+h2+p'
+  url: 'https://mirrors.ustc.edu.cn/kde/stable/amarok/',
+  version: async (res, $, fns, choice) => {
+    url = await fns.walkLink(res, fns, {
+      selector: 'a',
+      sort: true
+    }, {
+      selector: 'a',
+      matchCheck: 'win32'
+    }, {
+      selector: 'a',
+      matchCheck: '.exe'
+    })
+    return url.match(/(\d+[\d.]+\d+)/)[1]
   },
-  download: {
-    plain: 'http://mirrors.shu.edu.cn/kde/ftp/stable/amarok/{version}/win32/amarok-x86-setup-{version}.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: async (res, $, fns, choice) => url,
+  install: 'install_nsis'
 }
 module.exports = data

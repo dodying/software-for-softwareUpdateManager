@@ -1,16 +1,9 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/CryptKat/ShowDesktopPerMonitor/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/CryptKat/ShowDesktopPerMonitor/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  install: 'install'
 }
 module.exports = data

@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://www.softpedia.com/get/Internet/Bookmark-Managers/Flamory.shtml',
-  version: {
-    func: async (res, $) => res.body.match(/spjs_prog_version="(.*?)";/)[1]
+  site: {
+    Softpedia: 'https://www.softpedia.com/get/Internet/Bookmark-Managers/Flamory.shtml'
   },
-  download: {
-    plain: 'http://flamory.com/get'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.ai(output, iPath, null, 'App')
-  }
+  download: 'https://flamory.com/dl/release/SetupFlamory.exe',
+  install: ['install_ai', null, 'App']
 }
 module.exports = data

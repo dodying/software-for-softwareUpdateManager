@@ -2,14 +2,9 @@
 
 let data = {
   url: 'https://www.kalkules.com/download/',
-  version: {
-    selector: 'h2'
-  },
-  download: {
-    selector: 'h2:contains("zip")+p+p>a'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: 'h2',
+  changelog: ['https://www.kalkules.com/category/version-history/', '.entry-content'],
+  download: 'h2:contains("zip")+p+p>a',
+  install: 'install'
 }
 module.exports = data

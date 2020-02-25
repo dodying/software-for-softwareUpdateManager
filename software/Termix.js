@@ -1,35 +1,17 @@
 'use strict'
 
 let data = {
-  commercial: 3,
-  useProxy: true,
-  url: 'https://file.termix.io/',
-  version: {
-    func: async (res, $, fns, choice) => fns.walkLink(res, fns, {
-      selector: 'a[href$=".zip"]',
-      sort: true,
-      match: /Termix-(.*?)-windows.zip/
-    })
+  site: {
+    'GitHub-Api': 'https://api.github.com/repos/termix-io/releases/releases'
   },
-  download: {
-    func: async (res, $, fns, choice) => fns.walkLink(res, fns, {
-      selector: 'a[href$=".zip"]',
-      sort: true
-    })
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  },
+  versionChoice: [/Termix-beta-(.*?)-windows.zip/, /beta-(.*)/],
+  install: 'install',
   other: {
-    nightly: {
-      url: 'https://file.termix.io/nightly/',
-      version: {
-        func: async (res, $, fns, choice) => fns.walkLink(res, fns, {
-          selector: 'a[href$=".zip"]',
-          sort: true,
-          match: /Termix-(.*?)-windows.zip/
-        })
-      }
+    beta: {
+      versionChoice: [/Termix-beta-(.*?)-windows.zip/, /beta-(.*)/]
+    },
+    alpha: {
+      versionChoice: [/Termix-alpha-(.*?)-windows.zip/, /alpha-(.*)/]
     }
   }
 }

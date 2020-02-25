@@ -1,16 +1,11 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/wixtoolset/wix3/releases/latest',
-  version: {
-    selector: '.release-header a',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/wixtoolset/wix3/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="binaries.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  versionChoice: [/v([\d.]+)/, true],
+  downloadChoice: '[href$="binaries.zip"]',
+  install: 'install'
 }
 module.exports = data

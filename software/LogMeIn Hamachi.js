@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://www.softpedia.com/get/Internet/File-Sharing/Hamachi.shtml',
-  version: {
-    func: async (res, $) => res.body.match(/spjs_prog_version="(.*?)";/)[1]
+  site: {
+    Softpedia: 'https://www.softpedia.com/get/Internet/File-Sharing/Hamachi.shtml'
   },
-  download: {
-    plain: 'https://secure.logmein.com/hamachi.msi'
-  },
-  preferPath: 'hamachi-2-ui.exe',
-  install: function (output, iPath, fns) {
-    return fns.install.msi(output, iPath, null, data.preferPath)
-  }
+  download: 'https://secure.logmein.com/hamachi.msi',
+  install: ['install_msi', null, 'hamachi-2-ui.exe']
 }
 module.exports = data

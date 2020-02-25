@@ -3,16 +3,15 @@
 let data = {
   commercial: 2,
   url: 'https://www.enpass.io/downloads/',
-  version: {
-    selector: '[href$=".exe"]',
-    attr: 'href'
+  version: ['[href$=".exe"]', 'href'],
+  changelog: {
+    url: 'https://www.enpass.io/release-notes/windows-pc/',
+    selector: '.entry-content',
+    attr: 'text',
+    match: /^Version [\d.]+/,
+    split: true
   },
-  download: {
-    selector: '[href$=".exe"]'
-  },
-  preferPath: 'Enpass.exe',
-  install: function (output, iPath, fns) {
-    return fns.install.wix(output, iPath, null, 'Enpass.msi')
-  }
+  download: '[href$=".exe"]',
+  install: ['install_wix', null, 'Enpass.msi', 'Enpass.exe']
 }
 module.exports = data

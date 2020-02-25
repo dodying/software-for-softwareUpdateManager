@@ -3,14 +3,8 @@
 let data = {
   commercial: 3,
   url: 'https://hackolade.com/download.html',
-  version: {
-    selector: 'h3'
-  },
-  download: {
-    selector: 'a[href*="win64"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno.type(output, iPath)
-  }
+  version: 'h3',
+  download: 'a[href*="win64"]',
+  install: 'install_inno_type'
 }
 module.exports = data

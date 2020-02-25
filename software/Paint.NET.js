@@ -2,14 +2,9 @@
 
 let data = {
   url: 'https://www.dotpdn.com/downloads/pdn.html',
-  version: {
-    selector: 'a[href$=".zip"]+b'
-  },
-  download: {
-    selector: 'a[href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install')
-  }
+  version: 'a[href$=".zip"]+b',
+  changelog: ['https://www.getpaint.net/roadmap.html', '[size]>ul'],
+  download: 'a[href$=".zip"]',
+  install: ['install_zipped', 'install_nsis']
 }
 module.exports = data

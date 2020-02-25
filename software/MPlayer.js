@@ -3,15 +3,9 @@
 let data = {
   withoutHeader: true,
   url: 'http://oss.netfarm.it/mplayer/',
-  version: {
-    selector: '#content>ul>li',
-    match: /MPlayer (r\d+)/
-  },
-  download: {
-    selector: 'a[rel="external"][href*="x86_64"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: ['#content>ul>li', 'text', /MPlayer (r\d+)/],
+  changelog: '.changelog',
+  download: 'a[rel="external"][href*="x86_64"]',
+  install: 'install'
 }
 module.exports = data

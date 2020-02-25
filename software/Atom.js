@@ -1,16 +1,17 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/atom/atom/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/atom/atom/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="-x64-windows.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
+  downloadChoice: '[href$="-x64-windows.zip"]',
+  install: 'install',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/atom/atom/releases'
+      }
+    }
   }
 }
 module.exports = data

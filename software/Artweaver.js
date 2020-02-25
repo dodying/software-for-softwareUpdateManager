@@ -3,14 +3,23 @@
 let data = {
   commercial: 2,
   url: 'https://www.artweaver.de/en/changelog',
-  version: {
-    selector: 'a[href^="/en/help/"]'
+  version: '.tabs_container>div:nth-child(2) a[href^="/en/help/"]',
+  changelog: {
+    url: '.tabs_container>div:nth-child(2) a[href^="/en/help/"]',
+    selector: '.content'
   },
-  download: {
-    plain: 'https://www.artweaver.de/direct/ArtweaverPlus.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno.type(output, iPath)
+  download: 'https://www.artweaver.de/direct/ArtweaverPlus.exe',
+  install: 'install_inno_type',
+  other: {
+    free: {
+      commercial: 0,
+      version: '.tabs_container>div:nth-child(3) a[href^="/en/help/"]',
+      changelog: {
+        url: '.tabs_container>div:nth-child(3) a[href^="/en/help/"]',
+        selector: '.content'
+      },
+      download: 'https://www.artweaver.de/direct/Artweaver.exe'
+    }
   }
 }
 module.exports = data

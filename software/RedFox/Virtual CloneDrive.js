@@ -2,14 +2,13 @@
 
 let data = {
   url: 'https://www.redfox.bz/en/download.html',
-  version: {
-    selector: '[href="/download/changes_vcd.txt"]'
+  version: '[href="/download/changes_vcd.txt"]',
+  changelog: {
+    url: 'https://www.redfox.bz/download/changes_vcd.txt',
+    match: /^Virtual CloneDrive [\d.]+/,
+    split: true
   },
-  download: {
-    plain: 'https://www.redfox.bz/download/SetupVirtualCloneDrive.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.nsis(output, iPath)
-  }
+  download: 'https://www.redfox.bz/download/SetupVirtualCloneDrive.exe',
+  install: 'install_nsis_cli'
 }
 module.exports = data

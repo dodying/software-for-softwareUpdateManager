@@ -2,14 +2,15 @@
 
 let data = {
   url: 'https://browser.yandex.com/',
-  version: {
-    func: async (res, $) => JSON.parse(res.body.match(/, (\{"lang":"en",.*\}), true\);<\/script> /)[1]).browserVersion
-  },
-  download: {
-    plain: 'https://browser.yandex.com/download/?full=1'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install', null, null, 'Browser-bin')
+  version: (res, $) => res.body.match(/"browserVersion":"([\d.]+)"/)[1],
+  download: 'https://browser.yandex.com/download/?full=1',
+  install: ['install_zipped', 'install', null, null, 'Browser-bin'],
+  other: {
+    beta: {
+      url: 'https://browser.yandex.com/beta/',
+      version: '.button2__text',
+      download: 'https://browser.yandex.com/download/?full=1&betacusto=1'
+    }
   }
 }
 module.exports = data

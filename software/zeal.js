@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/zealdocs/zeal/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/zealdocs/zeal/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href*="portable"][href$="x64.7z"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: '[href*="portable"][href$="x64.7z"]',
+  install: 'install'
 }
 module.exports = data

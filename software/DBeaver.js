@@ -1,16 +1,19 @@
 'use strict'
 
 let data = {
-  commercial: 2,
-  url: 'https://dbeaver.io/download/',
-  version: {
-    selector: '#post-6 > div.post-entry > table > tbody > tr:nth-child(1) > td:nth-child(1) > h2'
+  site: {
+    GitHub: 'https://github.com/dbeaver/dbeaver/releases/latest'
   },
-  download: {
-    plain: 'https://dbeaver.io/files/dbeaver-ce-latest-win32.win32.x86_64.zip'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
+  download: 'https://dbeaver.io/files/dbeaver-ce-latest-win32.win32.x86_64.zip',
+  install: 'install',
+  other: {
+    ee: { // Enterprise Edition
+      url: 'https://dbeaver.com/release-notes/',
+      version: ['a[name]', 'name'],
+      changelog: '.bullet_list>ul',
+      commercial: 2,
+      download: 'https://dbeaver.com/files/dbeaver-ee-latest-win32.win32.x86_64.zip'
+    }
   }
 }
 module.exports = data

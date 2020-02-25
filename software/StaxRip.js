@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/Revan654/staxrip/releases',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/Revan654/staxrip/releases'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".rar"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: '[href$=".rar"]',
+  install: 'install'
 }
 module.exports = data

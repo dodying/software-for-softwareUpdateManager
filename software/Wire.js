@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/wireapp/wire-desktop/releases',
-  version: {
-    selector: '.release-entry:has(.muted-link.css-truncate[title^="window"])',
-    match: /windows\/(.*)/
+  site: {
+    'GitHub-Api': 'https://api.github.com/repos/wireapp/wire-desktop/releases'
   },
-  download: {
-    selector: '.release-entry:has(.muted-link.css-truncate[title^="window"]) a[href*="/releases/download/"][href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install', 'full.nupkg', null, 'lib\\net45')
-  }
+  versionChoice: [/.exe$/, /windows\/(.*)/],
+  install: ['install_zipped', 'install', 'full.nupkg', null, 'lib\\net*']
 }
 module.exports = data

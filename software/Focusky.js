@@ -2,18 +2,11 @@
 
 let data = {
   commercial: 1,
-  url: 'http://focusky.com/',
-  version: {
-    func: async (res, $, fns, choice) => {
-      let res1 = await fns.reqHEAD('http://focusky.com/download/index.php?platform=win')
-      return res1.request.uri.href.match(/focusky_v(.*?)_win_setup.zip/)[1]
-    }
+  site: {
+    download: 'https://focusky.com/'
   },
-  download: {
-    plain: 'http://focusky.com/download/index.php?platform=win'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install_inno')
-  }
+  versionChoice: 'https://focusky.com/download/index.php?platform=win&edition=64',
+  changelog: ['https://focusky.com/update/update-history.php', '.liright'],
+  install: ['install_zipped', 'install_inno']
 }
 module.exports = data

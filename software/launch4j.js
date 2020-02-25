@@ -1,21 +1,10 @@
 'use strict'
 
 let data = {
-  withoutHeader: true,
-  url: 'https://sourceforge.net/projects/launch4j/files/launch4j-3/',
-  version: {
-    selector: '[headers="files_name_h"]>a'
+  site: {
+    SourceForge: 'https://sourceforge.net/projects/launch4j/files/launch4j-3/'
   },
-  download: {
-    func: async (res, $, fns, choice) => fns.walkLink(res, fns, {
-      selector: '[headers="files_name_h"]>a'
-    }, {
-      selector: '[headers="files_name_h"]>a[href$="/download"]',
-      matchCheck: 'win32.exe'
-    })
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: [null, 'win32.exe'],
+  install: 'install_nsis'
 }
 module.exports = data

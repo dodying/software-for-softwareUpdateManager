@@ -2,14 +2,8 @@
 
 let data = {
   url: 'https://www.cfos.de/en/download/download.htm',
-  version: {
-    selector: '#cfosics>.red'
-  },
-  download: {
-    func: async (res, $) => 'https://www.cfos.de' + $('[href*="cFosICS"][href$=".zip"]').eq(0).attr('href').match(/\?file=(.*)$/)[1]
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  version: (res, $) => $('[href*="cFosICS"][href$=".zip"]').eq(0).attr('href').match(/\?file=(.*)$/)[1].match(/v(\d+)/)[1].replace(/(\d)(\d+)/, '$1.$2'),
+  download: (res, $) => 'https://www.cfos.de' + $('[href*="cFosICS"][href$=".zip"]').eq(0).attr('href').match(/\?file=(.*)$/)[1],
+  install: 'install_zipped_single'
 }
 module.exports = data

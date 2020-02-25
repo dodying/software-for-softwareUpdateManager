@@ -3,18 +3,14 @@
 let data = {
   url: 'http://pc.wps.cn/',
   preferPath: 'ksolaunch.exe',
-  version: {
-    selector: '.verson_txt'
-  },
-  download: {
-    selector: '.banner_txt>a[href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, (output, iPath) => {
+  version: '.verson_txt',
+  download: '.banner_txt>a[href$=".exe"]',
+  install: info => {
+    return info.fns.install.zipped(info, (output, iPath) => {
       const path = require('path')
       const fs = require('fs')
 
-      let dir = path.resolve(fns.dirname, 'unzip/$_11_')
+      let dir = path.resolve(info.fns.dirname, 'unzip/$_11_')
 
       let oem = path.resolve(dir, 'oem.ini')
       let content = fs.readFileSync(oem, 'utf-8')
@@ -23,7 +19,7 @@ let data = {
 
       let exe = path.resolve(dir, '$EXEFILE')
       fs.renameSync(exe, exe + '.exe')
-      return fns.install.cli(output, iPath, exe + '.exe', [], { wait: true })
+      return info.fns.install.cli(info, exe + '.exe', [], { wait: true })
     })
   }
 }

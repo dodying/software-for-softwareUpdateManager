@@ -2,14 +2,8 @@
 
 let data = {
   url: 'http://www.alexnolan.net/software/chronometask.xml',
-  version: {
-    selector: 'Program_Version'
-  },
-  download: {
-    plain: 'http://www.alexnolan.net/software/chronometask.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.single(output, iPath)
-  }
+  version: 'Program_Version',
+  download: 'http://www.alexnolan.net/software/chronometask.exe',
+  install: 'install_single'
 }
 module.exports = data

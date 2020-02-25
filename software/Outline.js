@@ -1,16 +1,13 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/Jigsaw-Code/outline-client/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    'GitHub-Api': 'https://api.github.com/repos/Jigsaw-Code/outline-client/releases'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
+  versionChoice: [/.exe$/, /windows-v(.*)/, false],
+  install: 'install_nsis',
+  other: {
+    daily: { versionChoice: [/.exe$/, /daily-(.*)/] }
   }
 }
 module.exports = data

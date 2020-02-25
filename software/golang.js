@@ -1,16 +1,9 @@
 'use strict'
 
 let data = {
-  url: 'https://golang.org/dl/',
-  preferPath: 'bin/go.exe',
-  version: {
-    selector: '.toggleButton'
-  },
-  download: {
-    selector: '.download[href$="amd64.msi"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.msi(output, iPath, null, data.preferPath)
-  }
+  url: 'https://golang.google.cn/dl/',
+  version: '.toggleButton',
+  download: '.download[href$="amd64.msi"]',
+  install: ['install_msi', null, 'bin/go.exe']
 }
 module.exports = data

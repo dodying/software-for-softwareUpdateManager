@@ -6,8 +6,6 @@ let data = {
     Softpedia: 'https://www.softpedia.com/get/Desktop-Enhancements/Other-Desktop-Enhancements/WindowBlinds.shtml'
   },
   fixedPath: '%ProgramFiles(x86)%\\Stardock\\WindowBlinds\\wbload.exe',
-  install: function (output, iPath, fns) {
-    return fns.install.cli(output, iPath, output, ['/S'], { wait: true })
-  }
+  install: 'install_cli_s'
 }
 module.exports = data

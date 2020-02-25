@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'http://softpointer.com/download.htm',
-  version: {
-    selector: '[href*="AudioShell"]'
-  },
-  download: {
-    selector: '[href*="AudioShell"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  url: 'https://softpointer.com/AudioShell.htm',
+  version: '.header>h2:has(sup)',
+  changelog: '.content+.content:contains("version")>ul',
+  download: '.download_url',
+  install: 'install_inno'
 }
 module.exports = data

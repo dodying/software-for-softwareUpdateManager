@@ -2,14 +2,14 @@
 
 let data = {
   url: 'https://typora.io/windows/dev_release.html',
-  version: {
-    selector: 'h4'
+  version: 'h4',
+  changelog: {
+    selector: 'body',
+    attr: 'text',
+    match: /^[\d.]{3,}/,
+    split: true
   },
-  download: {
-    plain: 'https://typora.io/windows/typora-setup-x64.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno.type(output, iPath)
-  }
+  download: 'https://typora.io/windows/typora-setup-x64.exe',
+  install: 'install_inno_type'
 }
 module.exports = data

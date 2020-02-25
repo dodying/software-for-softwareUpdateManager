@@ -2,14 +2,15 @@
 
 let data = {
   url: 'https://www.mirc.com/get.html',
-  version: {
-    selector: 'td>strong'
+  version: 'td>strong',
+  changelog: {
+    url: 'https://www.mirc.com/news.html',
+    selector: 'body > table:nth-child(2) > tbody > tr > td.middle > table',
+    attr: 'text',
+    match: /^mIRC [\d.]+/,
+    split: true
   },
-  download: {
-    plain: 'https://www.mirc.com/get.php'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: 'https://www.mirc.com/get.php',
+  install: 'install_nsis'
 }
 module.exports = data

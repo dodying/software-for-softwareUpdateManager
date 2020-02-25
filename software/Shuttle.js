@@ -1,16 +1,17 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/sipt/shuttle/releases',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/sipt/shuttle/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".zip"][href*="windows_amd64"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
+  downloadChoice: '[href$=".zip"][href*="windows_amd64"]',
+  install: 'install',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/sipt/shuttle/releases'
+      }
+    }
   }
 }
 module.exports = data

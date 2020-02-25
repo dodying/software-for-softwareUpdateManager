@@ -2,15 +2,12 @@
 
 let data = {
   url: 'https://lynx.invisible-island.net/release/breakout/CHANGES',
-  version: {
-    selector: 'body',
-    match: /\d+-\d+-\d+ \((.*?)\)/
+  version: ['body', 'text', /\d+-\d+-\d+ \((.*?)\)/],
+  changelog: {
+    match: /^\d+-\d+-\d+/,
+    split: true
   },
-  download: {
-    plain: 'https://invisible-island.net/datafiles/current/lynx-cs-setup.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  download: 'https://invisible-island.net/datafiles/current/lynx-cs-setup.exe',
+  install: 'install_inno'
 }
 module.exports = data

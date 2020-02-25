@@ -1,16 +1,25 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/brave/brave-browser/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    'GitHub-Api': 'https://api.github.com/repos/brave/brave-browser/releases'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="win32-x64.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
+  versionChoice: i => i.name.match(/Release Channel/) && i.assets.some(j => j.name.match(/win32-x64.zip$/)),
+  downloadChoice: /win32-x64.zip$/,
+  install: 'install',
+  other: {
+    beta: {
+      versionChoice: i => i.name.match(/Beta Channel/) && i.assets.some(j => j.name.match(/win32-x64.zip$/)),
+      downloadChoice: /win32-x64.zip$/
+    },
+    dev: {
+      versionChoice: i => i.name.match(/Dev Channel/) && i.assets.some(j => j.name.match(/win32-x64.zip$/)),
+      downloadChoice: /win32-x64.zip$/
+    },
+    nightly: {
+      versionChoice: i => i.name.match(/Nightly Channel/) && i.assets.some(j => j.name.match(/win32-x64.zip$/)),
+      downloadChoice: /win32-x64.zip$/
+    }
   }
 }
 module.exports = data

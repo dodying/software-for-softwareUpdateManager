@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/James1201/Fanhuaji-GUI-Release/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/James1201/Fanhuaji-GUI-Release/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="win64.7z"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  downloadChoice: '[href$="win64.7z"]',
+  install: 'install_zipped_single'
 }
 module.exports = data

@@ -1,15 +1,11 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/Microsoft/vscode/releases',
-  version: {
-    selector: '.commit-title>a'
+  site: {
+    download: 'https://code.visualstudio.com/updates/'
   },
-  download: {
-    plain: 'https://go.microsoft.com/fwlink/?Linkid=850641'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  versionChoice: ['https://update.code.visualstudio.com/latest/win32-x64/stable', /VSCodeSetup-x64-(.*).exe/],
+  changelog: '.body>hr+p+ul',
+  install: ['install_inno', null, { '{code_GetDestDir}': '{dir}' }]
 }
 module.exports = data

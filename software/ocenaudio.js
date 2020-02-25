@@ -2,14 +2,9 @@
 
 let data = {
   url: 'https://www.ocenaudio.com/',
-  version: {
-    selector: '#startpage_download_text>h1'
-  },
-  download: {
-    plain: 'https://www.ocenaudio.com/downloads/ocenaudio64.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: '#startpage_download_text>h1',
+  changelog: ['https://www.ocenaudio.com/en/changelog', '#changelog_text>ul'],
+  download: 'https://www.ocenaudio.com/downloads/ocenaudio64.exe',
+  install: 'install_nsis'
 }
 module.exports = data

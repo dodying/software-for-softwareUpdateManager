@@ -1,16 +1,9 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/shadowsocks/shadowsocks-windows/releases',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/shadowsocks/shadowsocks-windows/releases'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  install: 'install_zipped_single'
 }
 module.exports = data

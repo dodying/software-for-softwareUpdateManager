@@ -2,16 +2,9 @@
 
 let data = {
   url: 'https://hexchat.github.io/downloads.html',
-  version: {
-    selector: '[href$="x64.exe"]',
-    attr: 'href',
-    match: /%20(.*?)%20x64/
-  },
-  download: {
-    selector: '[href$="x64.exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  version: ['[href$="x64.exe"]', 'href', /%20(.*?)%20x64/],
+  changelog: ['https://hexchat.readthedocs.io/en/latest/changelog.html', '.simple'],
+  download: '[href$="x64.exe"]',
+  install: 'install_inno'
 }
 module.exports = data

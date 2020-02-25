@@ -2,16 +2,8 @@
 
 let data = {
   url: 'http://squid.diladele.com/',
-  version: {
-    selector: 'a[href$=".msi"]',
-    attr: 'href'
-  },
-  download: {
-    selector: 'a[href$=".msi"]'
-  },
-  preferPath: 'bin/squid.exe',
-  install: function (output, iPath, fns) {
-    return fns.install.msi(output, iPath, null, data.preferPath)
-  }
+  version: ['a[href$=".msi"]', 'href'],
+  download: 'a[href$=".msi"]',
+  install: ['install_msi', null, 'bin/squid.exe']
 }
 module.exports = data

@@ -5,9 +5,6 @@ let data = {
   site: {
     Softpedia: 'https://www.softpedia.com/get/System/Back-Up-and-Recovery/Paragon-HFS.shtml'
   },
-  preferPath: 'HFS+ for Windows by Paragon Software.exe',
-  install: function (output, iPath, fns) {
-    return fns.install.msi(output, iPath, null, data.preferPath)
-  }
+  install: ['install_msi', null, 'HFS+ for Windows by Paragon Software.exe']
 }
 module.exports = data

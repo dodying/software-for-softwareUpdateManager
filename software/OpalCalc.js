@@ -2,11 +2,12 @@
 
 let data = {
   url: 'https://www.skytopia.com/software/opalcalc/history.html',
-  version: {
-    selector: 'h2'
+  version: 'h2',
+  changelog: {
+    selector: 'body',
+    attr: 'text',
+    split: true
   },
-  download: {
-    plain: 'https://www.skytopia.com/software/opalcalc/OpalCalcSetup.exe'
-  }
+  download: 'https://www.skytopia.com/software/opalcalc/OpalCalcSetup.exe'
 }
 module.exports = data

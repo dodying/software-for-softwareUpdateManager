@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/Dreamacro/clash/releases',
-  version: {
-    selector: '.muted-link.css-truncate'
+  site: {
+    GitHub: 'https://github.com/Dreamacro/clash/releases'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="windows-amd64.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  downloadChoice: '[href*="windows-amd64"][href$=".zip"]',
+  install: 'install_zipped_single'
 }
 module.exports = data

@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://www.softpedia.com/get/Office-tools/Other-Office-Tools/Grammarly-Grammarly.shtml',
-  version: {
-    func: async (res, $) => res.body.match(/spjs_prog_version="(.*?)";/)[1]
+  site: {
+    Softpedia: 'https://www.softpedia.com/get/Office-tools/Other-Office-Tools/Grammarly-Grammarly.shtml'
   },
-  download: {
-    plain: 'https://download-editor.grammarly.com/windows/GrammarlySetup.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install', 'full.nupkg', null, 'lib\\net45')
-  }
+  download: 'https://download-editor.grammarly.com/windows/GrammarlySetup.exe',
+  install: ['install_zipped', 'install', 'full.nupkg', null, 'lib\\net*']
 }
 module.exports = data

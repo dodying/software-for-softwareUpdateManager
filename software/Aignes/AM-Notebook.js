@@ -2,15 +2,10 @@
 
 let data = {
   commercial: 3,
-  url: 'https://www.aignes.com/notebook.htm',
-  version: {
-    selector: '.mobile .medium'
-  },
-  download: {
-    plain: 'https://www.aignes.info/download/notesetup.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  url: 'https://www.aignes.com/note_history.htm',
+  version: '.larger>b',
+  changelog: '.history',
+  download: 'https://www.aignes.info/download/notesetup.exe',
+  install: 'install_inno'
 }
 module.exports = data

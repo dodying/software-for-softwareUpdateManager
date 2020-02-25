@@ -2,15 +2,15 @@
 
 let data = {
   url: 'https://www.mp3tag.de/en/download.html',
-  version: {
-    selector: 'h2',
-    match: /v(\d+\.\w+)/
+  version: ['h2', 'text', /v(\d+\.\w+)/],
+  changelog: {
+    url: 'https://www.mp3tag.de/en/changelog.html',
+    selector: '.changes',
+    attr: 'text',
+    match: /REL: VERSION [\d.]+/,
+    split: true
   },
-  download: {
-    func: async (res, $) => 'https://download.mp3tag.de/' + $('a[href="dodownload.html"]').text().trim()
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: (res, $) => 'https://download.mp3tag.de/' + $('a[href="dodownload.html"]').text().trim(),
+  install: 'install_nsis'
 }
 module.exports = data

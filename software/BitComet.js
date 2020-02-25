@@ -3,23 +3,16 @@
 let data = {
   useProxy: true,
   commercial: 1,
-  url: 'https://www.bitcomet.com/en/archive',
-  version: {
-    func: async (res, $, fns, choice) => fns.walkLink(res, fns, {
-      selector: '.bc_table_version>a[href*="BitComet"][href$=".zip"]',
-      attr: 'text',
-      sort: true,
-      match: /BitComet_(.*?)\.zip/
-    })
+  url: 'https://www.bitcomet.com/en/downloads',
+  version: '#version',
+  changelog: async (res, $) => {
+    let lineArr = $('.bc_downloads_changelog dl').eq(0).html().split(/<d[dt]>(.*)<\/d[dt]>/).map(i => i.trim()).filter(i => i)
+    let split = lineArr.filter(line => line.match(/^v[\d.]+/))
+    let start = lineArr.indexOf(split[0])
+    let end = lineArr.indexOf(split[1])
+    return lineArr.slice(start, end).join('\n')
   },
-  download: {
-    func: async (res, $, fns, choice) => fns.walkLink(res, fns, {
-      selector: '.bc_table_version>a[href*="BitComet"][href$=".zip"]',
-      sort: true
-    })
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: 'https://download.bitcomet.com/achive/BitComet_{version}.zip',
+  install: 'install'
 }
 module.exports = data

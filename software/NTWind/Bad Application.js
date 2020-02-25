@@ -2,14 +2,8 @@
 
 let data = {
   url: 'https://www.ntwind.com/software/utilities/badapp.html',
-  version: {
-    selector: '.btn_download'
-  },
-  download: {
-    selector: '.btn_download'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: () => '1.0',
+  download: '.btn_download',
+  install: 'install'
 }
 module.exports = data

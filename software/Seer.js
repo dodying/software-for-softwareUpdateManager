@@ -1,15 +1,11 @@
 'use strict'
 
 let data = {
+  commercial: 2,
   url: 'http://www.1218.io/seer/release-note.html',
-  version: {
-    selector: 'h3'
-  },
-  download: {
-    plain: 'http://www.1218.io/seer/dl'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: 'h3',
+  changelog: 'ul',
+  download: 'http://www.1218.io/seer/dl',
+  install: 'install_nsis'
 }
 module.exports = data

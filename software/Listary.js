@@ -3,15 +3,9 @@
 let data = {
   commercial: 2,
   url: 'https://www.listary.com/download',
-  version: {
-    selector: '.portable-download-link',
-    attr: 'href'
-  },
-  download: {
-    selector: '.portable-download-link'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: ['.portable-download-link', 'href'],
+  changelog: '.wpb_text_column:contains("What")+div h3+ul',
+  download: '.portable-download-link',
+  install: 'install'
 }
 module.exports = data

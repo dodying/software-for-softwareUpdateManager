@@ -3,40 +3,23 @@
 let data = {
   commercial: 2,
   url: 'https://www.2brightsparks.com/downloads.html',
-  version: {
-    selector: 'a.btn[href="/download-syncbackpro.html"]'
-  },
-  download: {
-    plain: 'https://www.2brightsparks.com/assets/software/SyncBackPro64_Setup.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno.type(output, iPath)
-  },
+  version: 'a.btn[href="/download-syncbackpro.html"]',
+  changelog: ['https://www.2brightsparks.com/syncback/changes.html', 'hr+p'],
+  download: 'https://www.2brightsparks.com/assets/software/SyncBackPro64_Setup.exe',
+  install: 'install_inno_type',
   other: {
     'SE': {
-      version: {
-        selector: 'a.btn[href="/download-syncbackse.html"]'
-      },
-      download: {
-        plain: 'https://www.2brightsparks.com/assets/software/SyncBackSE64_Setup.exe'
-      }
+      version: 'a.btn[href="/download-syncbackse.html"]',
+      download: 'https://www.2brightsparks.com/assets/software/SyncBackSE64_Setup.exe'
     },
     'Lite': {
-      version: {
-        selector: 'a.btn[href="/download-syncbacklite.html"]'
-      },
-      download: {
-        plain: 'https://www.2brightsparks.com/assets/software/SyncBackLite_Setup.exe'
-      }
+      version: 'a.btn[href="/download-syncbacklite.html"]',
+      download: 'https://www.2brightsparks.com/assets/software/SyncBackLite_Setup.exe'
     },
     'Free': {
       commercial: 0,
-      version: {
-        selector: 'a.btn[href="/download-syncbackfree.html"]'
-      },
-      download: {
-        plain: 'https://www.2brightsparks.com/assets/software/SyncBack_Setup.exe'
-      }
+      version: 'a.btn[href="/download-syncbackfree.html"]',
+      download: 'https://www.2brightsparks.com/assets/software/SyncBack_Setup.exe'
     }
   }
 }

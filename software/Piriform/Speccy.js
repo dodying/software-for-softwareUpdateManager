@@ -3,18 +3,13 @@
 let data = {
   commercial: 2,
   url: 'https://www.ccleaner.com/speccy/download',
-  version: {
-    selector: '.icon_edit+strong'
+  version: '.icon_square:contains("Release notes")+div strong',
+  changelog: '.icon_square:contains("Release notes")+div',
+  download: async (res, $, fns) => {
+    let res1 = await fns.req('https://www.ccleaner.com/speccy/download/standard')
+    let $1 = fns.cheerio.load(res1.body)
+    return $1('[data-download-url]').attr('data-download-url')
   },
-  download: {
-    func: async (res, $, fns) => {
-      let res1 = await fns.req('https://www.ccleaner.com/speccy/download/standard')
-      let $1 = fns.cheerio.load(res1.body)
-      return $1('#BigDownload a').attr('href')
-    }
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  install: 'install_nsis'
 }
 module.exports = data

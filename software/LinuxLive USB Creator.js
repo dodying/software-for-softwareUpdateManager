@@ -2,14 +2,15 @@
 
 let data = {
   url: 'http://www.linuxliveusb.com/en/download',
-  version: {
-    selector: '.dl-detail'
+  version: '.dl-detail',
+  changelog: {
+    url: 'https://www.linuxliveusb.com/en/release-notes',
+    selector: '.content',
+    attr: 'text',
+    match: /^Version [\d.]+/,
+    split: true
   },
-  download: {
-    plain: 'http://www.linuxliveusb.com/downloads/?stable'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: 'http://www.linuxliveusb.com/downloads/?stable',
+  install: 'install_nsis'
 }
 module.exports = data

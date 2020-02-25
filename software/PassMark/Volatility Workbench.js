@@ -2,14 +2,14 @@
 
 let data = {
   url: 'https://www.osforensics.com/tools/volatility-workbench.html',
-  version: {
-    selector: '.feature:contains("Download")+p'
+  version: '.feature:contains("Download")+p',
+  changelog: {
+    selector: '#sub-content',
+    attr: 'text',
+    match: /^v[\d.]+/,
+    split: true
   },
-  download: {
-    plain: 'https://www.osforensics.com/downloads/VolatilityWorkbench.zip'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: 'https://www.osforensics.com/downloads/VolatilityWorkbench.zip',
+  install: 'install'
 }
 module.exports = data

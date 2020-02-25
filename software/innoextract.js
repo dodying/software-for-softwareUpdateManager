@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/dscharrer/innoextract/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/dscharrer/innoextract/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="windows.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath, 'innoextract.exe')
-  }
+  downloadChoice: '[href$="windows.zip"]',
+  install: ['install_zipped_single', 'innoextract.exe']
 }
 module.exports = data

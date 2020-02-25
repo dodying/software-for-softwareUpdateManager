@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/github/hub/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/github/hub/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href*="-windows-amd64-"][href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: '[href*="-windows-amd64-"][href$=".zip"]',
+  install: 'install'
 }
 module.exports = data

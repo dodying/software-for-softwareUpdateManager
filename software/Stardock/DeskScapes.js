@@ -5,8 +5,6 @@ let data = {
     Softpedia: 'https://www.softpedia.com/get/Desktop-Enhancements/Shell-Replacements/Stardock-DeskScapes.shtml'
   },
   fixedPath: '%ProgramFiles(x86)%\\Stardock\\DeskScapes8\\Deskscapes64.exe',
-  install: function (output, iPath, fns) {
-    return fns.install.cli(output, iPath, output, ['/S'], { wait: true })
-  }
+  install: 'install_cli_s'
 }
 module.exports = data

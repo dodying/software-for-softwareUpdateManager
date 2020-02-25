@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/babun/babun/releases',
-  version: {
-    selector: '.commit-title>a',
-    match: /v(.*)/
+  site: {
+    'GitHub-commit': 'https://github.com/babun/babun/releases'
   },
-  download: {
-    plain: 'http://projects.reficio.org/babun/download'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: 'http://projects.reficio.org/babun/download',
+  install: 'install'
 }
 module.exports = data

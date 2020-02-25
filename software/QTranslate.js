@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://quest-app.appspot.com/',
-  version: {
-    selector: 'a[title="Download QTranslate"]'
-  },
-  download: {
-    selector: 'a[title="Download QTranslate"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  url: 'https://quest-app.appspot.com/download',
+  version: 'h3',
+  changelog: '[id^="version"]>.panel-body',
+  download: '.btn-info[href$=".exe"]',
+  install: 'install_nsis'
 }
 module.exports = data

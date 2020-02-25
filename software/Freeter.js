@@ -2,15 +2,10 @@
 
 let data = {
   commercial: 2,
-  url: 'https://freeter.io/download',
-  version: {
-    selector: 'h2'
-  },
-  download: {
-    plain: 'https://freeter.io/download/FreeterSetup.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install', 'full.nupkg', null, 'lib\\net45')
-  }
+  url: 'https://freeter.io/release-notes',
+  version: '.p-title',
+  changelog: '.just-list',
+  download: 'https://freeter.io/download/FreeterSetup.exe',
+  install: ['install_zipped', 'install', 'full.nupkg', null, 'lib\\net*']
 }
 module.exports = data

@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/thunkli/hummingbird/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/thunkli/hummingbird/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".zip"][href*="-win"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: '[href$=".zip"][href*="-win"]',
+  install: 'install'
 }
 module.exports = data

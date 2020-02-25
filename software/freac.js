@@ -1,16 +1,17 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/enzo1982/freac/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/enzo1982/freac/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
+  install: 'install',
+  other: {
+    beta: {
+      site: {
+        'GitHub-Api': 'https://api.github.com/repos/enzo1982/freac/releases'
+      },
+      versionChoice: /windows-x64.zip$/
+    }
   }
 }
 module.exports = data

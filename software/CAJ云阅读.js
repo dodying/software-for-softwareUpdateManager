@@ -2,15 +2,8 @@
 
 let data = {
   url: 'http://cajviewer.cnki.net/cajcloud/',
-  version: {
-    selector: '.download a',
-    attr: 'href'
-  },
-  download: {
-    selector: '.download a'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: ['.download a', 'href'],
+  download: '.download a',
+  install: ['install_zipped', 'install', '.exe']
 }
 module.exports = data

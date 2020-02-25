@@ -1,15 +1,16 @@
 'use strict'
 
 let data = {
-  url: 'https://xmedia-recode.de/en/download.html',
-  version: {
-    selector: 'table.download_table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)'
+  url: 'https://www.xmedia-recode.de/en/download.php',
+  version: '.download_table tr>td:nth-child(2)',
+  changelog: {
+    url: 'https://www.xmedia-recode.de/en/version.php',
+    selector: '#page_content',
+    attr: 'text',
+    match: /^XMedia Recode [\d.]+/,
+    split: true
   },
-  download: {
-    func: async (res, $) => $('.download_link[href$=".zip"]').eq(0).attr('href').replace('http://', 'https://')
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: '[href$="x64.zip"]',
+  install: 'install'
 }
 module.exports = data

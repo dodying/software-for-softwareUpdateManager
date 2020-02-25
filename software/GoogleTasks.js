@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/wixiweb/googletasks-desktop/releases',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/wixiweb/googletasks-desktop/releases'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="win32-x64.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: '[href$="win32-x64.zip"]',
+  install: 'install'
 }
 module.exports = data

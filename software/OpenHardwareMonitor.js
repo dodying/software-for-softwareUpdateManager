@@ -2,14 +2,9 @@
 
 let data = {
   url: 'https://openhardwaremonitor.org/downloads/',
-  version: {
-    selector: '.download-button'
-  },
-  download: {
-    selector: '.download-button'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: '.download-button',
+  changelog: ['https://openhardwaremonitor.org/', '.entry'],
+  download: '.download-button',
+  install: 'install'
 }
 module.exports = data

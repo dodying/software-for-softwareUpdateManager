@@ -1,18 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://sourceforge.net/projects/minime-tool/files/Minime/',
-  version: {
-    selector: '[headers="files_name_h"]>a'
+  site: {
+    SourceForge: 'https://sourceforge.net/projects/minime-tool/files/Minime/'
   },
-  download: {
-    func: async (res, $, fns, choice) => fns.walkLink(res, fns, {
-      selector: '[headers="files_name_h"]>a[href$="/download"]',
-      matchCheck: '.zip'
-    })
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  versionChoice: /minime_v(.*).zip/,
+  install: 'install_zipped_single'
 }
 module.exports = data

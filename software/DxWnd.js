@@ -1,17 +1,10 @@
 'use strict'
 
 let data = {
-  withoutHeader: true,
-  url: 'https://sourceforge.net/projects/dxwnd/files/Latest%20build/',
-  version: {
-    selector: '.file .name',
-    match: /(.*)_build.rar/
+  site: {
+    SourceForge: 'https://sourceforge.net/projects/dxwnd/files/Latest%20build/'
   },
-  download: {
-    selector: '.file a'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  versionChoice: /v(.*)_build.rar/,
+  install: 'install'
 }
 module.exports = data

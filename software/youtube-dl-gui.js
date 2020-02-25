@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/MrS0m30n3/youtube-dl-gui/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/MrS0m30n3/youtube-dl-gui/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="win-setup.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install_inno')
-  }
+  downloadChoice: '[href$="win-setup.zip"]',
+  install: ['install_zipped', 'install_inno']
 }
 module.exports = data

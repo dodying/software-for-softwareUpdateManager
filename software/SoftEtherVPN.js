@@ -1,13 +1,9 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    'GitHub-Api': 'https://api.github.com/repos/SoftEtherVPN/SoftEtherVPN_Stable/releases'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href*="softether-vpnclient"][href$=".exe"]'
-  }
+  versionChoice: /softether-vpnclient.*\.exe$/
 }
 module.exports = data

@@ -1,20 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://sourceforge.net/projects/dcplusplus/files/',
-  version: {
-    selector: '[headers="files_name_h"]>a'
+  site: {
+    SourceForge: 'https://sourceforge.net/projects/dcplusplus/files/'
   },
-  download: {
-    func: async (res, $, fns, choice) => fns.walkLink(res, fns, {
-      selector: '[headers="files_name_h"]>a'
-    }, {
-      selector: '[headers="files_name_h"]>a[href$="/download"]',
-      matchCheck: 'x64.zip'
-    })
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: [/DC\+\+ ([\d.]+)/, 'x64.zip'],
+  install: 'install'
 }
 module.exports = data

@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/BoostIO/boost-releases/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/BoostIO/boost-releases/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="full.nupkg"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath, null, 'lib\\net45')
-  }
+  downloadChoice: '[href$="full.nupkg"]',
+  install: ['install', null, 'lib\\net*']
 }
 module.exports = data

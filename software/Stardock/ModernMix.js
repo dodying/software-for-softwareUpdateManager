@@ -5,8 +5,6 @@ let data = {
     Softpedia: 'https://www.softpedia.com/get/System/System-Miscellaneous/ModernMix.shtml'
   },
   fixedPath: '%ProgramFiles(x86)%\\Stardock\\ModernMix\\MMix_64.exe',
-  install: function (output, iPath, fns) {
-    return fns.install.cli(output, iPath, output, ['/S'], { wait: true })
-  }
+  install: 'install_cli_s'
 }
 module.exports = data

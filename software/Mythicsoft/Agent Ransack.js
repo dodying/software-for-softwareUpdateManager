@@ -1,35 +1,29 @@
 'use strict'
 
 let data = {
-  url: 'https://www.mythicsoft.com/',
-  version: {
-    selector: 'a[href*="AgentRansack"][href$=".exe"]',
-    attr: 'href'
-  },
-  download: {
-    selector: 'a[href*="AgentRansack"][href$=".exe"]'
-  },
-  preferPath: 'AgentRansack.exe',
-  install: function (output, iPath, fns, choice, cab, preferPath) {
-    cab = cab || 'shared.cab'
-    preferPath = preferPath || data.preferPath
-
+  commercial: 3,
+  url: 'https://www.mythicsoft.com/agentransack/information/',
+  version: ['.style1', 'text', /([\d.]+) \((\d+)\)/, '$1.$2'],
+  changelog: '#version-history .detail',
+  download: 'a[href*="agentransack"][href$=".exe"]',
+  install: info => {
     const path = require('path')
     const cp = require('child_process')
     const fs = require('fs')
 
     let name = Math.random().toString().substr(2)
-    cp.execSync(`plugins\\7z.exe x -y -o"unzip\\${name}\\" "${output}"`)
-    let tmp = path.resolve(fns.dirname, 'unzip', name)
-    let list = fns.walk(tmp)
+    cp.execSync(`plugins\\7z.exe x -sccUTF-8 -y -o"unzip\\${name}\\" "${info.output}"`)
+    let tmp = path.resolve(info.fns.dirname, 'unzip', name)
+    let list = info.fns.walk(tmp)
 
     let shared = list.filter(i => path.basename(i) === '$_3_')[0]
-    fs.renameSync(shared, path.resolve(shared, './../', cab))
+    fs.renameSync(shared, path.resolve(shared, './../', 'shared.cab'))
 
     let install = list.filter(i => path.basename(i) === '$_2_')[0]
     let installNew = path.resolve(install, './../install.msi')
     fs.renameSync(install, installNew)
-    return fns.install.msi(installNew, iPath, null, preferPath)
+    info.output = installNew
+    return info.fns.install.msi(info, null, 'AgentRansack.exe')
   }
 }
 module.exports = data

@@ -3,14 +3,9 @@
 let data = {
   commercial: 3,
   url: 'https://www.duplicatedetective.com/download',
-  version: {
-    selector: '[itemprop="softwareVersion"]'
-  },
-  download: {
-    plain: 'https://s3.amazonaws.com/KeyMetricSoft/Duplicate+File+Detective/DFD6-Setup.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.ai(output, iPath)
-  }
+  version: '[itemprop="softwareVersion"]',
+  changelog: ['https://www.duplicatedetective.com/Content/static/ReleaseNotes.htm', 'p+ul'],
+  download: 'https://s3.amazonaws.com/KeyMetricSoft/Duplicate+File+Detective/DFD6-Setup.exe',
+  install: 'install_ai'
 }
 module.exports = data

@@ -2,14 +2,9 @@
 
 let data = {
   url: 'https://www.geany.org/Download/Releases',
-  version: {
-    selector: 'a[href$="_setup.exe"]'
-  },
-  download: {
-    selector: 'a[href$="_setup.exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: 'a[href$="_setup.exe"]',
+  changelog: ['https://www.geany.org/documentation/releasenotes/', '#content-main'],
+  download: 'a[href$="_setup.exe"]',
+  install: 'install_nsis'
 }
 module.exports = data

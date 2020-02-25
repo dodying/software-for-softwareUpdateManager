@@ -2,14 +2,14 @@
 
 let data = {
   url: 'https://www.osforensics.com/tools/mount-disk-images.html',
-  version: {
-    selector: '.feature:contains("Download")+p'
+  version: '.feature:contains("Download")+p',
+  changelog: {
+    selector: '#sub-content',
+    attr: 'text',
+    match: /^v[\d.]+/,
+    split: true
   },
-  download: {
-    plain: 'https://www.osforensics.com/downloads/osfmount.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  download: 'https://www.osforensics.com/downloads/osfmount.exe',
+  install: 'install_inno'
 }
 module.exports = data

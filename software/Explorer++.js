@@ -1,17 +1,17 @@
 'use strict'
 
 let data = {
-  useProxy: true,
-  url: 'https://github.com/derceg/explorerplusplus/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /version-(.*)/
-  },
-  download: {
-    plain: 'https://ci.appveyor.com/api/projects/derceg/explorerplusplus/artifacts/explorer++_x64.zip?branch=master&job=Platform%3A%20x64'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
+  url: 'https://explorerplusplus.com/download',
+  version: 'strong',
+  download: '[href$="x64.zip"]',
+  install: 'install_zipped_single',
+  other: {
+    beta: {
+      site: {
+        AppVeyor: 'https://ci.appveyor.com/api/projects/derceg/explorerplusplus'
+      },
+      downloadChoice: ['x64.zip', 'x64']
+    }
   }
 }
 module.exports = data

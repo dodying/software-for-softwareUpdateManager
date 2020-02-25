@@ -1,17 +1,11 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/yupi2/synergy/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)_master/
+  site: {
+    GitHub: 'https://github.com/yupi2/synergy/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".msi"][href*="_x64_"]'
-  },
-  preferPath: 'synergys.exe',
-  install: function (output, iPath, fns) {
-    return fns.install.msi(output, iPath, null, data.preferPath)
-  }
+  versionChoice: /(.*)_master/,
+  downloadChoice: '[href$=".msi"][href*="_x64_"]',
+  install: ['install_msi', null, 'synergys.exe']
 }
 module.exports = data

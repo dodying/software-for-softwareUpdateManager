@@ -4,14 +4,14 @@ let data = {
   useProxy: true,
   commercial: 3,
   url: 'http://www.driver-soft.com/download.html',
-  version: {
-    selector: 'p>strong'
+  version: 'p>strong',
+  changelog: {
+    selector: '.k_s',
+    attr: 'text',
+    match: /^Driver Genius [\d.]+/,
+    split: true
   },
-  download: {
-    plain: 'http://www.driver-soft.com/products/DG_Setup.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  download: 'http://www.driver-soft.com/products/DG_Setup.exe',
+  install: 'install_inno'
 }
 module.exports = data

@@ -1,15 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'http://systemexplorer.net/downloading.php',
-  version: {
-    selector: '.downloading'
-  },
-  download: {
-    plain: 'http://systemexplorer.net/download/SystemExplorerSetup.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  url: 'https://systemexplorer.net/news.php',
+  version: 'h2',
+  changelog: 'h1+article',
+  download: 'http://systemexplorer.net/download/SystemExplorerSetup.exe',
+  install: 'install_inno'
 }
 module.exports = data

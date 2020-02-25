@@ -2,15 +2,9 @@
 
 let data = {
   url: 'https://enigmaprotector.com/en/downloads/changelogenigmavb.html',
-  version: {
-    selector: 'a[onclick="return openclose(\'content0\');"]',
-    match: /(.*)/
-  },
-  download: {
-    plain: 'https://enigmaprotector.com/assets/files/enigmavb.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath, 'languages')
-  }
+  version: ['a[onclick="return openclose(\'content0\');"]', 'text', /(.*)/],
+  changelog: '#content0',
+  download: 'https://enigmaprotector.com/assets/files/enigmavb.exe',
+  install: ['install_inno', 'languages']
 }
 module.exports = data

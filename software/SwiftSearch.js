@@ -1,20 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://sourceforge.net/projects/swiftsearch/files/',
-  version: {
-    selector: '[headers="files_name_h"]>a'
+  site: {
+    SourceForge: 'https://sourceforge.net/projects/swiftsearch/files/'
   },
-  download: {
-    func: async (res, $, fns, choice) => fns.walkLink(res, fns, {
-      selector: '[headers="files_name_h"]>a'
-    }, {
-      selector: '[headers="files_name_h"]>a[href$="/download"]',
-      matchCheck: '64.exe'
-    })
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.single(output, iPath)
-  }
+  downloadChoice: [null, '64.exe'],
+  install: 'install_single'
 }
 module.exports = data

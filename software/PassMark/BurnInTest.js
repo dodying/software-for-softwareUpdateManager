@@ -2,16 +2,10 @@
 
 let data = {
   commercial: 3,
-  url: 'https://www.passmark.com/products/bit_history.htm',
-  version: {
-    selector: 'p>em>strong',
-    match: /Version (\d.*),/
-  },
-  download: {
-    plain: 'https://www.passmark.com/ftp/bitpro.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno.type(output, iPath)
-  }
+  url: 'https://www.passmark.com/products/burnintest/history.php',
+  version: ['#block_2>div>div>p', 'text', /([\d.]+ build \d+)/],
+  changelog: '#block_2>div>div>ul',
+  download: 'https://www.passmark.com/ftp/bitpro.exe',
+  install: 'install_inno_type'
 }
 module.exports = data

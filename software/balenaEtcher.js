@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/balena-io/etcher/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/balena-io/etcher/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="-x64.exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install', 'app-64.7z')
-  }
+  downloadChoice: '[href*="-Portable-"][href$=".exe"]',
+  install: ['install_zipped', 'install', 'app-64.7z']
 }
 module.exports = data

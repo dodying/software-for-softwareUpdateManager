@@ -2,15 +2,14 @@
 
 let data = {
   url: 'https://rink.hockeyapp.net/apps/6037e69fa4944acc9d83ef7682e60732',
-  version: {
-    selector: '.app-body>h3'
+  version: '.app-body>h3',
+  changelog: {
+    selector: '.release-notes',
+    attr: 'text',
+    match: /^Release notes for [\d.]+/,
+    split: true
   },
-  download: {
-    selector: '.btn-ha-primary'
-  },
-  preferPath: 'Stack.exe',
-  install: function (output, iPath, fns) {
-    return fns.install.msi(output, iPath, null, data.preferPath)
-  }
+  download: '.btn-ha-primary',
+  install: ['install_msi', null, 'Stack.exe']
 }
 module.exports = data

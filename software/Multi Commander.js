@@ -2,15 +2,12 @@
 
 let data = {
   url: 'http://www.multicommander.com/downloads',
-  version: {
-    selector: 'a[href$=".exe"][href*="x64"]',
-    match: /v(.*?\(Build .*?\))/
+  version: ['a[href$=".exe"][href*="x64"]', 'text', /v([\d.]+) \(Build (\d+)\)/, '$1.$2'],
+  changelog: {
+    url: '[href^="/release/multicommander/version"]',
+    selector: '.field-name-body'
   },
-  download: {
-    selector: 'a[href$=".exe"][href*="x64"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  download: 'a[href$=".exe"][href*="x64"]',
+  install: 'install_nsis'
 }
 module.exports = data

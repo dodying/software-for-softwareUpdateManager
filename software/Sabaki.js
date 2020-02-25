@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/SabakiHQ/Sabaki/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/SabakiHQ/Sabaki/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="win-x64-setup.exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install', 'app-64.7z')
-  }
+  downloadChoice: '[href$="win-x64-setup.exe"]',
+  install: ['install_zipped', 'install', 'app-64.7z']
 }
 module.exports = data

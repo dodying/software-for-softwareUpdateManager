@@ -2,14 +2,8 @@
 
 let data = {
   url: 'http://www.bradsoft.com/',
-  version: {
-    selector: 'h1'
-  },
-  download: {
-    selector: '[href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  version: 'h1',
+  download: '[href$=".exe"]',
+  install: 'install_inno'
 }
 module.exports = data

@@ -2,16 +2,10 @@
 
 let data = {
   commercial: 3,
-  url: 'https://www.passmark.com/products/pt_history.htm',
-  version: {
-    selector: 'p>strong',
-    match: /V(\d.*) -/
-  },
-  download: {
-    plain: 'https://www.passmark.com/ftp/petst.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  url: 'https://www.passmark.com/products/performancetest/history.php',
+  version: ['#block_2>div>div>p', 'text', /([\d.]+ Build \d+)/],
+  changelog: '#block_2>div>div>ul',
+  download: 'https://www.passmark.com/ftp/petst.exe',
+  install: 'install_inno'
 }
 module.exports = data

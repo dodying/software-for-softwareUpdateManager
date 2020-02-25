@@ -2,14 +2,8 @@
 
 let data = {
   url: 'http://www.chameleon-managers.com/downloads.php',
-  version: {
-    selector: '[id="wrap-main"]:has(.folder-logo) td[rowspan="3"]+td'
-  },
-  download: {
-    plain: 'http://www.chameleon-managers.com/files/cfolder_freeware.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno(output, iPath)
-  }
+  version: '[id="wrap-main"]:has(.folder-logo) td[rowspan="3"]+td',
+  download: 'http://www.chameleon-managers.com/files/cfolder_freeware.exe',
+  install: 'install_inno'
 }
 module.exports = data

@@ -2,11 +2,8 @@
 
 let data = {
   url: 'http://qttabbar.wikidot.com/',
-  version: {
-    selector: 'a[href$=".zip"][href*="/QTTabBar"]'
-  },
-  download: {
-    selector: 'a[href$=".zip"][href*="/QTTabBar"]'
-  }
+  version: 'a[href$=".zip"][href*="/QTTabBar"]',
+  changelog: ['http://qttabbar.wikidot.com/change-log', '#page-content>div'],
+  download: 'a[href$=".zip"][href*="/QTTabBar"]'
 }
 module.exports = data

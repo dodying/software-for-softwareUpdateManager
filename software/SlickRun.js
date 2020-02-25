@@ -1,15 +1,9 @@
 'use strict'
 
 let data = {
-  url: 'https://bayden.com/SlickRun/updates.asp',
-  version: {
-    selector: '.Code>b'
+  site: {
+    MajorGeeks: 'https://www.majorgeeks.com/mg/getmirror/slickrun,1.html'
   },
-  download: {
-    plain: 'https://bayden.com/dl/sr-setup64.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  install: 'install_nsis'
 }
 module.exports = data

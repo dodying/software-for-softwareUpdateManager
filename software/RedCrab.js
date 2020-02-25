@@ -2,14 +2,9 @@
 
 let data = {
   url: 'https://www.redcrab-software.com/en/RedCrab/Updates',
-  version: {
-    selector: 'p>strong'
-  },
-  download: {
-    plain: 'https://www.redcrab-software.com/download/redcrab.zip'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: 'p>strong',
+  changelog: '.col-md-8>p',
+  download: 'https://www.redcrab-software.com/download/redcrab.zip',
+  install: 'install'
 }
 module.exports = data

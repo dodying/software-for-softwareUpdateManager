@@ -1,16 +1,9 @@
 'use strict'
 
 let data = {
-  url: 'https://www.crsky.com/soft/25711.html',
-  version: {
-    selector: '[itemprop="version"]',
-    match: /(.*)/
+  site: {
+    Pc6: 'http://www.pc6.com/softview/SoftView_52259.html'
   },
-  download: {
-    selector: 'a[href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  install: ['install', null, 'Fish*\\']
 }
 module.exports = data

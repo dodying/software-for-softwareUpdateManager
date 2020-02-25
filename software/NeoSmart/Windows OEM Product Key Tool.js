@@ -2,14 +2,9 @@
 
 let data = {
   url: 'https://neosmart.net/Software/Changelog/22',
-  version: {
-    selector: 'a[name]'
-  },
-  download: {
-    func: async (res, $, fns) => fns.download.neosmart(res, $, fns)
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: 'a[name]',
+  changelog: 'ul',
+  download: async (res, $, fns) => fns.download.neosmart(res, $, fns),
+  install: 'install'
 }
 module.exports = data

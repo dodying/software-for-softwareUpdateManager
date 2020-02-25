@@ -2,14 +2,9 @@
 
 let data = {
   url: 'https://apps.ankiweb.net/',
-  version: {
-    selector: '#windows a.btn'
-  },
-  download: {
-    selector: '#windows a.btn'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  version: '#windows a.btn',
+  changelog: ['https://apps.ankiweb.net/docs/changes.html', '.sectionbody'],
+  download: '#windows a.btn',
+  install: 'install_nsis'
 }
 module.exports = data

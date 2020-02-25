@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'http://www.anyburn.com/cn/index.htm',
-  version: {
-    selector: 'font>a[href="download.htm"]',
-    match: /v(\d+[\d.]+\d+)/
-  },
-  download: {
-    plain: 'http://www.anyburn.com/anyburn_setup_x64.exe'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  url: 'http://www.anyburn.com/cn/download.htm',
+  version: '[href="../anyburn_setup.exe"]',
+  changelog: 'blockquote+p+ul+p+p[align="left"]+ul',
+  download: 'http://www.anyburn.com/anyburn_setup_x64.exe',
+  install: 'install_nsis'
 }
 module.exports = data

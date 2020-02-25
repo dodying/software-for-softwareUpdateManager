@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/maz-1/waifu2x-gui/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /(.*)/
+  site: {
+    GitHub: 'https://github.com/maz-1/waifu2x-gui/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".7z"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: '[href$=".7z"]',
+  install: 'install'
 }
 module.exports = data

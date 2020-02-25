@@ -4,9 +4,6 @@ let data = {
   site: {
     Softpedia: 'https://www.softpedia.com/get/Multimedia/Audio/Other-AUDIO-Tools/Song-Buddy.shtml'
   },
-  preferPath: 'SongBuddy.exe',
-  install: function (output, iPath, fns) {
-    return fns.install.msi(output, iPath, null, data.preferPath)
-  }
+  install: ['install_msi', null, 'SongBuddy.exe']
 }
 module.exports = data

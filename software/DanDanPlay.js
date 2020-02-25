@@ -2,15 +2,9 @@
 
 let data = {
   url: 'http://dandanplay.com/',
-  version: {
-    selector: 'a[href$=".exe"]',
-    attr: 'href'
-  },
-  download: {
-    selector: 'a[href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.ai(output, iPath)
-  }
+  version: ['a[href$=".exe"]', 'href'],
+  changelog: ['http://dandanplay.com/blog.html', '#blogs li:contains("Windows版")'],
+  download: 'a[href$=".exe"]',
+  install: 'install_ai'
 }
 module.exports = data

@@ -2,15 +2,10 @@
 
 let data = {
   commercial: 3,
-  url: 'http://www.internetdownloadmanager.com/',
-  version: {
-    selector: 'img[src="home/new!.gif"]+font'
-  },
-  download: {
-    selector: 'a[href*="idman"][href*=".exe"]'
-  },
-  install: function (output, iPath, fns, choice) {
-    return fns.install.cli(output, iPath, output, ['/skipdlgs'], { wait: true })
-  }
+  url: 'https://www.internetdownloadmanager.com/news.html',
+  version: ['.style28', 'text', /version ([\d.]+) Build (\d+)/, '$1.$2'],
+  changelog: '.style12+ul',
+  download: async (res, $, fns, choice) => fns.walkLink('https://www.internetdownloadmanager.com/download.html', fns, 'a[href$=".exe"]'),
+  install: ['install_cli', null, ['/skipdlgs'], { wait: true }]
 }
 module.exports = data

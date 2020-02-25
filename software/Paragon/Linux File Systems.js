@@ -5,9 +5,6 @@ let data = {
   site: {
     Softpedia: 'https://www.softpedia.com/get/System/System-Miscellaneous/Paragon-ExtFS.shtml'
   },
-  preferPath: 'Linux File Systems for Windows by Paragon Software.exe',
-  install: function (output, iPath, fns) {
-    return fns.install.msi(output, iPath, null, data.preferPath)
-  }
+  install: ['install_msi', null, 'Linux File Systems for Windows by Paragon Software.exe']
 }
 module.exports = data

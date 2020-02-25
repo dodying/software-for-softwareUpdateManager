@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/upx/upx/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/upx/upx/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href*="win64"][href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath, 'upx.exe')
-  }
+  downloadChoice: '[href*="win64"][href$=".zip"]',
+  install: ['install_zipped_single', 'upx.exe']
 }
 module.exports = data

@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/akameco/PixivDeck/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    'GitHub-Api': 'https://api.github.com/repos/akameco/PixivDeck/releases'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$="win.7z"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  versionChoice: [/win.7z$/, /v(.*)/],
+  install: 'install'
 }
 module.exports = data

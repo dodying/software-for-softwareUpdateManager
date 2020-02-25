@@ -2,15 +2,12 @@
 
 let data = {
   url: 'https://mpv.srsfckn.biz/',
-  version: {
-    selector: '.latest>td',
-    match: /(.*)/
+  version: ['.latest>td', 'text', /(.*)/],
+  changelog: {
+    url: '[href^="/changes/"]',
+    selector: '.note'
   },
-  download: {
-    selector: '.latest a[href^="/mpv-x86_64"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath, 'doc')
-  }
+  download: '.latest a[href^="/mpv-x86_64"]',
+  install: ['install', 'doc']
 }
 module.exports = data

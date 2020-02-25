@@ -2,15 +2,8 @@
 
 let data = {
   url: 'https://www.kaplansoft.com/download.html',
-  preferPath: 'TSRServer.exe',
-  version: {
-    selector: '.pricerow:contains("TekSIP Route Server")>td[align="center"]'
-  },
-  download: {
-    plain: 'https://www.kaplansoft.com/tsrserver/release/TSRServer.zip'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install_msi', '.msi', null, data.preferPath)
-  }
+  version: '.pricerow:contains("TekSIP Route Server")>td[align="center"]',
+  download: 'https://www.kaplansoft.com/tsrserver/release/TSRServer.zip',
+  install: ['install_zipped', 'install_msi', '.msi', null, 'TSRServer.exe']
 }
 module.exports = data

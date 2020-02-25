@@ -1,12 +1,12 @@
 'use strict'
 
 let data = {
-  url: 'http://balabolka.site/data/sizes.js',
-  version: {
-    func: async (res, $) => res.body.match(/return \('(.*?)'\);/)[1]
+  url: 'http://balabolka.site/changelog.txt',
+  version: (res, $) => res.body.match(/[\d-]+\s+v([\d.]+)/)[1],
+  changelog: {
+    match: /^[\d-]+\s+v[\d.]+$/,
+    split: true
   },
-  download: {
-    plain: 'http://balabolka.site/balabolka.zip'
-  }
+  download: 'http://balabolka.site/balabolka.zip'
 }
 module.exports = data

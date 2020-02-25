@@ -1,16 +1,29 @@
 'use strict'
 
 let data = {
-  commercial: 2,
-  url: 'https://www.teamspeak.com/en/downloads/',
-  version: {
-    selector: '#client > div.platform.mb-5.windows > div:nth-child(3) > div.file.col-md-7 > h3 > span'
-  },
-  download: {
-    selector: 'a[href*="win64"][href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
+  url: 'https://files.teamspeak-services.com/releases/client/',
+  version: async (res, $, fns, choice) => fns.walkLink(res, fns, {
+    selector: 'pre>a',
+    sort: true,
+    attr: 'text'
+  }),
+  download: async (res, $, fns, choice) => fns.walkLink(res, fns, {
+    selector: 'pre>a',
+    sort: true
+  }, {
+    selector: 'pre>a',
+    matchCheck: /win64-(.*?).(exe|zip)/
+  }),
+  install: 'install_nsis',
+  other: {
+    server: {
+      url: 'https://files.teamspeak-services.com/releases/server/',
+      install: 'install'
+    },
+    'server-pre_releases': {
+      url: 'https://files.teamspeak-services.com/pre_releases/server/',
+      install: 'install'
+    }
   }
 }
 module.exports = data

@@ -1,24 +1,15 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/ukanth/monitores/releases/latest',
-  version: {
-    selector: '.release-header a'
+  site: {
+    GitHub: 'https://github.com/ukanth/monitores/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  },
+  versionChoice: [/Google Code Release (.*)$/, true],
+  install: 'install',
   other: {
     lite: {
-      download: {
-        selector: 'a[href*="/releases/download/"][href$="MonitorESLite.exe"]'
-      },
-      install: function (output, iPath, fns) {
-        return fns.install.single(output, iPath)
-      }
+      downloadChoice: '[href$="MonitorESLite.exe"]',
+      install: 'install_single'
     }
   }
 }

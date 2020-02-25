@@ -2,14 +2,13 @@
 
 let data = {
   url: 'https://megatools.megous.com/',
-  version: {
-    selector: 'a[href$="-win64.zip"]'
+  version: 'a[href$="-win64.zip"]',
+  changelog: {
+    url: 'https://megatools.megous.com/builds/NEWS',
+    match: /^megatools [\d.]+/,
+    split: true
   },
-  download: {
-    selector: 'a[href$="-win64.zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath, 'mega.ini')
-  }
+  download: 'a[href$="-win64.zip"]',
+  install: ['install', 'mega.ini']
 }
 module.exports = data

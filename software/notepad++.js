@@ -1,15 +1,23 @@
+// 'use strict'
+
+// let data = {
+//   url: 'https://notepad-plus-plus.org/download/',
+//   version: 'h2>a',
+//   changelog: async (res, $, fns, choice) => [(await fns.walkLink(res, fns, 'h2>a', {
+//     selector: 'ol',
+//     attr: 'html'
+//   })), true],
+//   download: async (res, $, fns, choice) => fns.walkLink(res, fns, 'h2>a', '[href$="bin.x64.7z"]'),
+//   install: 'install'
+// }
+// module.exports = data
 'use strict'
 
 let data = {
-  url: 'https://notepad-plus-plus.org/download/',
-  version: {
-    selector: 'h1'
+  site: {
+    GitHub: 'https://github.com/notepad-plus-plus/notepad-plus-plus/releases/latest'
   },
-  download: {
-    selector: 'a[href$="x64.7z"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install(output, iPath)
-  }
+  downloadChoice: '[href$="bin.x64.7z"]',
+  install: 'install'
 }
 module.exports = data

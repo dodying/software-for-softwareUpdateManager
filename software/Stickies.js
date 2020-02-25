@@ -1,16 +1,14 @@
 'use strict'
 
 let data = {
-  url: 'https://www.zhornsoftware.co.uk/stickies/download.html',
-  version: {
-    selector: 'a[href$=".exe"]',
-    match: /Stickies (.*?) setup program/
+  url: 'https://www.zhornsoftware.co.uk/stickies/versions.html',
+  version: ['.versionheading', 'text', /v(.*?) -/],
+  changelog: {
+    selector: 'body > table > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(3) > td > table > tbody > tr:nth-child(2) > td:nth-child(2) > table',
+    attr: 'text',
+    match: /^v[\d.]+/,
+    split: true
   },
-  download: {
-    selector: 'a[href$=".exe"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped.single(output, iPath)
-  }
+  download: async (res, $, fns, choice) => fns.walkLink('https://www.zhornsoftware.co.uk/stickies/download.html', fns, 'a[href$=".exe"]')
 }
 module.exports = data

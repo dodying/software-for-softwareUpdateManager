@@ -1,17 +1,17 @@
 'use strict'
 
 let data = {
-  url: 'https://caret.io/',
-  version: {
-    selector: '.button--download',
-    attr: 'href',
-    match: /download\/(.*?)\//
+  site: {
+    GitHub: 'https://github.com/careteditor/issues/releases/latest'
   },
-  download: {
-    selector: '.button--download'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install', 'full.nupkg', null, 'lib\\net45')
+  downloadChoice: '[href$="full.nupkg"]',
+  install: ['install_zipped', 'install', 'full.nupkg', null, 'lib\\net*'],
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/careteditor/releases-beta/releases/latest'
+      }
+    }
   }
 }
 module.exports = data

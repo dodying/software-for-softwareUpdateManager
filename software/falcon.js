@@ -1,16 +1,10 @@
 'use strict'
 
 let data = {
-  url: 'https://github.com/plotly/falcon/releases/latest',
-  version: {
-    selector: '.muted-link.css-truncate',
-    match: /v(.*)/
+  site: {
+    GitHub: 'https://github.com/plotly/falcon/releases/latest'
   },
-  download: {
-    selector: 'a[href*="/releases/download/"][href*="win"][href$=".zip"]'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.zipped(output, iPath, 'install_zipped', null, 'install', 'app-64.7z')
-  }
+  downloadChoice: '[href*="win"][href$=".zip"]',
+  install: ['install_zipped', 'install_zipped', null, 'install', 'app-64.7z']
 }
 module.exports = data

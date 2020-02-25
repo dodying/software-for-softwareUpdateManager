@@ -1,21 +1,11 @@
 'use strict'
 
 let data = {
-  url: 'https://sourceforge.net/projects/emulemorph/files/MorphXT/',
-  version: {
-    selector: '[headers="files_name_h"]>a',
-    match: /MorphXT (.*)/
+  site: {
+    SourceForge: 'https://sourceforge.net/projects/emulemorph/files/MorphXT/'
   },
-  download: {
-    func: async (res, $, fns, choice) => fns.walkLink(res, fns, {
-      selector: '[headers="files_name_h"]>a'
-    }, {
-      selector: '[headers="files_name_h"]>a[href$="/download"]',
-      matchCheck: 'installer.exe'
-    })
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.inno.type(output, iPath)
-  }
+  versionChoice: /MorphXT ([\d.]+)/,
+  downloadChoice: [/MorphXT ([\d.]+)/, 'installer.exe'],
+  install: 'install_inno_type'
 }
 module.exports = data

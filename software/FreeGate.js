@@ -2,11 +2,15 @@
 
 let data = {
   useProxy: true,
-  site: {
-    Softpedia: 'https://www.softpedia.com/get/Network-Tools/Misc-Networking-Tools/Freegate.shtml'
-  },
-  install: function (output, iPath, fns) {
-    return fns.install.single(output, iPath)
+  url: 'http://dongtaiwang.com/loc/download.php',
+  version: '#one_col>table table>tbody>tr>th',
+  download: '#one_col>table table>tbody>tr>td a[href$=".exe"]',
+  install: 'install_single',
+  other: {
+    limited: {
+      version: '#one_col>table table>tbody>tr:nth-child(2)>th',
+      download: '#one_col>table table>tbody>tr:nth-child(2)>td a[href$=".exe"]'
+    }
   }
 }
 module.exports = data
