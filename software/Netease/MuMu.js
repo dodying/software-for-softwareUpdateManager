@@ -14,10 +14,9 @@ let getInfo = async (res, $, fns, choice) => {
     form: {
       downloader_version: downloaderVersion,
       machine: '%7B%7D'
-    },
-    json: true
+    }
   })
-  info = res2.body.data
+  info = res2.json.data
   return info
 }
 

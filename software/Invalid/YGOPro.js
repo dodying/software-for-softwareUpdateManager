@@ -25,10 +25,9 @@ let data = {
         shorturl: shorturl,
         nid: nid,
         download_permit_token: token
-      },
-      json: true
+      }
     })
-    return res2.body.data.downloadurl
+    return res2.json.data.downloadurl
   },
   install: 'install'
 }
