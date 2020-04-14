@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     download: 'https://calibre-ebook.com/changelog.rss'
   },
@@ -10,8 +10,8 @@ let data = {
   other: {
     portable: {
       versionChoice: ['https://calibre-ebook.com/dist/portable', /calibre-portable-installer-(.*?).exe/],
-      nstall: info => info.fns.install.cli(info, null, [require('path').resolve(info.parentPath, '../')])
+      install: info => info.fns.install.cli(info, null, [require('path').resolve(info.parentPath, '../')])
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

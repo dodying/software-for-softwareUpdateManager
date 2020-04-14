@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   url: 'http://mfiles.maokebing.com/',
-  version: ['[href$="green.zip"]', 'href', /mfiles-helper-(.*)-win/],
-  download: '[href$="green.zip"]',
+  version: ['[href*="win8-later"][href$="green.rar"]', 'href', /mfiles-helper-(.*)-win/],
+  download: '[href*="win8-later"][href$="green.rar"]',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
-  url: 'http://freevirtualkeyboard.com/',
-  version: '.lnk+p',
+const data = {
+  url: 'https://freevirtualkeyboard.com/',
+  version: '.col-right>h2+p+p',
   changelog: ['https://freevirtualkeyboard.blogspot.com/search/label/new%20version', '.post-body ul'],
-  download: 'http://freevirtualkeyboard.com/FreeVK.exe',
+  download: 'https://freevirtualkeyboard.com/FreeVK.exe',
   install: 'install_single'
-}
-module.exports = data
+};
+module.exports = data;

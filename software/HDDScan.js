@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
-  url: 'http://hddscan.com/',
-  version: 'body > center > table > tbody > tr:nth-child(1) > td:nth-child(2) > div > div:nth-child(2)',
-  download: 'http://hddscan.com/download/HDDScan.zip',
+const data = {
+  url: 'https://hddscan.com/',
+  version: '.btn[href$="HDDScan.zip"]',
+  download: 'https://hddscan.com/download/HDDScan.zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

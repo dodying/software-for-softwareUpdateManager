@@ -1,8 +1,11 @@
-'use strict'
+'use strict';
 
-let downloadUrl
+let downloadUrl;
 
-let data = {
+const data = {
+  // ?tags: string[] or string, which would be shown in SupportedSoftwares.md for search
+  tags: ['browser'],
+
   // ?commercial:
   // 1. boolean: false=Free true=Commercial
   // 2. number: 0=Free 1=FreePersonal 2=Freemium 3=Commercial
@@ -116,11 +119,11 @@ let data = {
       url: 'https://vivaldi.com/blog/snapshots/',
       version: {
         func: async (res, $, fns, choice) => {
-          let uri1 = $('.download-vivaldi-sidebar>a[href*="snapshot"]').eq(0).attr('href')
-          let res1 = await fns.req(uri1)
-          let $1 = fns.cheerio.load(res1.body)
-          downloadUrl = $1('[href^="https://downloads.vivaldi.com/snapshot/Vivaldi"][href$="x64.exe"]').eq(0).attr('href')
-          return downloadUrl.match(/Vivaldi.(.*?).x64.exe/)[1]
+          const uri1 = $('.download-vivaldi-sidebar>a[href*="snapshot"]').eq(0).attr('href');
+          const res1 = await fns.req(uri1);
+          const $1 = fns.cheerio.load(res1.body);
+          downloadUrl = $1('[href^="https://downloads.vivaldi.com/snapshot/Vivaldi"][href$="x64.exe"]').eq(0).attr('href');
+          return downloadUrl.match(/Vivaldi.(.*?).x64.exe/)[1];
         }
       },
       download: {
@@ -128,5 +131,5 @@ let data = {
       }
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

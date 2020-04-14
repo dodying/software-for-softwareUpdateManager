@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/netchx/Netch/releases/latest'
   },
-  downloadChoice: '[href$="x64.7z"]',
+  downloadChoice: '[href$=".zip"][href*="Netch.x64"]',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

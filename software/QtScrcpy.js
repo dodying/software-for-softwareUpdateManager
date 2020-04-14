@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/barry-ran/QtScrcpy/releases/latest'
   },
-  downloadChoice: '[href$=".zip"][href*="win64"]',
+  downloadChoice: '[href$=".zip"][href*="win-x64"]',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

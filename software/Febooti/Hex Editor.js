@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   url: 'https://www.febooti.com/products/filetweak/members/hex-editor/history/',
-  version: '.m1>strong',
-  changelog: '.m1',
+  version: '.ver>h2',
+  changelog: '.ver',
   download: 'https://x.febooti.com/downloads/files/ftweak-hex-x64.msi',
   install: ['install_msi', null, 'fHex.dll']
-}
-module.exports = data
+};
+module.exports = data;
