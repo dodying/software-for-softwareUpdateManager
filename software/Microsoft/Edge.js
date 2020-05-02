@@ -1,12 +1,12 @@
-'use strict'
+'use strict';
 
 // https://www.microsoftedgeinsider.com/en-us/download?platform=win10
 // https://tools.shuax.com/edge/
 // https://go.microsoft.com/fwlink/?linkid=2069324&Channel=Stable&language=cn
 
-let version, channel
-let getVersion = async (res, $, fns, choice) => {
-  let res1 = await fns.req({
+let version, channel;
+const getVersion = async (res, $, fns, choice) => {
+  const res1 = await fns.req({
     uri: `https://msedge.api.cdp.microsoft.com/api/v1/contents/Browser/namespaces/Default/names/msedge-${channel}-win-x64/versions/latest?action=select`,
     method: 'POST',
     headers: {
@@ -22,16 +22,23 @@ let getVersion = async (res, $, fns, choice) => {
       // 'X-HTTP-Attempts': '1'
     },
     body: '{"targetingAttributes":{"AppAp":"","AppCohort":"","AppLang":"en-us","AppRollout":1.0,"AppVersion":"","IsInternalUser":false,"IsMachine":true,"OsArch":"x64","OsPlatform":"win","OsVersion":"10.0.17763.1","Updater":"MicrosoftEdgeUpdate","UpdaterVersion":"1.3.107.13"}}'
-  })
-  return (version = res1.json.ContentId.Version)
-}
+  });
+  return (version = res1.json.ContentId.Version);
+};
 
-let data = {
+const data = {
   url: 'https://www.microsoftedgeinsider.com/en-us/download?platform=win10',
-  version: async (res, $, fns, choice) => { channel = 'stable'; return getVersion(res, $, fns, choice) },
+  version: async (res, $, fns, choice) => { channel = 'stable'; return getVersion(res, $, fns, choice); },
+  changelog: {
+    url: 'https://docs.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel',
+    selector: '[role="main"]',
+    attr: 'text',
+    match: /^Version [\d.]+/,
+    split: true
+  },
   download: {
     func: async (res, $, fns, choice) => {
-      let res1 = await fns.req({
+      const res1 = await fns.req({
         uri: `https://msedge.api.cdp.microsoft.com/api/v1/contents/Browser/namespaces/Default/names/msedge-${channel}-win-x64/versions/${version}/files?action=GenerateDownloadInfo`,
         method: 'POST',
         headers: {
@@ -47,22 +54,31 @@ let data = {
           'X-HTTP-Attempts': '1'
         },
         body: '{}'
-      })
-      return res1.json.filter(i => i.FileId === `MicrosoftEdge_X64_${version}.exe`)[0].Url
+      });
+      return res1.json.filter(i => i.FileId === `MicrosoftEdge_X64_${version}.exe`)[0].Url;
     },
     output: '.exe'
   },
   install: ['install_zipped', 'install'],
   other: {
     beta: {
-      version: async (res, $, fns, choice) => { channel = 'beta'; return getVersion(res, $, fns, choice) }
+      version: async (res, $, fns, choice) => { channel = 'beta'; return getVersion(res, $, fns, choice); },
+      changelog: {
+        url: 'https://docs.microsoft.com/en-us/deployedge/microsoft-edge-relnote-beta-channel',
+        selector: '[role="main"]',
+        attr: 'text',
+        match: /^Version [\d.]+/,
+        split: true
+      }
     },
     dev: {
-      version: async (res, $, fns, choice) => { channel = 'dev'; return getVersion(res, $, fns, choice) }
+      version: async (res, $, fns, choice) => { channel = 'dev'; return getVersion(res, $, fns, choice); },
+      changelog: null
     },
     canary: {
-      version: async (res, $, fns, choice) => { channel = 'canary'; return getVersion(res, $, fns, choice) }
+      version: async (res, $, fns, choice) => { channel = 'canary'; return getVersion(res, $, fns, choice); },
+      changelog: null
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

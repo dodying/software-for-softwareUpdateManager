@@ -3,7 +3,7 @@
 let data = {
   url: 'https://release.tinymediamanager.org/download_v3.html',
   version: ['a[href$="win.zip"]', 'href'],
-  changelog: ['https://tinymediamanager.org/changelog/', '[id^="Version v"]+p'],
+  changelog: ['https://www.tinymediamanager.org/changelog/', '[id^="Version v"]+p'],
   download: 'a[href$="win.zip"]',
   install: 'install',
   other: {

@@ -1,9 +1,14 @@
-'use strict'
+'use strict';
 
-let data = {
-  url: 'https://www.gog.com/galaxy',
-  version: ['.glx-button--blue[href$=".exe"]', 'href', /setup_galaxy_(.*?).exe/],
-  download: '.glx-button--blue[href$=".exe"]',
-  install: 'install_inno_cli'
-}
-module.exports = data
+const data = {
+  url: 'https://remote-config.gog.com/components/webinstaller?component_version=2.0.0',
+  version: (res, $) => res.json.content.windows.version,
+  download: (res, $) => res.json.content.windows.downloadLink,
+  install: 'install_inno_cli',
+  other: {
+    1: {
+      url: 'https://remote-config.gog.com/components/webinstaller?component_version=1.0.0'
+    }
+  }
+};
+module.exports = data;

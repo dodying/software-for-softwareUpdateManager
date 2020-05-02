@@ -1,13 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
-  url: 'https://mpv.srsfckn.biz/',
-  version: ['.latest>td', 'text', /(.*)/],
-  changelog: {
-    url: '[href^="/changes/"]',
-    selector: '.note'
+const data = {
+  site: {
+    GitHub: ' https://github.com/mpv-player/mpv/releases/latest'
   },
-  download: '.latest a[href^="/mpv-x86_64"]',
-  install: ['install', 'doc']
-}
-module.exports = data
+  download: 'https://downloads.sourceforge.net/project/mpv-player-windows/stable/mpv-{version}-x86_64.7z',
+  install: ['install_zipped_single', 'mpv.exe']
+};
+module.exports = data;
