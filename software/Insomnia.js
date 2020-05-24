@@ -1,11 +1,17 @@
-'use strict'
+'use strict';
 
-let data = {
-  commercial: 2,
+const data = {
   site: {
-    GitHub: 'https://github.com/getinsomnia/insomnia/releases/latest'
+    'GitHub-Api': 'https://api.github.com/repos/Kong/insomnia/releases'
   },
-  downloadChoice: '[href$="full.nupkg"]',
-  install: ['install', null, 'lib\\net*']
-}
-module.exports = data
+  versionChoice: /Insomnia.Setup.(.*?).exe$/,
+  install: ['install_zipped', 'install', 'full.nupkg', null, 'lib\\net*'],
+  other: {
+    designer: {
+      versionChoice: /insomnia-designer-(.*?)-full.nupkg$/,
+      install: ['install', null, 'lib\\net*']
+    },
+    core: {}
+  }
+};
+module.exports = data;

@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 
-let data = {
-  url: 'https://ffmpeg.zeranoe.com/builds/',
-  version: ['label[title^="Release"]', 'text', /(.*)/],
+const data = {
+  url: 'https://ffmpeg.zeranoe.com/builds/builds.json',
+  version: (res) => res.json.release[0],
   changelog: {
     url: 'https://raw.githubusercontent.com/FFmpeg/FFmpeg/master/Changelog',
     match: /^version [\d.]+/,
@@ -12,11 +12,9 @@ let data = {
   install: ['install', null, '*\\bin\\*.exe'],
   other: {
     nightly: {
-      version: {
-        selector: 'label[title^="Nightly"]',
-        match: /(.*)/
-      }
+      version: (res) => res.json.git[0],
+      changelog: null
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

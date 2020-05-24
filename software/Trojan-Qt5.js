@@ -4,7 +4,7 @@ const data = {
   site: {
     GitHub: 'https://github.com/TheWanderingCoel/Trojan-Qt5/releases/latest'
   },
-  downloadChoice: '[href$="Windows.zip"]',
+  downloadChoice: '[href$="Windows.7z"]',
   install: 'install',
   other: {
     beta: {
