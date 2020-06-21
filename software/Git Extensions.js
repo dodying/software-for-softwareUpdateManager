@@ -1,10 +1,17 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    GitHub: 'https://github.com/gitextensions/gitextensions/releases'
+    GitHub: 'https://github.com/gitextensions/gitextensions/releases/latest'
   },
-  downloadChoice: '[href*="Portable"][href$=".zip"]',
-  install: 'install'
-}
-module.exports = data
+  versionChoice: 'Portable(.*).zip',
+  install: 'install',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/gitextensions/gitextensions/releases'
+      }
+    }
+  }
+};
+module.exports = data;

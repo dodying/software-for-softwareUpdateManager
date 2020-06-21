@@ -1,15 +1,15 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/cmderdev/cmder/releases/latest'
   },
-  downloadChoice: '[href$="cmder.7z"]',
+  versionChoice: 'cmder.7z',
   install: 'install',
   other: {
     mini: {
-      downloadChoice: '[href$="mini.zip"]'
+      versionChoice: 'mini.zip'
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/kkguo/apkshellext/releases'
   },
-  downloadChoice: '[href$="ApkShellext2.7z"]',
+  versionChoice: 'ApkShellext2.7z',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

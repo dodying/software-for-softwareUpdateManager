@@ -4,7 +4,7 @@ const data = {
   site: {
     GitHub: 'https://github.com/microsoft/ApplicationInspector/releases/latest'
   },
-  downloadChoice: '[href*="_windows_"][href$=".zip"]',
+  versionChoice: '_windows_(.*).zip',
   install: 'install'
 };
 module.exports = data;

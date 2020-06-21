@@ -1,15 +1,15 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/sysprogs/WinCDEmu/releases/latest'
   },
-  downloadChoice: '[href$=".exe"][href*="/WinCDEmu-"]',
+  versionChoice: '^WinCDEmu-.*.exe',
   other: {
     portable: {
-      downloadChoice: '[href$=".exe"][href*="/PortableWinCDEmu-"]',
+      versionChoice: '^PortableWinCDEmu-.*.exe',
       install: 'install_single'
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

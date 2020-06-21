@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    GitHub: 'https://github.com/lc-soft/LC-Finder/releases/latest'
+    GitHub: 'https://github.com/lc-soft/LC-Finder/releases'
   },
-  downloadChoice: '[href$="LC-Finder.zip"]',
+  versionChoice: 'LC-Finder.zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

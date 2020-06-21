@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/kefir500/apk-editor-studio/releases/latest'
   },
-  downloadChoice: '[href$=".zip"][href*="win32"]',
+  versionChoice: 'win32(.*).zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

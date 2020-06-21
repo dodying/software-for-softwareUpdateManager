@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/Maxstupo/ydl-ui/releases/latest'
   },
-  downloadChoice: '[href$="Portable.zip"]',
+  versionChoice: 'Portable.zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

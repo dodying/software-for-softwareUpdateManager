@@ -1,11 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/n457/Uncolored/releases/latest'
   },
-  versionChoice: /v\.(.*)/,
-  downloadChoice: '[href$="setup.exe"]',
+  versionChoice: ['setup.exe', /v\.(.*)/],
   install: ['install_zipped', 'install', 'app-64.7z']
-}
-module.exports = data
+};
+module.exports = data;

@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   url: 'https://github.com/ohsoft/archive/tree/master/virtualdvd',
   version: async (res, $, fns, choice) => fns.walkLink(res, fns, {
     selector: '.content .js-navigation-open',
@@ -19,5 +19,5 @@ let data = {
     selector: '#raw-url'
   }),
   install: 'install_inno'
-}
-module.exports = data
+};
+module.exports = data;

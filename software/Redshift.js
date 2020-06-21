@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/jonls/redshift/releases/latest'
   },
-  downloadChoice: '[href$="x86_64.zip"]',
+  versionChoice: 'x86_64.zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

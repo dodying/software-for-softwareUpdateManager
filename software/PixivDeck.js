@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    'GitHub-Api': 'https://api.github.com/repos/akameco/PixivDeck/releases'
+    GitHub: 'https://github.com/akameco/PixivDeck/releases/latest'
   },
   versionChoice: [/win.7z$/, /v(.*)/],
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

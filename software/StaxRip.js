@@ -1,10 +1,17 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    GitHub: 'https://github.com/Revan654/staxrip/releases'
+    GitHub: 'https://github.com/Revan654/staxrip/releases/latest'
   },
-  downloadChoice: '[href$=".rar"]',
-  install: 'install'
-}
-module.exports = data
+  versionChoice: '.rar',
+  install: 'install',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/Revan654/staxrip/releases'
+      }
+    }
+  }
+};
+module.exports = data;

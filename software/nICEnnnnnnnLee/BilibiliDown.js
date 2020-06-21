@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/nICEnnnnnnnLee/BilibiliDown/releases/latest'
   },
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

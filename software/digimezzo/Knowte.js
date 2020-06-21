@@ -2,9 +2,9 @@
 
 let data = {
   site: {
-    GitHub: 'https://github.com/digimezzo/knowte-electron/releases/latest'
+    GitHub: 'https://github.com/digimezzo/knowte/releases/latest'
   },
-  downloadChoice: '[href$=".exe"]',
+  versionChoice: '.exe',
   install: ['install_zipped', 'install', 'app-64.7z'],
   other: {
     1: {

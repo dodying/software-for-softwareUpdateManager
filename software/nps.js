@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    GitHub: 'https://github.com/cnlh/nps/releases/latest'
+    GitHub: 'https://github.com/ehang-io/nps/releases/latest'
   },
-  downloadChoice: '[href$=".tar.gz"][href*="win_amd64_client"]',
+  versionChoice: 'win_amd64_client(.*).tar.gz',
   install: ['install_zipped', 'install']
-}
-module.exports = data
+};
+module.exports = data;

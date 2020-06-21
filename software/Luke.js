@@ -4,7 +4,7 @@ const data = {
   site: {
     GitHub: 'https://github.com/DmitryKey/luke/releases/latest'
   },
-  versionChoice: [/Luke ([\d.]+)/, true],
+  versionChoice: ['.zip$', /Luke ([\d.]+)/, false, 'name'],
   install: 'install'
 };
 module.exports = data;

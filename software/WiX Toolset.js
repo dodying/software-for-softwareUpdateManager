@@ -1,11 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/wixtoolset/wix3/releases/latest'
   },
-  versionChoice: [/v([\d.]+)/, true],
-  downloadChoice: '[href$="binaries.zip"]',
+  versionChoice: ['binaries.zip', /v([\d.]+)/, false, 'name'],
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

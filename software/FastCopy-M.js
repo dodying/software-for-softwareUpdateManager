@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/Mapaler/FastCopy-M/releases/latest'
   },
-  downloadChoice: '[href$="64bit.zip"]',
+  versionChoice: '64bit.zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

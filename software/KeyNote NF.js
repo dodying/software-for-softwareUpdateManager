@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/dpradov/keynote-nf/releases/latest'
   },
-  downloadChoice: '[href*="Release"][href$=".rar"]',
+  versionChoice: 'Release(.*).rar',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

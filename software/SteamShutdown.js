@@ -1,9 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/akorb/SteamShutdown/releases/latest'
   },
-  install: 'install_zipped_single'
-}
-module.exports = data
+  versionChoice: '.exe',
+  install: 'install_single'
+};
+module.exports = data;

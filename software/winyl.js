@@ -1,10 +1,17 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    GitHub: 'https://github.com/winyl-player/winyl/releases'
+    GitHub: 'https://github.com/winyl-player/winyl/releases/latest'
   },
-  downloadChoice: '[href$="portable_x64.zip"]',
-  install: 'install'
-}
-module.exports = data
+  versionChoice: 'portable_x64.zip',
+  install: 'install',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/winyl-player/winyl/releases'
+      }
+    }
+  }
+};
+module.exports = data;

@@ -1,10 +1,17 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/Armin2208/Windows-Auto-Night-Mode/releases/latest'
   },
-  downloadChoice: '[href$=".exe"]',
-  install: 'install_inno'
-}
-module.exports = data
+  versionChoice: '.exe',
+  install: 'install_inno',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/Armin2208/Windows-Auto-Night-Mode/releases'
+      }
+    }
+  }
+};
+module.exports = data;

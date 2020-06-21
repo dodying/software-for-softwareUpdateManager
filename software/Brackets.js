@@ -1,11 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/adobe/brackets/releases/latest'
   },
-  versionChoice: /release-(.*)/,
-  downloadChoice: '[href$=".msi"]',
+  versionChoice: ['.msi', /release-(.*)/],
   install: ['install_msi', null, 'Brackets.exe']
-}
-module.exports = data
+};
+module.exports = data;

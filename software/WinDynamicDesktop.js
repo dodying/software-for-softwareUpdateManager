@@ -2,9 +2,16 @@
 
 const data = {
   site: {
-    GitHub: 'https://github.com/t1m0thyj/WinDynamicDesktop/releases'
+    GitHub: 'https://github.com/t1m0thyj/WinDynamicDesktop/releases/latest'
   },
-  downloadChoice: '[href$="Portable.exe"]',
-  install: 'install_single'
+  versionChoice: 'Portable.exe',
+  install: 'install_single',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/t1m0thyj/WinDynamicDesktop/releases'
+      }
+    }
+  }
 };
 module.exports = data;

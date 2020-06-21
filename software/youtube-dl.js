@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/ytdl-org/youtube-dl/releases/latest'
   },
-  downloadChoice: '[href$="youtube-dl.exe"]',
+  versionChoice: 'youtube-dl.exe',
   install: 'install_single'
-}
-module.exports = data
+};
+module.exports = data;

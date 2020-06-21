@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/sachinchoolur/lightgallery-desktop/releases/latest'
   },
-  downloadChoice: '[href$="windows.zip"]',
+  versionChoice: 'windows.zip',
   install: ['install_zipped', 'install_nsis']
-}
-module.exports = data
+};
+module.exports = data;

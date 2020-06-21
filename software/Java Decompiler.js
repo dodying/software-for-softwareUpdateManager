@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/java-decompiler/jd-gui/releases/latest'
   },
-  downloadChoice: '[href$=".zip"][href*="-windows-"]',
+  versionChoice: '-windows-(.*).zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

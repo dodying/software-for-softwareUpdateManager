@@ -4,7 +4,7 @@ const data = {
   site: {
     GitHub: 'https://github.com/gdegeneve/Awake/releases/latest'
   },
-  downloadChoice: '.exe',
+  versionChoice: '.exe',
   install: 'install_single'
 };
 module.exports = data;

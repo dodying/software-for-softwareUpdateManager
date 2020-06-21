@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/ChanpleCai/SmartTaskbar/releases/latest'
   },
-  downloadChoice: '[href$=".exe"]',
+  versionChoice: '.exe',
   install: ['install_inno_single', '.exe']
-}
-module.exports = data
+};
+module.exports = data;

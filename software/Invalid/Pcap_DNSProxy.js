@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/chengr28/Pcap_DNSProxy/releases/latest'
   },
-  downloadChoice: '[href$="bin.7z"]',
+  versionChoice: 'bin.7z',
   install: ['install', null, 'Pcap_DNSProxy-bin\\Windows']
-}
-module.exports = data
+};
+module.exports = data;

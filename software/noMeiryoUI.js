@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/Tatsu-syo/noMeiryoUI/releases/latest'
   },
-  versionChoice: /TAG-(.*)/,
+  versionChoice: ['.zip$', /TAG-(.*)/],
   install: 'install_zipped_single'
-}
-module.exports = data
+};
+module.exports = data;

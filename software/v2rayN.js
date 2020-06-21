@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/2dust/v2rayN/releases/latest'
   },
-  downloadChoice: '[href$="v2rayN.zip"]',
+  versionChoice: 'v2rayN.zip',
   install: 'install',
   other: {
     beta: {
@@ -13,5 +13,5 @@ let data = {
       }
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

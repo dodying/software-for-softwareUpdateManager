@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/liuzhuoling2011/music-jojo/releases/latest'
   },
-  downloadChoice: '[href$="x64.exe"]',
+  versionChoice: 'x64.exe',
   install: ['install_zipped', 'install', 'app-64.7z']
-}
-module.exports = data
+};
+module.exports = data;

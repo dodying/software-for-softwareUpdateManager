@@ -5,7 +5,7 @@ const data = {
   site: {
     GitHub: 'https://github.com/FiloSottile/age/releases'
   },
-  downloadChoice: '[href$="windows-amd64.zip"]',
+  versionChoice: 'windows-amd64.zip',
   install: 'install'
 };
 module.exports = data;

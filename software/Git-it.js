@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/jlord/git-it-electron/releases/latest'
   },
-  downloadChoice: '[href$="Win-ia32.zip"]',
+  versionChoice: 'Win-ia32.zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

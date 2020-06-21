@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/crystalidea/anytoiso/releases/latest'
   },
-  downloadChoice: '[href$="portable.zip"]',
+  versionChoice: 'portable.zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

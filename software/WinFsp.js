@@ -4,7 +4,7 @@ const data = {
   site: {
     GitHub: 'https://github.com/billziss-gh/winfsp/releases/latest'
   },
-  downloadChoice: '.msi',
+  versionChoice: '.msi',
   install: ['install_msi', null, 'bin/launcher-x64.exe'],
   other: {
     beta: {

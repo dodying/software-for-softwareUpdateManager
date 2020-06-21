@@ -4,7 +4,7 @@ const data = {
   site: {
     GitHub: 'https://github.com/ollm/OpenComic/releases/latest'
   },
-  downloadChoice: '[href$=".exe"]',
+  versionChoice: '.exe',
   install: ['install_zipped', 'install', 'app-64.7z']
 };
 module.exports = data;

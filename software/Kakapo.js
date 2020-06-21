@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/bluedaniel/Kakapo-app/releases/latest'
   },
-  downloadChoice: '[href$="Win.exe"]',
+  versionChoice: 'Win.exe',
   install: ['install_zipped', 'install', 'full.nupkg', null, 'lib\\net*']
-}
-module.exports = data
+};
+module.exports = data;

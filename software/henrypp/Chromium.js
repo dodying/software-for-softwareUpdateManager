@@ -1,11 +1,14 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/henrypp/chromium/releases'
   },
-  versionChoice: /v(.*)-win64/,
-  downloadChoice: '[href$=".exe"]',
+  versionChoice: {
+    filter: i => i.assets.some(j => j.name.match('.exe')) && i.tag_name.match('win64'),
+    match: 'v(.*)-win64'
+  },
+  downloadChoice: '.exe',
   install: ['install_zipped', 'install']
-}
-module.exports = data
+};
+module.exports = data;

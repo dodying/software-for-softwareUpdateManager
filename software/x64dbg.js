@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/x64dbg/x64dbg/releases/latest'
   },
-  versionChoice: [/(\d+[\d-_]+)/, true],
+  versionChoice: ['.zip$', /(\d+[\d-_]+)/, false, 'name'],
   install: ['install', null, 'release\\']
-}
-module.exports = data
+};
+module.exports = data;

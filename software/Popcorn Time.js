@@ -1,9 +1,12 @@
 'use strict';
 
-const data = {
-  url: 'https://getpopcorntime.is/windows.html',
-  version: '.sub>b',
-  download: 'https://dl.getpopcorntime.is/PopcornTime-latest.exe',
-  install: ['install_inno', null, { '{pf32}': '{dir}' }]
+module.exports = {
+  //   url: 'https://popcorntime.app/windows',
+  //   version: ['[data-os="Win64"]', 'href', /Popcorn-Time-(.*?)-win64-Setup.exe/],
+  //   download: '[data-os="Win64"]',
+  site: {
+    GitHub: 'https://github.com/popcorn-official/popcorn-desktop/releases/latest'
+  },
+  downloadChoice: 'win64-Setup.exe',
+  install: 'install_nsis'
 };
-module.exports = data;

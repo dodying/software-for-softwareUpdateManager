@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    GitHub: 'https://github.com/imagemin/imagemin-app/releases/latest'
+    GitHub: 'https://github.com/imagemin/imagemin-app/releases'
   },
-  downloadChoice: '[href$="win32.zip"]',
+  versionChoice: 'win32.zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

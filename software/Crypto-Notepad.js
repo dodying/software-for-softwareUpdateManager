@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/Crypto-Notepad/Crypto-Notepad/releases/latest'
   },
-  downloadChoice: '[href$=".7z"]',
+  versionChoice: '.7z',
   install: 'install_zipped_single'
-}
-module.exports = data
+};
+module.exports = data;

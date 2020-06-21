@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/Physiix/topsi-project-manager/releases/'
   },
-  downloadChoice: '[href$="win-x64.zip"]',
+  versionChoice: 'win-x64.zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

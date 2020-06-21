@@ -1,10 +1,18 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/manisandro/gImageReader/releases/latest'
   },
-  downloadChoice: '[href$="x86_64.exe"]',
-  install: 'install_nsis'
-}
-module.exports = data
+  versionChoice: 'x86_64.exe',
+  install: 'install_nsis',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/manisandro/gImageReader/releases'
+      },
+      versionChoice: ['x86_64.exe', null, null, 'published_at']
+    }
+  }
+};
+module.exports = data;

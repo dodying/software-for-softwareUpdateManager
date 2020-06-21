@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/mazehall/eintopf/releases/latest'
   },
-  downloadChoice: '[href$="x64.exe"]',
+  versionChoice: 'x64.exe',
   install: 'install_nsis'
-}
-module.exports = data
+};
+module.exports = data;

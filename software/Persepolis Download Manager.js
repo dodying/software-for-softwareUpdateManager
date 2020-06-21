@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/persepolisdm/persepolis/releases/latest'
   },
-  downloadChoice: '[href$="64bit.exe"]',
+  versionChoice: '64bit.exe',
   install: 'install_inno'
-}
-module.exports = data
+};
+module.exports = data;

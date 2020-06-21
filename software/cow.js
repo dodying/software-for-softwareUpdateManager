@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/cyfdecyf/cow/releases/latest'
   },
-  downloadChoice: '[href*="win64"][href$=".zip"]',
+  versionChoice: 'win64(.*).zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

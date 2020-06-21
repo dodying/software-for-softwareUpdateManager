@@ -1,25 +1,24 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/yuzu-emu/yuzu-nightly/releases/latest'
   },
-  versionChoice: /nightly-(.*)/,
-  downloadChoice: '[href$=".7z"][href*="yuzu-windows"]',
+  versionChoice: ['yuzu-windows(.*).7z', /nightly-(.*)/],
   install: 'install',
   other: {
     nightly: {
       site: {
-        GitHub: 'https://github.com/yuzu-emu/yuzu-nightly/releases/latest'
+        GitHub: 'https://github.com/yuzu-emu/yuzu-nightly/releases'
       },
-      versionChoice: /nightly-(.*)/
+      versionChoice: ['yuzu-windows(.*).7z', /nightly-(.*)/]
     },
     canary: {
       site: {
-        GitHub: 'https://github.com/yuzu-emu/yuzu-canary/releases/latest'
+        GitHub: 'https://github.com/yuzu-emu/yuzu-canary/releases'
       },
-      versionChoice: /canary-(.*)/
+      versionChoice: ['yuzu-windows(.*).7z', /canary-(.*)/]
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

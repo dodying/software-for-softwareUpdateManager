@@ -1,11 +1,11 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   commercial: 2,
   site: {
     GitHub: 'https://github.com/httptoolkit/httptoolkit-desktop/releases/latest'
   },
-  downloadChoice: '[href$="full.nupkg"]',
+  versionChoice: 'full.nupkg',
   install: ['install', null, 'lib\\net*']
-}
-module.exports = data
+};
+module.exports = data;

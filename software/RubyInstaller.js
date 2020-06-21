@@ -1,17 +1,16 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/oneclick/rubyinstaller2/releases/latest'
   },
-  versionChoice: /RubyInstaller-(.*)/,
-  downloadChoice: '[href$="x64.exe"][href*="devkit"]',
+  versionChoice: ['devkit(.*)x64.exe', /RubyInstaller-(.*)/],
   install: 'install_inno',
   other: {
     nodevkit: {
-      downloadChoice: '[href$="x64.7z"]',
+      versionChoice: ['x64.7z', /RubyInstaller-(.*)/],
       install: 'install'
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

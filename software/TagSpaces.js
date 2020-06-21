@@ -1,11 +1,11 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   commercial: 2,
   site: {
     GitHub: 'https://github.com/tagspaces/tagspaces/releases/latest'
   },
-  downloadChoice: '[href*="win"][href$=".exe"]',
+  versionChoice: 'win(.*).exe',
   install: ['install_zipped', 'install', 'app-64.7z'],
   other: {
     beta: {
@@ -14,5 +14,5 @@ let data = {
       }
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

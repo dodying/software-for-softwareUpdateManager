@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/duplicati/duplicati/releases'
   },
-  downloadChoice: '[href$="x64.msi"]',
+  versionChoice: 'x64.msi',
   install: ['install_msi', null, 'Duplicati.GUI.TrayIcon.exe']
-}
-module.exports = data
+};
+module.exports = data;

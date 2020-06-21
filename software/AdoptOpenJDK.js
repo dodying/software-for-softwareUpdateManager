@@ -6,6 +6,8 @@ const data = {
   url: 'https://github.com/AdoptOpenJDK',
   version: async (res, $, fns, choice = { version: 14, jvm: 'hotspot', type: 'jdk' }) => {
     const uri1 = `https://api.adoptopenjdk.net/v3/assets/feature_releases/${choice.version}/ga?jvm_impl=${choice.jvm}&vendor=adoptopenjdk`;
+    // https://api.adoptopenjdk.net/v3/assets/feature_releases/11/ga?jvm_impl=hotspot&vendor=adoptopenjdk&
+    // https://api.adoptopenjdk.net/v3/assets/latest/11/hotspot?release=latest&jvm_impl=hotspot&vendor=adoptopenjdk&
     const res1 = await fns.req(uri1);
     const info = res1.json.find(i => i.binaries.find(i => i.os === 'windows' && i.architecture === 'x64' && i.image_type === choice.type));
     download = info.binaries.find(i => i.os === 'windows' && i.architecture === 'x64' && i.image_type === choice.type).package.link;

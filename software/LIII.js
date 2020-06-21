@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    GitHub: 'https://github.com/aliakseis/LIII/releases/latest'
+    GitHub: 'https://github.com/aliakseis/LIII/releases'
   },
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

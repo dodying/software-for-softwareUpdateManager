@@ -1,10 +1,17 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/Soundnode/soundnode-app/releases/latest'
   },
-  downloadChoice: '[href$="win32-x64.zip"]',
-  install: 'install'
-}
-module.exports = data
+  versionChoice: 'win32-x64.zip',
+  install: 'install',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/Soundnode/soundnode-app/releases'
+      }
+    }
+  }
+};
+module.exports = data;

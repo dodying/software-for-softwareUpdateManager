@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/nICEnnnnnnnLee/FileRename/releases/latest'
   },
-  downloadChoice: '[href$=".jar"]',
+  versionChoice: '.jar',
   install: 'install_single'
-}
-module.exports = data
+};
+module.exports = data;

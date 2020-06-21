@@ -1,18 +1,18 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/comictagger/comictagger/releases/latest'
   },
-  downloadChoice: '[href$=".exe.zip"]',
+  versionChoice: '.exe.zip',
   install: 'install_single',
   other: {
     beta: {
       site: {
         GitHub: 'https://github.com/comictagger/comictagger/releases'
       },
-      downloadChoice: '[href$=".exe.zip"]'
+      versionChoice: '.exe.zip'
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

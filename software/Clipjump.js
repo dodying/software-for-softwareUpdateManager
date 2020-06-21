@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/aviaryan/Clipjump/releases/latest'
   },
-  downloadChoice: '[href$="x64.zip"]',
+  versionChoice: 'x64.zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

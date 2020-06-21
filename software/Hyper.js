@@ -1,10 +1,17 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    GitHub: 'https://github.com/zeit/hyper/releases'
+    GitHub: 'https://github.com/vercel/hyper/releases/latest'
   },
-  downloadChoice: '[href$="full.nupkg"]',
-  install: ['install', null, 'lib\\net*']
-}
-module.exports = data
+  versionChoice: 'full.nupkg',
+  install: ['install', null, 'lib\\net*'],
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/vercel/hyper/releases'
+      }
+    }
+  }
+};
+module.exports = data;

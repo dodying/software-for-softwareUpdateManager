@@ -1,11 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/mamedev/mame/releases/latest'
   },
-  versionChoice: [/([\d.]+)/, true],
-  downloadChoice: '[href$="64bit.exe"]',
+  versionChoice: ['64bit.exe', /([\d.]+)/, false, 'name'],
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

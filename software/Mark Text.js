@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/marktext/marktext/releases/latest'
   },
-  downloadChoice: '[href$="x64-win.zip"]',
+  versionChoice: 'x64-win.zip',
   install: 'install',
   other: {
     beta: {
@@ -13,5 +13,5 @@ let data = {
       }
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

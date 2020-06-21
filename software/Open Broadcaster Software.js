@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/obsproject/obs-studio/releases/latest'
   },
-  downloadChoice: '[href$="Full-Installer-x64.exe"]',
+  versionChoice: 'Full-Installer-x64.exe',
   install: 'install_nsis'
-}
-module.exports = data
+};
+module.exports = data;

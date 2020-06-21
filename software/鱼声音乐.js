@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/AnyListen/YaVipCore/releases'
   },
-  downloadChoice: '[href$=".rar"]',
+  versionChoice: '.rar',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

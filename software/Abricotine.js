@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/brrd/Abricotine/releases/latest'
   },
-  downloadChoice: '[href$="windows-x64.exe"]',
+  versionChoice: 'win32-x64.exe',
   install: ['install_zipped', 'install', 'full.nupkg', null, 'lib\\net*']
-}
-module.exports = data
+};
+module.exports = data;

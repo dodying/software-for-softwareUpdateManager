@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/mu-editor/mu/releases/latest'
   },
-  downloadChoice: '[href$="win64.exe"]',
+  versionChoice: 'win64.exe',
   install: 'install_nsis',
   other: {
     alpha: {
@@ -13,5 +13,5 @@ let data = {
       }
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

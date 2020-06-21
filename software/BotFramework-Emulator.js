@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/Microsoft/BotFramework-Emulator/releases/latest'
   },
-  downloadChoice: '[href$=".exe"]',
+  versionChoice: '.exe',
   install: ['install_zipped', 'install', 'app-32.7z']
-}
-module.exports = data
+};
+module.exports = data;

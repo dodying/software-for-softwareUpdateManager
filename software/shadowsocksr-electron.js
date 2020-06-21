@@ -1,10 +1,17 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/shadowsocksrr/electron-ssr/releases/latest'
   },
-  downloadChoice: '[href$=".exe"]',
-  install: ['install_zipped', 'install', 'app-32.7z']
-}
-module.exports = data
+  versionChoice: '.exe',
+  install: ['install_zipped', 'install', 'app-32.7z'],
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/shadowsocksrr/electron-ssr/releases'
+      }
+    }
+  }
+};
+module.exports = data;

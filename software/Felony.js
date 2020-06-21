@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    GitHub: 'https://github.com/henryboldi/felony/releases/latest'
+    GitHub: 'https://github.com/henryboldi/felony/releases'
   },
-  downloadChoice: '[href$="win.exe"]',
+  versionChoice: 'win.exe',
   install: ['install_zipped', 'install', 'full.nupkg', null, 'lib\\net*']
-}
-module.exports = data
+};
+module.exports = data;

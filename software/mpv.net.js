@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/stax76/mpv.net/releases/latest'
   },
-  downloadChoice: '[href$=".7z"][href*="portable-x64"]',
+  versionChoice: 'portable-x64(.*).7z',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/Open-Shell/Open-Shell-Menu/releases/latest'
   },
-  downloadChoice: '[href$=".exe"]'
-}
-module.exports = data
+  versionChoice: '.exe'
+};
+module.exports = data;

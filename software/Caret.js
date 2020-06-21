@@ -1,17 +1,17 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/careteditor/issues/releases/latest'
   },
-  downloadChoice: '[href$="full.nupkg"]',
+  versionChoice: 'full.nupkg',
   install: ['install_zipped', 'install', 'full.nupkg', null, 'lib\\net*'],
   other: {
     beta: {
       site: {
-        GitHub: 'https://github.com/careteditor/releases-beta/releases/latest'
+        GitHub: 'https://github.com/careteditor/releases-beta/releases'
       }
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

@@ -1,15 +1,15 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/lordmulder/mediainfo-gui/releases/latest'
   },
-  downloadChoice: '[href$=".zip"][href*="MediaInfo-GUI"]',
+  versionChoice: 'MediaInfo-GUI(.*).zip',
   install: 'install_zipped_single',
   other: {
     cli: {
-      downloadChoice: '[href$=".zip"][href*="MediaInfo-CLI"]'
+      versionChoice: 'MediaInfo-CLI(.*).zip'
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

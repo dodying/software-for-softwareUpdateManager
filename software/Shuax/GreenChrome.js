@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/shuax/GreenChrome/releases/latest'
   },
-  downloadChoice: '[href$=".7z"]',
+  versionChoice: '.7z',
   install: ['install', null, 'x64']
-}
-module.exports = data
+};
+module.exports = data;

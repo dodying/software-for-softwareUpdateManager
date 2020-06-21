@@ -4,7 +4,7 @@ const data = {
   site: {
     GitHub: 'https://github.com/HDoujinDownloader/HDoujin-Downloader/releases/latest'
   },
-  downloadChoice: '[href$="win.zip"]',
+  versionChoice: 'win.zip',
   install: 'install'
 };
 module.exports = data;

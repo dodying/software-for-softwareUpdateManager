@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/processhacker/processhacker/releases/latest'
   },
@@ -10,8 +10,8 @@ let data = {
       site: {
         AppVeyor: 'https://ci.appveyor.com/api/projects/processhacker/processhacker'
       },
-      downloadChoice: 'bin.zip'
+      versionChoice: 'bin.zip'
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

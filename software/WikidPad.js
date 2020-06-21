@@ -1,11 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/WikidPad/WikidPad/releases/'
   },
-  versionChoice: /WikidPad-(.*)/,
-  downloadChoice: '[href$=".exe"]',
+  versionChoice: ['.exe', /WikidPad-(.*)/],
   install: 'install_inno'
-}
-module.exports = data
+};
+module.exports = data;

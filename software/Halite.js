@@ -1,11 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/Eoinocal/Halite/releases/latest'
   },
-  versionChoice: /Release-(.*)/,
-  downloadChoice: '[href$="x64.7z"]',
+  versionChoice: ['x64.7z', /Release-(.*)/],
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

@@ -1,15 +1,15 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/Tyrrrz/DiscordChatExporter/releases/latest'
   },
-  downloadChoice: '[href$="DiscordChatExporter.zip"]',
+  versionChoice: 'DiscordChatExporter.zip',
   install: 'install',
   other: {
     cli: {
-      downloadChoice: '[href$="DiscordChatExporter.CLI.zip"]'
+      versionChoice: 'DiscordChatExporter.CLI.zip'
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

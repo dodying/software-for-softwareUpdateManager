@@ -1,18 +1,18 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/snowie2000/mactype/releases/latest'
   },
-  downloadChoice: '[href$=".exe"]',
+  versionChoice: '.exe',
   install: 'install_inno_cli',
   other: {
     beta: {
       site: {
         GitHub: 'https://github.com/snowie2000/mactype/releases'
       },
-      downloadChoice: '[href$=".exe"]'
+      versionChoice: '.exe'
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

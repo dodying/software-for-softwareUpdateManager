@@ -1,18 +1,17 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    'GitHub-Api': 'https://api.github.com/repos/trufflesuite/ganache/releases'
+    GitHub: 'https://github.com/trufflesuite/ganache/releases/latest'
   },
-  versionChoice: [/.exe$/, null, false],
+  versionChoice: /.exe$/,
   install: ['install_zipped', 'install', 'app-64.7z'],
   other: {
     beta: {
       site: {
-        'GitHub-Api': 'https://api.github.com/repos/trufflesuite/ganache/releases'
-      },
-      versionChoice: /.exe$/
+        GitHub: 'https://github.com/trufflesuite/ganache/releases'
+      }
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

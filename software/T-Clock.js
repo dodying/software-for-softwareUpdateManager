@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/White-Tiger/T-Clock/releases/latest'
   },
-  downloadChoice: '[href$=".7z"]',
+  versionChoice: '.7z',
   install: 'install',
   other: {
     beta: {
@@ -13,5 +13,5 @@ let data = {
       }
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

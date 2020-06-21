@@ -1,11 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/yupi2/synergy/releases/latest'
   },
-  versionChoice: /(.*)_master/,
-  downloadChoice: '[href$=".msi"][href*="_x64_"]',
+  versionChoice: ['_x64_(.*).msi', /(.*)_master/],
   install: ['install_msi', null, 'synergys.exe']
-}
-module.exports = data
+};
+module.exports = data;

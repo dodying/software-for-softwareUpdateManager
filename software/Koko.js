@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/KokoIRC/koko/releases/latest'
   },
-  downloadChoice: '[href$="win-64.zip"]',
+  versionChoice: 'win-64.zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

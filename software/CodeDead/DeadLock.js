@@ -4,7 +4,7 @@ const data = {
   site: {
     GitHub: 'https://github.com/CodeDead/DeadLock/releases/latest'
   },
-  downloadChoice: '[href$=".exe"]',
+  versionChoice: '.exe',
   install: 'install_inno_type'
 };
 module.exports = data;

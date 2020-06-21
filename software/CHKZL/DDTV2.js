@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/CHKZL/DDTV2/releases/latest'
   },
-  downloadChoice: '[href$=".rar"][href*="DDTV2.0.Ver"]',
+  versionChoice: 'DDTV-.*?.rar',
   install: ['install', null, 'DDTV*']
-}
-module.exports = data
+};
+module.exports = data;

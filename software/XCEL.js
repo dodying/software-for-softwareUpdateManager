@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/o2team/xcel/releases/latest'
   },
-  downloadChoice: '[href$=".exe"]:not([href$="ia32.exe"])',
+  versionChoice: /([\d.]+).exe/,
   install: 'install_nsis'
-}
-module.exports = data
+};
+module.exports = data;

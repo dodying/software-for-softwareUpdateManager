@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/Enyby/APK-Info/releases/latest'
   },
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

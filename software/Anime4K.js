@@ -1,9 +1,16 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    GitHub: 'https://github.com/bloc97/Anime4K/releases'
+    GitHub: 'https://github.com/bloc97/Anime4K/releases/latest'
   },
-  install: 'install'
-}
-module.exports = data
+  install: 'install',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/bloc97/Anime4K/releases'
+      }
+    }
+  }
+};
+module.exports = data;

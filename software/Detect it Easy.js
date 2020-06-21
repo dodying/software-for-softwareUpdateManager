@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/horsicq/DIE-engine/releases/latest'
   },
-  downloadChoice: '[href*="win32_portable"][href$=".zip"]',
+  versionChoice: 'win32_portable(.*).zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

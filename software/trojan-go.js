@@ -2,16 +2,9 @@
 
 const data = {
   site: {
-    GitHub: 'https://github.com/p4gefau1t/trojan-go/releases/latest'
+    GitHub: 'https://github.com/p4gefau1t/trojan-go/releases'
   },
-  downloadChoice: '[href$="trojan-go-windows-amd64.exe.zip"]',
-  install: 'install',
-  other: {
-    beta: {
-      site: {
-        GitHub: 'https://github.com/p4gefau1t/trojan-go/releases'
-      }
-    }
-  }
+  versionChoice: 'windows-amd64.zip',
+  install: 'install'
 };
 module.exports = data;

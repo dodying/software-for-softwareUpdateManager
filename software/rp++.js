@@ -4,7 +4,7 @@ const data = {
   site: {
     GitHub: 'https://github.com/0vercl0k/rp/releases/latest'
   },
-  downloadChoice: 'win-x64.exe',
+  versionChoice: 'win-x64.exe',
   install: 'install',
   other: {
     beta: {

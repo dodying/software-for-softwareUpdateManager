@@ -1,11 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/aria2/aria2/releases/latest'
   },
-  versionChoice: /release-(.*)/,
-  downloadChoice: '[href*="win-64bit"][href$=".zip"]',
+  versionChoice: ['win-64bit(.*).zip', /release-(.*)/],
   install: ['install_zipped_single', 'aria2c.exe']
-}
-module.exports = data
+};
+module.exports = data;

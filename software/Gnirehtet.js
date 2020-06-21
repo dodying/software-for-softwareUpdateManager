@@ -1,17 +1,17 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/Genymobile/gnirehtet/releases/latest'
   },
-  downloadChoice: '[href$=".zip"][href*="rust-win64"]',
+  versionChoice: 'rust-win64(.*).zip',
   install: 'install',
   other: {
     java: {
     },
     java8: {
-      downloadChoice: '[href$="java8.zip"][href*="java"]'
+      versionChoice: 'java(.*)java8.zip'
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

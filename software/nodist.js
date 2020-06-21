@@ -4,7 +4,7 @@ const data = {
   site: {
     GitHub: 'https://github.com/nullivex/nodist/releases/latest'
   },
-  downloadChoice: '.exe',
+  versionChoice: '.exe',
   install: 'install_nsis'
 };
 module.exports = data;

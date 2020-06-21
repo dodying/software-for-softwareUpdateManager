@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/aluxian/Messenger-for-Desktop/releases/latest'
   },
-  downloadChoice: '[href$="win32-portable.zip"]',
+  versionChoice: 'win32-portable.zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

@@ -4,7 +4,7 @@ const data = {
   site: {
     GitHub: 'https://github.com/inlets/inlets/releases/latest'
   },
-  downloadChoice: '[href$=".exe"]',
+  versionChoice: '.exe',
   install: 'install',
   other: {
     pro: {

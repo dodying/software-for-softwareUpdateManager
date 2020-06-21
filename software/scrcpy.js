@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/Genymobile/scrcpy/releases/latest'
   },
-  downloadChoice: '[href$=".zip"][href*="win64"]',
+  versionChoice: 'win64(.*).zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

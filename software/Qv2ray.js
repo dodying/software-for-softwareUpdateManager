@@ -4,35 +4,40 @@ const data = {
   site: {
     GitHub: 'https://github.com/Qv2ray/Qv2ray/releases/latest'
   },
-  downloadChoice: 'Windows-x64.7z',
+  versionChoice: 'Windows-x64.7z',
   install: 'install',
   other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/Qv2ray/Qv2ray/releases'
+      }
+    },
     'plugin-ssr': {
       site: {
-        GitHub: 'https://github.com/Qv2ray/QvPlugin-SSR/releases/latest'
+        GitHub: 'https://github.com/Qv2ray/QvPlugin-SSR/releases'
       },
-      downloadChoice: 'Windows-x64.dll',
+      versionChoice: 'Windows-x64.dll',
       install: 'install_single'
     },
     'plugin-trojan': {
       site: {
-        GitHub: 'https://github.com/Qv2ray/QvPlugin-Trojan/releases/latest'
+        GitHub: 'https://github.com/Qv2ray/QvPlugin-Trojan/releases'
       },
-      downloadChoice: 'Windows-x64.dll',
+      versionChoice: 'Windows-x64.dll',
       install: 'install_single'
     },
     'plugin-command': {
       site: {
-        GitHub: 'https://github.com/Qv2ray/QvPlugin-Command/releases/latest'
+        GitHub: 'https://github.com/Qv2ray/QvPlugin-Command/releases'
       },
-      downloadChoice: 'Windows-x64.dll',
+      versionChoice: 'Windows-x64.dll',
       install: 'install_single'
     },
     'plugin-pac': {
       site: {
-        GitHub: 'https://github.com/Qv2ray/QvPlugin-PAC/releases/latest'
+        GitHub: 'https://github.com/Qv2ray/QvPlugin-PAC/releases'
       },
-      downloadChoice: 'Windows-x64.dll',
+      versionChoice: 'Windows-x64.dll',
       install: 'install_single'
     }
   }

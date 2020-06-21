@@ -1,9 +1,16 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    GitHub: 'https://github.com/shadowsocks/shadowsocks-windows/releases'
+    GitHub: 'https://github.com/shadowsocks/shadowsocks-windows/releases/latest'
   },
-  install: 'install_zipped_single'
-}
-module.exports = data
+  install: 'install_zipped_single',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/shadowsocks/shadowsocks-windows/releases'
+      }
+    }
+  }
+};
+module.exports = data;

@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/LMMS/lmms/releases/latest'
   },
-  downloadChoice: '[href$="win64.exe"]',
+  versionChoice: 'win64.exe',
   install: 'install_nsis'
-}
-module.exports = data
+};
+module.exports = data;

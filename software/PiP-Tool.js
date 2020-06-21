@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/LionelJouin/PiP-Tool/releases/latest'
   },
-  downloadChoice: '[href$=".msi"]',
+  versionChoice: '.msi',
   install: ['install_msi', null, 'PiP-Tool.exe']
-}
-module.exports = data
+};
+module.exports = data;

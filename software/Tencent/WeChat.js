@@ -8,6 +8,14 @@ const data = {
     selector: '#page_center'
   },
   download: 'https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe',
-  install: 'install_nsis'
+  install: 'install_nsis',
+  other: {
+    企业版: {
+      url: 'https://work.weixin.qq.com/',
+      version: '.index_log_section_title',
+      changelog: '.index_log_section_list',
+      download: 'https://work.weixin.qq.com/wework_admin/commdownload?platform=win'
+    }
+  }
 };
 module.exports = data;

@@ -1,10 +1,17 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/sqlitebrowser/sqlitebrowser/releases/latest'
   },
-  downloadChoice: '[href$="win64.zip"]',
-  install: 'install'
-}
-module.exports = data
+  versionChoice: 'win64.zip',
+  install: 'install',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/sqlitebrowser/sqlitebrowser/releases'
+      }
+    }
+  }
+};
+module.exports = data;

@@ -1,16 +1,16 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/ukanth/monitores/releases/latest'
   },
-  versionChoice: [/Google Code Release (.*)$/, true],
+  versionChoice: ['.zip$', /Google Code Release (.*)$/, false, 'name'],
   install: 'install',
   other: {
     lite: {
-      downloadChoice: '[href$="MonitorESLite.exe"]',
+      downloadChoice: 'MonitorESLite.exe',
       install: 'install_single'
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

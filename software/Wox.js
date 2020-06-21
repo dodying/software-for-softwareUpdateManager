@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/Wox-launcher/Wox/releases/latest'
   },
-  downloadChoice: '[href*="Wox-"][href$=".exe"]',
+  versionChoice: 'Wox-(.*).exe',
   install: ['install_zipped', 'install', 'full.nupkg', null, 'lib\\net*'],
   other: {
     beta: {
@@ -13,5 +13,5 @@ let data = {
       }
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/hainproject/hain/releases/latest'
   },
-  downloadChoice: '[href*="Hain-x64"][href$=".zip"]',
+  versionChoice: 'Hain-x64(.*).zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

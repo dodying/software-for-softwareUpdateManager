@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/yakyak/yakyak/releases/latest'
   },
-  downloadChoice: '[href$="win32-x64.zip"]',
+  versionChoice: 'win32-x64.zip',
   install: 'install',
   other: {
     beta: {
@@ -13,5 +13,5 @@ let data = {
       }
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

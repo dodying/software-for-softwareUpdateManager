@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    'GitHub-Api': 'https://api.github.com/repos/cztomczak/phpdesktop/releases'
+    GitHub: 'https://github.com/cztomczak/phpdesktop/releases/latest'
   },
   versionChoice: [/^phpdesktop-chrome/, /chrome-v(.*)/],
   install: 'install_nsis'
-}
-module.exports = data
+};
+module.exports = data;

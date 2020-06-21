@@ -1,10 +1,17 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/clementine-player/Clementine/releases/latest'
   },
-  downloadChoice: '[href$=".exe"]',
-  install: 'install_nsis'
-}
-module.exports = data
+  versionChoice: '.exe',
+  install: 'install_nsis',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/clementine-player/Clementine/releases'
+      }
+    }
+  }
+};
+module.exports = data;

@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/LorenzCK/OnTopReplica/releases/latest'
   },
   install: ['install_zipped', 'install_msi', null, null, 'OnTopReplica.exe']
-}
-module.exports = data
+};
+module.exports = data;

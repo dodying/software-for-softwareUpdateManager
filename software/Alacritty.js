@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    GitHub: 'https://github.com/jwilm/alacritty/releases/latest'
+    GitHub: 'https://github.com/alacritty/alacritty/releases/latest'
   },
-  downloadChoice: '[href$="windows-portable.zip"]',
+  versionChoice: 'windows-portable.zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

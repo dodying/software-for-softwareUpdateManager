@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/zufuliu/notepad2/releases/latest'
   },
-  downloadChoice: '[href*="x64"][href$=".zip"]',
+  versionChoice: 'x64(.*).zip',
   install: 'install',
   other: {
     chs: {
@@ -13,5 +13,5 @@ let data = {
       }
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

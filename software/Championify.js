@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/dustinblackman/Championify/releases/latest'
   },
-  downloadChoice: '[href*="WIN"][href$=".zip"]',
+  versionChoice: 'WIN(.*).zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

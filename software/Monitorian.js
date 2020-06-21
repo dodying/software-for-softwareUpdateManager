@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/emoacht/Monitorian/releases/latest'
   },
-  versionChoice: /(.*)-Installer/,
+  versionChoice: ['.zip$', /(.*)-Installer/],
   install: ['install_zipped', 'install_msi', '.msi', null, 'Monitorian.exe']
-}
-module.exports = data
+};
+module.exports = data;

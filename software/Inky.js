@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/inkle/inky/releases/latest'
   },
-  downloadChoice: '[href$="windows_64.zip"]',
+  versionChoice: 'windows_64.zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

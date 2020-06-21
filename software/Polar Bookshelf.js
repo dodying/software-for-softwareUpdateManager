@@ -1,10 +1,17 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/burtonator/polar-bookshelf/releases/latest'
   },
-  downloadChoice: '[href$="x64.exe"]',
-  install: ['install_zipped', 'install', 'app-64.7z']
-}
-module.exports = data
+  versionChoice: 'x64.exe',
+  install: ['install_zipped', 'install', 'app-64.7z'],
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/burtonator/polar-bookshelf/releases'
+      }
+    }
+  }
+};
+module.exports = data;

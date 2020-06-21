@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/angryip/ipscan/releases/latest'
   },
-  downloadChoice: '[href*="win64-"][href$=".exe"]',
+  versionChoice: 'win64-(.*).exe',
   install: 'install_single'
-}
-module.exports = data
+};
+module.exports = data;

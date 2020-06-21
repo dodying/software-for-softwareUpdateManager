@@ -1,11 +1,18 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   commercial: 2,
   site: {
     GitHub: 'https://github.com/mullvad/mullvadvpn-app/releases/latest'
   },
-  downloadChoice: '[href$=".exe"]',
-  install: ['install_zipped', 'install', 'app-64.7z']
-}
-module.exports = data
+  versionChoice: '.exe',
+  install: ['install_zipped', 'install', 'app-64.7z'],
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/mullvad/mullvadvpn-app/releases'
+      }
+    }
+  }
+};
+module.exports = data;

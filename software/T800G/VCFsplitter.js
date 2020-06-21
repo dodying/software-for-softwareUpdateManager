@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    GitHub: 'https://github.com/T800G/VCFsplitter/releases/latest'
+    GitHub: 'https://github.com/T800G/VCFsplitter/releases'
   },
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

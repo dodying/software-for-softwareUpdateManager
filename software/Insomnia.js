@@ -2,14 +2,13 @@
 
 const data = {
   site: {
-    'GitHub-Api': 'https://api.github.com/repos/Kong/insomnia/releases'
+    GitHub: 'https://github.com/Kong/insomnia/releases/latest'
   },
-  versionChoice: /Insomnia.Setup.(.*?).exe$/,
+  versionChoice: 'Insomnia.Core-(.*?).exe$',
   install: ['install_zipped', 'install', 'full.nupkg', null, 'lib\\net*'],
   other: {
     designer: {
-      versionChoice: /insomnia-designer-(.*?)-full.nupkg$/,
-      install: ['install', null, 'lib\\net*']
+      versionChoice: 'Insomnia.Designer-(.*?).exe$'
     },
     core: {}
   }

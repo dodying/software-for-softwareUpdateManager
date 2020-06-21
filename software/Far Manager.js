@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   url: 'https://farmanager.com/download.php?l=en',
   version: ['li>b', 'text', /v([\d.]+) build (\d+) x/, '$1.$2'],
   download: 'a.body_link[href$=".7z"][href*="x64"]',
@@ -14,9 +14,8 @@ let data = {
       site: {
         GitHub: 'https://github.com/FarGroup/FarManager/releases/latest'
       },
-      versionChoice: /^ci\/v(.*)$/,
-      downloadChoice: '[href$=".7z"][href*="Far.x64"]'
+      versionChoice: ['Far.x64(.*).7z', /^ci\/v(.*)$/]
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/yingDev/WGestures/releases/latest'
   },
   install: ['install_zipped', 'install_msi', null, null, 'WGestures.exe']
-}
-module.exports = data
+};
+module.exports = data;

@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/rvpanoz/luna/releases/latest'
   },
-  downloadChoice: '[href$=".msi"]',
+  versionChoice: '.msi',
   install: ['install_msi', null, 'luna.exe']
-}
-module.exports = data
+};
+module.exports = data;

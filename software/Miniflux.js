@@ -1,10 +1,11 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/miniflux/miniflux/releases/latest'
   },
-  downloadChoice: ['[href$="windows-amd64"]', '.exe'],
+  versionChoice: 'miniflux-windows-amd64',
+  downloadChoice: ['miniflux-windows-amd64', '.exe'],
   install: 'install_single'
-}
-module.exports = data
+};
+module.exports = data;

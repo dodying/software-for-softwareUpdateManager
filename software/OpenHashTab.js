@@ -5,7 +5,7 @@ const data = {
   site: {
     GitHub: 'https://github.com/namazso/OpenHashTab/releases/latest'
   },
-  downloadChoice: '[href$=".exe"]',
+  versionChoice: '.exe',
   install: 'install_inno_cli'
 };
 module.exports = data;

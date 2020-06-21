@@ -1,10 +1,17 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/React-Proto/react-proto/releases/latest'
   },
-  downloadChoice: '[href$=".7z"]',
-  install: 'install'
-}
-module.exports = data
+  versionChoice: '.7z',
+  install: 'install',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/React-Proto/react-proto/releases'
+      }
+    }
+  }
+};
+module.exports = data;

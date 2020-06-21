@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    GitHub: 'https://github.com/Xyrio/RSSOwlnix/releases/latest'
+    GitHub: 'https://github.com/Xyrio/RSSOwlnix/releases'
   },
-  downloadChoice: '[href$="win32.win32.x86_64.zip"]',
+  versionChoice: 'win32.win32.x86_64.zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

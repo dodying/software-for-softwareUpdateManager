@@ -2,16 +2,16 @@
 
 const data = {
   site: {
-    GitHub: 'https://github.com/readium/readium-desktop/releases/latest'
+    GitHub: 'https://github.com/edrlab/thorium-reader/releases/latest'
   },
-  downloadChoice: '[href$=".exe"]',
+  versionChoice: '.exe',
   install: ['install_zipped', 'install', 'app-64.7z'],
   other: {
-    prerelease: {
+    beta: {
       site: {
-        AppVeyor: 'https://ci.appveyor.com/api/projects/danielweck/readium-desktop'
+        GitHub: 'https://github.com/edrlab/thorium-reader/releases'
       },
-      downloadChoice: '.exe'
+      versionChoice: ['.exe', null, null, 'published_at']
     }
   }
 };

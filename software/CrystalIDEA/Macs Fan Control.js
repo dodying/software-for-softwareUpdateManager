@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/crystalidea/macs-fan-control/releases/latest'
   },
-  downloadChoice: '[href$=".exe"]',
+  versionChoice: '.exe',
   install: ['install_inno', null, { '{code_Qt32Dir}': '{dir}' }]
-}
-module.exports = data
+};
+module.exports = data;

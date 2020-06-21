@@ -1,9 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/miyouzi/akamTester/releases/latest'
   },
+  versionChoice: '.7z',
   install: 'install_zipped_single'
-}
-module.exports = data
+};
+module.exports = data;

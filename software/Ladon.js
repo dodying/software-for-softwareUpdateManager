@@ -1,10 +1,17 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/k8gege/Ladon/releases/latest'
   },
-  downloadChoice: '[href$=".rar"]',
-  install: 'install'
-}
-module.exports = data
+  versionChoice: '.rar',
+  install: 'install',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/k8gege/Ladon/releases'
+      }
+    }
+  }
+};
+module.exports = data;

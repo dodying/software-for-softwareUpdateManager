@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    'GitHub-Api': 'https://api.github.com/repos/SoftEtherVPN/SoftEtherVPN_Stable/releases'
+    GitHub: 'https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/latest'
   },
   versionChoice: /softether-vpnclient.*\.exe$/
-}
-module.exports = data
+};
+module.exports = data;

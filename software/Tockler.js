@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    'GitHub-Api': 'https://api.github.com/repos/MayGo/tockler/releases'
+    GitHub: 'https://github.com/MayGo/tockler/releases/latest'
   },
   versionChoice: /.exe$/,
   install: 'install_nsis'
-}
-module.exports = data
+};
+module.exports = data;

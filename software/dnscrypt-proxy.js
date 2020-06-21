@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    GitHub: 'https://github.com/jedisct1/dnscrypt-proxy/releases/latest'
+    GitHub: 'https://github.com/DNSCrypt/dnscrypt-proxy/releases/latest'
   },
-  downloadChoice: '[href*="win64"][href$=".zip"]',
+  versionChoice: 'win64(.*).zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

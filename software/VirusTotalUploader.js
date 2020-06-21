@@ -1,10 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/SamuelTulach/VirusTotalUploader/releases/latest'
   },
-  downloadChoice: '[href$="Release.zip"]',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

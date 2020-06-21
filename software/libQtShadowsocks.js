@@ -2,7 +2,7 @@
 
 const data = {
   site: {
-    'GitHub-Api': 'https://api.github.com/repos/shadowsocks/libQtShadowsocks/releases'
+    GitHub: 'https://github.com/shadowsocks/libQtShadowsocks/releases/latest'
   },
   versionChoice: /win64.7z$/,
   install: 'install_zipped_single'

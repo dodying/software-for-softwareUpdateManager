@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/LabelPlus/LabelPlus/releases/latest'
   },
-  downloadChoice: '[href$=".7z"]',
+  versionChoice: '.7z',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

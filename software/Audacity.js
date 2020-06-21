@@ -1,9 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    Softpedia: 'https://www.softpedia.com/get/Multimedia/Audio/Audio-Editors-Recorders/Audacity.shtml'
+    FossHub: 'https://www.fosshub.com/Audacity.html'
   },
+  downloadChoice: /audacity-win-.*?.exe/,
   install: 'install_inno'
-}
-module.exports = data
+};
+module.exports = data;

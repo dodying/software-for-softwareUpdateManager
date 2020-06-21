@@ -1,9 +1,16 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/icsharpcode/ILSpy/releases/latest'
   },
-  install: 'install'
-}
-module.exports = data
+  install: 'install',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/icsharpcode/ILSpy/releases'
+      }
+    }
+  }
+};
+module.exports = data;

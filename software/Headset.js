@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/headsetapp/headset-electron/releases/latest'
   },
-  downloadChoice: '[href$="setup.exe"]',
+  versionChoice: 'setup.exe',
   install: ['install_zipped', 'install', 'full.nupkg', null, 'lib\\net*']
-}
-module.exports = data
+};
+module.exports = data;

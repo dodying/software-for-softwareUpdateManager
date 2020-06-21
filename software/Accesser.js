@@ -4,7 +4,7 @@ const data = {
   site: {
     GitHub: 'https://github.com/URenko/Accesser/releases/latest'
   },
-  downloadChoice: '[href$=".exe"]',
+  versionChoice: '.exe',
   install: 'install_single'
 };
 module.exports = data;

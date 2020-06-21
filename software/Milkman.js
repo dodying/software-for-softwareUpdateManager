@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/warmuuh/milkman/releases/latest'
   },
-  downloadChoice: '[href$="win64-bin.zip"]',
+  versionChoice: 'win64-bin.zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

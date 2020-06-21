@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/atom/atom/releases/latest'
   },
-  downloadChoice: '[href$="-x64-windows.zip"]',
+  versionChoice: '-x64-windows.zip',
   install: 'install',
   other: {
     beta: {
@@ -13,5 +13,5 @@ let data = {
       }
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

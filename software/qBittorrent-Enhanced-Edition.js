@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    'GitHub-Api': 'https://api.github.com/repos/c0re100/qBittorrent-Enhanced-Edition/releases'
+    GitHub: 'https://github.com/c0re100/qBittorrent-Enhanced-Edition/releases/latest'
   },
   versionChoice: [/x64_setup.exe$/, /release-(.*)/],
   install: 'install_nsis'
-}
-module.exports = data
+};
+module.exports = data;

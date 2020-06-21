@@ -1,16 +1,16 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/HandBrake/HandBrake/releases/latest'
   },
-  downloadChoice: '[href$="x86_64-Win_GUI.exe"]',
+  versionChoice: 'x86_64-Win_GUI.exe',
   install: 'install_nsis',
   other: {
     cli: {
-      downloadChoice: '[href$="win-x86_64.zip"][href*="HandBrakeCLI"]',
+      versionChoice: 'HandBrakeCLI(.*)win-x86_64.zip',
       install: 'install'
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

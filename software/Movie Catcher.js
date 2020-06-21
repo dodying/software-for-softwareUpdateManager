@@ -1,11 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/EvilCult/moviecatcher/releases'
   },
-  versionChoice: /Beta(.*)\(/,
-  downloadChoice: '[href$="Windows.zip"]',
+  versionChoice: ['Windows.zip', /Beta(.*)\(/],
   install: ['install_zipped_single', 'Movie Catcher.exe']
-}
-module.exports = data
+};
+module.exports = data;

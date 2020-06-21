@@ -1,18 +1,18 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/meetfranz/franz/releases/latest'
   },
-  downloadChoice: '[href$=".exe"]',
+  versionChoice: '.exe',
   install: ['install_zipped', 'install', 'app-64.7z'],
   other: {
     beta: {
       site: {
         GitHub: 'https://github.com/meetfranz/franz/releases'
       },
-      downloadChoice: '[href$=".exe"]'
+      versionChoice: '.exe'
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

@@ -1,9 +1,16 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    GitHub: 'https://github.com/shadowsocksrr/shadowsocksr-csharp/releases'
+    GitHub: 'https://github.com/shadowsocksrr/shadowsocksr-csharp/releases/latest'
   },
-  install: ['install', 'templates']
-}
-module.exports = data
+  install: ['install', 'templates'],
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/shadowsocksrr/shadowsocksr-csharp/releases'
+      }
+    }
+  }
+};
+module.exports = data;

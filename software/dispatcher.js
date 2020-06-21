@@ -4,11 +4,11 @@ const data = {
   site: {
     GitHub: 'https://github.com/131/dispatcher/releases/latest'
   },
-  downloadChoice: 'win_x64.exe',
+  versionChoice: 'win_x64.exe',
   install: 'install_single',
   other: {
     cmd: {
-      downloadChoice: 'cmd_x64.exe'
+      versionChoice: 'cmd_x64.exe'
     }
   }
 };

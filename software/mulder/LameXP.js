@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/lordmulder/LameXP/releases/latest'
   },
-  versionChoice: [/LameXP v([\d.]+)/, true],
+  versionChoice: ['.zip$', /LameXP v([\d.]+)/, false, 'name'],
   install: 'install_zipped_single'
-}
-module.exports = data
+};
+module.exports = data;

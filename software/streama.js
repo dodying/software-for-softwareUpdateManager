@@ -4,7 +4,7 @@ const data = {
   site: {
     GitHub: 'https://github.com/streamaserver/streama/releases/latest'
   },
-  downloadChoice: '[href$=".jar"]',
+  versionChoice: '.jar',
   install: 'install_single'
 };
 module.exports = data;

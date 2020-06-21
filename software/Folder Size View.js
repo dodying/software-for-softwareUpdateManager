@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/foldersizeview/foldersizeview.github.io/releases/latest'
   },
-  downloadChoice: '[href$="Setup.zip"]',
+  versionChoice: 'Setup.zip',
   install: ['install_zipped', 'install_inno_type']
-}
-module.exports = data
+};
+module.exports = data;

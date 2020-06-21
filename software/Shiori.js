@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/go-shiori/shiori/releases/latest'
   },
-  downloadChoice: '[href$="windows-amd64.exe"]',
+  versionChoice: 'windows-amd64.exe',
   install: 'install_single'
-}
-module.exports = data
+};
+module.exports = data;

@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/Eugeny/terminus/releases/latest'
   },
-  downloadChoice: '[href$="portable.exe"]',
+  versionChoice: '.exe',
   install: ['install_zipped', 'install', 'app-64.7z']
-}
-module.exports = data
+};
+module.exports = data;

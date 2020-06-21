@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/airdcpp/airgit/releases/latest'
   },
-  downloadChoice: '[href$="x64.7z"]',
+  versionChoice: 'x64.7z',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

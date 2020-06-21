@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/upx/upx/releases/latest'
   },
-  downloadChoice: '[href*="win64"][href$=".zip"]',
+  versionChoice: 'win64(.*).zip',
   install: ['install_zipped_single', 'upx.exe']
-}
-module.exports = data
+};
+module.exports = data;

@@ -20,6 +20,7 @@ const data = {
   // ?preferPath: 'preferPath',
 
   // url or site, either needed
+  // when templates, (url)=>urlTrue
   url: 'https://vivaldi.com/',
   site: {
     // key of site, should be found in folder templates

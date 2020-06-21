@@ -1,10 +1,17 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    GitHub: 'https://github.com/fatedier/frp/releases'
+    GitHub: 'https://github.com/fatedier/frp/releases/latest'
   },
-  downloadChoice: '[href$="windows_amd64.zip"]',
-  install: 'install'
-}
-module.exports = data
+  versionChoice: 'windows_amd64.zip',
+  install: 'install',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/fatedier/frp/releases'
+      }
+    }
+  }
+};
+module.exports = data;

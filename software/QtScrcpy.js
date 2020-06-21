@@ -4,7 +4,7 @@ const data = {
   site: {
     GitHub: 'https://github.com/barry-ran/QtScrcpy/releases/latest'
   },
-  downloadChoice: '[href$=".zip"][href*="win-x64"]',
+  versionChoice: 'win-x64(.*).zip',
   install: 'install'
 };
 module.exports = data;

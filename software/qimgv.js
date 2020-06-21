@@ -2,9 +2,16 @@
 
 const data = {
   site: {
-    GitHub: 'https://github.com/easymodo/qimgv/releases'
+    GitHub: 'https://github.com/easymodo/qimgv/releases/latest'
   },
-  downloadChoice: '[href$="-video.exe"]',
-  install: 'install_inno'
+  versionChoice: '-video.exe',
+  install: 'install_inno',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/easymodo/qimgv/releases'
+      }
+    }
+  }
 };
 module.exports = data;

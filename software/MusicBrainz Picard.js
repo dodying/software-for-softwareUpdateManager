@@ -1,11 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/metabrainz/picard/releases/latest'
   },
-  versionChoice: /release-(.*)/,
-  downloadChoice: '[href$=".exe"]',
+  versionChoice: ['.exe', /release-(.*)/],
   install: 'install_nsis'
-}
-module.exports = data
+};
+module.exports = data;

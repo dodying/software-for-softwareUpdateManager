@@ -1,13 +1,18 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    'GitHub-Api': 'https://api.github.com/repos/Jigsaw-Code/outline-client/releases'
+    GitHub: 'https://github.com/Jigsaw-Code/outline-client/releases/latest'
   },
-  versionChoice: [/.exe$/, /windows-v(.*)/, false],
+  versionChoice: [/.exe$/, /windows-v(.*)/],
   install: 'install_nsis',
   other: {
-    daily: { versionChoice: [/.exe$/, /daily-(.*)/] }
+    daily: {
+      site: {
+        GitHub: 'https://github.com/Jigsaw-Code/outline-client/releases'
+      },
+      versionChoice: [/.exe$/, /daily-(.*)/]
+    }
   }
-}
-module.exports = data
+};
+module.exports = data;

@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/k-takata/the_silver_searcher-win32/releases'
   },
-  downloadChoice: '[href$="x64.zip"]',
+  versionChoice: 'x64.zip',
   install: 'install_zipped_single'
-}
-module.exports = data
+};
+module.exports = data;

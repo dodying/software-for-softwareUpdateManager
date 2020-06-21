@@ -1,11 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    GitHub: 'https://github.com/kohsuke/winsw/releases'
+    GitHub: 'https://github.com/winsw/winsw/releases/latest'
   },
-  versionChoice: /winsw-v(.*)/,
-  downloadChoice: '[href$="NET4.exe"]',
+  versionChoice: 'NET4.exe',
   install: 'install_single'
-}
-module.exports = data
+};
+module.exports = data;

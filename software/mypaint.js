@@ -1,9 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/mypaint/mypaint/releases/latest'
   },
+  versionChoice: 'mypaint-w64-(.*?)-standalone.7z',
   install: 'install',
   other: {
     beta: {
@@ -12,5 +13,5 @@ let data = {
       }
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

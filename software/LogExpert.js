@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/zarunbal/LogExpert/releases/latest'
   },
-  downloadChoice: '[href*="LogExpert."][href$=".zip"]',
+  versionChoice: 'LogExpert.(.*).zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

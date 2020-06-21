@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    'GitHub': 'https://github.com/hellzerg/optimizer/releases/latest'
+    GitHub: 'https://github.com/hellzerg/optimizer/releases/latest'
   },
-  downloadChoice: '[href$=".exe"]',
+  versionChoice: '.exe',
   install: 'install_single'
-}
-module.exports = data
+};
+module.exports = data;

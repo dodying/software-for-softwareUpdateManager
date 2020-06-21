@@ -1,10 +1,17 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/freenet/fred/releases/latest'
   },
-  downloadChoice: 'a[href*="freenet-build"][href*="/releases/download/"][href$=".jar"]',
-  install: 'install_single'
-}
-module.exports = data
+  versionChoice: 'freenet.jar',
+  install: 'install_single',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/freenet/fred/releases'
+      }
+    }
+  }
+};
+module.exports = data;

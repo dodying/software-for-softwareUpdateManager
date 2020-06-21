@@ -1,10 +1,17 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/TreeNote/TreeNote/releases/latest'
   },
-  downloadChoice: '[href$="windows.zip"]',
-  install: 'install'
-}
-module.exports = data
+  versionChoice: 'windows.zip',
+  install: 'install',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/TreeNote/TreeNote/releases'
+      }
+    }
+  }
+};
+module.exports = data;

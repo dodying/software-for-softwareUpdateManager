@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/Foundry376/Mailspring/releases/latest'
   },
-  downloadChoice: '[href$="full.nupkg"]',
+  versionChoice: 'full.nupkg',
   install: ['install', null, 'lib\\net*']
-}
-module.exports = data
+};
+module.exports = data;

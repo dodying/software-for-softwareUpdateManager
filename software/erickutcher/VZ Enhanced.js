@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/vzenhanced/vzenhanced/releases/latest'
   },
   install: 'install_zipped_single'
-}
-module.exports = data
+};
+module.exports = data;

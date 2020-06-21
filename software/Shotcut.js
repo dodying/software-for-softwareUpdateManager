@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/mltframework/shotcut/releases/latest'
   },
-  downloadChoice: '[href$=".exe"][href*="win64"]',
+  versionChoice: 'win64(.*).exe',
   install: 'install_nsis',
   other: {
     beta: {
@@ -13,5 +13,5 @@ let data = {
       }
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

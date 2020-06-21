@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/giorgiotani/PeaZip/releases/latest'
   },
-  downloadChoice: '[href*="portable"][href$="WIN64.zip"]',
+  versionChoice: 'portable(.*)WIN64.zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/mike-schultz/materialette/releases/latest'
   },
-  downloadChoice: '[href*="windows"][href$=".zip"]',
+  versionChoice: 'windows(.*).zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

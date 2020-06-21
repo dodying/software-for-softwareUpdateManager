@@ -1,10 +1,8 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    GitHub: 'https://github.com/Gainedge/BetterExplorer/releases/latest'
-  },
-  downloadChoice: '[href$=".rar"]',
-  install: 'install'
-}
-module.exports = data
+    GitHub: 'https://github.com/Gainedge/BetterExplorer/releases'
+  }
+};
+module.exports = data;

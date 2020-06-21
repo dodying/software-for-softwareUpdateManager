@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/Dreamacro/clash/releases'
   },
-  downloadChoice: '[href*="windows-amd64"][href$=".zip"]',
+  versionChoice: 'windows-amd64(.*).zip',
   install: 'install_zipped_single'
-}
-module.exports = data
+};
+module.exports = data;

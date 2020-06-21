@@ -1,10 +1,17 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/laurent22/joplin/releases/latest'
   },
-  downloadChoice: '[href$="Portable.exe"]',
-  install: ['install_zipped', 'install', 'app-64.7z']
-}
-module.exports = data
+  versionChoice: 'Portable.exe',
+  install: ['install_zipped', 'install', 'app-64.7z'],
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/laurent22/joplin/releases'
+      }
+    }
+  }
+};
+module.exports = data;

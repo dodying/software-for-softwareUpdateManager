@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/sipt/shuttle/releases/latest'
   },
-  downloadChoice: '[href$=".zip"][href*="windows_amd64"]',
+  versionChoice: 'windows_amd64(.*).zip',
   install: 'install',
   other: {
     beta: {
@@ -13,5 +13,5 @@ let data = {
       }
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

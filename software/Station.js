@@ -4,7 +4,7 @@ const data = {
   site: {
     GitHub: 'https://github.com/getstation/desktop-app-releases/releases/latest'
   },
-  downloadChoice: 'full.nupkg',
+  versionChoice: 'full.nupkg',
   install: ['install', null, 'lib\\net*']
 };
 module.exports = data;

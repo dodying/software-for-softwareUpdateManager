@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    GitHub: 'https://github.com/nurtext/active-collab-desktop/releases/latest'
+    GitHub: 'https://github.com/nurtext/active-collab-desktop/releases'
   },
-  downloadChoice: '[href*="win-x64"][href$=".zip"]',
+  versionChoice: 'win-x64(.*).zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

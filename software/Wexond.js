@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    GitHub: 'https://github.com/wexond/wexond/releases/latest'
+    GitHub: 'https://github.com/wexond/desktop/releases/latest'
   },
-  downloadChoice: '[href$="win.zip"]',
+  versionChoice: 'win.zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

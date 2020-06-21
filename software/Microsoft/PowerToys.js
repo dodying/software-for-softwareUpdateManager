@@ -1,11 +1,11 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   fixedPath: '%ProgramFiles%/PowerToys/PowerToys.exe',
   site: {
     GitHub: 'https://github.com/microsoft/PowerToys/releases/latest'
   },
-  downloadChoice: '[href$=".msi"]',
+  versionChoice: '.msi',
   install: 'install_msi_cli'
-}
-module.exports = data
+};
+module.exports = data;

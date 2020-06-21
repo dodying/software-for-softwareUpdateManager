@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   commercial: 2,
   url: 'https://tianruoocr.cn/server/update/README.md',
   version: (res, $) => res.body.match(/版本：([\d.]+)/),
@@ -9,14 +9,14 @@ let data = {
     split: true
   },
   other: {
-    'free': {
+    free: {
       commercial: 0,
       site: {
         GitHub: 'https://github.com/miyouzi/tianruoocr_last/releases/latest'
       },
-      downloadChoice: '[href$=".7z"]',
+      versionChoice: '.7z',
       install: 'install'
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

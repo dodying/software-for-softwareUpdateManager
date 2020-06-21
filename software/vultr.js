@@ -5,7 +5,7 @@ const data = {
   site: {
     GitHub: 'https://github.com/JamesClonk/vultr/releases/latest'
   },
-  downloadChoice: 'Windows-64bit.zip',
+  versionChoice: 'Windows-64bit.zip',
   install: 'install_zipped_single'
 };
 module.exports = data;

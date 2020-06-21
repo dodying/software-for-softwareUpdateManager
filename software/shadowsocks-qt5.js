@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    'GitHub-Api': 'https://api.github.com/repos/shadowsocks/shadowsocks-qt5/releases'
+    GitHub: 'https://github.com/shadowsocks/shadowsocks-qt5/releases/latest'
   },
   versionChoice: /win64.7z$/,
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

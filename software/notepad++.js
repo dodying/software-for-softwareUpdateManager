@@ -17,7 +17,7 @@ let data = {
   site: {
     GitHub: 'https://github.com/notepad-plus-plus/notepad-plus-plus/releases/latest'
   },
-  downloadChoice: '[href$="bin.x64.7z"]',
+  downloadChoice: 'bin.x64.7z',
   install: 'install'
 }
 module.exports = data

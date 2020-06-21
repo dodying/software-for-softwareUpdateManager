@@ -1,10 +1,17 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/Sigil-Ebook/Sigil/releases/latest'
   },
-  downloadChoice: '[href$="x64-Setup.exe"]',
-  install: 'install_inno'
-}
-module.exports = data
+  versionChoice: 'x64-Setup.exe',
+  install: 'install_inno',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/Sigil-Ebook/Sigil/releases'
+      }
+    }
+  }
+};
+module.exports = data;

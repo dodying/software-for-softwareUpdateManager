@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/alexhua/goproxy-ci/releases/latest'
   },
-  downloadChoice: '[href$=".7z"][href*="windows_amd64"]',
+  versionChoice: 'windows_amd64(.*).7z',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

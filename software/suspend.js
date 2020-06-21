@@ -1,11 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    'GitHub': 'https://github.com/craftwar/suspend/releases/latest'
+    GitHub: 'https://github.com/craftwar/suspend/releases/latest'
   },
-  versionChoice: [/(.*)/, true],
-  downloadChoice: '[href$="suspend.7z"]',
+  versionChoice: ['suspend.7z', /(.*)/, false, 'name'],
   install: 'install_zipped_single'
-}
-module.exports = data
+};
+module.exports = data;

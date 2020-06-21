@@ -2,7 +2,7 @@
 
 const data = {
   site: {
-    'GitHub-Api': 'https://api.github.com/repos/wireapp/wire-desktop/releases'
+    GitHub: 'https://github.com/wireapp/wire-desktop/releases/latest'
   },
   versionChoice: { filter: i => i.tag_name.match(/windows/), match: /windows\/(.*)/ },
   download: 'https://wire-app.wire.com/win/prod/WireSetup.exe',

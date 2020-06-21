@@ -1,18 +1,18 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/JabRef/jabref/releases/latest'
   },
-  downloadChoice: '[href$=".jar"]',
-  install: 'install_single',
+  versionChoice: 'portable_windows.zip',
+  install: 'install',
   other: {
     beta: {
       site: {
         GitHub: 'https://github.com/JabRef/jabref/releases'
       },
-      downloadChoice: '[href$=".jar"]'
+      versionChoice: 'portable_windows.zip'
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

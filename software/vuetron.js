@@ -1,10 +1,17 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/vuetwo/vuetron/releases/latest'
   },
-  downloadChoice: '[href*="win"][href$=".zip"]',
-  install: 'install'
-}
-module.exports = data
+  versionChoice: 'win(.*).zip',
+  install: 'install',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/vuetwo/vuetron/releases'
+      }
+    }
+  }
+};
+module.exports = data;

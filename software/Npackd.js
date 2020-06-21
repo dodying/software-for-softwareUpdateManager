@@ -1,16 +1,26 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/tim-lebedkov/npackd-cpp/releases/latest'
   },
-  versionChoice: /version_(.*)/,
-  downloadChoice: '[href*="Npackd64-"][href$=".zip"]',
+  versionChoice: ['Npackd64-(.*).zip', /version_(.*)/],
   install: 'install',
   other: {
     cli: {
-      downloadChoice: '[href*="NpackdCL64-"][href$=".zip"]'
+      versionChoice: ['NpackdCL64-(.*).zip', /version_(.*)/]
+    },
+    beta: {
+      site: {
+        GitHub: 'https://github.com/tim-lebedkov/npackd-cpp/releases'
+      }
+    },
+    'cli-beta': {
+      site: {
+        GitHub: 'https://github.com/tim-lebedkov/npackd-cpp/releases'
+      },
+      versionChoice: ['NpackdCL64-(.*).zip', /version_(.*)/]
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

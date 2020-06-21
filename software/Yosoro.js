@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/IceEnd/Yosoro/releases/latest'
   },
-  downloadChoice: '[href*="win32-x64"][href$=".zip"]',
+  versionChoice: 'win32-x64(.*).zip',
   install: ['install_zipped', 'install_zipped', null, 'install', 'full.nupkg', null, 'lib\\net*']
-}
-module.exports = data
+};
+module.exports = data;

@@ -4,7 +4,7 @@ const data = {
   site: {
     GitHub: 'https://github.com/HexPang/MagnetY/releases/latest'
   },
-  downloadChoice: '[href$=".rar"]',
+  versionChoice: '.rar',
   install: 'install'
 };
 module.exports = data;

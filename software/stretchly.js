@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/hovancik/stretchly/releases/latest'
   },
-  downloadChoice: '[href$="win.7z"]:not([href$="ia32-win.7z"])',
+  versionChoice: /stretchly-([\d.]+)-win.7z/,
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

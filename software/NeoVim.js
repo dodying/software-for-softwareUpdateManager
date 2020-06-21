@@ -1,18 +1,18 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/neovim/neovim/releases/latest'
   },
-  downloadChoice: '[href$="nvim-win64.zip"]',
+  downloadChoice: 'nvim-win64.zip',
   install: 'install',
   other: {
     nightly: {
-      url: 'https://github.com/neovim/neovim/releases/tag/nightly',
-      version: ['.release-header+.markdown-body>pre', 'text', /NVIM v([\d.]+.*)/],
-      changelog: '.release-header+.markdown-body',
-      download: 'https://github.com/neovim/neovim/releases/download/nightly/nvim-win64.zip'
+      site: {
+        GitHub: 'https://github.com/neovim/neovim/releases'
+      },
+      versionChoice: ['nvim-win64.zip', /NVIM ([\d.]+.*)/, null, 'name']
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

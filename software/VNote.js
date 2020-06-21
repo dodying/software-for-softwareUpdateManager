@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/tamlok/vnote/releases/latest'
   },
-  downloadChoice: '[href*="64_portable"][href$=".zip"]',
+  versionChoice: '64_portable(.*).zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

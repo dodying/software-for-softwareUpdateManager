@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    GitHub: 'https://github.com/aimerforreimu/AUXPI/releases/latest'
+    GitHub: 'https://github.com/0xDkd/auxpi/releases/latest'
   },
-  downloadChoice: '[href$="windows.tar.gz"]',
+  versionChoice: 'windows.tar.gz',
   install: ['install_zipped', 'install']
-}
-module.exports = data
+};
+module.exports = data;

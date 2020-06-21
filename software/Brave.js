@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    'GitHub-Api': 'https://api.github.com/repos/brave/brave-browser/releases'
+    GitHub: 'https://github.com/brave/brave-browser/releases'
   },
   versionChoice: i => i.name.match(/Release Channel/) && i.assets.some(j => j.name.match(/win32-x64.zip$/)),
   downloadChoice: /win32-x64.zip$/,
@@ -21,5 +21,5 @@ let data = {
       downloadChoice: /win32-x64.zip$/
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

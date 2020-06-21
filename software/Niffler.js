@@ -1,10 +1,17 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    GitHub: 'https://github.com/grinfans/niffler/releases'
+    GitHub: 'https://github.com/grinfans/Niffler/releases/latest'
   },
-  downloadChoice: '[href$=".exe"]',
-  install: ['install_zipped', 'install', 'app-64.7z']
-}
-module.exports = data
+  versionChoice: '.exe',
+  install: ['install_zipped', 'install', 'app-64.7z'],
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/grinfans/Niffler/releases'
+      }
+    }
+  }
+};
+module.exports = data;

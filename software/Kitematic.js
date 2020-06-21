@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/docker/kitematic/releases/latest'
   },
-  downloadChoice: '[href$="Windows.zip"]',
+  versionChoice: 'Windows.zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

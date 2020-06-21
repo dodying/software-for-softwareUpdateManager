@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/cassidoo/todometer/releases/latest'
   },
-  downloadChoice: '[href$=".exe"]',
+  versionChoice: /windows.zip/i,
   install: ['install_zipped', 'install', 'full.nupkg', null, 'lib\\net*']
-}
-module.exports = data
+};
+module.exports = data;

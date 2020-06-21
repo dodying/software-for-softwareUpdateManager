@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/plotly/falcon/releases/latest'
   },
-  downloadChoice: '[href*="win"][href$=".zip"]',
+  versionChoice: 'win(.*).zip',
   install: ['install_zipped', 'install_zipped', null, 'install', 'app-64.7z']
-}
-module.exports = data
+};
+module.exports = data;

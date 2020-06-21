@@ -4,7 +4,14 @@ const data = {
   site: {
     GitHub: 'https://github.com/billziss-gh/sshfs-win/releases/latest'
   },
-  downloadChoice: '-x64.msi',
-  install: ['install_msi', null, 'bin/sshfs.exe']
+  versionChoice: '-x64.msi',
+  install: ['install_msi', null, 'bin/sshfs.exe'],
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/billziss-gh/sshfs-win/releases'
+      }
+    }
+  }
 };
 module.exports = data;

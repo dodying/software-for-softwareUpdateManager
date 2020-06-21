@@ -1,17 +1,17 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/enzo1982/freac/releases/latest'
   },
+  versionChoice: /windows-x64.zip$/,
   install: 'install',
   other: {
     beta: {
       site: {
-        'GitHub-Api': 'https://api.github.com/repos/enzo1982/freac/releases'
-      },
-      versionChoice: /windows-x64.zip$/
+        GitHub: 'https://github.com/enzo1982/freac/releases'
+      }
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

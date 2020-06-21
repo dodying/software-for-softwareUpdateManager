@@ -5,8 +5,7 @@ const data = {
   site: {
     GitHub: 'https://github.com/darktable-org/darktable/releases/latest'
   },
-  versionChoice: /release-(.*)/,
-  downloadChoice: '[href$="win64.exe"]',
+  versionChoice: ['win64.exe', /release-(.*)/],
   install: 'install_nsis_cli'
 };
 module.exports = data;

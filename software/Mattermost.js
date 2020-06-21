@@ -1,10 +1,17 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/mattermost/desktop/releases/latest'
   },
-  downloadChoice: '[href$="win-x64.zip"]',
-  install: 'install'
-}
-module.exports = data
+  versionChoice: 'win-x64.zip',
+  install: 'install',
+  other: {
+    beta: {
+      site: {
+        GitHub: 'https://github.com/mattermost/desktop/releases'
+      }
+    }
+  }
+};
+module.exports = data;

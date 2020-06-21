@@ -1,6 +1,7 @@
 'use strict'
 
 let data = {
+  commercial: 2,
   url: 'http://irreader.fatecore.com/',
   version: 'h1',
   changelog: {

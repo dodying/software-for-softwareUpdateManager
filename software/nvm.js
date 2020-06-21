@@ -4,7 +4,7 @@ const data = {
   site: {
     GitHub: 'https://github.com/coreybutler/nvm-windows/releases/latest'
   },
-  downloadChoice: 'noinstall.zip',
+  versionChoice: 'noinstall.zip',
   install: 'install'
 };
 module.exports = data;

@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    'GitHub-Api': 'https://api.github.com/repos/termix-io/releases/releases'
+    GitHub: 'https://github.com/termix-io/releases/releases'
   },
   versionChoice: [/Termix-beta-(.*?)-windows.zip/, /beta-(.*)/],
   install: 'install',
@@ -14,5 +14,5 @@ let data = {
       versionChoice: [/Termix-alpha-(.*?)-windows.zip/, /alpha-(.*)/]
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

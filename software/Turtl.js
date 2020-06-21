@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/turtl/desktop/releases/latest'
   },
-  downloadChoice: '[href$="windows64.msi"]',
+  versionChoice: 'windows64.msi',
   install: ['install_msi', null, 'turtl.exe'],
   other: {
     beta: {
@@ -13,5 +13,5 @@ let data = {
       }
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

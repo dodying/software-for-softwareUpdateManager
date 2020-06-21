@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/TransposonY/GestureSign/releases/latest'
   },
-  downloadChoice: '[href$=".zip"][href*="Setup-"]',
+  versionChoice: 'Setup-(.*).zip',
   install: ['install_zipped', 'install_nsis']
-}
-module.exports = data
+};
+module.exports = data;

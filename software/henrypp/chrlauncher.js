@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/henrypp/chrlauncher/releases/latest'
   },
-  versionChoice: /v.(.*)/,
+  versionChoice: ['.zip$', /v.(.*)/],
   install: ['install', null, '*\\64']
-}
-module.exports = data
+};
+module.exports = data;

@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    'GitHub-Api': 'https://api.github.com/repos/frostwire/frostwire/releases'
+    GitHub: 'https://github.com/frostwire/frostwire/releases/latest'
   },
   versionChoice: [/windows.github.exe$/, /frostwire-desktop-(.*)/],
   install: 'install_nsis'
-}
-module.exports = data
+};
+module.exports = data;

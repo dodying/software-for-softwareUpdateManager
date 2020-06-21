@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/portacle/portacle/releases/latest'
   },
-  downloadChoice: '[href$="win-portacle.exe"]',
+  versionChoice: 'win-portacle.exe',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;
