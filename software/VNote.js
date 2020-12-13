@@ -2,7 +2,7 @@
 
 const data = {
   site: {
-    GitHub: 'https://github.com/tamlok/vnote/releases/latest'
+    GitHub: 'https://github.com/vnotex/vnote/releases/latest'
   },
   versionChoice: '64_portable(.*).zip',
   install: 'install'

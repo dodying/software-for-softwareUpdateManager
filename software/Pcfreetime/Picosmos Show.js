@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   url: 'http://pcfreetime.com/picosmos/ps_index.php',
-  version: ['a[href$=".exe"][href*="PSX64"]', 'href', /PSX64Setup(.*?).exe/],
-  download: 'a[href$=".exe"][href*="PSX64"]',
+  version: '[style="font-size:1em;"]',
+  download: '[href*="/pure/"][href$=".exe"]',
   install: 'install_nsis'
-}
-module.exports = data
+};
+module.exports = data;

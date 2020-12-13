@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
-  url: 'http://www.pazera-software.com/products/wininfo/',
-  version: '.prog_name',
-  download: 'http://www.pazera-software.com/files/WinInfo.rar',
+const data = {
+  site: {
+    'Sites/Pazera-Software': 'http://www.pazera-software.com/products/wininfo/'
+  },
   install: 'install_zipped_single'
-}
-module.exports = data
+};
+module.exports = data;

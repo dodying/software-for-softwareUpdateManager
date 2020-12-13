@@ -10,8 +10,8 @@ let shell, portable, regDll;
 const data = {
   commercial: 2,
   url: 'https://www.bandisoft.com/bandizip/history/',
-  version: '.content>h2',
-  changelog: '.content>ul',
+  version: '.content h2',
+  changelog: '.content ul',
   download: 'https://dl.bandisoft.com/bandizip.std/BANDIZIP-SETUP-STD-ALL.EXE',
   install: 'install',
   beforeInstall: info => {
@@ -53,6 +53,11 @@ const data = {
       download: 'https://www.bandisoft.com/bandizip/dl.php?old-ca',
       beforeInstall: null,
       afterInstall: null
+    },
+    beta: {
+      url: 'https://www.bandisoft.com/bandizip/beta/',
+      version: '[href="/bandizip/dl.php?beta"]',
+      download: 'https://www.bandisoft.com/bandizip/dl.php?beta'
     }
   }
 };

@@ -1,18 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   commercial: 3,
   site: {
     Softpedia: 'https://www.softpedia.com/get/Network-Tools/Telnet-SSH-Clients/Xshell.shtml'
   },
-  install: 'install_is_cli',
-  other: {
-    free: {
-      commercial: 0,
-      site: {
-        Softpedia: 'https://www.softpedia.com/get/Network-Tools/Telnet-SSH-Clients/Xshell-Free.shtml'
-      }
-    }
-  }
-}
-module.exports = data
+  install: 'install_is_cli'
+};
+module.exports = data;

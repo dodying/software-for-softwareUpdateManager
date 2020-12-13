@@ -1,11 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   commercial: 3,
-  url: 'https://www.collectorz.com/game/signup-completed',
-  version: 'h3+p',
-  changelog: ['https://www.collectorz.com/game/game-collector/whatsnew', '.wp-content'],
-  download: '.btn-primary',
+  site: {
+    Softpedia: 'https://www.softpedia.com/get/Others/File-CD-DVD-Catalog/Collectorzcom-Game-Collector.shtml'
+  },
   install: 'install_inno_type'
-}
-module.exports = data
+};
+module.exports = data;

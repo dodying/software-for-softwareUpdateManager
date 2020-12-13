@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
-  url: 'https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/overview',
-  version: '#release-history~ul>li>a',
+const data = {
+  url: 'https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/support/release-history',
+  version: '#main>ul>li>a[href*="/wac"]',
   download: 'https://aka.ms/wacdownload',
   install: 'install_msi_cli'
-}
-module.exports = data
+};
+module.exports = data;

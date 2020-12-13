@@ -1,9 +1,8 @@
-'use strict'
+'use strict';
 
-let data = {
-  url: 'https://vovsoft.com/software/prime-number-counter/',
-  version: 'h1',
-  download: 'http://vovsoft.com/files/prime-number-counter.exe',
+module.exports = {
+  site: {
+    'Sites/VovSoft': 'https://vovsoft.com/software/prime-number-counter/'
+  },
   install: 'install_inno'
-}
-module.exports = data
+};

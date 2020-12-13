@@ -1,11 +1,11 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   commercial: 2,
   url: 'https://www.comfort-software.com/clipboard-manager/version-history/',
   version: 'h4',
   changelog: 'h4+ul',
-  download: 'https://www.comfort-software.com/download/cc_setup.exe',
+  download: 'https://www.comfort-software.com/download/ComfortClipboardSetup.exe',
   install: 'install_inno',
   other: {
     lite: {
@@ -13,5 +13,5 @@ let data = {
       download: 'https://www.comfort-software.com/download/cc_lite.exe'
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = {
-  url: 'https://www.documentalist.io/',
-  version: ['#dlurl', 'href', /installer-(.*?).exe/],
-  download: '#dlurl',
-  install: 'install_single'
+  url: 'https://kjkpubsf.sfo2.digitaloceanspaces.com/software/documentalist/rel/latestver.js',
+  version: (res, $) => res.body.match(/"Ver": "([\d.]+)"/)[1],
+  download: (res, $) => res.body.match(/"URL": "(.*?)"/)[1],
+  install: 'install'
 };

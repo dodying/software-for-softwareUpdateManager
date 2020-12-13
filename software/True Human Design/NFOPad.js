@@ -2,7 +2,7 @@
 
 let data = {
   url: 'https://truehumandesign.se/s_nfopad.php',
-  version: '.downloadtable .menutd',
+  version: ['.downloadtable', 'text', /Version: ([\d.]+)/],
   changelog: {
     selector: '.content',
     attr: 'text',

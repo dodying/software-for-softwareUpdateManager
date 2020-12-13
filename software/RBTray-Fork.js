@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    'GitHub-commit': 'https://github.com/benbuck/rbtray/releases'
+    GitHub: 'https://github.com/benbuck/rbtray/releases/latest'
   },
-  changelog: ['https://github.com/benbuck/rbtray/blob/master/CHANGELOG.md', 'h2:has(#user-content-change-history)+h2+ul'],
-  install: ['install', null, '*\\x64']
-}
-module.exports = data
+  versionChoice: 'x64.zip',
+  install: 'install'
+};
+module.exports = data;

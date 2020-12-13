@@ -1,15 +1,13 @@
-'use strict'
+'use strict';
 
-let data = {
-  fixedPath: '%ProgramFiles(x86)%\\Huorong\\Sysdiag\\bin\\HipsMain.exe',
-  url: 'https://www.huorong.cn/downloadv5.html',
-  version: (res, $) => res.body.match(/var version = "(.*?)";/)[1],
-  download: 'https://down5.huorong.cn/sysdiag-full-{version}.exe',
-  // install: 'install_nsis_cli',
+module.exports = {
+  url: 'https://www.huorong.cn/versionShow.php',
+  version: (res) => res.json.version,
+  download: (res) => res.json.urlFull,
+  install: 'install',
   other: {
     all: {
-      download: 'https://down5.huorong.cn/sysdiag-all-{version}.exe'
+      download: (res) => res.json.urlAll
     }
   }
-}
-module.exports = data
+};

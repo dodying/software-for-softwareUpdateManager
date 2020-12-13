@@ -1,15 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   url: 'https://www.quickaccesspopup.com/',
-  version: ['h5:contains("What\'s new")+p+pre', 'text', /Version: ([\d.]+) \(/],
-  changelog: {
-    selector: 'h5:contains("What\'s new")+p+pre',
-    attr: 'text',
-    match: /^Version: [\d.]+/,
-    split: true
-  },
+  version: ['pre', 'text', /Version: ([\d.]+) \(/],
+  changelog: 'pre',
   download: 'https://www.quickaccesspopup.com/download/quickaccesspopup.zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

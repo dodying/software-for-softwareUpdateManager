@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     'Sites/Sordum': 'https://www.sordum.org/8058/'
   },
-  install: 'install'
-}
-module.exports = data
+  install: 'install_zipped_single'
+};
+module.exports = data;

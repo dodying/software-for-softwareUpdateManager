@@ -1,9 +1,8 @@
-'use strict'
+'use strict';
 
-let data = {
-  site: {
-    Pc6: 'http://www.pc6.com/softview/SoftView_667366.html'
-  },
+module.exports = {
+  url: 'https://www.bishouapp.com/',
+  version: '.download_platform>[href$=".exe"]',
+  download: '.download_platform>[href$=".exe"]',
   install: ['install_zipped', 'install_zipped', '.exe', 'install', 'app-32.7z']
-}
-module.exports = data
+};

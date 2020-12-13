@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   url: 'https://mirrors.ustc.edu.cn/kde/stable/kexi/win64/',
   version: async (res, $, fns, choice) => fns.walkLink(res, fns, {
     selector: 'a',
@@ -11,6 +11,6 @@ let data = {
     selector: 'a',
     sort: true
   }),
-  install: 'install_nsis'
-}
-module.exports = data
+  install: ['install_zipped', 'install', 'Win64.exe']
+};
+module.exports = data;

@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
-  url: 'http://www.dcmembers.com/bgmcoder/download/ballistic/',
-  version: ['[class="list-group-item [hide_empty:version]"]>span', 'text', /(.*)/],
-  download: ['a.wpdm-download-link', 'onclick', /^this.href='(.*)';$/],
+const data = {
+  site: {
+    'Sites/DonationCoder': 'http://www.dcmembers.com/bgmcoder/download/ballistic/'
+  },
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

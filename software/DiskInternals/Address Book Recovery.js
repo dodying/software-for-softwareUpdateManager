@@ -2,7 +2,7 @@
 
 let data = {
   url: 'https://www.diskinternals.com/wab-recovery/',
-  version: '.divh5',
+  version: '.prod-get[download][onclick]',
   download: 'https://www.diskinternals.com/download/WAB_Recovery.exe',
   install: 'install_nsis'
 }

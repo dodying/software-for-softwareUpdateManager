@@ -1,11 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+module.exports = {
   commercial: 3,
-  url: 'http://www.raimersoft.com/downloads.html',
-  version: '#AutoNumber1 tr:contains("RadioMaximus")>td:nth-child(2)',
-  changelog: ['http://www.raimersoft.com/radiomaximus/whatsnew.html', 'body'],
+  url: 'http://www.raimersoft.com/radiomaximus/whatsnew.html',
+  version: 'h2',
+  changelog: 'h2+ul',
   download: 'http://www.raimersoft.com/downloads/radiomaximus_setup_x64.exe',
   install: 'install_inno'
-}
-module.exports = data
+};

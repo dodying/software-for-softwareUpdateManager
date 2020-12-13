@@ -8,7 +8,7 @@ let data = {
   install: 'install',
   other: {
     beta: {
-      url: 'http://static.centbrowser.com/beta_64/',
+      url: 'https://static.centbrowser.com/win_beta/',
       version: async (res, $, fns, choice) => fns.walkLink(res, fns, {
         selector: 'a',
         match: /centbrowser_(.*?)_x64_portable.exe/,

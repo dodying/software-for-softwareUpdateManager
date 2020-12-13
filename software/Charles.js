@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   withoutHeader: true,
   url: 'https://www.charlesproxy.com/latest-release/download.do',
   version: ['[name="version"]', 'value'],
@@ -12,7 +12,7 @@ let data = {
     split: true
   },
   download: async (res, $, fns, choice) => {
-    let res1 = await fns.reqHEAD({
+    const res1 = await fns.reqHEAD({
       uri: data.url,
       method: 'POST',
       form: {
@@ -21,9 +21,9 @@ let data = {
         beta: 'false',
         version: $('[name="version"]').eq(0).attr('value')
       }
-    })
-    return res1.request.uri
+    });
+    return res1.request.uri.href;
   },
   install: 'install_msi_cli'
-}
-module.exports = data
+};
+module.exports = data;

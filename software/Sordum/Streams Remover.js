@@ -1,18 +1,8 @@
-// 'use strict'
-//
-// let data = {
-//   site: {
-//     'Sites/Sordum': 'https://www.sordum.org/11263/'
-//   },
-//   install: 'install'
-// }
-// module.exports = data
-//
 'use strict'
 
 let data = {
   site: {
-    'Softpedia': 'https://www.softpedia.com/get/Security/Security-Related/Streams-Remover.shtml'
+    'Sites/Sordum': 'https://www.sordum.org/11263/'
   },
   install: 'install_zipped_single'
 }

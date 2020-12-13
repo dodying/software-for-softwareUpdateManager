@@ -1,6 +1,7 @@
 'use strict';
 
 const data = {
+  tags: ['proxy'],
   useProxy: true,
   // url: 'http://wujieliulan.com/',
   // version: '#sidebar-right>div:has(a[href="http://wujieliulan.com/download/u.exe"])',

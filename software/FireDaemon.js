@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   commercial: 3,
   url: 'https://firedaemon.com/firedaemon-pro-release-notes',
   version: '#article-body>table>tbody>tr:nth-child(2)>td:nth-child(1)>p>a',
@@ -15,20 +15,17 @@ let data = {
     },
     Fusion: {
       url: 'https://firedaemon.com/firedaemon-fusion-release-notes',
-      version: '#article-body>table>tbody>tr:nth-child(1)>td:nth-child(1)>p:nth-child(3)>a',
-      changelog: '#article-body>table>tbody>tr:nth-child(2)>td:nth-child(1)',
-      download: '#article-body>table>tbody>tr:nth-child(1)>td:nth-child(1)>p:nth-child(3)>a'
+      version: '[href*="FireDaemon-Fusion-x86"][href$=".exe"]',
+      download: '[href*="FireDaemon-Fusion-x86"][href$=".exe"]'
     },
     'Fusion-RC': {
       url: 'https://firedaemon.com/firedaemon-fusion-release-notes',
-      version: '#article-body>table>tbody>tr:nth-child(1)>td:nth-child(2)>p:nth-child(3)>a',
-      changelog: '#article-body>table>tbody>tr:nth-child(2)>td:nth-child(1)',
-      download: '#article-body>table>tbody>tr:nth-child(1)>td:nth-child(2)>p:nth-child(3)>a'
+      version: '[href*="FireDaemon-Fusion-x64"][href$=".exe"]',
+      download: '[href*="FireDaemon-Fusion-x64"][href$=".exe"]'
     },
     Zero: {
       url: 'https://firedaemon.com/firedaemon-zero-release-notes',
-      version: '[href$="/download-firedaemon-zero-x64"]',
-      changelog: 'h2:Contains("New Features")+ul',
+      version: '[href*="FireDaemon-Zero-x64"]',
       download: 'https://firedaemon.com/download-firedaemon-zero-x64'
     },
     daeMON: {
@@ -40,5 +37,5 @@ let data = {
       install: ['install_zipped_single', 'daeMON-x64.exe']
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

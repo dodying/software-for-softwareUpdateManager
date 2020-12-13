@@ -2,7 +2,7 @@
 
 let data = {
   url: 'http://hibitsoft.ir/Uninstaller.html',
-  version: '#wb_Text2',
+  version: '.info',
   changelog: {
     url: 'http://www.hibitsoft.ir/HiBitUninstaller/Changelog.txt',
     match: /^HiBit Uninstaller [\d.]+/,

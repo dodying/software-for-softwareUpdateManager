@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
-  url: 'https://antibody-software.com/web/software/software/wiztree-finds-the-files-and-folders-using-the-most-disk-space-on-your-hard-drive/',
-  version: '.smalldark',
-  changelog: 'div:contains("WizTree")+div>ul',
-  download: 'a[href*="/files/"]',
+const data = {
+  url: 'https://wiztreefree.com/download',
+  version: '[href$="setup.exe"]',
+  changelog: ['https://wiztreefree.com/whats-new', 'h4+ul'],
+  download: '[href$="setup.exe"]',
   install: 'install_inno'
-}
-module.exports = data
+};
+module.exports = data;

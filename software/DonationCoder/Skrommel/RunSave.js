@@ -1,9 +1,9 @@
 'use strict'
 
 let data = {
-  url: 'http://www.dcmembers.com/skrommel/download/runsave/',
-  version: ['[class="list-group-item [hide_empty:version]"]>span', 'text', /(.*)/],
-  download: ['a.wpdm-download-link', 'onclick', /^this.href='(.*)';$/],
+  site: {
+    'Sites/DonationCoder': 'http://www.dcmembers.com/skrommel/download/runsave/'
+  },
   install: 'install'
 }
 module.exports = data

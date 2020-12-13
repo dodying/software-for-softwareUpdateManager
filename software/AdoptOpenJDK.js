@@ -4,7 +4,7 @@ let download;
 
 const data = {
   url: 'https://github.com/AdoptOpenJDK',
-  version: async (res, $, fns, choice = { version: 14, jvm: 'hotspot', type: 'jdk' }) => {
+  version: async (res, $, fns, choice = { version: 15, jvm: 'hotspot', type: 'jdk' }) => {
     const uri1 = `https://api.adoptopenjdk.net/v3/assets/feature_releases/${choice.version}/ga?jvm_impl=${choice.jvm}&vendor=adoptopenjdk`;
     // https://api.adoptopenjdk.net/v3/assets/feature_releases/11/ga?jvm_impl=hotspot&vendor=adoptopenjdk&
     // https://api.adoptopenjdk.net/v3/assets/latest/11/hotspot?release=latest&jvm_impl=hotspot&vendor=adoptopenjdk&
@@ -16,11 +16,11 @@ const data = {
   download: () => download,
   install: 'install',
   other: {
-    '14-hotspot-jdk': { versionChoice: { version: 14, jvm: 'hotspot', type: 'jdk' } }
+    '15-hotspot-jdk': { versionChoice: { version: 15, jvm: 'hotspot', type: 'jdk' } }
   }
 };
 
-for (let version = 8; version <= 14; version++) {
+for (let version = 8; version <= 15; version++) {
   data.other[`${version}`] = { versionChoice: { version, jvm: 'hotspot', type: 'jdk' } };
   for (const jvm of ['hotspot', 'openj9']) {
     data.other[`${version}`] = { versionChoice: { version, jvm, type: 'jdk' } };

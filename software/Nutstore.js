@@ -1,15 +1,11 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   url: 'http://help.jianguoyun.com/?p=1415',
-  version: ['[dir="ltr"]>strong', 'text', /（WPF ([\d.]+)）/],
-  changelog: {
-    selector: '.entry-content',
-    attr: 'text',
-    split: true
-  },
+  version: ['[dir="ltr"]>strong', 'text', /（WPF\s*([\d.]+)）/],
+  changelog: '[dir="ltr"]+ol',
   download: 'https://www.jianguoyun.com/static/exe/installer/NutstoreWindowsInstaller.exe',
   fixedPath: '%ProgramFiles%\\Nutstore\\Nutstore.exe',
   install: 'install_ai_cli'
-}
-module.exports = data
+};
+module.exports = data;

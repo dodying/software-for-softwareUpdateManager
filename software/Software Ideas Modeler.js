@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   commercial: 3,
   url: 'https://www.softwareideas.net/Download/845/',
-  version: 'h2',
+  version: '.info>.display-field',
   download: '.download-link',
   install: 'install',
   other: {
@@ -11,5 +11,5 @@ let data = {
       url: 'https://www.softwareideas.net/Download/850/'
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

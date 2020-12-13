@@ -1,13 +1,15 @@
 'use strict';
 
 const data = {
+  tags: ['proxy'],
   site: {
     GitHub: 'https://github.com/shadowsocksrr/shadowsocksr-csharp/releases/latest'
   },
   install: ['install', 'templates'],
   other: {
     beta: {
-      site: {
+      tags: ['proxy'],
+  site: {
         GitHub: 'https://github.com/shadowsocksrr/shadowsocksr-csharp/releases'
       }
     }

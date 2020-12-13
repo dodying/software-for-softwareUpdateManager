@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   commercial: 2,
   url: 'https://www.privatetunnel.com/apps/',
-  version: ['a[href$=".exe"]', 'href'],
-  download: 'a[href$=".exe"]',
-  install: 'install_nsis'
-}
-module.exports = data
+  version: ['a[href$=".msi"]', 'href'],
+  download: 'a[href$=".msi"]',
+  install: ['install_msi', null, 'PrivateTunnel.exe']
+};
+module.exports = data;

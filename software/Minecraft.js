@@ -1,9 +1,8 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   url: 'https://www.digminecraft.com/version_history/pc_mac.php',
-  version: '.panel-title',
-  changelog: '.panel-body',
+  version: '.list-group-item_title',
   download: 'https://launcher.mojang.com/download/Minecraft.exe',
   install: 'install_single',
   other: {
@@ -21,5 +20,5 @@ let data = {
       install: 'install'
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

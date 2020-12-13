@@ -1,11 +1,11 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   commercial: 1,
   url: 'https://everylang.net/en/history',
-  version: '.accordion-title',
-  changelog: '.accordion-content',
+  version: '.acco-heading',
+  changelog: '.acco-des',
   download: 'http://everylang.net/dist/EveryLang.zip',
   install: 'install_zipped_single'
-}
-module.exports = data
+};
+module.exports = data;

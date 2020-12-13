@@ -10,7 +10,7 @@ const data = {
       site: {
         AppVeyor: 'https://ci.appveyor.com/api/projects/processhacker/processhacker'
       },
-      versionChoice: 'bin.zip'
+      downloadChoice: 'bin.zip'
     }
   }
 };

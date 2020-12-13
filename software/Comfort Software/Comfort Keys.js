@@ -1,11 +1,11 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   commercial: 2,
   url: 'https://www.comfort-software.com/comfort-keys/version-history/',
   version: 'h4',
   changelog: 'h4+ul',
-  download: 'https://www.comfort-software.com/download/ck_setup.exe',
+  download: 'https://www.comfort-software.com/download/ComfortKeysSetup.exe',
   install: 'install_inno_type',
   other: {
     lite: {
@@ -13,5 +13,5 @@ let data = {
       download: 'https://www.comfort-software.com/download/ck_lite.exe'
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = {
+  tags: ['proxy'],
   site: {
     GitHub: 'https://github.com/SeaHOH/GotoX/releases/latest'
   },

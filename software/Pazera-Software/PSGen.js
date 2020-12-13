@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
-  url: 'http://www.pazera-software.com/products/psgen/',
-  version: '#changelog_block>b',
-  download: 'http://www.pazera-software.com/files/PSGen_64bit_PORTABLE.zip',
+const data = {
+  site: {
+    'Sites/Pazera-Software': 'http://www.pazera-software.com/products/psgen/'
+  },
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

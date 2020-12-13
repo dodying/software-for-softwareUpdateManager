@@ -2,6 +2,7 @@
 
 const data = {
   tags: ['proxy'],
+  tags: ['proxy'],
   site: {
     GitHub: 'https://github.com/mellow-io/mellow/releases/latest'
   },

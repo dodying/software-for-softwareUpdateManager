@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   url: 'https://www.taskade.com/downloads',
-  version: ['.win-app', 'href'],
-  download: '.win-app',
+  version: ['[href$=".exe"]', 'href', /Taskade_Setup_([\d.]+).exe/],
+  download: '[href$=".exe"]',
   install: ['install_zipped', 'install_zipped', null, 'install', 'app-64.7z']
-}
-module.exports = data
+};
+module.exports = data;

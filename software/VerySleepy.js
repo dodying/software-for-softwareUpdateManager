@@ -11,7 +11,7 @@ const data = {
       site: {
         AppVeyor: 'https://ci.appveyor.com/api/projects/CyberShadow/verysleepy'
       },
-      versionChoice: '.exe'
+      downloadChoice: '.exe'
     }
   }
 };

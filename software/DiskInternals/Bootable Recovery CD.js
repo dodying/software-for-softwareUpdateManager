@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   url: 'https://www.diskinternals.com/boot-cd/',
-  version: '.divh5',
+  version: '.prod-get[download][onclick]',
   download: 'https://www.diskinternals.com/download/Boot_CD.exe',
   install: 'install_nsis'
-}
-module.exports = data
+};
+module.exports = data;

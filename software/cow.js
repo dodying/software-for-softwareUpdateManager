@@ -1,6 +1,7 @@
 'use strict';
 
 const data = {
+  tags: ['proxy'],
   site: {
     GitHub: 'https://github.com/cyfdecyf/cow/releases/latest'
   },

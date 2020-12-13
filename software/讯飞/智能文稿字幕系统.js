@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
-  url: 'https://wgzm.iflyrec.com/hiseelsweb/html/hiseelsdownload.html',
-  version: '.client-version',
+const data = {
+  url: 'https://zimu.iflyrec.com/HiseelsBasicService/hiseeLS/api/client/resourceInfo',
+  version: (res) => res.json.content.winVersion,
   download: 'https://www.iflyrec.com/download/HiseeLS/64',
   installType: 'inno'
-}
-module.exports = data
+};
+module.exports = data;

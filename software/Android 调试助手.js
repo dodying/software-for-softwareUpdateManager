@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 
-let data = {
-  url: 'http://www.microdesktop.com/ChangeLog.php',
-  version: '.col-md-12>h4',
-  changelog: '.col-md-12>pre'
-}
-module.exports = data
+module.exports = {
+  site: {
+    Pc6: 'http://www.pc6.com/softview/SoftView_656244.html'
+  },
+  install: 'install'
+};

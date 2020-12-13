@@ -6,6 +6,17 @@ const data = {
   },
   downloadChoice: [null, 'x64_setup.exe'],
   changelog: ['https://www.qbittorrent.org/news.php', '#StretchHome>ul'],
-  install: 'install'
+  install: 'install',
+  other: {
+    ci: {
+      site: {
+        'GitHub-actions': 'https://github.com/qbittorrent/qBittorrent'
+      },
+      versionChoice: 'Windows_x64',
+      changelog: null,
+      downloadChoice: null,
+      install: ['install', null, 'build']
+    }
+  }
 };
 module.exports = data;

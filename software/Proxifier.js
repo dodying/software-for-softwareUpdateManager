@@ -1,11 +1,12 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
+  tags: ['proxy'],
   commercial: 3,
   url: 'https://www.proxifier.com/changelog/',
   version: '.changelog-version',
   changelog: '.changelog-description',
   download: 'https://www.proxifier.com/download/ProxifierSetup.exe',
   install: 'install_inno_cli'
-}
-module.exports = data
+};
+module.exports = data;

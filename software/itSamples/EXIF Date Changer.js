@@ -1,9 +1,9 @@
 'use strict'
 
 let data = {
-  url: 'http://www.itsamples.com/exif-date-changer.html',
-  version: async (res, $) => res.body.match(/version: (\d+[\d.]+\d+)/i)[1],
-  download: 'http://www.itsamples.com/downloads/exif-date-changer.zip',
+  site: {
+    'Sites/itSamples': 'http://www.itsamples.com/exif-date-changer.html'
+  },
   install: 'install_zipped_single'
 }
 module.exports = data

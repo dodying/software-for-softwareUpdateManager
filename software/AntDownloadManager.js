@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   commercial: 2,
   url: 'https://antdownloadmanager.com/download.php',
   version: ['.download_header:contains("Current version")', 'text', /Current version: (\d+[\d.]+\d+) Build (\d+) \(.*$/, '$1.$2'],
@@ -10,8 +10,8 @@ let data = {
   other: {
     beta: {
       version: '.download_item_beta .download_a>a',
-      download: '.download_item_beta .download_a>a'
+      download: ['.download_item_beta .download_a>a', 'antdmexe']
     }
   }
-}
-module.exports = data
+};
+module.exports = data;

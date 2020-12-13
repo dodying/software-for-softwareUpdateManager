@@ -3,7 +3,7 @@ let info;
 
 const data = {
   url: 'https://developers.redhat.com/products/openjdk/download',
-  version: async (res, $, fns, choice = { version: 14, type: 'jdk' }) => {
+  version: async (res, $, fns, choice = { version: 15, type: 'jdk' }) => {
     const arr = $('.product-version').toArray().map(i => ({
       text: $(i).find('.product-version__file-label').text(),
       href: $(i).find('.pf-c-button[href]').attr('href')
@@ -14,11 +14,11 @@ const data = {
   download: () => info.href,
   install: 'install',
   other: {
-    '14-jdk': { versionChoice: { version: 14, type: 'jdk' } }
+    '15-jdk': { versionChoice: { version: 15, type: 'jdk' } }
   }
 };
 
-for (let version = 8; version <= 14; version++) {
+for (let version = 8; version <= 15; version++) {
   data.other[`${version}`] = { versionChoice: { version, type: 'jdk' } };
   for (const type of ['jdk', 'jre']) {
     data.other[`${version}-${type}`] = { versionChoice: { version, type } };

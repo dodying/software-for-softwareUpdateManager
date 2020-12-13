@@ -1,9 +1,8 @@
-'use strict'
+'use strict';
 
-let data = {
-  url: 'http://www.miniget001.com/',
-  version: '.list>li:contains("Version")',
-  download: 'http://www.miniget001.com/download/MiniGet.zip',
-  install: 'install'
-}
-module.exports = data
+module.exports = {
+  site: {
+    Pc6: 'http://www.pc6.com/softview/SoftView_645998.html'
+  },
+  install: ['install', null, 'MiniGetPortable*\\']
+};

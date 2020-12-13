@@ -2,7 +2,7 @@
 
 let data = {
   url: 'https://www.glenn.delahoy.com/desktopinfo/',
-  version: ['.featured-artist', 'text', /Version: (.*)/],
+  version: ['.entry', 'text', /Version: (.*)/],
   download: '[href$=".zip"]',
   install: 'install'
 }

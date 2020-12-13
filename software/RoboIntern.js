@@ -1,15 +1,15 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   url: 'https://robointern.tech/release-log.html',
-  version: ['.download-section b'],
+  version: '.releaselog-section b',
   changelog: {
-    selector: '.download-section',
+    selector: '.releaselog-section',
     attr: 'text',
     match: /^RoboIntern [\d.]+/,
     split: true
   },
   download: 'https://robointern.tech/release/RoboIntern.zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

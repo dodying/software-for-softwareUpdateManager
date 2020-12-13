@@ -1,11 +1,11 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   commercial: 1,
   url: 'https://prepros.io/changelog',
-  version: '.release-version',
-  changelog: '.change-data',
+  version: '.Changelog__release-version',
+  changelog: '.Changelog__release-content',
   download: 'https://prepros.io/downloads/stable/windows',
   install: ['install_zipped', 'install', 'full.nupkg', null, 'lib\\net*']
-}
-module.exports = data
+};
+module.exports = data;

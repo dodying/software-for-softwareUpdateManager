@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   url: 'https://csharp.love/chrome-update-tool.html',
   version: 'li:contains("当前版本")',
-  download: 'https://static.pzhacm.org/software/ChromeUpdateSharp_v{version}.zip',
+  download: 'https://api.pzhacm.org/iivb/ChromeUpdateSharp.zip',
   install: 'install_zipped_single'
-}
-module.exports = data
+};
+module.exports = data;

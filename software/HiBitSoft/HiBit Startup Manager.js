@@ -2,7 +2,7 @@
 
 let data = {
   url: 'http://hibitsoft.ir/StartupManager.html',
-  version: '#wb_Text2',
+  version: '.info',
   changelog: {
     url: 'http://www.hibitsoft.ir/HibitStartup/Changelog.txt',
     match: /^HiBit Startup Manager [\d.]+/,

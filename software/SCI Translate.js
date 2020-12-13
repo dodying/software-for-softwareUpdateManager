@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   url: 'http://www.scitranslate.com/',
-  version: ['.btn-download', 'href', /SCITranslate(.*?).rar/],
+  version: ['.side-title', 'text', /(\d+)/],
   download: '.btn-download',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

@@ -1,13 +1,15 @@
-'use strict'
+'use strict';
+let download;
 
-let data = {
+const data = {
   url: 'https://www.shencut.com/download.html',
   version: async (res, $, fns, choice) => {
-    let uri1 = $('.sys-win').eq(0).attr('href')
-    let res1 = await fns.reqHEAD(uri1)
-    return res1.request.uri.href.match(/filmora_full(.*?).exe/)
+    const uri1 = $('.download_pc_url').eq(0).attr('href');
+    const res1 = await fns.reqHEAD(uri1);
+    download = res1.request.uri.href;
+    return download.match(/filmora_setup_full(.*?).exe/);
   },
-  download: 'http://cc-download.wondershare.cc/cbs_down/filmora_full{version}.exe',
+  download: () => download,
   install: 'install_inno'
-}
-module.exports = data
+};
+module.exports = data;

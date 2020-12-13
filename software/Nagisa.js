@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
-    GitHub: 'https://github.com/Project-Nagisa/Nagisa/releases/latest'
+    GitHub: 'https://github.com/Project-Nagisa/Nagisa-ClassicUWP/releases/latest'
   },
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

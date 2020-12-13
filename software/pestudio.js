@@ -1,14 +1,13 @@
-'use strict'
+'use strict';
 
-let data = {
-  url: 'https://www.winitor.com/get.html',
-  version: '[href="./get.html"]',
+module.exports = {
+  commercial: 2,
+  url: 'https://www.winitor.com/tools/pestudio/changes.log',
+  version: (res) => res.body.match(/Version ([\d.]+)/)[1],
   changelog: {
-    url: 'https://www.winitor.com/tools/pestudio/changes.log',
     match: /^Version [\d.]+/,
     split: true
   },
-  download: 'a[href$=".zip"]',
+  download: 'https://www.winitor.com/tools/pestudio/current/pestudio.zip',
   install: 'install'
-}
-module.exports = data
+};

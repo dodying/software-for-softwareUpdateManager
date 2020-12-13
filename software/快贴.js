@@ -1,9 +1,8 @@
-'use strict'
+'use strict';
 
-let data = {
-  url: 'https://www.clipber.com/',
-  version: '[name="download_app"]+div>div>div:nth-child(2) .quote2',
-  download: '[name="download_app"]+div>div>div:nth-child(2) a[href$=".exe"]',
-  install: 'install_inno'
-}
-module.exports = data
+module.exports = {
+  url: 'https://clipber.com/',
+  version: '.testi-quote:contains("win")>.quote3:contains("版本")',
+  download: 'https://clipber.com/getzip',
+  install: 'install'
+};

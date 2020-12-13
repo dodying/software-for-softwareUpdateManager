@@ -1,11 +1,11 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   commercial: 3,
-  url: 'https://bulkimagedownloader.com/',
-  version: '.smalldark',
-  changelog: ['https://bulkimagedownloader.com/bulk-image-downloader-version-history/', 'div:contains("What\'s new")+div>ul'],
-  download: 'a[href*="/files/"]',
+  url: 'https://bulkimagedownloader.com/download',
+  version: '[href$="setup.exe"]',
+  changelog: ['https://bulkimagedownloader.com/whats-new', 'h4+ul'],
+  download: '[href$="setup.exe"]',
   install: 'install_inno'
-}
-module.exports = data
+};
+module.exports = data;

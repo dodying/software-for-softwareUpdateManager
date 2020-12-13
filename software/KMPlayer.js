@@ -1,9 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+module.exports = {
   site: {
-    MajorGeeks: 'https://www.majorgeeks.com/mg/getmirror/kmplayer,1.html'
+    Softpedia: 'https://www.softpedia.com/get/Multimedia/Video/Video-Players/KMPlayer.shtml'
   },
-  install: 'install_nsis'
-}
-module.exports = data
+  versionChoice: /\d{4}\.\d{2}.\d{2}/,
+  downloadChoice: /\d{4}\.\d{2}.\d{2}/,
+  install: 'install'
+};

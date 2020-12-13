@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   url: 'https://wiki.actiona.tools/doku.php?id=:en:start',
   version: 'p:has([href="/doku.php?id=en:changelog"])',
   changelog: {
@@ -11,12 +11,6 @@ let data = {
     split: true
   },
   download: 'a[href$="windows-64bit.7z"]',
-  install: 'install',
-  other: {
-    unstable: {
-      version: 'p:has([href="/doku.php?id=en:changelog"]):contains("Unstable")',
-      download: 'p:has([href="/doku.php?id=en:changelog"]):contains("Unstable")+ul a[href$="windows-64bit.7z"]'
-    }
-  }
-}
-module.exports = data
+  install: 'install'
+};
+module.exports = data;

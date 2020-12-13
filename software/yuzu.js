@@ -2,10 +2,10 @@
 
 const data = {
   site: {
-    GitHub: 'https://github.com/yuzu-emu/yuzu-nightly/releases/latest'
+    GitHub: 'https://github.com/yuzu-emu/yuzu-mainline/releases/latest'
   },
-  versionChoice: ['yuzu-windows(.*).7z', /nightly-(.*)/],
-  install: 'install',
+  versionChoice: ['yuzu-windows(.*).7z', /mainline-(.*)/],
+  install: ['install', 'yuzu-windows-msvc-source-(.*).tar.xz'],
   other: {
     nightly: {
       site: {

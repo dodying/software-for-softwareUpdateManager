@@ -1,6 +1,7 @@
 'use strict';
 
 const data = {
+  tags: ['proxy'],
   site: {
     GitHub: 'https://github.com/ihciah/go-shadowsocks-magic/releases/latest'
   },

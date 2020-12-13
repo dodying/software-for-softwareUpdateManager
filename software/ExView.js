@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   // url: 'https://www.exview.ml/',
   site: {
     lanzous: 'https://www.lanzous.com/b743927'
   },
-  versionChoice: [/windows/i, /release_([\d.]+).zip/]
-}
-module.exports = data
+  versionChoice: [/ExView_Windows/i, /release_([\d.]+).7z/i]
+};
+module.exports = data;

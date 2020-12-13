@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   url: 'https://mirrors.ustc.edu.cn/kde/stable/umbrello/latest/win64/',
-  version: ['a[href$="bin.7z"]', 'text', /mingw64-(.*?)-bin.7z/],
-  download: 'a[href$="bin.7z"]',
+  version: ['a[href$="portable.7z"]', 'text', /mingw64-(.*?)-portable.7z/],
+  download: 'a[href$="portable.7z"]',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

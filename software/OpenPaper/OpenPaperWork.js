@@ -1,14 +1,17 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   url: 'https://download.openpaper.work/windows/amd64/',
-  version: async (res, $, fns, choice) => {
-    let latest = $('td:has(a[href="paperwork-master-latest.zip"])+td').eq(0).text()
-    let index = $('td:has(a[href^="paperwork-master"][href$=".zip"]:not([href="paperwork-master-latest.zip"]))+td').toArray().map(i => $(i).text() === latest)
-    index = index.indexOf(true)
-    return $('a[href^="paperwork-master"][href$=".zip"]:not([href="paperwork-master-latest.zip"])').eq(index).text().match(/paperwork-master-(.*?).zip/)[1]
-  },
-  download: 'https://download.openpaper.work/windows/amd64/paperwork-latest.zip',
+  version: async (res, $, fns, choice) => fns.walkLink(res, fns, {
+    selector: '[href^="paperwork-master"][href$=".zip"]',
+    sort: true,
+    match: /paperwork-master-([\d.]+).zip/
+  }),
+  download: async (res, $, fns, choice) => fns.walkLink(res, fns, {
+    selector: '[href^="paperwork-master"][href$=".zip"]',
+    sort: true,
+    matchCheck: /paperwork-master-([\d.]+).zip/
+  }),
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

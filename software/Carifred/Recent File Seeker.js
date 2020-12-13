@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   url: 'https://www.carifred.com/rfs',
-  version: 'p:contains("Current version")',
+  version: () => '1', // 'p:contains("Current version")',
   download: 'https://www.carifred.com/rfs/RecentFileSeeker.exe',
   install: 'install_single'
-}
-module.exports = data
+};
+module.exports = data;

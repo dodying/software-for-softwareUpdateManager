@@ -11,13 +11,13 @@
 //   install: 'install'
 // }
 // module.exports = data
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     GitHub: 'https://github.com/notepad-plus-plus/notepad-plus-plus/releases/latest'
   },
-  downloadChoice: 'bin.x64.7z',
+  downloadChoice: 'portable.x64.7z',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

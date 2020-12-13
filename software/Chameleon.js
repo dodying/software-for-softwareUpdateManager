@@ -1,13 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
-  url: 'https://raw.githubusercontent.com/ianmartinez/Chameleon/master/Changelog.txt',
-  version: (res, $) => res.body.match(/Version (.*?) \(/)[1],
-  changelog: {
-    match: /Version [\d.]+/,
-    split: true
+module.exports = {
+  site: {
+    GitHub: 'https://github.com/ianmartinez/Chameleon/releases/latest'
   },
-  download: 'https://github.com/ianmartinez/Chameleon/raw/master/Release/Chameleon.exe',
-  install: 'install_single'
-}
-module.exports = data
+  versionChoice: '.exe',
+  install: 'install_inno_single'
+};

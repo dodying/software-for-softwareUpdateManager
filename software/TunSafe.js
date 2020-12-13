@@ -1,6 +1,7 @@
 'use strict';
 
 const data = {
+  tags: ['proxy'],
   useProxy: true,
   url: 'https://tunsafe.com/download',
   version: ['.btn-success[href$=".exe"]>b', 'text', /Download TunSafe (.*?) Installer/],

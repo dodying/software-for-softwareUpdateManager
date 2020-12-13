@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
-  url: 'https://www.expandrive.com/download-expandrive/',
-  version: ['[onClick*="64.msi"]', 'onclick'],
-  changelog: ['https://www.expandrive.com/blog/', '.post-title+p'],
-  download: (res, $) => $('[onClick*="64.msi"]').attr('onclick').match(/ifrm.src ="(.*?)";/)[1],
+module.exports = {
+  site: {
+    download: 'https://www.expandrive.com/download-expandrive/'
+  },
+  versionChoice: ['https://updates.expandrive.com/apps/expandrive7_win64/download_latest', /ExpanDrive_Setup_([\d.]+).exe/],
+  download: 'https://packages.expandrive.com/msi/{version}/ExpanDriveInstaller64.msi',
   install: ['install_msi', null, 'ExpanDrive.exe']
-}
-module.exports = data
+};

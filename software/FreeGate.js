@@ -1,6 +1,7 @@
 'use strict';
 
 const data = {
+  tags: ['proxy'],
   useProxy: true,
   url: 'http://us.dongtaiwang.com/loc/download.en.php',
   version: '#one_col>table table>tbody>tr>th',

@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   site: {
     download: 'https://www.emclient.com/download'
   },
-  versionChoice: ['https://www.emclient.com/dist/latest/setup.msi', /dist\/v([\d.]+)\/setup.msi/],
+  versionChoice: 'https://www.emclient.com/dist/latest/setup.msi',
   install: ['install_msi', null, 'MailClient.exe']
-}
-module.exports = data
+};
+module.exports = data;

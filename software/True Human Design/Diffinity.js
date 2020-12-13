@@ -2,7 +2,7 @@
 
 let data = {
   url: 'http://truehumandesign.se/s_diffinity.php',
-  version: '.downloadtable .menutd',
+  version: ['.downloadtable', 'text', /Version: ([\d.]+)/],
   changelog: {
     selector: '.content',
     attr: 'text',

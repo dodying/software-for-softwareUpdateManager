@@ -1,11 +1,11 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   commercial: 3,
   url: 'https://www.kcsoftwares.com/bugs/changelog_page.php?project_id=9',
-  version: '[href^="changelog_page.php?version_id="]',
-  changelog: '[id^="changelog_"]',
+  version: '[id^="changelog"]:not(:contains("Under Dev")) .widget-title>a[href^="changelog_page.php?version_id="]',
+  changelog: '[id^="changelog"]:not(:contains("Under Dev")) .widget-main',
   download: 'https://kcsoftwares.com/files/aphemo.exe',
   install: 'install_inno'
-}
-module.exports = data
+};
+module.exports = data;

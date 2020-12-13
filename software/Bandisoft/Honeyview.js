@@ -9,8 +9,8 @@ let shell, portable;
 
 const data = {
   url: 'https://www.bandisoft.com/honeyview/history/',
-  version: '.content>h2',
-  changelog: '.content>ul',
+  version: '.content h2',
+  changelog: '.content ul',
   download: 'https://dl.bandisoft.com/honeyview/HONEYVIEW-SETUP.EXE',
   install: 'install_nsis',
   beforeInstall: info => {

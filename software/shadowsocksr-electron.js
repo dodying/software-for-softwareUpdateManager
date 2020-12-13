@@ -1,6 +1,7 @@
 'use strict';
 
 const data = {
+  tags: ['proxy'],
   site: {
     GitHub: 'https://github.com/shadowsocksrr/electron-ssr/releases/latest'
   },
@@ -8,7 +9,8 @@ const data = {
   install: ['install_zipped', 'install', 'app-32.7z'],
   other: {
     beta: {
-      site: {
+      tags: ['proxy'],
+  site: {
         GitHub: 'https://github.com/shadowsocksrr/electron-ssr/releases'
       }
     }

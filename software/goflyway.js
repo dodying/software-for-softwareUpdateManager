@@ -2,6 +2,7 @@
 'use strict';
 
 const data = {
+  tags: ['proxy'],
   site: {
     GitHub: 'https://github.com/coyove/goflyway/releases/latest'
   },

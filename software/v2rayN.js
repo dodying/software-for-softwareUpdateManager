@@ -1,6 +1,7 @@
 'use strict';
 
 const data = {
+  tags: ['proxy'],
   site: {
     GitHub: 'https://github.com/2dust/v2rayN/releases/latest'
   },
@@ -8,7 +9,8 @@ const data = {
   install: 'install',
   other: {
     beta: {
-      site: {
+      tags: ['proxy'],
+  site: {
         GitHub: 'https://github.com/2dust/v2rayN/releases'
       }
     }

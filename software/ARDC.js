@@ -1,19 +1,14 @@
-'use strict'
+'use strict';
 
-let data = {
-  url: 'https://www.cnblogs.com/we-hjb/tag/ARDC/',
-  version: '[id^="PostsList1_rpPosts_TitleUrl_"]',
-  changelog: async (res, $, fns, choice) => [(await fns.walkLink(res, fns, {
-    selector: '[id^="PostsList1_rpPosts_TitleUrl_"]'
-  }, {
+module.exports = {
+  url: 'https://www.cnblogs.com/we-hjb/p/10989928.html',
+  version: ['#cnblogs_post_body', 'text', /安卓投屏助手\((.*?)\)/],
+  changelog: {
     selector: '#cnblogs_post_body',
-    attr: 'html'
-  })), true],
-  download: async (res, $, fns, choice) => fns.walkLink(res, fns, {
-    selector: '[id^="PostsList1_rpPosts_TitleUrl_"]'
-  }, {
-    selector: '#cnblogs_post_body a[href$=".7z"]'
-  }),
+    attr: 'text',
+    match: /^安卓投屏助手\((.*?)\)/,
+    split: true
+  },
+  download: '#cnblogs_post_body a[href$=".7z"]',
   install: 'install'
-}
-module.exports = data
+};

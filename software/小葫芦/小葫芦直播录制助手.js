@@ -2,7 +2,7 @@
 
 let data = {
   url: 'https://www.xiaohulu.com/luzhizhushou/',
-  version: '.version',
+  version: '.tips',
   download: '.download',
   install: 'install_nsis'
 }

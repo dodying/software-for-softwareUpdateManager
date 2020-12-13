@@ -2,7 +2,7 @@
 
 const data = {
   site: {
-    GitHub: 'https://github.com/tophubs/to-be-slack/releases/latest'
+    GitHub: 'https://github.com/ttop5/to-be-slack/releases/latest'
   },
   versionChoice: 'win32-x64.zip',
   install: 'install'

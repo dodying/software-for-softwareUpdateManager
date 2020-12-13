@@ -1,9 +1,9 @@
 'use strict'
 
 let data = {
-  url: 'http://www.itsamples.com/caps-unlocker.html',
-  version: async (res, $) => res.body.match(/version: (\d+[\d.]+\d+)/i)[1],
-  download: 'http://www.itsamples.com/downloads/caps-unlocker.zip',
+  site: {
+    'Sites/itSamples': 'http://www.itsamples.com/caps-unlocker.html'
+  },
   install: 'install'
 }
 module.exports = data

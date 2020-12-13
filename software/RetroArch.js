@@ -1,14 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
-  url: 'https://buildbot.libretro.com/stable/',
-  version: async (res, $, fns, choice) => fns.walkLink(res, fns, {
-    selector: '.fb-n>a',
-    sort: true,
-    attr: 'text'
-  }),
+module.exports = {
+  url: 'https://retroarch.com/?page=platforms',
+  version: (res) => res.body.match(/version = "(.*?)"/)[1],
   changelog: ['https://retroarch.com/?page=changelog', '.changelog-update-descriptions'],
-  download: 'https://buildbot.libretro.com/stable/{version}/windows/x86_64/RetroArch.7z',
-  install: 'install'
-}
-module.exports = data
+  download: 'http://buildbot.libretro.com/stable/{version}/windows/x86_64/RetroArch-x64-setup.exe',
+  install: ['install_zipped', 'install', '.7z']
+};

@@ -9,6 +9,6 @@ let data = {
     match: /^v[\d.]+/,
     split: true
   },
-  download: '[href$="%E5%85%8D%E5%AE%89%E8%A3%85.zip"]'
+  download: '[href*="/download/"][href$=".zip"]'
 }
 module.exports = data

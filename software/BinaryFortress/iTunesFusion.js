@@ -1,11 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   commercial: 2,
-  url: 'https://www.itunesfusion.com/ChangeLog/',
-  version: '#MainBodyWrapper>h2',
-  changelog: '.FancyList',
-  download: 'https://www.binaryfortress.com/Data/Download/?package=itunesfusion&log=102',
+  url: 'https://www.binaryfortress.com/RetiredProduct/?ProductID=102',
+  version: '.FancyListNoLeftNoBottom>li>div',
+  download: 'https://www.binaryfortress.com/Data/Download/?Package=retired_itunesfusion_retired&Log=100',
   install: 'install_inno'
-}
-module.exports = data
+};
+module.exports = data;

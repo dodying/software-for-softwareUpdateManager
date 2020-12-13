@@ -1,9 +1,9 @@
 'use strict'
 
 let data = {
-  url: 'https://www.trisunsoft.com/date-time-counter/',
-  version: '.green-button>span:nth-child(3)',
-  download: 'https://www.trisunsoft.com/date-time-counter/date-time-counter.exe',
+  site: {
+    'Sites/TriSunSoft': 'https://www.trisunsoft.com/date-time-counter/'
+  },
   install: 'install_inno'
 }
 module.exports = data

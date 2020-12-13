@@ -1,8 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
-  url: 'https://www.xiaohulu.com/zhibozhushou',
-  version: ['[href$=".exe"]:contains("离线")', 'href', /web\/(.*?)\/Setup/],
-  download: '[href$=".exe"]:contains("离线")'
-}
-module.exports = data
+module.exports = {
+  site: {
+    download: 'https://www.xiaohulu.com/zhibozhushou'
+  },
+  versionChoice: 'http://down.obsapp.com/down.php',
+  install: 'install'
+};

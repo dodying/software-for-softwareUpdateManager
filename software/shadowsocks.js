@@ -1,13 +1,15 @@
 'use strict';
 
 const data = {
+  tags: ['proxy'],
   site: {
     GitHub: 'https://github.com/shadowsocks/shadowsocks-windows/releases/latest'
   },
   install: 'install_zipped_single',
   other: {
     beta: {
-      site: {
+      tags: ['proxy'],
+  site: {
         GitHub: 'https://github.com/shadowsocks/shadowsocks-windows/releases'
       }
     }

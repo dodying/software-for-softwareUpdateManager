@@ -1,10 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
+module.exports = {
   site: {
-    SourceForge: 'https://sourceforge.net/projects/ext2fsd/files/Ext2fsd/'
+    GitHub: 'https://github.com/matt-wu/Ext3Fsd/releases/latest'
   },
-  downloadChoice: [null, '.7z'],
-  install: ['install', null, '*\\Setup']
-}
-module.exports = data
+  versionChoice: ['.exe', /Ext3Fsd-(.*)/],
+  install: 'install_inno_cli'
+};

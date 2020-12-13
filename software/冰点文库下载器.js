@@ -1,9 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+module.exports = {
   site: {
-    Pc6: 'http://www.pc6.com/softview/SoftView_52259.html'
+    Zol: 'http://xiazai.zol.com.cn/detail/42/417000.shtml'
   },
-  install: ['install', null, 'Fish*\\']
-}
-module.exports = data
+  versionChoice: '',
+  downloadChoice: '',
+  install: 'install'
+};

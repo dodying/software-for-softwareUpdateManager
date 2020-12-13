@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
-  url: 'https://www.nrosvall.name/progcop/',
-  version: '[name="get"]+h2+p',
+const data = {
+  url: 'https://www.progcop.com/',
+  version: 'p:contains("Latest version")',
   download: 'https://www.nrosvall.name/progcop/ProgCop.zip',
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

@@ -6,7 +6,7 @@ let data = {
   changelog: {
     split: true
   },
-  download: 'https://tinywall.pados.hu/files/TinyWallInstaller.msi',
+  download: 'https://tinywall.pados.hu/ccount/click.php?id=4',
   install: ['install_msi', null, 'TinyWall.exe']
 }
 module.exports = data

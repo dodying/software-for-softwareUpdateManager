@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-let data = {
-  url: 'http://www.pazera-software.com/products/zune-video-converter/',
-  version: '#changelog_block>b',
-  download: 'http://www.pazera-software.com/files/Free_Zune_Video_Converter_PORTABLE.zip',
+const data = {
+  site: {
+    'Sites/Pazera-Software': 'http://www.pazera-software.com/products/zune-video-converter/'
+  },
   install: 'install'
-}
-module.exports = data
+};
+module.exports = data;

@@ -1,9 +1,15 @@
-'use strict'
+'use strict';
 
-let data = {
-  url: 'http://www.tomatolife.cn/down.html',
+module.exports = {
+  url: 'http://www.tomatolist.com/down.html',
   version: '#down_file_link',
+  changelog: {
+    url: '[href^="show_blog_page.html"]',
+    selector: '.container',
+    attr: 'text',
+    match: /^[\d.]+/,
+    split: true
+  },
   download: '#down_file_link',
-  install: 'install_inno_type'
-}
-module.exports = data
+  install: 'install'
+};

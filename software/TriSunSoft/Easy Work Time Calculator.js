@@ -1,9 +1,9 @@
 'use strict'
 
 let data = {
-  url: 'https://www.trisunsoft.com/easy-work-time-calculator/',
-  version: '.green-button>span:nth-child(3)',
-  download: 'https://www.trisunsoft.com/easy-work-time-calculator/ewtc.exe',
+  site: {
+    'Sites/TriSunSoft': 'https://www.trisunsoft.com/easy-work-time-calculator/'
+  },
   install: 'install_inno'
 }
 module.exports = data

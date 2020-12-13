@@ -1,14 +1,14 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   url: 'https://weerdbg.com/zh-cn/download.md',
-  version: '[href$="windows.zip?r=1"]',
+  version: '[href$="windows.zip"]',
   changelog: {
     url: 'https://weerdbg.com/zh-cn/changelog.md',
     match: /^v[\d.]+/,
     split: true
   },
-  download: '[href$="windows.zip?r=1"]',
+  download: '[href$="windows.zip"]',
   install: 'install_zipped_single'
-}
-module.exports = data
+};
+module.exports = data;

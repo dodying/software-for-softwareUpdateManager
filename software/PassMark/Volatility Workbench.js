@@ -2,13 +2,8 @@
 
 let data = {
   url: 'https://www.osforensics.com/tools/volatility-workbench.html',
-  version: '.feature:contains("Download")+p',
-  changelog: {
-    selector: '#sub-content',
-    attr: 'text',
-    match: /^v[\d.]+/,
-    split: true
-  },
+  version: '.whats-new-block>h3',
+  changelog: '.whats-new-block',
   download: 'https://www.osforensics.com/downloads/VolatilityWorkbench.zip',
   install: 'install'
 }

@@ -1,15 +1,10 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   url: 'https://www.osforensics.com/tools/write-usb-images.html',
-  version: '.feature:contains("Download")+p',
-  changelog: {
-    selector: '#sub-content',
-    attr: 'text',
-    match: /^Release [\d.]+/,
-    split: true
-  },
+  version: '.whats-new-block>h3',
+  changelog: '.whats-new-block',
   download: 'https://www.osforensics.com/downloads/imageusb.zip',
   install: 'install_zipped_single'
-}
-module.exports = data
+};
+module.exports = data;
