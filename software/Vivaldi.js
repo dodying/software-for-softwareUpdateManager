@@ -1,10 +1,11 @@
 'use strict';
-
 let downloadUrl;
 
-const data = {
+module.exports = {
   // ?tags: string[] or string, which would be shown in SupportedSoftwares.md for search
   tags: ['browser'],
+
+  // ?alias: string[] or string
 
   // ?commercial:
   // 1. boolean: false=Free true=Commercial
@@ -52,9 +53,9 @@ const data = {
   },
 
   /**
-   * ?changelog:
-   * omitted => nothing
-   */
+* ?changelog:
+* omitted => nothing
+*/
   changelog: {
     // ?url: same as download.plain or selector
     url: 'https://update.vivaldi.com/update/2.0/relnotes/{version}.html',
@@ -71,9 +72,9 @@ const data = {
   },
 
   /**
-   * ?download:
-   * omitted => open url
-   */
+  * ?download:
+  * omitted => open url
+  */
   download: {
     // --- mode 0 ---
     // plain: 'url/to/download'
@@ -102,12 +103,12 @@ const data = {
   },
 
   /**
-   * ?install
-   * omitted => install manually
-   * @type {async function}
-   * @returns {boolean} if install completed
-   * @param {object} info
-   */
+  * ?install
+  * omitted => install manually
+  * @type {async function}
+  * @returns {boolean} if install completed
+  * @param {object} info
+  */
   install: ['install_zipped', 'install', null, null, 'Vivaldi-bin'],
 
   // ?beforeInstall: async function(info)
@@ -132,5 +133,9 @@ const data = {
       }
     }
   }
+
+  // ?type: one of ['software-list']
+  // ?directory: string[] or string, works same as alias
+  // ?noDirectory: boolean
+  // ?list: object, key=software, value=data
 };
-module.exports = data;

@@ -1,17 +1,14 @@
 'use strict';
 
 module.exports = {
-  site: {
-    GitHub: 'https://github.com/zyedidia/micro/releases/latest'
-  },
-  versionChoice: 'win64.zip',
-  install: 'install_zipped_single',
-  other: {
-    nightly: {
+  type: 'software-list',
+  list: {
+    micro: {
       site: {
-        GitHub: 'https://github.com/zyedidia/micro/releases'
+        GitHub: 'https://github.com/micro/micro/releases/latest'
       },
-      versionChoice: ['win64.zip', null, null, 'published_at']
+      versionChoice: 'windows-amd64.zip',
+      install: 'install_zipped_single'
     }
   }
 };

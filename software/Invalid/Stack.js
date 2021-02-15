@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   url: 'https://rink.hockeyapp.net/apps/6037e69fa4944acc9d83ef7682e60732',
   version: '.app-body>h3',
   changelog: {
@@ -11,5 +11,5 @@ let data = {
   },
   download: '.btn-ha-primary',
   install: ['install_msi', null, 'Stack.exe']
-}
-module.exports = data
+};
+module.exports = data;

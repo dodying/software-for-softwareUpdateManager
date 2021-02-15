@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-let data = {
+const data = {
   url: 'https://www.strokesplus.com/downloads/',
   version: async (res, $, fns, choice) => fns.walkLink(res, fns, {
     selector: 'tr>td[valign="middle"]:nth-child(2)',
@@ -16,5 +16,5 @@ let data = {
     selector: '[href*="/files/"][href$="x64_Signed.exe"]'
   })).replace('http://', 'https://'),
   install: 'install_inno'
-}
-module.exports = data
+};
+module.exports = data;
